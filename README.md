@@ -11,9 +11,9 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 ```markdown
 Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# Andro Dunos Project
+## Students From CITM 
+### Pol Gannau, Marc Rosell, Oriol Capdevila, Hugo Limoso
 
 - Bulleted
 - List
@@ -21,9 +21,8 @@ Syntax highlighted code block
 1. Numbered
 2. List
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
+https://polgannau.github.io/Projecte1/
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
