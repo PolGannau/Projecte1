@@ -1,36 +1,19 @@
-## Welcome to GitHub Pages
+#Welcome to a tribute to AndroDunos
 
-You can use the [editor on GitHub](https://github.com/PolGannau/Projecte1/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+##Introduction
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is the center of our project of making a tribute to the retro game AndroDunos.
 
-### Markdown
+##Description
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+AndroDunos is a horizontal scroller shoot'em up for NeoGeo wich was made in the average ninetees, it was made by Visco Games and was distributed by SNK. The game is able to be played by one or two people at the same time.
 
-```markdown
-Syntax highlighted code block
+The theme of the game is placed in the future where the human being is able to travel around the space, but meanwhile an alien being is trying to conquest the Earth and it is doing so. The player have to beat the enemys
 
-# Andro Dunos Project
-## Students From CITM 
-### Pol Gannau, Marc Rosell, Oriol Capdevila, Hugo Limoso
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+
+
 
 
 https://polgannau.github.io/Projecte1/
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/PolGannau/Projecte1/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
