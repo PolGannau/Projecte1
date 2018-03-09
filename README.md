@@ -12,7 +12,7 @@ The theme of the game is placed in the future where the human being is able to t
 
 
 
-
+(Add group members and their github url's, how to play,)
 
 
 
