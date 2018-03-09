@@ -10,6 +10,12 @@ AndroDunos is a horizontal scroller shoot'em up for NeoGeo wich was made in the 
 
 The theme of the game is placed in the future where the human being is able to travel around the space, but meanwhile an alien being is trying to conquest the Earth and it is doing so. The player have to beat the enemys while piloting the spaceship and dodging the enemy attacks.
 
+## Installation
+
+## Game Controls
+
+## Changelist
+
 ## Team
 
 Our team is composed by four members:
