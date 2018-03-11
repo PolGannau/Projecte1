@@ -22,7 +22,7 @@ Our team is composed by four members:
 
 **[Link to github of the team](https://polgannau.github.io/Projecte1/)**
 
-**[Link to  wiki github](https://github.com/PolGannau/Projecte1/wiki/Welcome-Page)**
+**[Link to  wiki github](https://github.com/PolGannau/Projecte1/wiki)**
 
 **[Link to github web page](https://polgannau.github.io/Projecte1/)**
 
