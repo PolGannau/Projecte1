@@ -41,9 +41,5 @@ Role: QA
 
 [Pol's github](https://github.com/PolGannau)
 
-### Hugo Limoso (Lipas98)
-Role: Art lead
-
-[Hugo's github](https://github.com/Lipas98)
 
 ![Team photo](https://github.com/PolGannau/Projecte1/blob/master/Team%20photo.jpeg)
