@@ -14,15 +14,17 @@ enum update_status
 	UPDATE_ERROR
 };
 
+// Useful typedefs ---------
 typedef unsigned int uint;
 
-//Configuration flags ----------
-#define SCREEN_WIDTH 1024
-#define SCREEN_HEIGHT 768
+// Configuration -----------
+#define SCREEN_SIZE 2
+#define SCREEN_WIDTH 384
+#define SCREEN_HEIGHT 224
 #define WIN_FULLSCREEN 0
 #define WIN_FULLSCREEN_DESKTOP 0
 #define WIN_BORDERLESS 0
-#define WIN_RESIZABLE 1
+#define WIN_RESIZABLE 0
 #define REN_VSYNC 1
 
-#endif // !__GLOBALS_H__
+#endif // __GLOBALS_H__

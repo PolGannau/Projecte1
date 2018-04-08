@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{B9D8DBF9-9EA3-439C-8228-6212102166A4}</ProjectGuid>
-    <RootNamespace>Source_Files</RootNamespace>
+    <ProjectGuid>{932BE24F-D3C2-485A-B760-7E357536F60F}</ProjectGuid>
+    <RootNamespace>GameFiles</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,21 +123,27 @@
   <ItemGroup>
     <ClCompile Include="..\Application.cpp" />
     <ClCompile Include="..\Globals.cpp" />
-    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\Main.cpp" />
+    <ClCompile Include="..\ModuleBackground.cpp" />
     <ClCompile Include="..\ModuleInput.cpp" />
+    <ClCompile Include="..\ModulePlayer.cpp" />
     <ClCompile Include="..\ModuleRender.cpp" />
     <ClCompile Include="..\ModuleTextures.cpp" />
     <ClCompile Include="..\ModuleWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Animation.h" />
     <ClInclude Include="..\Application.h" />
     <ClInclude Include="..\Globals.h" />
     <ClInclude Include="..\MemLeaks.h" />
     <ClInclude Include="..\Module.h" />
+    <ClInclude Include="..\ModuleBackground.h" />
     <ClInclude Include="..\ModuleInput.h" />
+    <ClInclude Include="..\ModulePlayer.h" />
     <ClInclude Include="..\ModuleRender.h" />
     <ClInclude Include="..\ModuleTextures.h" />
     <ClInclude Include="..\ModuleWindow.h" />
+    <ClInclude Include="..\p2Point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
