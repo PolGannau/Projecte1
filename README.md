@@ -2,7 +2,7 @@
 
 ## Introduction
 
-We are four students from CITM in Terrassa and in our Project 1 subject we are making a tribute to the retro game AndroDunos.
+We are three students from CITM in Terrassa and in our Project 1 subject we are making a tribute to the retro game AndroDunos.
 
 ## Description
 
