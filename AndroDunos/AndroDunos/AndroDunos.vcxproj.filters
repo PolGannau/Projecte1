@@ -2,13 +2,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Containers">
-      <UniqueIdentifier>{d163ed7b-9426-43ab-8758-d08fd0c9a109}</UniqueIdentifier>
+      <UniqueIdentifier>{18e7ab90-2284-47be-8255-835cb4e60810}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core">
-      <UniqueIdentifier>{e7fafd40-14b7-429e-a318-829498534cbf}</UniqueIdentifier>
+      <UniqueIdentifier>{84909912-cbf4-4163-a0d9-d297b0fc2a20}</UniqueIdentifier>
     </Filter>
     <Filter Include="Modules">
-      <UniqueIdentifier>{7dc383f7-0ebc-497f-b13d-6e17b1829109}</UniqueIdentifier>
+      <UniqueIdentifier>{5a19c87f-5d99-4e24-a6ee-5bf3937411c7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -21,10 +21,16 @@
     <ClCompile Include="..\Globals.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\ModuleBackground.cpp">
+    <ClCompile Include="..\ModuleCollision.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ModuleFadeToBlack.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="..\ModuleInput.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ModuleParticle.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="..\ModulePlayer.cpp">
@@ -33,14 +39,29 @@
     <ClCompile Include="..\ModuleRender.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
+    <ClCompile Include="..\ModuleSceneIntro.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ModuleSceneSpace.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
     <ClCompile Include="..\ModuleTextures.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="..\ModuleWindow.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
+    <ClCompile Include="..\ModuleAudio.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Animation.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\p2Point.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
     <ClInclude Include="..\Application.h">
       <Filter>Core</Filter>
     </ClInclude>
@@ -53,10 +74,16 @@
     <ClInclude Include="..\Module.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="..\ModuleBackground.h">
+    <ClInclude Include="..\ModuleCollision.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ModuleFadeToBlack.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="..\ModuleInput.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ModuleParticles.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="..\ModulePlayer.h">
@@ -65,17 +92,20 @@
     <ClInclude Include="..\ModuleRender.h">
       <Filter>Modules</Filter>
     </ClInclude>
+    <ClInclude Include="..\ModuleSceneIntro.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ModuleSceneSpace.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
     <ClInclude Include="..\ModuleTextures.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="..\ModuleWindow.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="..\Animation.h">
-      <Filter>Containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\p2Point.h">
-      <Filter>Containers</Filter>
+    <ClInclude Include="..\ModuleAudio.h">
+      <Filter>Modules</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
