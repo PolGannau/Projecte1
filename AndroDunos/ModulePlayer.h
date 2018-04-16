@@ -4,6 +4,8 @@
 #include "Module.h"
 #include "Animation.h"
 #include "p2Point.h"
+#include "ModuleCollision.h"
+#include "SDL_mixer/include/SDL_mixer.h"
 
 struct SDL_Texture;
 struct Collider;
@@ -18,6 +20,8 @@ public:
 	update_status Update();
 	bool CleanUp();
 
+	void OnCollision(Collider*, Collider*);
+
 public:
 
 	SDL_Texture* graphics = nullptr;
@@ -27,6 +31,8 @@ public:
 	Animation up;
 	Animation down;
 	iPoint position;
+	Mix_Chunk* fx = nullptr;
+	bool destroyed = false;
 };
 
 #endif

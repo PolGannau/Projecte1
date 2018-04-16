@@ -70,7 +70,7 @@ bool ModuleAudio::CleanUp()
 void ModuleAudio::PlayMusic(Mix_Music * music_to_play, int repetitions)
 {
 	Mix_PlayMusic(music_to_play, repetitions);
-	Mix_VolumeMusic(MIX_MAX_VOLUME / 3);
+	Mix_VolumeMusic(MIX_MAX_VOLUME/3);
 }
 
 void ModuleAudio::PlaySoundEffect(Mix_Chunk * effect_to_play)

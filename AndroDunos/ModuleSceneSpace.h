@@ -2,6 +2,8 @@
 #define __MODULESCENESPACE_H__
 
 #include "Module.h"
+#include "Globals.h"
+#include "SDL_mixer/include/SDL_mixer.h"
 
 struct SDL_Texture;
 
@@ -20,6 +22,8 @@ public:
 	SDL_Texture* background1 = nullptr;
 	SDL_Texture* floor = nullptr;
 	SDL_Texture* stars = nullptr;
+
+	Mix_Music* mus = nullptr;
 };
 
 #endif // __MODULESCENESPACE_H__

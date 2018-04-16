@@ -1,5 +1,6 @@
 #include "Globals.h"
 #include "Application.h"
+#include "ModuleAudio.h"
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
@@ -30,8 +31,11 @@ bool ModuleSceneSpace::Start()
 	App->collision->Enable();
 
 	// Colliders ---
-	App->collision->AddCollider({ 0, 208, 3930, 16 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 0, 204, 3930, 20 }, COLLIDER_WALL);
 
+	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
+
+	App->audio->PlayMusic(mus, 1);
 
 	return true;
 }
@@ -46,6 +50,8 @@ bool ModuleSceneSpace::CleanUp()
 	App->player->Disable();
 	App->collision->Disable();
 	App->particles->Disable();
+
+	App->audio->UnloadMusic(mus);
 
 	return true;
 }

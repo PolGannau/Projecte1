@@ -1,12 +1,15 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleTextures.h"
+#include "ModuleSceneIntro.h"
+#include "ModuleSceneSpace.h"
 #include "ModuleInput.h"
 #include "ModuleParticles.h"
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
 #include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
+#include "ModuleAudio.h"
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
@@ -44,6 +47,8 @@ bool ModulePlayer::Start()
 	// TODO 2: Add a collider to the player
 	coll=App->collision->AddCollider({ position.x,position.y, 27, 16 },COLLIDER_PLAYER);
 
+	fx = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-1_(Main_Ships).wav");
+
 	return true;
 }
 
@@ -52,6 +57,7 @@ bool ModulePlayer::CleanUp()
 {
 	LOG("Unloading player");
 	App->textures->Unload(graphics);
+	App->audio->UnloadSoundEffects(fx);
 	return true;
 }
 
@@ -94,6 +100,7 @@ update_status ModulePlayer::Update()
 	{
 		App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
 		App->particles->AddParticle(App->particles->laser, position.x + 20, position.y +11, COLLIDER_PLAYER_SHOT);
+		App->audio->PlaySoundEffect(fx);
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_IDLE
@@ -112,3 +119,14 @@ update_status ModulePlayer::Update()
 }
 
 // TODO 4: Detect collision with a wall. If so, go back to intro screen.
+
+void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
+{
+	if (c1 == coll && destroyed == false && App->fade->IsFading() == false)
+	{
+		App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->scene_intro);
+		//code
+		App->player->Disable();
+
+	}
+}
