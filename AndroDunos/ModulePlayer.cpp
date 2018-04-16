@@ -13,17 +13,17 @@
 ModulePlayer::ModulePlayer()
 {
 	// idle animation (just the ship)
-	idle.PushBack({ 66, 1, 32, 14 });
+	idle.PushBack({ 94, 109, 27, 17 });
 
 	// move upwards
-	up.PushBack({ 100, 1, 32, 14 });
-	up.PushBack({ 132, 0, 32, 14 });
+	up.PushBack({ 94, 88, 27, 15 });
+	up.PushBack({ 94, 67, 27, 15 });
 	up.loop = false;
 	up.speed = 0.1f;
 
 	// Move down
-	down.PushBack({ 33, 1, 32, 14 });
-	down.PushBack({ 0, 1, 32, 14 });
+	down.PushBack({ 94, 132, 27, 16 });
+	down.PushBack({ 94, 154, 27, 17 });
 	down.loop = false;
 	down.speed = 0.1f;
 }
@@ -36,12 +36,13 @@ bool ModulePlayer::Start()
 {
 	LOG("Loading player");
 
-	graphics = App->textures->Load("rtype/ship.png");
+	graphics = App->textures->Load("assets/ship/ships.png");
 
 	position.x = 150;
 	position.y = 120;
 
 	// TODO 2: Add a collider to the player
+	coll=App->collision->AddCollider({ position.x,position.y, 27, 16 },COLLIDER_PLAYER);
 
 	return true;
 }
@@ -101,6 +102,7 @@ update_status ModulePlayer::Update()
 		current_animation = &idle;
 
 	// TODO 3: Update collider position to player position
+	coll->SetPos(position.x,position.y);
 
 	// Draw everything --------------------------------------
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));

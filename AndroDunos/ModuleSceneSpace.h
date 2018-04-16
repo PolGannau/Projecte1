@@ -17,7 +17,8 @@ public:
 
 public:
 
-	SDL_Texture* graphics = nullptr;
+	SDL_Texture* background1 = nullptr;
+	SDL_Texture* floor = nullptr;
 	SDL_Texture* stars = nullptr;
 };
 

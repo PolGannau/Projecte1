@@ -22,14 +22,15 @@ bool ModuleSceneSpace::Start()
 {
 	LOG("Loading space scene");
 
-	graphics = App->textures->Load("assets/background/Background_Tiles_part1.png");
+	background1 = App->textures->Load("assets/level-1/background&floor/Background_Tiles_part1.png");
+	floor = App->textures->Load("assets/level-1/background&floor/Floor_all.png");
 
 	App->player->Enable();
 	App->particles->Enable();
 	App->collision->Enable();
 
 	// Colliders ---
-	App->collision->AddCollider({ 0, 224, 3930, 16 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 0, 208, 3930, 16 }, COLLIDER_WALL);
 
 
 	return true;
@@ -40,7 +41,8 @@ bool ModuleSceneSpace::CleanUp()
 {
 	LOG("Unloading space scene");
 
-	App->textures->Unload(graphics);
+	App->textures->Unload(background1);
+	App->textures->Unload(floor);
 	App->player->Disable();
 	App->collision->Disable();
 	App->particles->Disable();
@@ -59,7 +61,8 @@ update_status ModuleSceneSpace::Update()
 
 
 	// Draw everything --------------------------------------
-	App->render->Blit(graphics, 0, 0, NULL);
+	App->render->Blit(background1, 0, 87, NULL);
+	App->render->Blit(floor, 0, -110, NULL);
 
 	return UPDATE_CONTINUE;
 }
