@@ -98,7 +98,9 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_IDLE
 		&& App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_IDLE)
+	{
 		current_animation = &idle;
+	}
 
 	// TODO 3: Update collider position to player position
 	coll->SetPos(position.x,position.y);

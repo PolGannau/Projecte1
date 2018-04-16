@@ -46,6 +46,8 @@ bool ModuleAudio::CleanUp()
 			if (songs[i] != nullptr)
 			{
 				Mix_FreeMusic(songs[i]);
+				songs[i] = nullptr;
+				break;
 			}
 		}
 
@@ -54,6 +56,8 @@ bool ModuleAudio::CleanUp()
 		if (sound_effects[i] != nullptr)
 		{
 			Mix_FreeChunk(sound_effects[i]);
+			sound_effects[i] = nullptr;
+			break;
 		}
 	}
 

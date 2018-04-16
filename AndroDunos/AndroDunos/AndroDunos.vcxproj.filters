@@ -10,6 +10,9 @@
     <Filter Include="Modules">
       <UniqueIdentifier>{5a19c87f-5d99-4e24-a6ee-5bf3937411c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Modules\Enemies">
+      <UniqueIdentifier>{b438482e-dbf0-4bb4-939e-ae7bd92d09d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp">
@@ -52,6 +55,12 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="..\ModuleAudio.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Enemy.cpp">
+      <Filter>Modules\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ModuleEnemies.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
   </ItemGroup>
@@ -105,6 +114,15 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="..\ModuleAudio.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Path.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Enemy.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ModuleEnemies.h">
       <Filter>Modules</Filter>
     </ClInclude>
   </ItemGroup>
