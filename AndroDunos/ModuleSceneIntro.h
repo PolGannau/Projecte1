@@ -2,6 +2,8 @@
 #define __MODULESCENEINTRO_H__
 
 #include "Module.h"
+#include "Globals.h"
+#include "SDL_mixer/include/SDL_mixer.h"
 
 struct SDL_Texture;
 
@@ -17,8 +19,12 @@ public:
 
 public:
 
-	SDL_Texture* background = nullptr;
+	SDL_Texture* intro = nullptr;
+	SDL_Rect neogeo;
+	
 	uint fx = 0;
+
+	Mix_Music* mus = nullptr;
 };
 
 #endif // __MODULESCENEINTRO_H__

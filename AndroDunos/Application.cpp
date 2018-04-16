@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "ModuleWindow.h"
 #include "ModuleRender.h"
+#include "ModuleAudio.h"
 #include "ModuleInput.h"
 #include "ModuleTextures.h"
 #include "ModuleSceneSpace.h"
@@ -15,6 +16,7 @@ Application::Application()
 	int i = 0;
 	modules[i++] = window = new ModuleWindow();
 	modules[i++] = render = new ModuleRender();
+	modules[i++] = audio = new ModuleAudio();
 	modules[i++] = input = new ModuleInput();
 	modules[i++] = textures = new ModuleTextures();
 	modules[i++] = scene_intro = new ModuleSceneIntro();
@@ -23,6 +25,7 @@ Application::Application()
 	modules[i++] = particles = new ModuleParticles();
 	modules[i++] = collision = new ModuleCollision();
 	modules[i++] = fade = new ModuleFadeToBlack();
+	
 }
 
 Application::~Application()
