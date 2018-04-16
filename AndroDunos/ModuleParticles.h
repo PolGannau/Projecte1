@@ -52,6 +52,7 @@ public:
 
 	Particle explosion;
 	Particle laser;
+	Particle laser2;
 };
 
 #endif // __MODULEPARTICLES_H__
