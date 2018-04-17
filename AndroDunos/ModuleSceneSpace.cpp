@@ -4,6 +4,7 @@
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModuleSceneSpace.h"
@@ -38,10 +39,9 @@ bool ModuleSceneSpace::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 600, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 625, 80);
 
-	
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
-
-	App->audio->PlayMusic(mus, 1);
+	
+	App->audio->PlayMusic(mus);
 
 	return true;
 }
@@ -55,6 +55,7 @@ bool ModuleSceneSpace::CleanUp()
 	App->textures->Unload(floor);
 	App->enemies->Disable();
 	App->player->Disable();
+	App->player2->Disable();
 	App->collision->Disable();
 	App->particles->Disable();
 	
@@ -70,12 +71,13 @@ update_status ModuleSceneSpace::Update()
 	int scroll_speed = 1;
 
 	App->player->position.x += 1;
+	App->player2->position.x += 1;
 	App->render->camera.x -= 3;
 
 
 	// Draw everything --------------------------------------
 	App->render->Blit(background1, 0, 87, NULL);
-	App->render->Blit(floor, 0, -110, NULL);
+	App->render->Blit(floor, 0, -115, NULL);
 
 	return UPDATE_CONTINUE;
 }

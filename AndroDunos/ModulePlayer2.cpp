@@ -8,6 +8,7 @@
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
 #include "ModuleFadeToBlack.h"
+#include "ModulePlayer.h"
 #include "ModulePlayer2.h"
 #include "ModuleAudio.h"
 
@@ -37,12 +38,12 @@ ModulePlayer2::~ModulePlayer2()
 // Load assets
 bool ModulePlayer2::Start()
 {
-	LOG("Loading player");
+	LOG("Loading player2");
 
 	graphics = App->textures->Load("assets/ship/ships.png");
 
-	position.x = App->render->camera.x + 150;
-	position.y = App->render->camera.y + 160;
+	position.x = App->player->position.x;
+	position.y = App->player->position.y + 50;
 
 	// TODO 2: Add a collider to the player
 	coll = App->collision->AddCollider({ position.x,position.y, 27, 16 }, COLLIDER_PLAYER);
@@ -96,7 +97,7 @@ update_status ModulePlayer2::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_O] == KEY_STATE::KEY_DOWN)
+	if (App->input->keyboard[SDL_SCANCODE_RCTRL] == KEY_STATE::KEY_DOWN)
 	{
 		App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
 		App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 11, COLLIDER_PLAYER_SHOT);

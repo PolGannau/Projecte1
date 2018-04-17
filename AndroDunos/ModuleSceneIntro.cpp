@@ -31,7 +31,7 @@ bool ModuleSceneIntro::Start()
 
 	mus = App->audio->LoadMusic("assets/Intro/01_Neo_Geo_Logo.ogg");
 
-	App->audio->PlayMusic(mus, 1);
+	App->audio->PlayMusic(mus);
 
 	return true;
 }

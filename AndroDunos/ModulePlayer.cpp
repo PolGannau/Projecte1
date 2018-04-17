@@ -6,10 +6,10 @@
 #include "ModuleInput.h"
 #include "ModuleParticles.h"
 #include "ModuleRender.h"
-#include "ModulePlayer2.h"
 #include "ModuleCollision.h"
 #include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "ModuleAudio.h"
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
@@ -42,11 +42,11 @@ bool ModulePlayer::Start()
 
 	graphics = App->textures->Load("assets/ship/ships.png");
 
-	position.x = 150;
-	position.y = 120;
+	position.x = 30;
+	position.y = 60;
 
 	// TODO 2: Add a collider to the player
-	coll=App->collision->AddCollider({ position.x,position.y, 27, 16 },COLLIDER_PLAYER);
+	coll = App->collision->AddCollider({ position.x,position.y, 27, 16 },COLLIDER_PLAYER);
 
 	fx = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-1_(Main_Ships).wav");
 

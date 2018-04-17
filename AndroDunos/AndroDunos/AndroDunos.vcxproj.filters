@@ -131,11 +131,11 @@
     <ClInclude Include="..\ModuleEnemies.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="..\ModulePlayer2.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
     <ClInclude Include="..\Enemy_WhiteShip.h">
       <Filter>Modules\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ModulePlayer2.h">
+      <Filter>Modules</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
