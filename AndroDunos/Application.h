@@ -17,6 +17,7 @@ class ModulePlayer;
 class ModulePlayer2;
 class ModuleFadeToBlack;
 class ModuleCollision;
+class ModuleEnemies;
 class Module;
 
 class Application
@@ -36,6 +37,7 @@ public:
 	ModulePlayer2* player2;
 	ModuleFadeToBlack* fade;
 	ModuleParticles* particles;
+	ModuleEnemies* enemies;
 
 public:
 

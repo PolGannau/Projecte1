@@ -66,6 +66,9 @@
     <ClCompile Include="..\ModulePlayer2.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
+    <ClCompile Include="..\Enemy_WhiteShip.cpp">
+      <Filter>Modules\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Animation.h">
@@ -130,6 +133,9 @@
     </ClInclude>
     <ClInclude Include="..\ModulePlayer2.h">
       <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Enemy_WhiteShip.h">
+      <Filter>Modules\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

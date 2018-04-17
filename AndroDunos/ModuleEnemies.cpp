@@ -5,6 +5,7 @@
 #include "ModuleParticles.h"
 #include "ModuleTextures.h"
 #include "Enemy.h"
+#include "Enemy_WhiteShip.h"
 
 #define SPAWN_MARGIN 50
 
@@ -22,7 +23,7 @@ ModuleEnemies::~ModuleEnemies()
 bool ModuleEnemies::Start()
 {
 	// Create a prototype for each enemy available so we can copy them around
-	sprites = App->textures->Load("rtype/enemies.png");
+	sprites = App->textures->Load("assets/enemies/9.png");
 
 	return true;
 }
@@ -118,18 +119,18 @@ bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
 void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 {
 	// find room for the new enemy
-	/*uint i = 0;
+	uint i = 0;
 	for (; enemies[i] != nullptr && i < MAX_ENEMIES; ++i);
 
 	if (i != MAX_ENEMIES)
 	{
 		switch (info.type)
 		{
-		case ENEMY_TYPES::REDBIRD:
-			enemies[i] = new Enemy_RedBird(info.x, info.y);
+		case ENEMY_TYPES::WHITESHIP:
+			enemies[i] = new Enemy_WhiteShip(info.x, info.y);
 			break;
 		}
-	}*/
+	}
 }
 
 void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
