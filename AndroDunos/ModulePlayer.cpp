@@ -66,6 +66,7 @@ bool ModulePlayer::CleanUp()
 update_status ModulePlayer::Update()
 {
 	int speed = 2;
+	int collision = 0;
 
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
@@ -113,6 +114,39 @@ update_status ModulePlayer::Update()
 	if (App->input->keyboard[SDL_SCANCODE_Z] == KEY_STATE::KEY_DOWN)
 	{
 		App->player2->Enable();
+	}
+
+	if (App->input->keyboard[SDL_SCANCODE_F2] == KEY_STATE::KEY_DOWN)
+	{
+		collision++;
+		if (collision >= 2)
+		{
+			collision = 0;
+		}
+		switch (collision)
+		{
+		case 0:
+			App->player->coll->to_delete = false;
+			if (App->player2->IsEnabled() == true)
+			{
+				App->player2->coll->to_delete = false;
+			}
+			break;
+		case 1:
+			App->player->coll->to_delete = true;
+			if (App->player2->IsEnabled() == true)
+			{
+				App->player2->coll->to_delete = true;
+			}
+			break;
+		default:
+			App->player->coll->to_delete = false;
+			if (App->player2->IsEnabled() == true)
+			{
+				App->player2->coll->to_delete = false;
+			}
+			break;
+		}
 	}
 
 	// TODO 3: Update collider position to player position

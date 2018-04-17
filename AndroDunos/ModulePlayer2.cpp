@@ -39,18 +39,21 @@ ModulePlayer2::~ModulePlayer2()
 bool ModulePlayer2::Start()
 {
 	LOG("Loading player2");
+	bool ret = true;
+	bool insert2 = false;
 
 	graphics = App->textures->Load("assets/ship/ships.png");
 
-	position.x = App->player->position.x;
-	position.y = App->player->position.y + 50;
+	position.x = App->render->camera.x + 30;
+	position.y = App->render->camera.y + 120;
 
+	destroyed = false;
 	// TODO 2: Add a collider to the player
 	coll = App->collision->AddCollider({ position.x,position.y, 27, 16 }, COLLIDER_PLAYER);
 
 	fx = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-1_(Main_Ships).wav");
 
-	return true;
+	return ret;
 }
 
 // Unload assets
