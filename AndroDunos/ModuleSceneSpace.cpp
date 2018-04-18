@@ -36,8 +36,8 @@ bool ModuleSceneSpace::Start()
 	// Colliders ---
 	App->collision->AddCollider({ 0, 204, 3930, 20 }, COLLIDER_WALL);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 600, 80);
-	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 625, 80);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 250, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 281, 100);
 
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
 	

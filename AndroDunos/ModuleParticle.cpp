@@ -38,11 +38,15 @@ bool ModuleParticles::Start()
 	laser.speed.x = 5;
 	laser.life = 3000;
 
-	laser2.anim.PushBack({ 25, 39, 11, 4 });
-	laser2.anim.speed = 0.2f;
-	laser2.speed.x = 5;
-	laser2.life = 3000;
+	laser2right.anim.PushBack({ 7, 70, 10, 3 });
+	laser2right.anim.speed = 0.2f;
+	laser2right.speed.x = 5;
+	laser2right.life = 3000;
 
+	laser2left.anim.PushBack({ 7, 39, 10, 3 });
+	laser2left.anim.speed = 0.2f;
+	laser2left.speed.x = -5;
+	laser2left.life = 3000;
 
 	return true;
 }

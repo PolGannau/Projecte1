@@ -33,6 +33,8 @@ public:
 	iPoint position;
 	Mix_Chunk* fx = nullptr;
 	bool destroyed = false;
+	bool weapon1 = true;
+	bool weapon2 = false;
 };
 
 #endif
