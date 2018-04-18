@@ -46,7 +46,7 @@ bool ModulePlayer::Start()
 	position.y = 60;
 
 	// TODO 2: Add a collider to the player
-	coll = App->collision->AddCollider({ position.x,position.y, 27, 16 },COLLIDER_PLAYER);
+	coll = App->collision->AddCollider({ position.x,position.y, 27, 16 },COLLIDER_PLAYER, this);
 
 	fx = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-1_(Main_Ships).wav");
 
