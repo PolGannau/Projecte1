@@ -44,8 +44,8 @@ bool ModulePlayer2::Start()
 
 	graphics = App->textures->Load("assets/ship/ships.png");
 
-	position.x = App->render->camera.x + 30;
-	position.y = App->render->camera.y + 120;
+	position.x = App->player->position.x;
+	position.y = App->player->position.y + 20;
 
 	destroyed = false;
 	// TODO 2: Add a collider to the player
