@@ -35,6 +35,7 @@ public:
 	bool destroyed = false;
 	bool weapon1 = true;
 	bool weapon2 = false;
+	bool weapon3 = false;
 };
 
 #endif

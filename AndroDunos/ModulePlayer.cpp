@@ -101,13 +101,17 @@ update_status ModulePlayer::Update()
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
 		App->audio->PlaySoundEffect(fx);
+
 		if (weapon1) {
 			App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
 			App->particles->AddParticle(App->particles->laser, position.x + 20, position.y +11, COLLIDER_PLAYER_SHOT);
 		}
-		if (weapon2) {
+		else if (weapon2) {
 			App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
 			App->particles->AddParticle(App->particles->laser2left, position.x -7, position.y + 7, COLLIDER_PLAYER_SHOT);
+		}
+		else if (weapon3) {
+			App->particles->AddParticle(App->particles->laser3, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
 		}
 	}
 
@@ -116,6 +120,14 @@ update_status ModulePlayer::Update()
 		if (weapon1) {
 			weapon1 = false;
 			weapon2 = true;
+		}
+		else if (weapon2) {
+			weapon2 = false;
+			weapon3 = true;
+		}
+		else if (weapon3) {
+			weapon3 = false;
+			weapon1 = true;
 		}
 	}
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_IDLE
