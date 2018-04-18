@@ -107,8 +107,8 @@ update_status ModulePlayer::Update()
 			App->particles->AddParticle(App->particles->laser, position.x + 20, position.y +11, COLLIDER_PLAYER_SHOT);
 		}
 		else if (weapon2) {
-			App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
-			App->particles->AddParticle(App->particles->laser2left, position.x -7, position.y + 7, COLLIDER_PLAYER_SHOT);
+			App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 10, COLLIDER_PLAYER_SHOT);
+			App->particles->AddParticle(App->particles->laser2left, position.x -7, position.y + 10, COLLIDER_PLAYER_SHOT);
 		}
 		else if (weapon3) {
 			App->particles->AddParticle(App->particles->laser3, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
