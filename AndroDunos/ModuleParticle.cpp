@@ -22,17 +22,16 @@ bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
 	graphics = App->textures->Load("assets/ship/laser_types.png");
-
+	
+	/*
 	// Explosion particle
-	explosion.anim.PushBack({ 274, 296, 33, 30 });
-	explosion.anim.PushBack({ 313, 296, 33, 30 });
-	explosion.anim.PushBack({ 346, 296, 33, 30 });
-	explosion.anim.PushBack({ 382, 296, 33, 30 });
-	explosion.anim.PushBack({ 419, 296, 33, 30 });
-	explosion.anim.PushBack({ 457, 296, 33, 30 });
+	explosion.anim.PushBack({ 4, 24, 8, 7 });
+	explosion.anim.PushBack({ 14, 18, 13, 14 });
+	explosion.anim.PushBack({ 30, 7, 25, 24 });
+	explosion.anim.PushBack({ 60, 6, 27, 26 });
 	explosion.anim.loop = false;
 	explosion.anim.speed = 0.3f;
-
+	*/
 	laser.anim.PushBack({ 24, 39, 11, 4 });
 	laser.anim.speed = 0.2f;
 	laser.speed.x = 5;
