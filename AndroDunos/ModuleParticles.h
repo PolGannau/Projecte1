@@ -55,6 +55,8 @@ public:
 	Particle laser2right;
 	Particle laser2left;
 	Particle laser3;
+	Particle laser4up;
+	Particle laser4down;
 };
 
 #endif // __MODULEPARTICLES_H__

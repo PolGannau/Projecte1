@@ -113,6 +113,10 @@ update_status ModulePlayer::Update()
 		else if (weapon3) {
 			App->particles->AddParticle(App->particles->laser3, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
 		}
+		else if (weapon4) {
+			App->particles->AddParticle(App->particles->laser4up, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
+			App->particles->AddParticle(App->particles->laser4down, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
+		}
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_Q] == KEY_STATE::KEY_DOWN)
@@ -127,6 +131,10 @@ update_status ModulePlayer::Update()
 		}
 		else if (weapon3) {
 			weapon3 = false;
+			weapon4 = true;
+		}
+		else if (weapon4) {
+			weapon4 = false;
 			weapon1 = true;
 		}
 	}

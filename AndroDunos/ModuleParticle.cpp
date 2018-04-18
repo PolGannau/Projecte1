@@ -33,7 +33,7 @@ bool ModuleParticles::Start()
 	explosion.anim.loop = false;
 	explosion.anim.speed = 0.3f;
 
-	laser.anim.PushBack({ 25, 39, 11, 4 });
+	laser.anim.PushBack({ 24, 39, 11, 4 });
 	laser.anim.speed = 0.2f;
 	laser.speed.x = 5;
 	laser.life = 3000;
@@ -53,6 +53,23 @@ bool ModuleParticles::Start()
 	laser3.speed.x = 5;
 	laser3.life = 3000;
 
+	laser4up.anim.PushBack({ 41, 11, 13, 2 });
+	laser4up.anim.PushBack({ 41, 23, 13, 6 });
+	laser4up.anim.PushBack({ 41, 38, 13, 7 });
+	laser4up.anim.loop = false;
+	laser4up.anim.speed = 0.2f;
+	laser4up.speed.x = 5;
+	laser4up.speed.y = 1;
+	laser4up.life = 3000;
+
+	laser4down.anim.PushBack({ 41, 11, 13, 2 });
+	laser4down.anim.PushBack({ 41, 23, 13, 6 });
+	laser4down.anim.PushBack({ 41, 38, 13, 7 });
+	laser4down.anim.loop = false;
+	laser4down.anim.speed = 0.2f;
+	laser4down.speed.x = 5;
+	laser4down.speed.y = -1;
+	laser4down.life = 3000;
 	return true;
 }
 
