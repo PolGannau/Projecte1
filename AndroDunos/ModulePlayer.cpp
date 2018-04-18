@@ -48,8 +48,11 @@ bool ModulePlayer::Start()
 	// TODO 2: Add a collider to the player
 	coll = App->collision->AddCollider({ position.x,position.y, 27, 16 },COLLIDER_PLAYER, this);
 
-	fx = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-1_(Main_Ships).wav");
-
+	fx_1 = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-1_(Main_Ships).wav");
+	fx_2 = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-2_(Main_Ships).wav");
+	fx_3 = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-3_(Main_Ships).wav");
+	fx_4 = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-4_(Main_Ships).wav");
+	
 	return true;
 }
 
@@ -58,7 +61,10 @@ bool ModulePlayer::CleanUp()
 {
 	LOG("Unloading player");
 	App->textures->Unload(graphics);
-	App->audio->UnloadSoundEffects(fx);
+	App->audio->UnloadSoundEffects(fx_1);
+	App->audio->UnloadSoundEffects(fx_2);
+	App->audio->UnloadSoundEffects(fx_3);
+	App->audio->UnloadSoundEffects(fx_4);
 	return true;
 }
 
@@ -100,20 +106,28 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
-		App->audio->PlaySoundEffect(fx);
 
 		if (weapon1) {
+			App->audio->PlaySoundEffect(fx_1);
 			App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
 			App->particles->AddParticle(App->particles->laser, position.x + 20, position.y +11, COLLIDER_PLAYER_SHOT);
 		}
 		else if (weapon2) {
+<<<<<<< HEAD
 			App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 10, COLLIDER_PLAYER_SHOT);
 			App->particles->AddParticle(App->particles->laser2left, position.x -7, position.y + 10, COLLIDER_PLAYER_SHOT);
+=======
+			App->audio->PlaySoundEffect(fx_2);
+			App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
+			App->particles->AddParticle(App->particles->laser2left, position.x -7, position.y + 7, COLLIDER_PLAYER_SHOT);
+>>>>>>> 94b498f73e16eba4ea3b59c4321278d3c67e32b2
 		}
 		else if (weapon3) {
+			App->audio->PlaySoundEffect(fx_3);
 			App->particles->AddParticle(App->particles->laser3, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
 		}
 		else if (weapon4) {
+			App->audio->PlaySoundEffect(fx_4);
 			App->particles->AddParticle(App->particles->laser4up, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
 			App->particles->AddParticle(App->particles->laser4down, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
 		}

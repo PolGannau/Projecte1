@@ -31,7 +31,10 @@ public:
 	Animation up;
 	Animation down;
 	iPoint position;
-	Mix_Chunk* fx = nullptr;
+	Mix_Chunk* fx_1 = nullptr;
+	Mix_Chunk* fx_2 = nullptr;
+	Mix_Chunk* fx_3 = nullptr;
+	Mix_Chunk* fx_4 = nullptr;
 	bool destroyed = false;
 	bool weapon1 = true;
 	bool weapon2 = false;
