@@ -21,7 +21,7 @@ ModuleParticles::~ModuleParticles()
 bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
-	graphics = App->textures->Load("assets/ship/laser_types.png");
+	graphics = App->textures->Load("assets/lasers_and_explosions.png");
 	
 	/*
 	// Explosion particle
@@ -32,38 +32,38 @@ bool ModuleParticles::Start()
 	explosion.anim.loop = false;
 	explosion.anim.speed = 0.3f;
 	*/
-	laser.anim.PushBack({ 24, 39, 11, 4 });
+	laser.anim.PushBack({ 27, 41, 11, 4 });
 	laser.anim.speed = 0.2f;
 	laser.speed.x = 5;
 	laser.life = 3000;
 
-	laser2right.anim.PushBack({ 6, 69, 10, 3 });
+	laser2right.anim.PushBack({ 9, 72, 10, 3 });
 	laser2right.anim.speed = 0.2f;
 	laser2right.speed.x = 5;
 	laser2right.life = 3000;
 
-	laser2left.anim.PushBack({ 6, 84, 10, 3 });
+	laser2left.anim.PushBack({ 9, 87, 10, 3 });
 	laser2left.anim.speed = 0.2f;
 	laser2left.speed.x = -5;
 	laser2left.life = 3000;
 
-	laser3.anim.PushBack({ 56, 92, 16, 3 });
+	laser3.anim.PushBack({ 59, 95, 16, 3 });
 	laser3.anim.speed = 0.2f;
 	laser3.speed.x = 5;
 	laser3.life = 3000;
 
-	laser4up.anim.PushBack({ 41, 11, 13, 2 });
-	laser4up.anim.PushBack({ 41, 23, 13, 6 });
-	laser4up.anim.PushBack({ 41, 38, 13, 7 });
+	laser4up.anim.PushBack({ 44, 14, 13, 2 });
+	laser4up.anim.PushBack({ 44, 26, 13, 6 });
+	laser4up.anim.PushBack({ 44, 41, 13, 7 });
 	laser4up.anim.loop = false;
 	laser4up.anim.speed = 0.2f;
 	laser4up.speed.x = 5;
 	laser4up.speed.y = 1;
 	laser4up.life = 3000;
 
-	laser4down.anim.PushBack({ 41, 11, 13, 2 });
-	laser4down.anim.PushBack({ 41, 23, 13, 6 });
-	laser4down.anim.PushBack({ 41, 38, 13, 7 });
+	laser4down.anim.PushBack({ 44, 14, 13, 2 });
+	laser4down.anim.PushBack({ 44, 26, 13, 6 });
+	laser4down.anim.PushBack({ 44, 41, 13, 7 });
 	laser4down.anim.loop = false;
 	laser4down.anim.speed = 0.2f;
 	laser4down.speed.x = 5;
