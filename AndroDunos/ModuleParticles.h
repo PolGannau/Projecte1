@@ -52,6 +52,7 @@ private:
 public:
 
 	Particle explosion;
+	Particle explosionship;
 	Particle laser;
 	Particle laser2right;
 	Particle laser2left;
