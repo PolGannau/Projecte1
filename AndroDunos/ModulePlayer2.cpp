@@ -172,6 +172,7 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 	{
 		App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->scene_intro);
 		//code
+		App->particles->AddParticle(App->particles->explosionship2, position.x, position.y, COLLIDER_NONE);
 		App->player2->Disable();
 
 	}

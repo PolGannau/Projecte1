@@ -52,6 +52,25 @@ ModuleParticles::ModuleParticles()
 	explosionship.anim.loop = false;
 	explosionship.anim.speed = 0.2f;
 
+	explosionship2.anim.PushBack({ 48,270,27,17 });
+	explosionship2.anim.PushBack({ 85,269,28,18 });
+	explosionship2.anim.PushBack({ 123,266,30,21 });
+	explosionship2.anim.PushBack({ 163,262,31,25 });
+	explosionship2.anim.PushBack({ 48,296,32,27 });
+	explosionship2.anim.PushBack({ 90,292,32,31 });
+	explosionship2.anim.PushBack({ 132,292,32,32 });
+	explosionship2.anim.PushBack({ 48,213,30,30 });
+	explosionship2.anim.PushBack({ 90,223,28,20 });
+	explosionship2.anim.PushBack({ 130,228,24,15 });
+	explosionship2.anim.PushBack({ 166,232,19,11 });
+	explosionship2.anim.PushBack({ 197,234,15,9 });
+	explosionship2.anim.PushBack({ 48,250,17,13 });
+	explosionship2.anim.PushBack({ 77,248,15,15 });
+	explosionship2.anim.PushBack({ 113,255,7,3 });
+	explosionship2.anim.PushBack({ 143,257,2,1 });
+	explosionship2.anim.loop = false;
+	explosionship2.anim.speed = 0.2f;
+
 	laser.anim.PushBack({ 26, 40, 11, 4 });
 	laser.anim.speed = 0.2f;
 	laser.speed.x = 5;
