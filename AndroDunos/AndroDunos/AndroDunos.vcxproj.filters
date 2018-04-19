@@ -69,9 +69,6 @@
     <ClCompile Include="..\Enemy_WhiteShip.cpp">
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleWinLose.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="..\ModuleWinLose.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -141,9 +138,6 @@
       <Filter>Modules\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="..\ModulePlayer2.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleWinLose.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="..\ModuleWinLose.h">

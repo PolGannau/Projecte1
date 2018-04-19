@@ -7,7 +7,6 @@
 #include "ModuleWinLose.h"
 #include "ModuleAudio.h"
 
-// Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
 ModuleWinLose::ModuleWinLose()
 {
