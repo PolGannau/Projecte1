@@ -26,7 +26,49 @@ Arrows: Camera Movement
 
 ESC: Closes Game
 
+Spacebar: Shot
+
+Q: Change type of weapon
+
+Z: Appear player 2
+
+J: Second player Left
+
+K: Second player down
+
+L: Second player Right
+
+I: Second player up
+
+Right control: Second player shot
+
+Right shift: Second player change type of weapon
+
+X: Win scene
+
+F1: View collision boxes
+
+F2: Godmode
+
 ## Changelist
+### **V_0.3.5**
+-Spaceship player 2
+
+-Spaceship animations(Fixed)
+
+-Collision boxes
+
+-Four types of bullets
+
+-First enemy implemented
+
+-Godmode
+
+-Intro scene
+
+-Win scene(to be fixed)
+
+-Audio
 ### **V_0.1**
 -Level 1 background (sky)
 
