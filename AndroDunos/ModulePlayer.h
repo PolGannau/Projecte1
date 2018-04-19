@@ -28,6 +28,7 @@ public:
 	Animation* current_animation = nullptr;
 	Collider* coll = nullptr;
 	Animation idle;
+	Animation stand_fire;
 	Animation up;
 	Animation down;
 	iPoint position;

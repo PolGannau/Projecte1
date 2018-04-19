@@ -20,6 +20,12 @@ ModulePlayer::ModulePlayer()
 	// idle animation (just the ship)
 	idle.PushBack({ 94, 109, 27, 17 });
 
+	stand_fire.PushBack({ 80,116,5,5 });
+	stand_fire.PushBack({ 65,116,8,5 });
+	stand_fire.PushBack({ 42,116,12,5 });
+	stand_fire.loop = true;
+	stand_fire.speed = 0.045f;
+
 	// move upwards
 	up.PushBack({ 94, 88, 27, 15 });
 	up.PushBack({ 94, 67, 27, 15 });
@@ -201,6 +207,8 @@ update_status ModulePlayer::Update()
 	{
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 	}
+
+	App->render->Blit(graphics, ((App->player->position.x) - App->player->stand_fire.GetCurrentFrame().w - 1), (App->player->position.y + 7), &(stand_fire.GetCurrentFrame()));
 
 	return UPDATE_CONTINUE;
 }
