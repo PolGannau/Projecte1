@@ -149,6 +149,11 @@ update_status ModulePlayer2::Update()
 		}
 	}
 
+	if (App->input->keyboard[SDL_SCANCODE_X] == KEY_STATE::KEY_DOWN)
+	{
+		App->player->Enable();
+	}
+
 	if (App->input->keyboard[SDL_SCANCODE_K] == KEY_STATE::KEY_IDLE
 		&& App->input->keyboard[SDL_SCANCODE_I] == KEY_STATE::KEY_IDLE)
 	{

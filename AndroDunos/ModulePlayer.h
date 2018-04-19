@@ -36,6 +36,7 @@ public:
 	Mix_Chunk* fx_3 = nullptr;
 	Mix_Chunk* fx_4 = nullptr;
 	bool destroyed = false;
+	bool collision = false;
 	bool weapon1 = true;
 	bool weapon2 = false;
 	bool weapon3 = false;

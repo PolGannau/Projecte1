@@ -7,6 +7,8 @@
 #include "p2Point.h"
 #include "ModuleCollision.h"
 
+#define BULLET_LIFE 1200
+
 #define MAX_ACTIVE_PARTICLES 100
 
 struct SDL_Texture;

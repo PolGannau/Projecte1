@@ -3,6 +3,8 @@
 #include "ModuleRender.h"
 #include "ModuleWindow.h"
 #include "ModuleInput.h"
+#include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "SDL/include/SDL.h"
 
 ModuleRender::ModuleRender() : Module()

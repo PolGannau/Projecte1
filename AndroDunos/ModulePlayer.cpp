@@ -72,7 +72,6 @@ bool ModulePlayer::CleanUp()
 update_status ModulePlayer::Update()
 {
 	int speed = 2;
-	int collision = 0;
 
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
@@ -160,39 +159,36 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_F2] == KEY_STATE::KEY_DOWN)
 	{
-		collision++;
-		if (collision >= 3)
+		if (collision)
 		{
-			collision = 0;
-		}
-		switch (collision)
-		{
-		case 0:
-			App->player->coll->to_delete = false;
+			coll = App->collision->AddCollider({ position.x,position.y,27, 16 }, COLLIDER_PLAYER, this);
 			if (App->player2->IsEnabled() == true)
 			{
-				App->player2->coll->to_delete = false;
+				App->player2->coll = App->collision->AddCollider({ App->player2->position.x,App->player2->position.y,27,16 }, COLLIDER_PLAYER, App->player2);
 			}
-			break;
-		case 1:
+			collision = false;
+		}
+		else
+		{
 			App->player->coll->to_delete = true;
 			if (App->player2->IsEnabled() == true)
 			{
 				App->player2->coll->to_delete = true;
 			}
-			break;
-		default:
-			App->player->coll->to_delete = false;
-			if (App->player2->IsEnabled() == true)
-			{
-				App->player2->coll->to_delete = false;
-			}
-			break;
+			collision = true;
 		}
 	}
 
+	
+
 	// TODO 3: Update collider position to player position
 	coll->SetPos(position.x,position.y);
+
+	if (App->player->position.x <= App->render->camera.x)
+	{
+		App->player->position.x = App->render->camera.x;
+	}
+
 
 	// Draw everything --------------------------------------
 	if (App->player->IsEnabled() == true)
