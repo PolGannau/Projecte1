@@ -195,7 +195,10 @@ update_status ModulePlayer::Update()
 	coll->SetPos(position.x,position.y);
 
 	// Draw everything --------------------------------------
-	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
+	if (App->player->IsEnabled() == true)
+	{
+		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
+	}
 
 	return UPDATE_CONTINUE;
 }
@@ -206,10 +209,15 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
 	if (c1 == coll && destroyed == false && App->fade->IsFading() == false)
 	{
-		App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->scene_intro);
+		if (App->player2->IsEnabled() == false) 
+		{
+			App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->scene_intro, 3.0f);
+		}
 		//code
 		App->particles->AddParticle(App->particles->explosionship, position.x, position.y, COLLIDER_NONE);
+		App->player->coll->to_delete = true;
 		App->player->Disable();
+		App->player->CleanUp();
 
 	}
 }
