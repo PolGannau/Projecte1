@@ -208,6 +208,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	{
 		App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->scene_intro);
 		//code
+		App->particles->AddParticle(App->particles->explosion, position.x + 20, position.y + 7, COLLIDER_NONE);
 		App->player->Disable();
 
 	}

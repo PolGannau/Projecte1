@@ -12,19 +12,9 @@ ModuleParticles::ModuleParticles()
 {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 		active[i] = nullptr;
-}
 
-ModuleParticles::~ModuleParticles()
-{}
-
-// Load assets
-bool ModuleParticles::Start()
-{
-	LOG("Loading particles");
-	graphics = App->textures->Load("assets/lasers_and_explosions.png");
-	
-	
 	// Explosion particle
+	
 	explosion.anim.PushBack({ 135, 26, 8, 7 });
 	explosion.anim.PushBack({ 145, 20, 13, 13 });
 	explosion.anim.PushBack({ 161, 9, 25, 24 });
@@ -80,6 +70,19 @@ bool ModuleParticles::Start()
 	laser4down.speed.x = 5;
 	laser4down.speed.y = -1;
 	laser4down.life = 3000;
+}
+
+ModuleParticles::~ModuleParticles()
+{}
+
+// Load assets
+bool ModuleParticles::Start()
+{
+	LOG("Loading particles");
+	graphics = App->textures->Load("assets/lasers_and_explosions.png");
+	
+	
+	
 	return true;
 }
 
@@ -178,7 +181,7 @@ Particle::Particle(const Particle& p) :
 
 Particle::~Particle()
 {
-	if (collider != nullptr)
+	if (collider != nullptr) 
 		collider->to_delete = true;
 }
 
