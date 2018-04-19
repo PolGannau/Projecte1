@@ -11,6 +11,7 @@
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
 #include "ModuleAudio.h"
+#include "ModuleWinLose.h"
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
@@ -177,6 +178,11 @@ update_status ModulePlayer::Update()
 			}
 			collision = true;
 		}
+	}
+
+	if (App->input->keyboard[SDL_SCANCODE_F4] == KEY_STATE::KEY_DOWN)
+	{
+		App->fade->FadeToBlack(App->scene_space, App->winlose, 1.0f);
 	}
 
 	
