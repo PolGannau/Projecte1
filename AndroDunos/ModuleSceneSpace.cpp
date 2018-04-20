@@ -43,7 +43,10 @@ bool ModuleSceneSpace::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 450, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 481, 100);
 
-	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 600, 100);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 575, 100);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 525, 75);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 800, 125);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 625, 150);
 
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
 	
