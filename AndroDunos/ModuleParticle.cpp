@@ -71,7 +71,7 @@ ModuleParticles::ModuleParticles()
 	explosionship2.anim.loop = false;
 	explosionship2.anim.speed = 0.2f;
 
-	laser.anim.PushBack({ 26, 40, 11, 4 });
+	laser.anim.PushBack({ 26, 41, 11, 4 });
 	laser.anim.speed = 0.2f;
 	laser.speed.x = 5;
 	laser.life = BULLET_LIFE;
