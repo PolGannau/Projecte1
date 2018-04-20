@@ -6,6 +6,7 @@
 #include "ModuleTextures.h"
 #include "PowerUp.h"
 #include "ShipPowerUp.h"
+#include "PowerUpRed.h"
 
 
 #define SPAWN_MARGIN 50
@@ -129,6 +130,9 @@ void ModulePowerUps::SpawnPowerUp(const PowerUpInfo& info)
 		{
 		case POWERUPS_TYPES::SHIPPOWERUP:
 			powerups[i] = new ShipPowerUp(info.x, info.y);
+			break;
+		case POWERUPS_TYPES::POWERUPRED:
+			powerups[i] = new PowerUpRed(info.x, info.y);
 			break;
 
 		}
