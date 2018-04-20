@@ -33,6 +33,7 @@ public:
 	Animation up;
 	Animation down;
 	iPoint position;
+	unsigned int lastTime = 0, currentTime;
 	Collider* coll = nullptr;
 	Mix_Chunk* fx_1 = nullptr;
 	Mix_Chunk* fx_2 = nullptr;

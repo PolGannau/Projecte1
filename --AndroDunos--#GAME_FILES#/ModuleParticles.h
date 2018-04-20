@@ -7,7 +7,9 @@
 #include "p2Point.h"
 #include "ModuleCollision.h"
 
-#define BULLET_LIFE 1200
+#define BULLET_LIFE 500
+
+#define BULLET_SPEED 10
 
 #define MAX_ACTIVE_PARTICLES 100
 

@@ -75,22 +75,22 @@ ModuleParticles::ModuleParticles()
 
 	laser.anim.PushBack({ 26, 41, 11, 4 });
 	laser.anim.speed = 0.2f;
-	laser.speed.x = 5;
+	laser.speed.x = BULLET_SPEED;
 	laser.life = BULLET_LIFE;
 
 	laser2right.anim.PushBack({ 8, 71, 10, 3 });
 	laser2right.anim.speed = 0.2f;
-	laser2right.speed.x = 5;
+	laser2right.speed.x = BULLET_SPEED;
 	laser2right.life = BULLET_LIFE;
 
 	laser2left.anim.PushBack({ 8, 86, 10, 3 });
 	laser2left.anim.speed = 0.2f;
-	laser2left.speed.x = -5;
+	laser2left.speed.x = -BULLET_SPEED;
 	laser2left.life = BULLET_LIFE;
 
 	laser3.anim.PushBack({ 58, 94, 16, 3 });
 	laser3.anim.speed = 0.2f;
-	laser3.speed.x = 5;
+	laser3.speed.x = BULLET_SPEED;
 	laser3.life = BULLET_LIFE;
 
 	laser4up.anim.PushBack({ 43, 13, 13, 2 });
@@ -98,8 +98,8 @@ ModuleParticles::ModuleParticles()
 	laser4up.anim.PushBack({ 43, 40, 13, 7 });
 	laser4up.anim.loop = false;
 	laser4up.anim.speed = 0.2f;
-	laser4up.speed.x = 5;
-	laser4up.speed.y = 1;
+	laser4up.speed.x = BULLET_SPEED;
+	laser4up.speed.y = BULLET_SPEED/5;
 	laser4up.life = BULLET_LIFE;
 
 	laser4down.anim.PushBack({ 43, 13, 13, 2 });
@@ -107,8 +107,8 @@ ModuleParticles::ModuleParticles()
 	laser4down.anim.PushBack({ 43, 40, 13, 7 });
 	laser4down.anim.loop = false;
 	laser4down.anim.speed = 0.2f;
-	laser4down.speed.x = 5;
-	laser4down.speed.y = -1;
+	laser4down.speed.x = BULLET_SPEED;
+	laser4down.speed.y = -BULLET_SPEED/5;
 	laser4down.life = BULLET_LIFE; explosion.anim.PushBack({ 135, 26, 8, 7 });
 
 

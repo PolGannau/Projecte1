@@ -16,6 +16,9 @@
     <Filter Include="Modules\PowerUps">
       <UniqueIdentifier>{9bf6c605-4ec4-4624-b3c1-bfde3bcbc4a1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Modules\Players">
+      <UniqueIdentifier>{f0579c51-f634-4943-8544-d90bfb1f0e7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Animation.h">
@@ -69,12 +72,6 @@
     <ClInclude Include="..\ModuleParticles.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="..\ModulePlayer.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ModulePlayer2.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
     <ClInclude Include="..\ModuleRender.h">
       <Filter>Modules</Filter>
     </ClInclude>
@@ -101,6 +98,12 @@
     </ClInclude>
     <ClInclude Include="..\PowerUpRed.h">
       <Filter>Modules\PowerUps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ModulePlayer.h">
+      <Filter>Modules\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ModulePlayer2.h">
+      <Filter>Modules\Players</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -143,12 +146,6 @@
     <ClCompile Include="..\ModuleParticles.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="..\ModulePlayer.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ModulePlayer2.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="..\ModuleRender.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -175,6 +172,12 @@
     </ClCompile>
     <ClCompile Include="..\PowerUpRed.cpp">
       <Filter>Modules\PowerUps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ModulePlayer.cpp">
+      <Filter>Modules\Players</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ModulePlayer2.cpp">
+      <Filter>Modules\Players</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
