@@ -13,6 +13,9 @@
     <Filter Include="Modules\Enemies">
       <UniqueIdentifier>{8eaf44d2-f09b-4f35-9048-6646bf4855eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Modules\PowerUps">
+      <UniqueIdentifier>{9bf6c605-4ec4-4624-b3c1-bfde3bcbc4a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Animation.h">
@@ -87,6 +90,15 @@
     <ClInclude Include="..\ModuleWindow.h">
       <Filter>Modules</Filter>
     </ClInclude>
+    <ClInclude Include="..\ModulePowerUps.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PowerUp.h">
+      <Filter>Modules\PowerUps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ShipPowerUp.h">
+      <Filter>Modules\PowerUps</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp">
@@ -148,6 +160,15 @@
     </ClCompile>
     <ClCompile Include="..\ModuleWindow.cpp">
       <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ModulePowerUps.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PowerUp.cpp">
+      <Filter>Modules\PowerUps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ShipPowerUp.cpp">
+      <Filter>Modules\PowerUps</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

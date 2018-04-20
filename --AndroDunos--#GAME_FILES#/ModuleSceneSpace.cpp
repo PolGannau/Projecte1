@@ -9,6 +9,7 @@
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
 #include "ModuleSceneSpace.h"
+#include "ModulePowerUps.h"
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
@@ -30,6 +31,7 @@ bool ModuleSceneSpace::Start()
 	App->particles->Enable();
 	App->collision->Enable();
 	App->enemies->Enable();
+	App->powerups->Enable();
 
 	// Colliders ---
 	App->collision->AddCollider({ 0, 204, 3930, 20 }, COLLIDER_WALL);
@@ -39,6 +41,9 @@ bool ModuleSceneSpace::Start()
 
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 450, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 481, 100);
+
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 550, 100);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 581, 100);
 
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
 
@@ -56,7 +61,7 @@ bool ModuleSceneSpace::CleanUp()
 	App->textures->Unload(floor);
 	App->audio->UnloadMusic(mus);
 	App->enemies->Disable();
-
+	App->powerups->Disable();
 	App->collision->Disable();
 	App->particles->Disable();
 	App->player->Disable();
