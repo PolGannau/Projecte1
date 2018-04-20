@@ -45,6 +45,9 @@ bool ModuleSceneSpace::Start()
 	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 550, 50);
 	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 681, 150);
 
+	App->powerups->AddPowerUp(POWERUPS_TYPES::POWERUPRED, 781, 150);
+
+
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
 
 	App->audio->PlayMusic(mus);

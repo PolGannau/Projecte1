@@ -11,6 +11,7 @@
 #include "ModulePlayer2.h"
 #include "ModuleAudio.h"
 #include "ModuleEnemies.h"
+#include "ModulePowerUps.h"
 #include<stdio.h>
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
@@ -205,6 +206,7 @@ update_status ModulePlayer::Update()
 	if (App->input->keyboard[SDL_SCANCODE_E] == KEY_STATE::KEY_DOWN)
 	{
 		App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, position.x + 250, position.y);
+		App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, position.x + 250, position.y);
 	}
 
 	coll->SetPos(position.x, position.y);

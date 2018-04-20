@@ -37,7 +37,7 @@ update_status ModulePowerUps::PreUpdate()
 	{
 		if (queue[i].type != POWERUPS_TYPES::NON_TYPE)
 		{
-			if (queue[i].x * SCREEN_SIZE > App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) + SPAWN_MARGIN)
+			if (queue[i].x * SCREEN_SIZE < App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) + SPAWN_MARGIN)
 			{
 				SpawnPowerUp(queue[i]);
 				queue[i].type = POWERUPS_TYPES::NON_TYPE;
