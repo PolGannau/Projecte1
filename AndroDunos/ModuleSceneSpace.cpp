@@ -33,6 +33,7 @@ bool ModuleSceneSpace::Start()
 	App->particles->Enable();
 	App->collision->Enable();
 	App->enemies->Enable();
+	App->powerups->Enable();
 
 	// Colliders ---
 	App->collision->AddCollider({ 0, 204, 3930, 20 }, COLLIDER_WALL);
@@ -63,11 +64,11 @@ bool ModuleSceneSpace::CleanUp()
 	App->textures->Unload(background1);
 	App->textures->Unload(floor);
 	App->enemies->Disable();
+	App->powerups->Disable();
 	App->player->Disable();
 	App->player2->Disable();
 	App->collision->Disable();
 	App->particles->Disable();
-	
 	App->audio->UnloadMusic(mus);
 
 	return true;

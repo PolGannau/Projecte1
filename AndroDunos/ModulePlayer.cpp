@@ -19,7 +19,7 @@
 ModulePlayer::ModulePlayer()
 {
 	// idle animation (just the ship)
-	idle.PushBack({ 94, 109, 27, 17 });
+	idle.PushBack({ 94, 108, 27, 17 });
 
 	stand_fire.PushBack({ 80,116,5,5 });
 	stand_fire.PushBack({ 65,116,8,5 });
