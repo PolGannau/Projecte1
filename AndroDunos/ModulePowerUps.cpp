@@ -1,69 +1,150 @@
-#include "Globals.h"
 #include "Application.h"
-#include "ModuleTextures.h"
-#include "ModuleSceneIntro.h"
-#include "ModuleSceneSpace.h"
 #include "ModuleInput.h"
-#include "ModuleParticles.h"
 #include "ModuleRender.h"
-#include "ModuleCollision.h"
-#include "ModuleAudio.h"
 #include "ModulePowerUps.h"
+#include "ModuleParticles.h"
+#include "ModuleTextures.h"
+#include "PowerUp.h"
+#include "ShipPowerUp.h"
 
 
-
-// Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
+#define SPAWN_MARGIN 50
 
 ModulePowerUps::ModulePowerUps()
 {
-	// idle animation (just the ship)
-	
-
-	// move upwards
-
-
-	// Move down
-
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+		powerups[i] = nullptr;
 }
 
+// Destructor
 ModulePowerUps::~ModulePowerUps()
-{}
+{
+}
 
-// Load assets
 bool ModulePowerUps::Start()
 {
-	LOG("Loading player");
+	// Create a prototype for each enemy available so we can copy them around
+	sprites = App->textures->Load("assets/enemies/enemies.png");
 
-	graphics = App->textures->Load("assets/ship/ships.png");
-
-	position.x = 30;
-	position.y = 60;
-
-	// TODO 2: Add a collider to the player
-
-
-	
 	return true;
 }
 
-// Unload assets
-bool ModulePowerUps::CleanUp()
+update_status ModulePowerUps::PreUpdate()
 {
-	LOG("Unloading powerupship");
-	
-	return true;
-}
+	// check camera position to decide what to spawn
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+	{
+		if (queue[i].type != POWERUPS_TYPES::NON_TYPE)
+		{
+			if (queue[i].x * SCREEN_SIZE > App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) + SPAWN_MARGIN)
+			{
+				SpawnPowerUp(queue[i]);
+				queue[i].type = POWERUPS_TYPES::NON_TYPE;
+				LOG("Spawning powerup at %d", queue[i].x * SCREEN_SIZE);
+			}
+		}
+	}
 
-// Update: draw background
-update_status ModulePowerUps::Update()
-{
-	
 	return UPDATE_CONTINUE;
 }
 
-// TODO 4: Detect collision with a wall. If so, go back to intro screen.
+// Called before render is available
+update_status ModulePowerUps::Update()
+{
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+		if (powerups[i] != nullptr) powerups[i]->Move();
+
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+		if (powerups[i] != nullptr) powerups[i]->Draw(sprites);
+
+	return UPDATE_CONTINUE;
+}
+
+update_status ModulePowerUps::PostUpdate()
+{
+	// check camera position to decide what to spawn
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+	{
+		if (powerups[i] != nullptr)
+		{
+			if (powerups[i]->position.x * SCREEN_SIZE < (App->render->camera.x) - SPAWN_MARGIN)
+			{
+				LOG("DeSpawning powerup at %d", powerups[i]->position.x * SCREEN_SIZE);
+				delete powerups[i];
+				powerups[i] = nullptr;
+			}
+		}
+	}
+
+	return UPDATE_CONTINUE;
+}
+
+// Called before quitting
+bool ModulePowerUps::CleanUp()
+{
+	LOG("Freeing all powerups");
+
+	App->textures->Unload(sprites);
+
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+	{
+		if (powerups[i] != nullptr)
+		{
+			delete powerups[i];
+			powerups[i] = nullptr;
+		}
+	}
+
+	return true;
+}
+
+bool ModulePowerUps::AddPowerUp(POWERUPS_TYPES type, int x, int y)
+{
+	bool ret = false;
+
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+	{
+		if (queue[i].type == POWERUPS_TYPES::NON_TYPE)
+		{
+			queue[i].type = type;
+			queue[i].x = x;
+			queue[i].y = y;
+			ret = true;
+			break;
+		}
+	}
+
+	return ret;
+}
+
+void ModulePowerUps::SpawnPowerUp(const PowerUpInfo& info)
+{
+	// find room for the new enemy
+	uint i = 0;
+	for (; powerups[i] != nullptr && i < MAX_POWERUPS; ++i);
+
+	if (i != MAX_POWERUPS)
+	{
+		switch (info.type)
+		{
+		case POWERUPS_TYPES::SHIPPOWERUP:
+			powerups[i] = new ShipPowerUp(info.x, info.y);
+			break;
+
+		}
+	}
+}
 
 void ModulePowerUps::OnCollision(Collider* c1, Collider* c2)
 {
-	
+	for (uint i = 0; i < MAX_POWERUPS; ++i)
+	{
+		if (powerups[i] != nullptr && powerups[i]->GetCollider() == c1)
+		{
+			powerups[i]->OnCollision(c2);
+			delete powerups[i];
+			powerups[i] = nullptr;
+			break;
+		}
+	}
 }

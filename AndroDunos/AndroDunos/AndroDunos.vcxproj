@@ -142,6 +142,8 @@
     <ClCompile Include="..\ModuleTextures.cpp" />
     <ClCompile Include="..\ModuleWindow.cpp" />
     <ClCompile Include="..\ModuleWinLose.cpp" />
+    <ClCompile Include="..\PowerUp.cpp" />
+    <ClCompile Include="..\ShipPowerUp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Animation.h" />
@@ -169,6 +171,8 @@
     <ClInclude Include="..\ModuleWinLose.h" />
     <ClInclude Include="..\p2Point.h" />
     <ClInclude Include="..\Path.h" />
+    <ClInclude Include="..\PowerUp.h" />
+    <ClInclude Include="..\ShipPowerUp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

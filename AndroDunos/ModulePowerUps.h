@@ -2,37 +2,49 @@
 #define __ModulePowerUps_H__
 
 #include "Module.h"
-#include "Animation.h"
-#include "p2Point.h"
-#include "ModuleCollision.h"
-#include "SDL_mixer/include/SDL_mixer.h"
+#include "ShipPowerUp.h"
 
-struct SDL_Texture;
-struct Collider;
+#define MAX_POWERUPS 100
+
+enum POWERUPS_TYPES
+{
+	NON_TYPE,
+	SHIPPOWERUP,
+};
+
+class PowerUp;
+
+struct PowerUpInfo
+{
+	POWERUPS_TYPES type = POWERUPS_TYPES::NON_TYPE;
+	int x, y;
+};
 
 class ModulePowerUps : public Module
 {
 public:
+
 	ModulePowerUps();
 	~ModulePowerUps();
 
 	bool Start();
+	update_status PreUpdate();
 	update_status Update();
+	update_status PostUpdate();
 	bool CleanUp();
+	void OnCollision(Collider* c1, Collider* c2);
 
-	void OnCollision(Collider*, Collider*);
+	bool AddPowerUp(POWERUPS_TYPES type, int x, int y);
 
-public:
+private:
 
-	SDL_Texture * graphics = nullptr;
-	Animation* current_animation = nullptr;
-	Collider* coll = nullptr;
-	Animation idle;
-	Animation stand_fire;
-	Animation up;
-	Animation down;
-	iPoint position;
+	void SpawnPowerUp(const PowerUpInfo& info);
 
+private:
+
+	PowerUpInfo queue[MAX_POWERUPS];
+	PowerUp* powerups[MAX_POWERUPS];
+	SDL_Texture* sprites;
 };
 
-#endif
+#endif // __ModuleEnemies_H__

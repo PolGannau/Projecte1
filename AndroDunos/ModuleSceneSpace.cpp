@@ -9,6 +9,7 @@
 #include "ModuleParticles.h"
 #include "ModuleSceneSpace.h"
 #include "ModuleEnemies.h"
+#include "ModulePowerUps.h"
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
@@ -41,6 +42,8 @@ bool ModuleSceneSpace::Start()
 
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 450, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 481, 100);
+
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 600, 100);
 
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
 	
