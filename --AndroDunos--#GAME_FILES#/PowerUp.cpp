@@ -3,7 +3,6 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModuleRender.h"
-#include "ModulePowerUps.h"
 
 
 PowerUp::PowerUp(int x, int y) : position(x, y)
@@ -32,6 +31,4 @@ void PowerUp::Draw(SDL_Texture* sprites)
 void PowerUp::OnCollision(Collider* collider)
 {
 	App->particles->AddParticle(App->particles->powerup, position.x, position.y);
-	//App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, position.x, position.y);
-
 }

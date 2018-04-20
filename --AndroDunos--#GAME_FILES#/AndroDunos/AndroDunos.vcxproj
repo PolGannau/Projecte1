@@ -45,7 +45,6 @@
     <ClInclude Include="..\p2Point.h" />
     <ClInclude Include="..\Path.h" />
     <ClInclude Include="..\PowerUp.h" />
-    <ClInclude Include="..\PowerUpeRed.h" />
     <ClInclude Include="..\ShipPowerUp.h" />
   </ItemGroup>
   <ItemGroup>
@@ -71,7 +70,6 @@
     <ClCompile Include="..\ModuleTextures.cpp" />
     <ClCompile Include="..\ModuleWindow.cpp" />
     <ClCompile Include="..\PowerUp.cpp" />
-    <ClCompile Include="..\PowerUpRed.cpp" />
     <ClCompile Include="..\ShipPowerUp.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

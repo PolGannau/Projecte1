@@ -3,7 +3,6 @@
 
 #include "Module.h"
 #include "ShipPowerUp.h"
-#include "PowerUpeRed.h"
 
 #define MAX_POWERUPS 15
 
@@ -11,7 +10,6 @@ enum POWERUPS_TYPES
 {
 	NON_TYPE,
 	SHIPPOWERUP,
-	POWERUPRED,
 };
 
 class PowerUp;
