@@ -6,6 +6,7 @@
 #include "ModuleTextures.h"
 #include "Enemy.h"
 #include "Enemy_WhiteShip.h"
+#include "Enemy_ShipUpDown.h"
 
 #define SPAWN_MARGIN 50
 
@@ -128,6 +129,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		{
 		case ENEMY_TYPES::WHITESHIP:
 			enemies[i] = new Enemy_WhiteShip(info.x, info.y);
+			break;
+		case ENEMY_TYPES::SHIPUPDOWN:
+			enemies[i] = new Enemy_ShipUpDown(info.x, info.y);
 			break;
 		}
 	}

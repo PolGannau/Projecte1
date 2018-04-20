@@ -39,6 +39,9 @@ bool ModuleSceneSpace::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 350, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 381, 100);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 450, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 481, 100);
+
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
 	
 	App->audio->PlayMusic(mus);
