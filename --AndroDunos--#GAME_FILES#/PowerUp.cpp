@@ -29,9 +29,4 @@ void PowerUp::Draw(SDL_Texture* sprites)
 		App->render->Blit(sprites, position.x, position.y, &(animation->GetCurrentFrame()));
 }
 
-void PowerUp::OnCollision(Collider* collider)
-{
-	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-	App->powerups->AddPowerUp(POWERUPS_TYPES::POWERUPRED, 800, 100);
-		
-}
+void PowerUp::OnCollision(Collider* collider) {}

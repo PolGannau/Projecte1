@@ -1,6 +1,8 @@
 #include "Application.h"
 #include "ShipPowerUp.h"
 #include "ModuleCollision.h"
+#include "ModuleParticles.h"
+#include "ModulePowerUps.h"
 
 ShipPowerUp::ShipPowerUp(int x, int y) : PowerUp(x, y)
 {
@@ -72,4 +74,11 @@ void ShipPowerUp::Move()
 
 	position.y = int(float(original_y) + (25.0f * sinf(wave)));
 	position.x -= 1;
+}
+
+void ShipPowerUp::OnCollision(Collider* collider)
+{
+	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::POWERUPRED, position.x, position.y);
+
 }

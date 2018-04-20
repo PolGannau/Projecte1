@@ -14,6 +14,8 @@ private:
 public:
 
 	ShipPowerUp(int x, int y);
+	
+	void OnCollision(Collider* collider);
 
 	void Move();
 };
