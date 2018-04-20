@@ -99,6 +99,9 @@
     <ClInclude Include="..\ShipPowerUp.h">
       <Filter>Modules\PowerUps</Filter>
     </ClInclude>
+    <ClInclude Include="..\PowerUpeRed.h">
+      <Filter>Modules\PowerUps</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp">
@@ -168,6 +171,9 @@
       <Filter>Modules\PowerUps</Filter>
     </ClCompile>
     <ClCompile Include="..\ShipPowerUp.cpp">
+      <Filter>Modules\PowerUps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PowerUpRed.cpp">
       <Filter>Modules\PowerUps</Filter>
     </ClCompile>
   </ItemGroup>
