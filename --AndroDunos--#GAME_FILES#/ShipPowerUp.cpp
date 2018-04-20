@@ -44,7 +44,7 @@ ShipPowerUp::ShipPowerUp(int x, int y) : PowerUp(x, y)
 	fly.PushBack({ 107, 79, 18, 26 });
 	fly.PushBack({ 133, 79, 18, 26 });
 	fly.PushBack({ 159, 79, 18, 26 });
-	fly.speed = 0.1f;
+	fly.speed = 0.05f;
 
 	animation = &fly;
 

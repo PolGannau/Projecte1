@@ -27,12 +27,13 @@ Application::Application()
 	modules[i++] = scene_intro = new ModuleSceneIntro();
 	modules[i++] = scene_space = new ModuleSceneSpace();
 	modules[i++] = enemies = new ModuleEnemies();
+	modules[i++] = powerups = new ModulePowerUps();
 	modules[i++] = player = new ModulePlayer();
 	modules[i++] = player2 = new ModulePlayer2();
 	modules[i++] = particles = new ModuleParticles();
 	modules[i++] = collision = new ModuleCollision();
 	modules[i++] = fade = new ModuleFadeToBlack();
-	modules[i++] = powerups = new ModulePowerUps();
+
 }
 
 Application::~Application()

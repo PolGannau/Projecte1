@@ -14,6 +14,9 @@ ModuleParticles::ModuleParticles()
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 		active[i] = nullptr;
 
+	//powerup.anim.PushBack({ 271,0,16,16 });
+
+
 	explosion.anim.PushBack({ 135, 26, 8, 7 });
 	explosion.anim.PushBack({ 145, 20, 13, 13 });
 	explosion.anim.PushBack({ 161, 9, 25, 24 });
@@ -203,7 +206,7 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
 		// Always destroy particles that collide
 		if (active[i] != nullptr && active[i]->collider == c1)
 		{
-			//AddParticle(explosion, active[i]->position.x, active[i]->position.y);
+			AddParticle(explosion, active[i]->position.x, active[i]->position.y);
 			delete active[i];
 			active[i] = nullptr;
 			break;

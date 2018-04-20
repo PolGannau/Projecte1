@@ -62,6 +62,7 @@ public:
 	Particle laser3;
 	Particle laser4up;
 	Particle laser4down;
+	Particle powerup;
 
 };
 
