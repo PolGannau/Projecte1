@@ -31,7 +31,7 @@ ModuleParticles::ModuleParticles()
 	explosion.anim.PushBack({ 141, 109, 17, 17 });
 	explosion.anim.PushBack({ 168, 117, 6, 6 });
 	explosion.anim.loop = false;
-	explosion.anim.speed = 0.2f;
+	explosion.anim.speed = 0.3f;
 	
 	explosionship.anim.PushBack({ 48,153,27,17 });
 	explosionship.anim.PushBack({ 85,152,28,18 });
@@ -50,7 +50,7 @@ ModuleParticles::ModuleParticles()
 	explosionship.anim.PushBack({ 113,255,7,3 });
 	explosionship.anim.PushBack({ 143,257,2,1 });
 	explosionship.anim.loop = false;
-	explosionship.anim.speed = 0.2f;
+	explosionship.anim.speed = 0.3f;
 
 	explosionship2.anim.PushBack({ 48,270,27,17 });
 	explosionship2.anim.PushBack({ 85,269,28,18 });
@@ -69,7 +69,7 @@ ModuleParticles::ModuleParticles()
 	explosionship2.anim.PushBack({ 113,255,7,3 });
 	explosionship2.anim.PushBack({ 143,257,2,1 });
 	explosionship2.anim.loop = false;
-	explosionship2.anim.speed = 0.2f;
+	explosionship2.anim.speed = 0.3f;
 
 	laser.anim.PushBack({ 26, 41, 11, 4 });
 	laser.anim.speed = 0.2f;
