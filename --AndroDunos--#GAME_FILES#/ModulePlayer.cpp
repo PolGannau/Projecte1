@@ -178,10 +178,10 @@ update_status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_Z] == KEY_STATE::KEY_DOWN)
-	{
-		App->player2->Enable();
-	}
+		if (App->input->keyboard[SDL_SCANCODE_Z] == KEY_STATE::KEY_DOWN)
+		{
+			App->player2->Enable();
+		}
 
 	if (App->input->keyboard[SDL_SCANCODE_F2] == KEY_STATE::KEY_DOWN)
 	{
@@ -226,7 +226,6 @@ update_status ModulePlayer::Update()
 	// Draw UI (score) --------------------------------------
 	sprintf_s(score_text, 10, "%7d", score);
 
-	// TODO 3: Blit the text of the score in at the bottom of the screen
 
 	return UPDATE_CONTINUE;
 }
