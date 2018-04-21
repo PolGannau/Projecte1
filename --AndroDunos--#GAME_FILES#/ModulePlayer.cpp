@@ -11,6 +11,7 @@
 #include "ModulePlayer2.h"
 #include "ModuleAudio.h"
 #include "ModuleEnemies.h"
+#include "Stageclear.h"
 #include "ModulePowerUps.h"
 #include "PowerUpRed.h"
 #include "PowerUp.h"
@@ -207,9 +208,9 @@ update_status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_F4] == KEY_STATE::KEY_DOWN)
+	if (App->input->keyboard[SDL_SCANCODE_F3] == KEY_STATE::KEY_DOWN)
 	{
-		//App->fade->FadeToBlack(App->scene_space, App->winlose, 1.0f);
+		App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->stageclear);
 	}
 	if (App->input->keyboard[SDL_SCANCODE_E] == KEY_STATE::KEY_DOWN)
 	{

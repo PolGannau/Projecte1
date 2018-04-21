@@ -4,6 +4,7 @@
 #include "ModuleAudio.h"
 #include "ModuleInput.h"
 #include "ModuleTextures.h"
+#include "Stageclear.h"
 #include "ModuleSceneSpace.h"
 #include "ModuleSceneIntro.h"
 #include "ModuleCollision.h"
@@ -27,6 +28,7 @@ Application::Application()
 	modules[i++] = fonts = new ModuleFonts();
 	modules[i++] = scene_intro = new ModuleSceneIntro();
 	modules[i++] = scene_space = new ModuleSceneSpace();
+	modules[i++] = stageclear = new ModuleStageclear();
 	modules[i++] = enemies = new ModuleEnemies();
 	modules[i++] = powerups = new ModulePowerUps();
 	modules[i++] = player = new ModulePlayer();
@@ -51,6 +53,7 @@ bool Application::Init()
 	scene_space->Disable();
 	player->Disable();
 	collision->Disable();
+	stageclear->Disable();
 	enemies->Disable();
 	// ----------------------------
 

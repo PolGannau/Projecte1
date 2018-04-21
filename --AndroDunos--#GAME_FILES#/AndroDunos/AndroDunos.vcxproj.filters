@@ -19,6 +19,9 @@
     <Filter Include="Modules\Players">
       <UniqueIdentifier>{f0579c51-f634-4943-8544-d90bfb1f0e7a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Modules\AfterplayScreen">
+      <UniqueIdentifier>{34e2f3ba-6921-4c0b-9f6f-6917fd35f5c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Animation.h">
@@ -105,6 +108,12 @@
     <ClInclude Include="..\ModulePlayer2.h">
       <Filter>Modules\Players</Filter>
     </ClInclude>
+    <ClInclude Include="..\Gameover.h">
+      <Filter>Modules\AfterplayScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Stageclear.h">
+      <Filter>Modules\AfterplayScreen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp">
@@ -178,6 +187,12 @@
     </ClCompile>
     <ClCompile Include="..\ModulePlayer2.cpp">
       <Filter>Modules\Players</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gameover.cpp">
+      <Filter>Modules\AfterplayScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Stageclear.cpp">
+      <Filter>Modules\AfterplayScreen</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
