@@ -35,7 +35,7 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
-
+	bool powerup1 = false;
 	bool AddPowerUp(POWERUPS_TYPES type, int x, int y);
 
 private:

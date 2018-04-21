@@ -44,7 +44,9 @@ bool ModuleSceneSpace::Start()
 	App->powerups->Enable();
 
 	// Colliders ---
-	App->collision->AddCollider({ 0, 204, 3750, 20 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 0, 204, 3670, 20 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3670,204,40,300 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3970,204,40,150 }, COLLIDER_WALL);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 350, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 381, 100);

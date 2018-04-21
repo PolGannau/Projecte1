@@ -1,6 +1,8 @@
 #include "Application.h"
 #include "PowerUpRed.h"
 #include "ModuleCollision.h"
+#include "ModuleParticles.h"
+#include "ModulePowerUps.h"
 
 PowerUpRed::PowerUpRed(int x, int y) : PowerUp(x, y)
 {
@@ -10,7 +12,7 @@ PowerUpRed::PowerUpRed(int x, int y) : PowerUp(x, y)
 
 	animation = &fly;
 
-	collider = App->collision->AddCollider({ 0, 0, 31, 27 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->powerups);
+	collider = App->collision->AddCollider({ 0, 0, 16, 16 }, COLLIDER_TYPE::COLLIDER_POWERUP, (Module*)App->powerups);
 
 	original_y = y;
 }
@@ -34,4 +36,9 @@ void PowerUpRed::Move()
 
 	position.y = int(float(original_y) + (25.0f * sinf(wave)));
 	position.x -= 1;
+}
+
+void PowerUpRed::OnCollision(Collider* collider)
+{
+	App->powerups->powerup1 = true;
 }

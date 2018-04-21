@@ -22,6 +22,7 @@ class ModuleFonts;
 class Module;
 class ModulePowerUps;
 
+
 class Application
 {
 public:
@@ -42,6 +43,7 @@ public:
 	ModuleEnemies* enemies;
 	ModuleFonts* fonts;
 	ModulePowerUps* powerups;
+
 
 public:
 
