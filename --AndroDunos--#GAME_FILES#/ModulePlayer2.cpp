@@ -187,10 +187,11 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (App->player->IsEnabled() == false)
 		{
-			App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->scene_intro);
+			App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->gameover,2.0f);
 		}
 		//code
 		App->particles->AddParticle(App->particles->explosionship2, position.x, position.y, COLLIDER_NONE);
+		weapon1 = true;
 		App->player2->coll->to_delete = true;
 		App->player2->Disable();
 		App->player2->CleanUp();
