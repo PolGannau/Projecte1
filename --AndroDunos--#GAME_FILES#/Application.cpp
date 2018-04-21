@@ -9,6 +9,7 @@
 #include "ModuleSceneIntro.h"
 #include "ModuleCollision.h"
 #include "ModulePlayer.h"
+#include "Gameover.h"
 #include "ModulePlayer2.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleParticles.h"
@@ -29,6 +30,7 @@ Application::Application()
 	modules[i++] = scene_intro = new ModuleSceneIntro();
 	modules[i++] = scene_space = new ModuleSceneSpace();
 	modules[i++] = stageclear = new ModuleStageclear();
+	modules[i++] = gameover = new ModuleGameover();
 	modules[i++] = enemies = new ModuleEnemies();
 	modules[i++] = powerups = new ModulePowerUps();
 	modules[i++] = player = new ModulePlayer();
@@ -54,6 +56,7 @@ bool Application::Init()
 	player->Disable();
 	collision->Disable();
 	stageclear->Disable();
+	gameover->Disable();
 	enemies->Disable();
 	// ----------------------------
 

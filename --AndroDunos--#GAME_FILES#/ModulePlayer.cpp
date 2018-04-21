@@ -212,6 +212,12 @@ update_status ModulePlayer::Update()
 	{
 		App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->stageclear);
 	}
+
+	if (App->input->keyboard[SDL_SCANCODE_F4] == KEY_STATE::KEY_DOWN)
+	{
+		App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->gameover);
+	}
+
 	if (App->input->keyboard[SDL_SCANCODE_E] == KEY_STATE::KEY_DOWN)
 	{
 		App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, position.x + 250, position.y);
