@@ -44,6 +44,7 @@ public:
 	bool weapon2 = false;
 	bool weapon3 = false;
 	bool weapon4 = false;
+	int hp;
 };
 
 #endif

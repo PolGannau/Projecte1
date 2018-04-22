@@ -232,12 +232,6 @@ update_status ModuleParticles::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_F3] == KEY_STATE::KEY_IDLE)
-	{
-		debug = App->collision->AddCollider({ App->render->camera.x, App->render->camera.y, SCREEN_WIDTH, SCREEN_HEIGHT }, COLLIDER_PLAYER_SHOT, this);
-		App->particles->debug->to_delete = true;
-	}
-
 	return UPDATE_CONTINUE;
 }
 

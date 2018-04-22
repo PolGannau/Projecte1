@@ -8,9 +8,11 @@
 #include "ModuleInput.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
+#include "ModuleUi.h"
 #include "ModuleEnemies.h"
 #include "ModuleSceneSpace.h"
 #include "ModulePowerUps.h"
+#include "ModuleFadeToBlack.h"
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
@@ -46,9 +48,77 @@ bool ModuleSceneSpace::Start()
 	App->powerups->Enable();
 
 	// Colliders ---
-	App->collision->AddCollider({ 0, 204, 3670, 20 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3670,204,40,300 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3970,204,40,150 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 0,195,1098,39 }, COLLIDER_WALL); //Initial Floor
+	App->collision->AddCollider({ 1491,195,1480,39 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1098,204,393,20 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 905,184,103,11 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1560,189,103,6 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2362,189,103,6 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2601,184,103,11 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2971,187,39,214 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 2960,401,114,47 }, COLLIDER_WALL);
+
+	App->collision->AddCollider({ 3204,187 ,45,108 }, COLLIDER_WALL); //Top
+	App->collision->AddCollider({ 3218,295 ,15,10 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3249,215 ,90,50 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3339,215 ,90,35 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3429,190 ,635,45 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4064,190 ,17,22 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4064,160 ,62,30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4126,130 ,30,30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4156, 90 ,30,40 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4186, 70 ,600,40 }, COLLIDER_WALL);
+
+	App->collision->AddCollider({ 6286, 0, 30, 30 }, COLLIDER_WALL); //Top 2
+	App->collision->AddCollider({ 6316, 30, 30, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 6346, 60, 50, 30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 6396, 90, 40, 50 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 6426, 140, 40, 40 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 6466, 170, 40, 35 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 6506, 205, 650, 35 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 7156, 185, 45, 105 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 7036, 240, 120, 20 }, COLLIDER_WALL);
+
+	App->collision->AddCollider({ 3074,430,1006,18 }, COLLIDER_WALL); //Downfall
+	App->collision->AddCollider({ 3893,418,64,12 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4080,421,29,29 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4109,389,30,58 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4139,351,81,89 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4183,325,20,26 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4203,311,402,40 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4605,331,15,30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4605,361,65,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4670,387,25,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4695,416,31,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 4726,430,490,25 }, COLLIDER_WALL);
+
+	App->collision->AddCollider({ 5216,415,32,25 }, COLLIDER_WALL); //Rise
+	App->collision->AddCollider({ 5248,385,27,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 5275,357,50,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 5325,307,35,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 5360,277,30,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 5390,247,53,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 5443,209,770,55 }, COLLIDER_WALL);
+
+	App->collision->AddCollider({ 6213,247,53,55 }, COLLIDER_WALL);//Downfall
+	App->collision->AddCollider({ 6266,277,30,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 6296,307,35,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 6331,357,50,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 6381,385,27,55 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 6408,415,32,25 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 6440,435,910,25 }, COLLIDER_WALL);
+
+
+	App->collision->AddCollider({ 7350,415,90,25 }, COLLIDER_WALL);//Rise
+	App->collision->AddCollider({ 7370,400,90,15 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 7400,200,90,200 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 7412,180,20,20 }, COLLIDER_WALL);
+
+	App->collision->AddCollider({ 7490,200,1700,40 }, COLLIDER_WALL); // Final Floor
+	App->collision->AddCollider({ 7780,190,105,10 }, COLLIDER_WALL); // End Crater 1
+	App->collision->AddCollider({ 8410,190,105,10 }, COLLIDER_WALL); // End Crater 2
+	App->collision->AddCollider({ 8650,190,105,10 }, COLLIDER_WALL); // End Crater 3
+
 
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 350, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 368, 60);
@@ -108,6 +178,24 @@ bool ModuleSceneSpace::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1460, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1480, 130);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1490, 160);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1600, 96);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1620, 112);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1640, 128);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 2000, 96);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 2020, 112);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 2040, 128);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 2200, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 2220, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 2240, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 2260, 140);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 2500, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 2520, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 2540, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 2560, 140);
 
 
 
@@ -190,6 +278,11 @@ update_status ModuleSceneSpace::Update()
 		{
 			App->player2->position.y -= 1;
 		}
+	}
+
+	if (App->player->position.x >= 11200 || App->player2->position.x >= 11200)
+	{
+		App->fade->FadeToBlack(this, (Module*)App->stageclear, 1.0f);
 	}
 
 

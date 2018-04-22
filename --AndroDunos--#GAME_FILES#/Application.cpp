@@ -11,6 +11,7 @@
 #include "ModulePlayer.h"
 #include "Gameover.h"
 #include "ModulePlayer2.h"
+#include "ModuleUi.h"
 #include "ModuleFadeToBlack.h"
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"

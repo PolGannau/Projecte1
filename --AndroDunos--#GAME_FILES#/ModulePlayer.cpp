@@ -57,6 +57,7 @@ bool ModulePlayer::Start()
 	destroyed = false;
 	position.x = 30;
 	position.y = 60;
+	font_score = App->fonts->Load("Assets/Fonts/font_score.png", "1234567890P", 1);
 	score = 0;
 
 	coll = App->collision->AddCollider({ position.x, position.y, 27, 17 }, COLLIDER_PLAYER, this);
@@ -305,8 +306,7 @@ update_status ModulePlayer::Update()
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 		App->render->Blit(graphics, ((App->player->position.x) - App->player->stand_fire.GetCurrentFrame().w - 1), (App->player->position.y + 7), &(stand_fire.GetCurrentFrame()));
 	}
-	// Draw UI (score) --------------------------------------
-	sprintf_s(score_text, 10, "%7d", score);
+	// Draw UI (score) -------------------------------------
 
 
 	return UPDATE_CONTINUE;

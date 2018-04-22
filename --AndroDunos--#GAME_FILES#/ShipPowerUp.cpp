@@ -1,5 +1,6 @@
 #include "Application.h"
 #include "ShipPowerUp.h"
+#include "ModuleRender.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModulePowerUps.h"
@@ -74,6 +75,7 @@ void ShipPowerUp::Move()
 
 	position.y = int(float(original_y) + (25.0f * sinf(wave)));
 	position.x -= 1;
+
 }
 
 void ShipPowerUp::OnCollision(Collider* collider)

@@ -117,6 +117,9 @@
     <ClInclude Include="..\Enemy_StraightOnShip.h">
       <Filter>Modules\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="..\ModuleUi.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp">
@@ -199,6 +202,9 @@
     </ClCompile>
     <ClCompile Include="..\Enemy_StraightOnShip.cpp">
       <Filter>Modules\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ModuleUi.cpp">
+      <Filter>Modules</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
