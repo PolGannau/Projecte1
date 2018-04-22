@@ -296,6 +296,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 
 		App->player->coll->to_delete = true;
 		weapon1 = true;
+		App->powerups->powerup1 = false;
+		App->powerups->powerup2 = false;
 		App->player->Disable();
 		App->player->CleanUp();
 

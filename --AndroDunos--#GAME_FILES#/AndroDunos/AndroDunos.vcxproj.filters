@@ -114,6 +114,9 @@
     <ClInclude Include="..\Stageclear.h">
       <Filter>Modules\AfterplayScreen</Filter>
     </ClInclude>
+    <ClInclude Include="..\Enemy_StraightOnShip.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp">
@@ -193,6 +196,9 @@
     </ClCompile>
     <ClCompile Include="..\Stageclear.cpp">
       <Filter>Modules\AfterplayScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Enemy_StraightOnShip.cpp">
+      <Filter>Modules\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

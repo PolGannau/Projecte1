@@ -55,6 +55,7 @@ private:
 public:
 
 	Particle explosion;
+	Particle explosion2;
 	Collider* debug = nullptr;
 	Particle explosionship;
 	Particle explosionship2;
