@@ -14,7 +14,7 @@ ModuleParticles::ModuleParticles()
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 		active[i] = nullptr;
 
-	//powerup.anim.PushBack({ 271,0,16,16 });
+	
 
 
 	explosion.anim.PushBack({ 135, 26, 8, 7 });
@@ -109,8 +109,15 @@ ModuleParticles::ModuleParticles()
 	laser4down.anim.speed = 0.2f;
 	laser4down.speed.x = BULLET_SPEED;
 	laser4down.speed.y = -BULLET_SPEED/5;
-	laser4down.life = BULLET_LIFE; explosion.anim.PushBack({ 135, 26, 8, 7 });
+	laser4down.life = BULLET_LIFE; 
 
+	laser4powerupblue.anim.PushBack({ 43, 13, 13, 2 });
+	laser4powerupblue.anim.PushBack({ 43, 25, 13, 6 });
+	laser4powerupblue.anim.PushBack({ 43, 40, 13, 7 });
+	laser4powerupblue.anim.loop = false;
+	laser4powerupblue.anim.speed = 0.2f;
+	laser4powerupblue.speed.x = BULLET_SPEED;
+	laser4powerupblue.life = BULLET_LIFE;
 
 }
 
