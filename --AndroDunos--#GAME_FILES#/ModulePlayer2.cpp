@@ -232,6 +232,8 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 		//code
 		App->particles->AddParticle(App->particles->explosionship2, position.x, position.y, COLLIDER_NONE);
 		weapon1 = true;
+		App->powerups->powerup1 = false;
+		App->powerups->powerup2 = false;
 		App->player2->coll->to_delete = true;
 		App->player2->Disable();
 		App->player2->CleanUp();
