@@ -57,11 +57,23 @@ bool ModuleSceneSpace::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 386, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 404, 60);
 
-	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 550, 50);
-	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 681, 150);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 460, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 478, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 496, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 514, 140);
 
-	App->powerups->AddPowerUp(POWERUPS_TYPES::POWERUPRED, 781, 150);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 560, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 578, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 596, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 614, 60);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 660, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 678, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 696, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 714, 140);
+
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 750, 110);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 1200, 110);
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1000, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1030, 100);
 
