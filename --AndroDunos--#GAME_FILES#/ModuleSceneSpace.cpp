@@ -97,45 +97,24 @@ bool ModuleSceneSpace::CleanUp()
 update_status ModuleSceneSpace::Update()
 {
 
-	if (stop_p == false && App->render->camera.x <= 11257 * SCREEN_SIZE)
-	{
+	if (stop_p == false && App->render->camera.x <= 11257 * SCREEN_SIZE) {
 		App->render->camera.x += 1 * SCREEN_SIZE; //speed in x axes
-		App->player->position.x += 1;
-		if (App->player2->IsEnabled() == true)
-		{
-			App->player2->position.x += 1;
-		}
 	}
 
 	if ((App->render->camera.x >= 3680 * SCREEN_SIZE && App->render->camera.x <= 3682 * SCREEN_SIZE && App->render->camera.y == 0)
-		|| (App->render->camera.x >= 8945 * SCREEN_SIZE && App->render->camera.y >= 279))
-	{
-		stop_p = true; // stop scrolling in x axes
-	}
+		|| (App->render->camera.x >= 8945 * SCREEN_SIZE && App->render->camera.y >= 279)) stop_p = true; // stop scrolling in x axes
 	else if ((App->render->camera.x >= 3680 * SCREEN_SIZE && App->render->camera.x <= 3682 * SCREEN_SIZE && App->render->camera.y >= 279 * SCREEN_SIZE)
 		|| (App->render->camera.x >= 8945 * SCREEN_SIZE && App->render->camera.x <= 8947 * SCREEN_SIZE && App->render->camera.y == 0)) stop_p = false; // enable scroll in x axes
 
 	if ((App->render->camera.x >= 3680 * SCREEN_SIZE && App->render->camera.x <= 3682 * SCREEN_SIZE  && App->render->camera.y <= 279 * SCREEN_SIZE)
 		|| (App->render->camera.x >= 5658 * SCREEN_SIZE && App->render->camera.x <= 5814 * SCREEN_SIZE)
-		|| (App->render->camera.x >= 7580 * SCREEN_SIZE && App->render->camera.x <= 7857 * SCREEN_SIZE)) 
-	{
+		|| (App->render->camera.x >= 7580 * SCREEN_SIZE && App->render->camera.x <= 7857 * SCREEN_SIZE)) {
 		App->render->camera.y += 1 * SCREEN_SIZE; // speed in y axes
-		App->player->position.y += 1;
-		if (App->player2->IsEnabled() == true)
-		{
-			App->player2->position.y += 1;
-		}
 	}
 	else if ((App->render->camera.x >= 5022 * SCREEN_SIZE && App->render->camera.x <= 5178 * SCREEN_SIZE)
 		|| (App->render->camera.x >= 6370 * SCREEN_SIZE && App->render->camera.x <= 6647 * SCREEN_SIZE)
-		|| (App->render->camera.x >= 8945 * SCREEN_SIZE && stop_p == true))
-	{
+		|| (App->render->camera.x >= 8945 * SCREEN_SIZE && stop_p == true)) {
 		App->render->camera.y -= 1 * SCREEN_SIZE; // speed in y axes
-		App->player->position.y -= 1;
-		if (App->player2->IsEnabled() == true)
-		{
-			App->player2->position.y -= 1;
-		}
 	}
 
 

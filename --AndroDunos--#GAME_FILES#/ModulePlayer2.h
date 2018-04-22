@@ -27,7 +27,6 @@ public:
 	SDL_Texture * graphics = nullptr;
 	Animation* current_animation = nullptr;
 	Collider* coll = nullptr;
-	Animation stand_fire;
 	Animation idle;
 	Animation up;
 	Animation down;
