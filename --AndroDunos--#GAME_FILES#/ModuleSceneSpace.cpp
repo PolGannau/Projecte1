@@ -50,9 +50,6 @@ bool ModuleSceneSpace::Start()
 	App->collision->AddCollider({ 3670,204,40,300 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3970,204,40,150 }, COLLIDER_WALL);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1050, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1081, 100);
-
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 350, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 368, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 386, 60);
@@ -105,6 +102,14 @@ bool ModuleSceneSpace::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1330, 96);
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1345, 112);
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1360, 128);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1450, 40);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1470, 70);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1460, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1480, 130);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1490, 160);
+
+
 
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
 
