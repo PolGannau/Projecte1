@@ -122,11 +122,13 @@ ModuleParticles::ModuleParticles()
 	laser4powerupredup.anim.PushBack({ 67, 15, 3, 16 });
 	laser4powerupredup.anim.speed = 0.2f;
 	laser4powerupredup.speed.y = -BULLET_SPEED;
+	laser4powerupredup.speed.x += 1;
 	laser4powerupredup.life = BULLET_LIFE;
 
 	laser4powerupreddown.anim.PushBack({ 67, 15, 3, 16 });
 	laser4powerupreddown.anim.speed = 0.2f;
 	laser4powerupreddown.speed.y = BULLET_SPEED;
+	laser4powerupreddown.speed.x +=1;
 	laser4powerupreddown.life = BULLET_LIFE;
 }
 
