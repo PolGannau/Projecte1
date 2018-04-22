@@ -12,6 +12,7 @@
 #include "ModuleSceneSpace.h"
 #include "ModulePowerUps.h"
 
+
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
 ModuleSceneSpace::ModuleSceneSpace()
@@ -58,6 +59,9 @@ bool ModuleSceneSpace::Start()
 	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 681, 150);
 
 	App->powerups->AddPowerUp(POWERUPS_TYPES::POWERUPRED, 781, 150);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1000, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1030, 100);
 
 
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");

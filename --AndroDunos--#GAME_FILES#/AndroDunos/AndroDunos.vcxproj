@@ -23,6 +23,7 @@
     <ClInclude Include="..\Application.h" />
     <ClInclude Include="..\Enemy.h" />
     <ClInclude Include="..\Enemy_ShipUpDown.h" />
+    <ClInclude Include="..\Enemy_StraightOnShip.h" />
     <ClInclude Include="..\Enemy_WhiteShip.h" />
     <ClInclude Include="..\Gameover.h" />
     <ClInclude Include="..\Globals.h" />
@@ -54,6 +55,7 @@
     <ClCompile Include="..\Application.cpp" />
     <ClCompile Include="..\Enemy.cpp" />
     <ClCompile Include="..\Enemy_ShipUpDown.cpp" />
+    <ClCompile Include="..\Enemy_StraightOnShip.cpp" />
     <ClCompile Include="..\Enemy_WhiteShip.cpp" />
     <ClCompile Include="..\Globals.cpp" />
     <ClCompile Include="..\Main.cpp" />
