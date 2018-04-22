@@ -20,6 +20,12 @@ ModulePlayer2::ModulePlayer2()
 	// idle animation (just the ship)
 	idle.PushBack({ 154, 108, 27, 17 });
 
+	stand_fire.PushBack({ 80,116,5,5 });
+	stand_fire.PushBack({ 65,116,8,5 });
+	stand_fire.PushBack({ 42,116,12,5 });
+	stand_fire.loop = true;
+	stand_fire.speed = 0.045f;
+
 	// move upwards
 	up.PushBack({ 154, 87, 27, 15 });
 	up.PushBack({ 154, 66, 27, 15 });
@@ -158,6 +164,8 @@ update_status ModulePlayer2::Update()
 	if (App->input->keyboard[SDL_SCANCODE_X] == KEY_STATE::KEY_DOWN)
 	{
 		App->player->Enable();
+		App->player->position.x = App->player2->position.x;
+		App->player->position.y = App->player2->position.y - 20;
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_K] == KEY_STATE::KEY_IDLE
@@ -173,6 +181,7 @@ update_status ModulePlayer2::Update()
 	if (App->player2->IsEnabled() == true)
 	{
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
+		App->render->Blit(graphics, ((App->player2->position.x) - App->player2->stand_fire.GetCurrentFrame().w - 1), (App->player2->position.y + 7), &(stand_fire.GetCurrentFrame()));
 	}
 
 	return UPDATE_CONTINUE;
