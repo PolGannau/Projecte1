@@ -101,6 +101,7 @@ update_status ModuleSceneSpace::Update()
 	{
 		App->render->camera.x += 1 * SCREEN_SIZE; //speed in x axes
 		App->player->position.x += 1;
+		App->render->view.x += 1;
 		if (App->player2->IsEnabled() == true)
 		{
 			App->player2->position.x += 1;
@@ -121,6 +122,7 @@ update_status ModuleSceneSpace::Update()
 	{
 		App->render->camera.y += 1 * SCREEN_SIZE; // speed in y axes
 		App->player->position.y += 1;
+		App->render->view.y += 1;
 		if (App->player2->IsEnabled() == true)
 		{
 			App->player2->position.y += 1;
@@ -132,6 +134,7 @@ update_status ModuleSceneSpace::Update()
 	{
 		App->render->camera.y -= 1 * SCREEN_SIZE; // speed in y axes
 		App->player->position.y -= 1;
+		App->render->view.y -= 1;
 		if (App->player2->IsEnabled() == true)
 		{
 			App->player2->position.y -= 1;

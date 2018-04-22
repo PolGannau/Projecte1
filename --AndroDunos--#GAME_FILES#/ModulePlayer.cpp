@@ -99,11 +99,19 @@ update_status ModulePlayer::Update()
 	if (App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x -= speed;
+		if (position.x <= App->render->view.x)
+		{
+			position.x = App->render->view.x + 2;
+		}
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x += speed;
+		if (position.x + 27 >= App->render->view.x + App->render->view.w)
+		{
+			position.x = (App->render->view.x + App->render->view.w) - 28;
+		}
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
@@ -114,6 +122,10 @@ update_status ModulePlayer::Update()
 			down.Reset();
 			current_animation = &down;
 		}
+		if (position.y + 17 >= App->render->view.y + App->render->view.h)
+		{
+			position.y = (App->render->view.y + App->render->view.h) - 18;
+		}
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
@@ -123,6 +135,10 @@ update_status ModulePlayer::Update()
 		{
 			up.Reset();
 			current_animation = &up;
+		}
+		if (position.y <= App->render->view.y)
+		{
+			position.y = App->render->view.y + 1;
 		}
 	}
 

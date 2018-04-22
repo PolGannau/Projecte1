@@ -99,7 +99,7 @@ ModuleParticles::ModuleParticles()
 	laser4up.anim.loop = false;
 	laser4up.anim.speed = 0.2f;
 	laser4up.speed.x = BULLET_SPEED;
-	laser4up.speed.y = BULLET_SPEED/5;
+	laser4up.speed.y = BULLET_SPEED/6;
 	laser4up.life = BULLET_LIFE;
 
 	laser4down.anim.PushBack({ 43, 13, 13, 2 });
@@ -108,7 +108,7 @@ ModuleParticles::ModuleParticles()
 	laser4down.anim.loop = false;
 	laser4down.anim.speed = 0.2f;
 	laser4down.speed.x = BULLET_SPEED;
-	laser4down.speed.y = -BULLET_SPEED/5;
+	laser4down.speed.y = -BULLET_SPEED/6;
 	laser4down.life = BULLET_LIFE; 
 
 	laser4powerupblue.anim.PushBack({ 43, 13, 13, 2 });
