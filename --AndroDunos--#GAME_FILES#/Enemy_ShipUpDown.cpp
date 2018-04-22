@@ -1,6 +1,9 @@
 #include "Application.h"
 #include "Enemy_ShipUpDown.h"
 #include "ModuleCollision.h"
+#include "ModuleParticles.h"
+#include "ModuleEnemies.h"
+
 
 Enemy_ShipUpDown::Enemy_ShipUpDown(int x, int y) : Enemy(x, y)
 {
@@ -25,8 +28,29 @@ Enemy_ShipUpDown::Enemy_ShipUpDown(int x, int y) : Enemy(x, y)
 	original_y = y;
 }
 
+
 void Enemy_ShipUpDown::Move()
 {
+	if (going_up)
+	{
+		if (wave > 1.0f)
+			going_up = false;
+		else
+			wave += 0.05f;
+	}
+	else
+	{
+		if (wave < -1.0f)
+			going_up = true;
+		else
+			wave -= 0.05f;
+	}
+
+	position.y = int(float(original_y) + (25.0f * sinf(wave)));
 	position.x -= 1;
 
+}
+
+void Enemy_ShipUpDown::OnCollision(Collider* collider) {
+	App->particles->AddParticle(App->particles->explosion2, position.x, position.y);
 }

@@ -35,6 +35,10 @@ ModuleParticles::ModuleParticles()
 	explosion.anim.loop = false;
 	explosion.anim.speed = 0.3f;
 
+	explosion2.anim.PushBack({ 135, 26, 8, 7 });
+	explosion2.anim.loop = false;
+	explosion2.anim.speed = 0.3f;
+
 	explosionship.anim.PushBack({ 48,153,27,17 });
 	explosionship.anim.PushBack({ 85,152,28,18 });
 	explosionship.anim.PushBack({ 123,149,30,21 });

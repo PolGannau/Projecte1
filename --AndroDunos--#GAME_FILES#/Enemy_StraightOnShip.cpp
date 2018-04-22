@@ -1,6 +1,8 @@
 #include "Application.h"
 #include "Enemy_StraightOnShip.h"
 #include "ModuleCollision.h"
+#include "ModuleParticles.h"
+#include "ModuleEnemies.h"
 
 Enemy_StraightOnShip::Enemy_StraightOnShip(int x, int y) : Enemy(x, y)
 {
@@ -10,7 +12,7 @@ Enemy_StraightOnShip::Enemy_StraightOnShip(int x, int y) : Enemy(x, y)
 	fly.PushBack({ 217, 0, 29, 16 });
 	fly.PushBack({ 277, 1, 29, 14 });
 
-	fly.speed = 0.05f;
+	fly.speed = 0.1f;
 
 	animation = &fly;
 
@@ -23,4 +25,8 @@ void Enemy_StraightOnShip::Move()
 {
 	position.x -= 1;
 
+}
+
+void Enemy_StraightOnShip::OnCollision(Collider* collider) {
+	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 }

@@ -1,6 +1,8 @@
 #include "Application.h"
 #include "Enemy_WhiteShip.h"
 #include "ModuleCollision.h"
+#include "ModuleParticles.h"
+#include "ModuleEnemies.h"
 
 Enemy_WhiteShip::Enemy_WhiteShip(int x, int y) : Enemy(x, y)
 {
@@ -35,4 +37,7 @@ void Enemy_WhiteShip::Move()
 
 	position.y = int(float(original_y) + (25.0f * sinf(wave)));
 	position.x -= 1;
+}
+void Enemy_WhiteShip::OnCollision(Collider* collider) {
+	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 }
