@@ -130,6 +130,38 @@ ModuleParticles::ModuleParticles()
 	laser4powerupreddown.speed.y = BULLET_SPEED;
 	laser4powerupreddown.speed.x +=1;
 	laser4powerupreddown.life = BULLET_LIFE;
+
+	laser2powerupred.anim.PushBack({ 389, 2, 9, 6 });
+	laser2powerupred.anim.PushBack({ 388, 15, 10, 8 });
+	laser2powerupred.anim.PushBack({ 387, 32, 13, 6 });
+	laser2powerupred.anim.PushBack({ 386, 44, 15, 8 });
+	laser2powerupred.anim.PushBack({ 385, 60, 16, 9 });
+	laser2powerupred.anim.PushBack({ 386, 75, 14, 9 });
+	laser2powerupred.anim.PushBack({ 385, 90, 16, 9 });
+	laser2powerupred.anim.PushBack({ 386, 104, 15, 9 });
+	laser2powerupred.anim.loop = false;
+	laser2powerupred.anim.speed = 0.3f;
+	laser2powerupred.speed.y = BULLET_SPEED;
+	laser2powerupred.speed.x += 1;
+	laser2powerupred.life = BULLET_LIFE;
+
+	laser3powerupred.anim.PushBack({ 503, 15, 8, 9 });
+	laser3powerupred.anim.loop = false;
+	laser2powerupred.anim.speed = 0.3f;
+	laser3powerupred.speed.y = BULLET_SPEED;
+	laser3powerupred.speed.x += 1;
+	laser3powerupred.life = BULLET_LIFE;
+
+	laser1powerupred.anim.PushBack({ 415, 31, 10, 5 });
+	laser1powerupred.anim.PushBack({ 413, 46, 13, 5 });
+	laser1powerupred.anim.PushBack({ 415, 1, 10, 8 });
+	laser1powerupred.anim.PushBack({ 414, 15, 12, 9 });
+	laser1powerupred.anim.loop = false;
+	laser1powerupred.anim.speed = 0.3f;
+	laser1powerupred.speed.y = BULLET_SPEED;
+	laser1powerupred.speed.x += 1;
+	laser1powerupred.life = BULLET_LIFE;
+
 }
 
 ModuleParticles::~ModuleParticles()

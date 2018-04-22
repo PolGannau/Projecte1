@@ -68,6 +68,10 @@ public:
 	Particle laser4powerupblue;
 	Particle laser4powerupredup;
 	Particle laser4powerupreddown;
+	Particle laser1powerupred;
+	Particle laser3powerupred;
+	Particle laser2powerupred;
+	
 
 };
 
