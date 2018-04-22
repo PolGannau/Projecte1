@@ -147,7 +147,30 @@ update_status ModulePlayer::Update()
 		currentTime = SDL_GetTicks();
 		if (currentTime > lastTime + 50)
 		{
-			if (App->powerups->powerup2) {
+			if (App->powerups->powerup1) {
+				if (weapon1) {
+					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 11, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_1);
+				}
+				else if (weapon2) {
+					App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 10, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser2left, position.x - 7, position.y + 7, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_2);
+				}
+				else if (weapon3) {
+					App->particles->AddParticle(App->particles->laser3, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_3);
+				}
+				else if (weapon4) {
+					App->particles->AddParticle(App->particles->laser4up, position.x + 20, position.y + 10.5, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser4down, position.x + 20, position.y + 10.5, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser4powerupredup, position.x + 10, position.y + 5, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser4powerupreddown, position.x + 10, position.y + 15, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_4);
+				}
+			}
+			else if (App->powerups->powerup2) {
 				if (weapon1) {
 					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
 					App->particles->AddParticle(App->particles->laser, position.x + 25, position.y + 11, COLLIDER_PLAYER_SHOT);
