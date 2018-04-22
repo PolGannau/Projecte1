@@ -1,5 +1,7 @@
 #include "Application.h"
 #include "ModuleInput.h"
+#include "ModulePlayer2.h"
+#include "ModulePlayer.h"
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
 
@@ -107,6 +109,34 @@ update_status ModuleCollision::Update()
 {
 
 	DebugDraw();
+
+	if (App->input->keyboard[SDL_SCANCODE_F2] == KEY_STATE::KEY_DOWN)
+	{
+		if (collision)
+		{
+			if (App->player->IsEnabled() == true)
+			{
+				App->player->coll = App->collision->AddCollider({ App->player->position.x,App->player->position.y,27, 16 }, COLLIDER_PLAYER, App->player);
+			}
+			if (App->player2->IsEnabled() == true)
+			{
+				App->player2->coll = App->collision->AddCollider({ App->player2->position.x,App->player2->position.y,27,16 }, COLLIDER_PLAYER, App->player2);
+			}
+			collision = false;
+		}
+		else if (!collision)
+		{
+			if (App->player->IsEnabled() == true)
+			{
+				App->player->coll->to_delete = true;
+			}
+			if (App->player2->IsEnabled() == true)
+			{
+				App->player2->coll->to_delete = true;
+			}
+			collision = true;
+		}
+	}
 
 	return UPDATE_CONTINUE;
 }

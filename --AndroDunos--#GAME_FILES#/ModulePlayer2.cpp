@@ -1,17 +1,22 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleTextures.h"
-#include "ModuleSceneIntro.h"
-#include "ModuleSceneSpace.h"
 #include "ModuleInput.h"
 #include "ModuleParticles.h"
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
 #include "ModuleFadeToBlack.h"
+#include "ModuleFonts.h"
 #include "ModulePlayer.h"
 #include "ModulePlayer2.h"
-#include "SDL/include/SDL_timer.h"
 #include "ModuleAudio.h"
+#include "ModuleEnemies.h"
+#include "Stageclear.h"
+#include "ModulePowerUps.h"
+#include "PowerUpRed.h"
+#include "PowerUp.h"
+#include "SDL/include/SDL_timer.h"
+#include<stdio.h>
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
@@ -86,19 +91,11 @@ update_status ModulePlayer2::Update()
 	if (App->input->keyboard[SDL_SCANCODE_J] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x -= speed;
-		if (position.x <= App->render->view.x)
-		{
-			position.x = App->render->view.x + 1;
-		}
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_L] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x += speed;
-		if (position.x + 27 >= App->render->view.x + App->render->view.w)
-		{
-			position.x = App->render->view.x + App->render->view.w - 28;
-		}
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_K] == KEY_STATE::KEY_REPEAT)
@@ -108,10 +105,6 @@ update_status ModulePlayer2::Update()
 		{
 			down.Reset();
 			current_animation = &down;
-		}
-		if (App->player2->position.y + 17 >= App->render->view.y + App->render->view.h)
-		{
-			App->player2->position.y = App->render->view.y + App->render->view.h - 18;
 		}
 	}
 
@@ -123,10 +116,6 @@ update_status ModulePlayer2::Update()
 			up.Reset();
 			current_animation = &up;
 		}
-		if (position.y <= App->render->view.y)
-		{
-			position.y = App->render->view.y + 1;
-		}
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_RCTRL] == KEY_STATE::KEY_DOWN)
@@ -134,25 +123,52 @@ update_status ModulePlayer2::Update()
 		currentTime = SDL_GetTicks();
 		if (currentTime > lastTime + 50)
 		{
-			if (weapon1) {
-				App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
-				App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 11, COLLIDER_PLAYER_SHOT);
-				App->audio->PlaySoundEffect(fx_1);
+			if (App->powerups->powerup2) {
+				if (weapon1) {
+					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser, position.x + 25, position.y + 11, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 18, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_1);
+				}
+				else if (weapon2) {
+					App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 10, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser2left, position.x - 7, position.y + 6, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser2left, position.x - 7, position.y + 12, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_2);
+				}
+				else if (weapon3) {
+					App->particles->AddParticle(App->particles->laser3, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_3);
+				}
+				else if (weapon4) {
+					App->particles->AddParticle(App->particles->laser4up, position.x + 20, position.y + 10.5, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser4down, position.x + 20, position.y + 10.5, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser4powerupblue, position.x + 20, position.y + 10.5, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_4);
+				}
 			}
-			else if (weapon2) {
-				App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 10, COLLIDER_PLAYER_SHOT);
-				App->particles->AddParticle(App->particles->laser2left, position.x - 7, position.y + 7, COLLIDER_PLAYER_SHOT);
-				App->audio->PlaySoundEffect(fx_2);
+			else {
+				if (weapon1) {
+					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 11, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_1);
+				}
+				else if (weapon2) {
+					App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 10, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser2left, position.x - 7, position.y + 7, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_2);
+				}
+				else if (weapon3) {
+					App->particles->AddParticle(App->particles->laser3, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_3);
+				}
+				else if (weapon4) {
+					App->particles->AddParticle(App->particles->laser4up, position.x + 20, position.y + 10.5, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser4down, position.x + 20, position.y + 10.5, COLLIDER_PLAYER_SHOT);
+					App->audio->PlaySoundEffect(fx_4);
+				}
 			}
-			else if (weapon3) {
-				App->particles->AddParticle(App->particles->laser3, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
-				App->audio->PlaySoundEffect(fx_3);
-			}
-			else if (weapon4) {
-				App->particles->AddParticle(App->particles->laser4up, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
-				App->particles->AddParticle(App->particles->laser4down, position.x + 20, position.y + 7, COLLIDER_PLAYER_SHOT);
-				App->audio->PlaySoundEffect(fx_4);
-			}
+			score += 13;
 			lastTime = currentTime;
 		}
 	}
@@ -180,8 +196,8 @@ update_status ModulePlayer2::Update()
 	if (App->input->keyboard[SDL_SCANCODE_X] == KEY_STATE::KEY_DOWN)
 	{
 		App->player->Enable();
-		App->player->position.x = position.x;
-		App->player->position.y = position.y - 20;
+		App->player->position.x = App->player2->position.x;
+		App->player->position.y = App->player2->position.y - 20;
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_K] == KEY_STATE::KEY_IDLE

@@ -59,6 +59,7 @@ private:
 
 	Collider * colliders[MAX_COLLIDERS];
 	bool matrix[COLLIDER_MAX][COLLIDER_MAX];
+	bool collision = false;
 	bool debug = false;
 };
 

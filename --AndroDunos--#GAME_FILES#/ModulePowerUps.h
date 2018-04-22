@@ -36,6 +36,7 @@ public:
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
 	bool powerup1 = false;
+	bool powerup2 = false;
 	bool AddPowerUp(POWERUPS_TYPES type, int x, int y);
 
 private:
