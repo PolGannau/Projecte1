@@ -55,7 +55,6 @@ private:
 public:
 
 	Particle explosion;
-	Particle explosion2;
 	Collider* debug = nullptr;
 	Particle explosionship;
 	Particle explosionship2;
@@ -66,13 +65,6 @@ public:
 	Particle laser4up;
 	Particle laser4down;
 	Particle powerup;
-	Particle laser4powerupblue;
-	Particle laser4powerupredup;
-	Particle laser4powerupreddown;
-	Particle laser1powerupred;
-	Particle laser3powerupred;
-	Particle laser2powerupred;
-	
 
 };
 

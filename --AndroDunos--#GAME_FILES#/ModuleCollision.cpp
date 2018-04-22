@@ -116,7 +116,7 @@ update_status ModuleCollision::Update()
 		{
 			if (App->player->IsEnabled() == true)
 			{
-				App->player->coll = App->collision->AddCollider({ App->player->position.x,App->player->position.y,27, 16 }, COLLIDER_PLAYER, this);
+				App->player->coll = App->collision->AddCollider({ App->player->position.x,App->player->position.y,27, 16 }, COLLIDER_PLAYER, App->player);
 			}
 			if (App->player2->IsEnabled() == true)
 			{

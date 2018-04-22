@@ -12,9 +12,6 @@ ModuleRender::ModuleRender() : Module()
 	camera.x = camera.y = 0;
 	camera.w = SCREEN_WIDTH;
 	camera.h = SCREEN_HEIGHT;
-	view.x = view.y = 0;
-	view.w = SCREEN_WIDTH;
-	view.h = SCREEN_HEIGHT;
 }
 
 // Destructor

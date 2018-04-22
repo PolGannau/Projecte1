@@ -14,7 +14,7 @@ private:
 public:
 
 	Enemy_ShipUpDown(int x, int y);
-	void OnCollision(Collider* collider);
+
 	void Move();
 };
 

@@ -7,7 +7,6 @@
 #include "Enemy.h"
 #include "Enemy_ShipUpDown.h"
 #include "Enemy_WhiteShip.h"
-#include "Enemy_StraightOnShip.h"
 
 #define SPAWN_MARGIN 50
 
@@ -132,9 +131,6 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::SHIPUPDOWN:
 			enemies[i] = new Enemy_ShipUpDown(info.x, info.y);
 			break;
-		case ENEMY_TYPES::STRAIGHTONSHIP:
-			enemies[i] = new Enemy_StraightOnShip(info.x, info.y);
-			break;
 		}
 	}
 }
@@ -145,7 +141,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
-			enemies[i]->OnCollision(c2);
+			App->particles->AddParticle(App->particles->explosion, enemies[i]->position.x, enemies[i]->position.y);
 			delete enemies[i];
 			enemies[i] = nullptr;
 			break;

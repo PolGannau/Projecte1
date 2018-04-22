@@ -12,7 +12,6 @@
 #include "ModuleSceneSpace.h"
 #include "ModulePowerUps.h"
 
-
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
 ModuleSceneSpace::ModuleSceneSpace()
@@ -49,33 +48,16 @@ bool ModuleSceneSpace::Start()
 	App->collision->AddCollider({ 3670,204,40,300 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3970,204,40,150 }, COLLIDER_WALL);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1050, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 1081, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 350, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 381, 100);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 350, 60);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 368, 60);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 386, 60);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 404, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 450, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 481, 100);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 460, 140);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 478, 140);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 496, 140);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 514, 140);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 550, 50);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 681, 150);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 560, 60);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 578, 60);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 596, 60);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 614, 60);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 660, 140);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 678, 140);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 696, 140);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 714, 140);
-
-	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 750, 110);
-	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 1200, 110);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1000, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1030, 100);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::POWERUPRED, 781, 150);
 
 
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
@@ -119,7 +101,6 @@ update_status ModuleSceneSpace::Update()
 	{
 		App->render->camera.x += 1 * SCREEN_SIZE; //speed in x axes
 		App->player->position.x += 1;
-		App->render->view.x += 1;
 		if (App->player2->IsEnabled() == true)
 		{
 			App->player2->position.x += 1;
@@ -140,7 +121,6 @@ update_status ModuleSceneSpace::Update()
 	{
 		App->render->camera.y += 1 * SCREEN_SIZE; // speed in y axes
 		App->player->position.y += 1;
-		App->render->view.y += 1;
 		if (App->player2->IsEnabled() == true)
 		{
 			App->player2->position.y += 1;
@@ -152,7 +132,6 @@ update_status ModuleSceneSpace::Update()
 	{
 		App->render->camera.y -= 1 * SCREEN_SIZE; // speed in y axes
 		App->player->position.y -= 1;
-		App->render->view.y -= 1;
 		if (App->player2->IsEnabled() == true)
 		{
 			App->player2->position.y -= 1;

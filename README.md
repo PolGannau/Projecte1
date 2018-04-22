@@ -44,13 +44,11 @@ Right control: Second player shot
 
 Right shift: Second player change type of weapon
 
+X: Win scene
+
 F1: View collision boxes
 
 F2: Godmode
-
-F3: WinScreen
-
-F4: GameOver
 
 ## Changelist
 ### **V_0.3.5**
