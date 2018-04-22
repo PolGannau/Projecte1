@@ -73,17 +73,38 @@ bool ModuleSceneSpace::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 696, 140);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 714, 140);
 
-	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 750, 110);
-	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 1200, 110);
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 775, 85);
 	
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1000, 90);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1020, 90);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1040, 90);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 900, 54);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 915, 70);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 900, 86);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1080, 140);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1100, 140);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1120, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 980, 96);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 995, 112);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 980, 128);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1060, 54);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1075, 70);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1060, 86);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1140, 86);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1155, 86);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1170, 70);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1185, 54);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1170, 102);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1185, 118);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1250, 86);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1265, 70);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1280, 54);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1250, 86);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1265, 70);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1280, 54);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1330, 96);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1345, 112);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1360, 128);
 
 	mus = App->audio->LoadMusic("assets/level-1/04_Stage_1 -The Moon-Loop.ogg");
 
