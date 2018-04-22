@@ -6,9 +6,36 @@
 
 PowerUpRed::PowerUpRed(int x, int y) : PowerUp(x, y)
 {
+	fly.PushBack({ 294,0,16,16 }); //start red
 	fly.PushBack({ 294,0,16,16 });
+	fly.PushBack({ 294,0,16,16 });
+	fly.PushBack({ 294,0,16,16 });
+	fly.PushBack({ 294,0,16,16 }); 
+	//fly.PushBack({ 313,0,16,16 });
+	fly.PushBack({ 331,0,16,16 });
+	//fly.PushBack({ 349,0,16,16 });
+	fly.PushBack({ 294,0,16,16 });
+	fly.PushBack({ 294,0,16,16 });
+	fly.PushBack({ 294,0,16,16 });
+	fly.PushBack({ 294,0,16,16 }); 
+	fly.PushBack({ 367,0,16,16 });
+	fly.PushBack({ 385,0,16,16 });  //last red
+	fly.PushBack({ 329,36,16,16 }); //close doors
+	fly.PushBack({ 294,18,16,16 }); //start blue
+	fly.PushBack({ 294,18,16,16 });
+	fly.PushBack({ 294,18,16,16 });
+	fly.PushBack({ 294,18,16,16 });
+	fly.PushBack({ 294,18,16,16 });
+	fly.PushBack({ 331,0,16,16 });
+	fly.PushBack({ 294,18,16,16 });
+	fly.PushBack({ 294,18,16,16 });
+	fly.PushBack({ 294,18,16,16 });
+	fly.PushBack({ 294,18,16,16 });
+	fly.PushBack({ 367,18,16,16 });
+	fly.PushBack({ 385,18,16,16 }); //last blue
+	fly.PushBack({ 329,36,16,16 }); //close doors
 
-	fly.speed = 0.05f;
+	fly.speed = 0.1f;
 
 	animation = &fly;
 
@@ -19,26 +46,12 @@ PowerUpRed::PowerUpRed(int x, int y) : PowerUp(x, y)
 
 void PowerUpRed::Move()
 {
-	if (going_up)
-	{
-		if (wave > 1.0f)
-			going_up = false;
-		else
-			wave += 0.05f;
-	}
-	else
-	{
-		if (wave < -1.0f)
-			going_up = true;
-		else
-			wave -= 0.05f;
-	}
 
-	position.y = int(float(original_y) + (25.0f * sinf(wave)));
-	position.x -= 1;
+	position.x -= 0.5;
 }
 
 void PowerUpRed::OnCollision(Collider* collider)
 {
 	App->powerups->powerup1 = true;
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 1050, 50);
 }
