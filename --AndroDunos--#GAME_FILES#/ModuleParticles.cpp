@@ -88,7 +88,7 @@ ModuleParticles::ModuleParticles()
 	laser2left.speed.x = -BULLET_SPEED;
 	laser2left.life = BULLET_LIFE;
 
-	laser3.anim.PushBack({ 58, 94, 16, 3 });
+	laser3.anim.PushBack({ 42, 94, 32, 3 });
 	laser3.anim.speed = 0.2f;
 	laser3.speed.x = BULLET_SPEED;
 	laser3.life = BULLET_LIFE;
