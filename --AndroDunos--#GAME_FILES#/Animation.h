@@ -53,6 +53,9 @@ public:
 		loops = 0;
 		current_frame = 0.0f;
 	}
+	int SeeCurrentFrame() {
+		return (int)current_frame;
+	}
 };
 
 #endif

@@ -52,6 +52,9 @@ void PowerUpRed::Move()
 
 void PowerUpRed::OnCollision(Collider* collider)
 {
+	if (fly.SeeCurrentFrame() == 1 || fly.SeeCurrentFrame() == 2 || fly.SeeCurrentFrame() == 3 || fly.SeeCurrentFrame() == 4 || fly.SeeCurrentFrame() == 5 || fly.SeeCurrentFrame() == 6 || fly.SeeCurrentFrame() == 7 || fly.SeeCurrentFrame() == 8 || fly.SeeCurrentFrame() == 9 || fly.SeeCurrentFrame() == 10 || fly.SeeCurrentFrame() == 11 || fly.SeeCurrentFrame() == 12 || fly.SeeCurrentFrame() == 13) {
+		App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 1050, 50);
+	}
 	App->powerups->powerup1 = true;
-	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 1050, 50);
+	
 }
