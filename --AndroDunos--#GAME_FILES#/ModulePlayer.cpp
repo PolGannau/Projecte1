@@ -166,7 +166,7 @@ update_status ModulePlayer::Update()
 					App->particles->AddParticle(App->particles->laser4up, position.x + 20, position.y + 10.5, COLLIDER_PLAYER_SHOT);
 					App->particles->AddParticle(App->particles->laser4down, position.x + 20, position.y + 10.5, COLLIDER_PLAYER_SHOT);
 					App->particles->AddParticle(App->particles->laser4powerupredup, position.x + 10, position.y, COLLIDER_PLAYER_SHOT);
-					App->particles->AddParticle(App->particles->laser4powerupreddown, position.x + 10, position.y + 5, COLLIDER_PLAYER_SHOT);
+					App->particles->AddParticle(App->particles->laser4powerupreddown, position.x + 10, position.y, COLLIDER_PLAYER_SHOT);
 					App->audio->PlaySoundEffect(fx_4);
 				}
 			}
