@@ -31,6 +31,7 @@ bool ModuleSceneSpace::Start()
 
 	stop_p = false;
 	background1 = App->textures->Load("assets/level-1/background&floor/UpperBackground.png");
+	//map_p[0] = App->textures->Load("assets/Stage 2/map-part1stage2.png"); ES EL INICI DEL FLOOR DEL STAGE 2
 	map_p[0] = App->textures->Load("assets/level-1/background&floor/map-part1.png");
 	map_p[1] = App->textures->Load("assets/level-1/background&floor/map-part2.png");
 	map_p[2] = App->textures->Load("assets/level-1/background&floor/map-part3.png");
