@@ -31,13 +31,16 @@ bool ModuleSceneSpace::Start()
 
 	stop_p = false;
 	background1 = App->textures->Load("assets/level-1/background&floor/UpperBackground.png");
-	//map_p[0] = App->textures->Load("assets/Stage 2/map-part1stage2.png"); ES EL INICI DEL FLOOR DEL STAGE 2
-	map_p[0] = App->textures->Load("assets/level-1/background&floor/map-part1.png");
-	map_p[1] = App->textures->Load("assets/level-1/background&floor/map-part2.png");
-	map_p[2] = App->textures->Load("assets/level-1/background&floor/map-part3.png");
-	map_p[3] = App->textures->Load("assets/level-1/background&floor/map-part4.png");
-	map_p[4] = App->textures->Load("assets/level-1/background&floor/map-part5.png");
-	map_p[5] = App->textures->Load("assets/level-1/background&floor/map-part6.png");
+	map_p[0] = App->textures->Load("assets/Stage 2/map-part1stage2.png"); //ES EL INICI DEL FLOOR DEL STAGE 2
+	//map_p[0] = App->textures->Load("assets/level-1/background&floor/map-part1.png"); //ES EL INICI DEL FLOOR DEL STAGE 1
+	map_p[1] = App->textures->Load("assets/Stage 2/map-part2stage2.png");
+	//map_p[1] = App->textures->Load("assets/level-1/background&floor/map-part2.png");
+	map_p[2] = App->textures->Load("assets/Stage 2/map-part3stage2.png");
+	//map_p[2] = App->textures->Load("assets/level-1/background&floor/map-part3.png");
+	map_p[3] = App->textures->Load("assets/Stage 2/map-part4stage2.png");
+	//map_p[3] = App->textures->Load("assets/level-1/background&floor/map-part4.png");
+	//map_p[4] = App->textures->Load("assets/level-1/background&floor/map-part5.png");
+	//map_p[5] = App->textures->Load("assets/level-1/background&floor/map-part6.png");
 	underground = App->textures->Load("assets/level-1/background&floor/UnderBackground.png");
 	underground_e = App->textures->Load("assets/level-1/background&floor/UnderBackground_end.png");
 	underground_s = App->textures->Load("assets/level-1/background&floor/Underbackground_start.png");
@@ -220,8 +223,8 @@ bool ModuleSceneSpace::CleanUp()
 	App->textures->Unload(map_p[1]);
 	App->textures->Unload(map_p[2]);
 	App->textures->Unload(map_p[3]);
-	App->textures->Unload(map_p[4]);
-	App->textures->Unload(map_p[5]);
+	//App->textures->Unload(map_p[4]);
+	//App->textures->Unload(map_p[5]);
 	App->audio->UnloadMusic(mus);
 	App->enemies->Disable();
 	App->powerups->Disable();
@@ -302,8 +305,8 @@ update_status ModuleSceneSpace::Update()
 	if (!App->render->Blit(map_p[1], 1639, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
 	if (!App->render->Blit(map_p[2], 3279, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
 	if (!App->render->Blit(map_p[3], 4935, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
-	if (!App->render->Blit(map_p[4], 6591, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
-	if (!App->render->Blit(map_p[5], 8230, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
+	//if (!App->render->Blit(map_p[4], 6591, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
+	//if (!App->render->Blit(map_p[5], 8230, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
 
 	return UPDATE_CONTINUE;
 }
