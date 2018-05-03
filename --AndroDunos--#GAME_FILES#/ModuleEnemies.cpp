@@ -8,6 +8,7 @@
 #include "Enemy_ShipUpDown.h"
 #include "Enemy_WhiteShip.h"
 #include "Enemy_StraightOnShip.h"
+#include "Enemy_ShipGreen.h"
 
 
 #define SPAWN_MARGIN 50
@@ -135,6 +136,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::STRAIGHTONSHIP:
 			enemies[i] = new Enemy_StraightOnShip(info.x, info.y);
+			break;
+		case ENEMY_TYPES::SHIPGREEN:
+			enemies[i] = new Enemy_ShipGreen(info.x, info.y);
 			break;
 		}
 	}

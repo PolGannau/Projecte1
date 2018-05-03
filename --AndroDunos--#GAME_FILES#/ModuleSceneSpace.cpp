@@ -124,10 +124,10 @@ bool ModuleSceneSpace::Start()
 	App->collision->AddCollider({ 8650,190,105,10 }, COLLIDER_WALL); // End Crater 3
 
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 350, 60);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 368, 60);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 386, 60);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 404, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 350, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 368, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 386, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 404, 60);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 460, 140);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 478, 140);

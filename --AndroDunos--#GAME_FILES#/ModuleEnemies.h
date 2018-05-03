@@ -5,6 +5,7 @@
 #include "Enemy_WhiteShip.h"
 #include "Enemy_ShipUpDown.h"
 #include "Enemy_StraightOnShip.h"
+#include "Enemy_ShipGreen.h"
 
 #define MAX_ENEMIES 100
 
@@ -15,6 +16,7 @@ enum ENEMY_TYPES
 	WHITESHIP,
 	MECH,
 	STRAIGHTONSHIP,
+	SHIPGREEN,
 };
 
 class Enemy;
