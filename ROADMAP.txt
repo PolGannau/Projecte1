@@ -1,0 +1,26 @@
+----------------------------------------------------
+---------------------ROADMAP------------------------
+----------------------------------------------------
+
+**0.6** -> Minimum UI
+	-> Static enemies (turrets)
+	-> Scroll
+	-> Level music
+	-> Collision walls
+----------------------------------------------------
+**0.7** -> Powerups animations
+	-> Introduce all powerups
+	-> Enemies sprites and animation
+	-> Audio of the Player shots and explotion
+----------------------------------------------------
+**0.8** -> All player weapons
+	-> Special attacks
+	-> Miniboss
+	-> Enemy shots
+----------------------------------------------------
+**0.9** -> Final Boss
+	-> Full UI
+	-> Enemy Audios
+----------------------------------------------------
+**1.0** -> Cutscene
+	-> Polish
