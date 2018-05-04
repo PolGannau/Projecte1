@@ -4,6 +4,7 @@
 
 **0.6** -> Minimum UI
 	-> Static enemies (turrets)
+	-> Implement controller
 	-> Scroll
 	-> Level music
 	-> Collision walls
@@ -22,5 +23,5 @@
 	-> Full UI
 	-> Enemy Audios
 ----------------------------------------------------
-**1.0** -> Cutscene
+**1.0** -> Cutscenes
 	-> Polish
