@@ -22,6 +22,7 @@
     <ClInclude Include="..\Animation.h" />
     <ClInclude Include="..\Application.h" />
     <ClInclude Include="..\Enemy.h" />
+    <ClInclude Include="..\Enemy_GreenTurret.h" />
     <ClInclude Include="..\Enemy_ShipGreen.h" />
     <ClInclude Include="..\Enemy_ShipUpDown.h" />
     <ClInclude Include="..\Enemy_StraightOnShip.h" />
@@ -56,6 +57,7 @@
   <ItemGroup>
     <ClCompile Include="..\Application.cpp" />
     <ClCompile Include="..\Enemy.cpp" />
+    <ClCompile Include="..\Enemy_GreenTurret.cpp" />
     <ClCompile Include="..\Enemy_ShipGreen.cpp" />
     <ClCompile Include="..\Enemy_ShipUpDown.cpp" />
     <ClCompile Include="..\Enemy_StraightOnShip.cpp" />

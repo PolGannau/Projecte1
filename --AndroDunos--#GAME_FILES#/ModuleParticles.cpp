@@ -173,8 +173,17 @@ ModuleParticles::ModuleParticles()
 	laser1powerupred.life = BULLET_LIFE;
 
 	laserenemyup.anim.PushBack({239,245,6,6});
-	laserenemyup.anim.loop = false;
-	laserenemyup.speed.x = BULLET_SPEED;
+	laserenemyup.anim.PushBack({ 239,264,6,6 });
+	laserenemyup.anim.PushBack({ 259,245,6,6 });
+	laserenemyup.anim.PushBack({ 239,245,6,6 });
+	laserenemyup.anim.PushBack({ 239,264,6,6 });
+	laserenemyup.anim.PushBack({ 259,245,6,6 });
+	laserenemyup.anim.PushBack({ 239,245,6,6 });
+	laserenemyup.anim.PushBack({ 239,264,6,6 });
+	laserenemyup.anim.PushBack({ 259,245,6,6 });
+	laserenemyup.anim.PushBack({ 239,245,6,6 });
+	laserenemyup.anim.PushBack({ 239,264,6,6 });
+	laserenemyup.anim.PushBack({ 259,245,6,6 });
 	laserenemyup.speed.y = BULLET_SPEED / 6;
 
 	laserenemydown.anim.PushBack({ 239,264,6,6 });
