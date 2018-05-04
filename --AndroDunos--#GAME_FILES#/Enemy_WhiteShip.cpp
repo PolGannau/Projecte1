@@ -15,8 +15,8 @@ Enemy_WhiteShip::Enemy_WhiteShip(int x, int y) : Enemy(x, y)
 	animation = &fly;
 
 	path.PushBack({ -0.3f, 0.0f }, 70); //avança recte cap a la esquerre
-	path.PushBack({ -1.0f, -0.5f }, 40); //puja adalt esquerre
-	path.PushBack({ 1.0f, 0.0f }, 35); //avança recte cap a la dreta
+	path.PushBack({ -0.7f, -0.5f }, 40); //puja adalt esquerre
+	path.PushBack({ 1.0f, 0.0f }, 25); //avança recte cap a la dreta
 	path.PushBack({ -0.8f, 0.0f }, 600); //avança recte cap a la esquerre
 	
 
