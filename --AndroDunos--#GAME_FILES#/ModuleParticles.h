@@ -72,6 +72,9 @@ public:
 	Particle laser1powerupred;
 	Particle laser3powerupred;
 	Particle laser2powerupred;
+	Particle laserenemyup;
+	Particle laserenemydown;
+	Particle laserenemyleft;
 	
 
 };
