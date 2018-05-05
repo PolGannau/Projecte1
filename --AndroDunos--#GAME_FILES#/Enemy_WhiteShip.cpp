@@ -30,6 +30,15 @@ Enemy_WhiteShip::Enemy_WhiteShip(int x, int y) : Enemy(x, y)
 void Enemy_WhiteShip::Move()
 {
 	position = original_pos + path.GetCurrentSpeed();
+
+	timing++;
+
+	if (timing == 160) {
+		App->particles->AddParticle(App->particles->laserenemyup, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->laserenemyleft, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->laserenemydown, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
+		timing = 0;
+	}
 }
 void Enemy_WhiteShip::OnCollision(Collider* collider) {
 	App->particles->AddParticle(App->particles->explosion, position.x, position.y);

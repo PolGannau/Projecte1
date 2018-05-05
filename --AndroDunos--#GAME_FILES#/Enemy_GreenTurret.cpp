@@ -23,26 +23,23 @@ Enemy_GreenTurret::Enemy_GreenTurret(int x, int y) : Enemy(x, y)
 void Enemy_GreenTurret::Move()
 {
 	position.x -= 1;
+
+	timing++;
+
+	if (timing == 80) {
+		if (App->player->position.x < position.x && App->player->position.y < position.y)
+		{
+			App->particles->AddParticle(App->particles->laserenemyup, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
+		}
+		else if (App->player->position.x < position.x && App->player->position.y > position.y) {
+			App->particles->AddParticle(App->particles->laserenemydown, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
+		}
+
+		timing = 0;
+	}
 }
 
 void Enemy_GreenTurret::OnCollision(Collider* collider) {
 	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 	
-}
-void Enemy_GreenTurret::Shot() {
-
-	currentTime = SDL_GetTicks();
-	if (currentTime > lastTime + 50) {
-		if (position.y < App->player->position.y) {
-			App->particles->AddParticle(App->particles->laserenemyup, position.x, position.y - 14.5, COLLIDER_ENEMY_SHOT);
-		}
-		else if (position.y == App->player->position.y) {
-			App->particles->AddParticle(App->particles->laserenemyleft, position.x, position.y - 14.5,COLLIDER_ENEMY_SHOT);
-		}
-		else if (position.y > App->player->position.y) {
-			App->particles->AddParticle(App->particles->laserenemydown, position.x, position.y - 14.5,COLLIDER_ENEMY_SHOT);
-		}
-		lastTime = currentTime;
-	}
-
 }

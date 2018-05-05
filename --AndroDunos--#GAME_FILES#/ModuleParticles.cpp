@@ -172,28 +172,46 @@ ModuleParticles::ModuleParticles()
 	laser1powerupred.speed.x += 1;
 	laser1powerupred.life = BULLET_LIFE;
 
-	laserenemyup.anim.PushBack({239,245,6,6});
-	laserenemyup.anim.PushBack({ 239,264,6,6 });
-	laserenemyup.anim.PushBack({ 259,245,6,6 });
-	laserenemyup.anim.PushBack({ 239,245,6,6 });
-	laserenemyup.anim.PushBack({ 239,264,6,6 });
-	laserenemyup.anim.PushBack({ 259,245,6,6 });
-	laserenemyup.anim.PushBack({ 239,245,6,6 });
-	laserenemyup.anim.PushBack({ 239,264,6,6 });
-	laserenemyup.anim.PushBack({ 259,245,6,6 });
-	laserenemyup.anim.PushBack({ 239,245,6,6 });
-	laserenemyup.anim.PushBack({ 239,264,6,6 });
-	laserenemyup.anim.PushBack({ 259,245,6,6 });
-	laserenemyup.speed.y = BULLET_SPEED / 6;
+	laserenemyup.anim.PushBack({239,245,7,7});
+	laserenemyup.anim.PushBack({ 239,245,7,7 });
+	laserenemyup.anim.PushBack({ 239,245,7,7 });
+	laserenemyup.anim.PushBack({ 239,245,7,7 });
+	laserenemyup.anim.PushBack({ 239,245,7,7 });
+	laserenemyup.anim.PushBack({ 239,245,7,7 });
+	laserenemyup.anim.PushBack({ 239,245,7,7 });
+	laserenemyup.anim.PushBack({ 239,245,7,7 });
+	laserenemyup.anim.PushBack({ 239,245,7,7 });
+	laserenemyup.anim.loop = false;
+	laserenemyup.anim.speed = 0.2f;
+	laserenemyup.speed.x = -BULLET_ENEMY_SPEED;
+	laserenemyup.speed.y = -BULLET_ENEMY_SPEED / 3;
 
-	laserenemydown.anim.PushBack({ 239,264,6,6 });
+	laserenemydown.anim.PushBack({ 239,264,7,7 });
+	laserenemydown.anim.PushBack({ 239,264,7,7 });
+	laserenemydown.anim.PushBack({ 239,264,7,7 });
+	laserenemydown.anim.PushBack({ 239,264,7,7 });
+	laserenemydown.anim.PushBack({ 239,264,7,7 });
+	laserenemydown.anim.PushBack({ 239,264,7,7 });
+	laserenemydown.anim.PushBack({ 239,264,7,7 });
+	laserenemydown.anim.PushBack({ 239,264,7,7 });
+	laserenemydown.anim.PushBack({ 239,264,7,7 });
 	laserenemydown.anim.loop = false;
-	laserenemydown.speed.x = BULLET_SPEED;
-	laserenemydown.speed.y = -BULLET_SPEED / 6;
+	laserenemydown.anim.speed = 0.2f;
+	laserenemydown.speed.x = -BULLET_ENEMY_SPEED;
+	laserenemydown.speed.y = BULLET_ENEMY_SPEED / 3;
 
-	laserenemyleft.anim.PushBack({ 259,245,6,6 });
+	laserenemyleft.anim.PushBack({ 259,245,7,7 });
+	laserenemyleft.anim.PushBack({ 259,245,7,7 });
+	laserenemyleft.anim.PushBack({ 259,245,7,7 });
+	laserenemyleft.anim.PushBack({ 259,245,7,7 });
+	laserenemyleft.anim.PushBack({ 259,245,7,7 });
+	laserenemyleft.anim.PushBack({ 259,245,7,7 });
+	laserenemyleft.anim.PushBack({ 259,245,7,7 });
+	laserenemyleft.anim.PushBack({ 259,245,7,7 });
+	laserenemyleft.anim.PushBack({ 259,245,7,7 });
 	laserenemyleft.anim.loop = false;
-	laserenemyleft.speed.x = -BULLET_SPEED;
+	laserenemyleft.anim.speed = 0.2f;
+	laserenemyleft.speed.x = -BULLET_ENEMY_SPEED;
 	
 }
 

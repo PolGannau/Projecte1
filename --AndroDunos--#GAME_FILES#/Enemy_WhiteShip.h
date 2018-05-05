@@ -13,6 +13,7 @@ private:
 	Animation fly;
 	Path path;
 	iPoint original_pos;
+	int timing = 80;
 
 public:
 

@@ -48,7 +48,15 @@ bool ModuleStage2::Start()
 
 	// Colliders ---
 	
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 350, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 368, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 386, 60);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 404, 60);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 550, 50);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 568, 80);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 586, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 504, 120);
 
 
 	//mus = App->audio->LoadMusic("assets/stage2/07_Stage_2-Mechanized-Unit-Intro.ogg", 1);

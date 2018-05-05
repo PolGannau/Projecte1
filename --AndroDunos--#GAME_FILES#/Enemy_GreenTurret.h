@@ -10,6 +10,7 @@ private:
 	bool going_up = true;
 	int original_y = 0;
 	Animation lookingleft, lookingright;
+	int timing = 0;
 
 
 public:
@@ -18,7 +19,6 @@ public:
 	Enemy_GreenTurret(int x, int y);
 	void OnCollision(Collider* collider);
 	void Move();
-	void Shot();
 };
 
 #endif // __ENEMY_GREENTURRET_H__
