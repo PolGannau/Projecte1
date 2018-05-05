@@ -34,9 +34,9 @@ void Enemy_WhiteShip::Move()
 	timing++;
 
 	if (timing == 160) {
-		App->particles->AddParticle(App->particles->laserenemyup, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
-		App->particles->AddParticle(App->particles->laserenemyleft, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
-		App->particles->AddParticle(App->particles->laserenemydown, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->laserenemyup, position.x + 8, position.y + 10, COLLIDER_ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->laserenemyleft, position.x + 8, position.y + 10, COLLIDER_ENEMY_SHOT);
+		App->particles->AddParticle(App->particles->laserenemydown, position.x + 8, position.y + 10, COLLIDER_ENEMY_SHOT);
 		timing = 0;
 	}
 }

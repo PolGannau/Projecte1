@@ -27,14 +27,7 @@ void Enemy_GreenTurret::Move()
 	timing++;
 
 	if (timing == 80) {
-		if (App->player->position.x < position.x && App->player->position.y < position.y)
-		{
-			App->particles->AddParticle(App->particles->laserenemyup, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
-		}
-		else if (App->player->position.x < position.x && App->player->position.y > position.y) {
-			App->particles->AddParticle(App->particles->laserenemydown, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
-		}
-
+		App->particles->AddParticle(App->particles->laserenemyfollow, position.x + 8, position.y + 7.5, COLLIDER_ENEMY_SHOT);
 		timing = 0;
 	}
 }

@@ -6,6 +6,7 @@
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
+#include "ModulePlayer.h"
 
 #include "SDL/include/SDL_timer.h"
 
@@ -213,6 +214,20 @@ ModuleParticles::ModuleParticles()
 	laserenemyleft.anim.speed = 0.2f;
 	laserenemyleft.speed.x = -BULLET_ENEMY_SPEED;
 	
+	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
+	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
+	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
+	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
+	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
+	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
+	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
+	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
+	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
+	laserenemyfollow.anim.loop = false;
+	laserenemyfollow.anim.speed = 0.2f;
+	laserenemyfollow.speed.x = -BULLET_ENEMY_SPEED;
+	//laserenemyfollow.speed.y = App->player->position.y / 3;
+	
 }
 
 ModuleParticles::~ModuleParticles()
@@ -223,6 +238,9 @@ bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
 	graphics = App->textures->Load("assets/lasers_and_explosions.png");
+
+
+
 
 	return true;
 }
@@ -272,6 +290,7 @@ update_status ModuleParticles::Update()
 			}
 		}
 	}
+
 
 	return UPDATE_CONTINUE;
 }
