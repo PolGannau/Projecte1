@@ -23,6 +23,7 @@ class ModuleFonts;
 class Module;
 class ModulePowerUps;
 class ModuleGameover;
+class ModuleStage2;
 
 
 class Application
@@ -47,6 +48,7 @@ public:
 	ModuleStageclear* stageclear;
 	ModulePowerUps* powerups;
 	ModuleGameover* gameover;
+	ModuleStage2* stage2;
 
 
 public:

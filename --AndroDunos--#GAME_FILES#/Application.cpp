@@ -17,6 +17,7 @@
 #include "ModuleEnemies.h"
 #include "ModuleFonts.h"
 #include "ModulePowerUps.h"
+#include "ModuleStage2.h"
 
 
 Application::Application()
@@ -29,6 +30,7 @@ Application::Application()
 	modules[i++] = textures = new ModuleTextures();
 	modules[i++] = fonts = new ModuleFonts();
 	modules[i++] = scene_intro = new ModuleSceneIntro();
+	modules[i++] = stage2 = new ModuleStage2();
 	modules[i++] = scene_space = new ModuleSceneSpace();
 	modules[i++] = stageclear = new ModuleStageclear();
 	modules[i++] = gameover = new ModuleGameover();
@@ -54,6 +56,7 @@ bool Application::Init()
 
 	// Deactivate modules here ----
 	scene_space->Disable();
+	stage2->Disable();
 	player->Disable();
 	collision->Disable();
 	stageclear->Disable();
