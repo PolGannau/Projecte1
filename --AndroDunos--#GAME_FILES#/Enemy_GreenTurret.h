@@ -7,11 +7,9 @@ class Enemy_GreenTurret : public Enemy
 {
 private:
 	float wave = -1.0f;
-	bool going_up = true;
 	int original_y = 0;
 	Animation lookingleft, lookingright;
-	int timing = 0;
-
+	int bullet = 0;
 
 public:
 

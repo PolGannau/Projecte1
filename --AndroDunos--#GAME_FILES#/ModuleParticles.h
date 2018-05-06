@@ -76,7 +76,7 @@ public:
 	Particle laserenemyup;
 	Particle laserenemydown;
 	Particle laserenemyleft;
-	Particle laserenemyfollow;
+	Particle laserenemygreenturret;
 	
 
 };

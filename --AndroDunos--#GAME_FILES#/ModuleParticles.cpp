@@ -214,19 +214,22 @@ ModuleParticles::ModuleParticles()
 	laserenemyleft.anim.speed = 0.2f;
 	laserenemyleft.speed.x = -BULLET_ENEMY_SPEED;
 	
-	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
-	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
-	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
-	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
-	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
-	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
-	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
-	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
-	laserenemyfollow.anim.PushBack({ 239,245,7,7 });
-	laserenemyfollow.anim.loop = false;
-	laserenemyfollow.anim.speed = 0.2f;
-	laserenemyfollow.speed.x = -BULLET_ENEMY_SPEED;
-	//laserenemyfollow.speed.y = App->player->position.y / 3;
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
+	laserenemygreenturret.anim.loop = false;
+	laserenemygreenturret.anim.speed = 0.2f;
+	laserenemygreenturret.speed.x = -BULLET_ENEMY_SPEED;
+	laserenemygreenturret.speed.y = 0.9f;
+
 	
 }
 
