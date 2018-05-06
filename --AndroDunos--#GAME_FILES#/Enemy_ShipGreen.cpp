@@ -23,6 +23,7 @@ Enemy_ShipGreen::Enemy_ShipGreen(int x, int y) : Enemy(x, y)
 void Enemy_ShipGreen::Move()
 {
 	position.x -= 1;
+	
 }
 
 void Enemy_ShipGreen::OnCollision(Collider* collider) {

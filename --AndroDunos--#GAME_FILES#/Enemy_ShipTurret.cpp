@@ -18,7 +18,7 @@ Enemy_ShipTurret::Enemy_ShipTurret(int x, int y) : Enemy(x, y)
 
 	animation = &fly;
 
-	collider = App->collision->AddCollider({ 0, 0, 23, 22 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 32, 22 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_y = y;
 }
@@ -26,8 +26,14 @@ Enemy_ShipTurret::Enemy_ShipTurret(int x, int y) : Enemy(x, y)
 void Enemy_ShipTurret::Move()
 {
 	position.x -= 1;
+
+	y+=0.5;
+	if (y > 10 && y < 11.5) {
+		position.y+=1;
+	}
+
 }
 
 void Enemy_ShipTurret::OnCollision(Collider* collider) {
-	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+	App->particles->AddParticle(App->particles->smallexplosion, position.x, position.y);
 }

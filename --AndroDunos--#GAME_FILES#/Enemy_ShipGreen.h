@@ -11,6 +11,7 @@ private:
 	int original_y = 0;
 	Animation fly;
 
+
 public:
 
 	Enemy_ShipGreen(int x, int y);

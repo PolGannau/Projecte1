@@ -10,6 +10,7 @@ private:
 	bool going_up = true;
 	int original_y = 0;
 	Animation fly;
+	float y = 5;
 
 public:
 
