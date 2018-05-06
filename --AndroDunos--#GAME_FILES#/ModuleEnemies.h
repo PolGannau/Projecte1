@@ -7,6 +7,7 @@
 #include "Enemy_StraightOnShip.h"
 #include "Enemy_ShipGreen.h"
 #include "Enemy_GreenTurret.h"
+#include "Enemy_ShipTurret.h"
 
 #define MAX_ENEMIES 100
 
@@ -19,6 +20,7 @@ enum ENEMY_TYPES
 	STRAIGHTONSHIP,
 	SHIPGREEN,
 	GREENTURRET,
+	SHIPTURRET,
 };
 
 class Enemy;
