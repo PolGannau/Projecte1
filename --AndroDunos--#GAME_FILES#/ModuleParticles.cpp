@@ -226,9 +226,9 @@ ModuleParticles::ModuleParticles()
 	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
 	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
 	laserenemygreenturret.anim.loop = false;
-	laserenemygreenturret.anim.speed = 0.2f;
+	laserenemygreenturret.anim.speed = 0.05f;
 	laserenemygreenturret.speed.x = -BULLET_ENEMY_SPEED;
-	laserenemygreenturret.speed.y = 0.9f;
+	laserenemygreenturret.speed.y = 0.3f;
 
 	
 }

@@ -8,6 +8,16 @@
 
 Enemy_GreenTurret::Enemy_GreenTurret(int x, int y) : Enemy(x, y)
 {
+
+
+	collider = App->collision->AddCollider({ 0, 0, 44, 29 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+
+	original_y = y;
+}
+void Enemy_GreenTurret::Move()
+{
+	position.x -= 1;
+
 	//lookingright.PushBack({ 430,0,39,29 });
 
 	lookingleft.PushBack({ 523,0,44,29 });
@@ -27,14 +37,6 @@ Enemy_GreenTurret::Enemy_GreenTurret(int x, int y) : Enemy(x, y)
 	lookingleft.speed = 0.05666f;
 	//animation = &lookingright;
 	animation = &lookingleft;
-
-	collider = App->collision->AddCollider({ 0, 0, 44, 29 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
-
-	original_y = y;
-}
-void Enemy_GreenTurret::Move()
-{
-	position.x -= 1;
 
 	if (lookingleft.SeeCurrentFrame() == 8) {
 		bullet++;

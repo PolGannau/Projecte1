@@ -9,7 +9,7 @@ private:
 	float wave = -1.0f;
 	int original_y = 0;
 	Animation lookingleft, lookingright;
-	int bullet = 0;
+	float bullet = 0;
 
 public:
 
