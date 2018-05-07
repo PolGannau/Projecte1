@@ -8,6 +8,8 @@
 
 Enemy_GreenTurret::Enemy_GreenTurret(int x, int y) : Enemy(x, y)
 {
+	type = GREENTURRET;
+
 	//lookingright.PushBack({ 430,0,39,29 });
 
 	lookingleft.PushBack({ 423,59,51,29 });
@@ -46,7 +48,9 @@ void Enemy_GreenTurret::Move()
 	if (lookingleft.SeeCurrentFrame() == 9) {
 		bullet = 0;
 	}
-
+	if (App->enemies->tocuh == true) {
+		App->particles->AddParticle(App->particles->bullettouchgreenturret, position.x, position.y);
+	}
 }
 
 

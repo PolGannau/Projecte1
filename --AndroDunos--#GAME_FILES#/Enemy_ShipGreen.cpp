@@ -6,6 +6,8 @@
 
 Enemy_ShipGreen::Enemy_ShipGreen(int x, int y) : Enemy(x, y)
 {
+	type = SHIPGREEN;
+
 	fly.PushBack({ 368,0,23,22 });
 	fly.PushBack({ 340, 2, 23, 20 });
 	fly.PushBack({ 311, 4, 23, 17 });

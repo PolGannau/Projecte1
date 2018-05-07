@@ -12,7 +12,7 @@
 #include "Enemy_GreenTurret.h"
 #include "Enemy_ShipTurret.h"
 #include "Enemy_WhiteTurret.h"
-
+#include "ModulePlayer.h"
 
 
 #define SPAWN_MARGIN 50
@@ -146,6 +146,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::GREENTURRET:
 			enemies[i] = new Enemy_GreenTurret(info.x, info.y);
+			lives[i] = 5;
 			break;
 		case ENEMY_TYPES::SHIPTURRET:
 			enemies[i] = new Enemy_ShipTurret(info.x, info.y);
@@ -165,10 +166,58 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1)
 		{
-			enemies[i]->OnCollision(c2);
-			delete enemies[i];
-			enemies[i] = nullptr;
-			break;
+			switch (enemies[i]->type)
+			{
+			case NO_TYPE:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case GREENTURRET:
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+				}
+				else if (lives[i]>0) {
+					App->enemies->tocuh = true;
+				}
+				App->enemies->tocuh = true;
+				break;
+			case WHITESHIP:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case SHIPUPDOWN:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case STRAIGHTONSHIP:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case SHIPGREEN:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case SHIPTURRET:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case WHITETURRET:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			default:
+				break;
+			}
 		}
 	}
 }

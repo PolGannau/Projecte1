@@ -20,6 +20,18 @@ enum update_status
 	UPDATE_STOP,
 	UPDATE_ERROR
 };
+enum ENEMY_TYPES
+{
+	NO_TYPE,
+	SHIPUPDOWN,
+	WHITESHIP,
+	MECH,
+	STRAIGHTONSHIP,
+	SHIPGREEN,
+	GREENTURRET,
+	SHIPTURRET,
+	WHITETURRET,
+};
 
 // Useful typedefs ---------
 typedef unsigned int uint;

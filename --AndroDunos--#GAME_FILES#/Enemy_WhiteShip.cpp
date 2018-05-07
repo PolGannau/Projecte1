@@ -7,6 +7,8 @@
 
 Enemy_WhiteShip::Enemy_WhiteShip(int x, int y) : Enemy(x, y)
 {
+	type = WHITESHIP;
+
 	fly.PushBack({ 1,0,31,27 });
 	fly.PushBack({ 32, 0, 31, 27 });
 

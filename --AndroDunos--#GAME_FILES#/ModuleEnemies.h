@@ -12,18 +12,6 @@
 
 #define MAX_ENEMIES 100
 
-enum ENEMY_TYPES
-{
-	NO_TYPE,
-	SHIPUPDOWN,
-	WHITESHIP,
-	MECH,
-	STRAIGHTONSHIP,
-	SHIPGREEN,
-	GREENTURRET,
-	SHIPTURRET,
-	WHITETURRET,
-};
 
 class Enemy;
 
@@ -46,7 +34,7 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
-
+	bool tocuh = false;
 	bool AddEnemy(ENEMY_TYPES type, int x, int y);
 
 private:
@@ -58,6 +46,7 @@ private:
 	EnemyInfo queue[MAX_ENEMIES];
 	Enemy* enemies[MAX_ENEMIES];
 	SDL_Texture* sprites;
+	int lives[MAX_ENEMIES];
 };
 
 #endif // __ModuleEnemies_H__

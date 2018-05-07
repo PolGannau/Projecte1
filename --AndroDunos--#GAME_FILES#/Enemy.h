@@ -15,13 +15,15 @@ protected:
 
 public:
 	iPoint position;
-
+	ENEMY_TYPES type = ENEMY_TYPES::NO_TYPE;
+	bool hit = false;
 public:
 	Enemy(int x, int y);
 	virtual ~Enemy();
 
 	const Collider* GetCollider() const;
 	virtual void OnCollision(Collider* collider);
+
 	virtual void Move() {};
 	virtual void Draw(SDL_Texture* sprites);
 

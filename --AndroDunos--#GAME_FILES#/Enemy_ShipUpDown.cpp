@@ -6,6 +6,8 @@
 
 Enemy_ShipUpDown::Enemy_ShipUpDown(int x, int y) : Enemy(x, y)
 {
+	type = SHIPUPDOWN;
+
 	fly.PushBack({ 65,3,18,12 });
 	fly.PushBack({ 84, 3, 18, 12 });
 	fly.PushBack({ 104, 3, 18, 13 });

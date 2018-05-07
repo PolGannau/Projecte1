@@ -6,6 +6,8 @@
 
 Enemy_ShipTurret::Enemy_ShipTurret(int x, int y) : Enemy(x, y)
 {
+	type = SHIPTURRET;
+
 	fly.PushBack({ 1,54,32,24 });
 	fly.PushBack({ 48, 54, 31, 24 });
 	fly.PushBack({ 92, 54, 31, 24 });

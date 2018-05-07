@@ -8,6 +8,8 @@
 
 Enemy_WhiteTurret::Enemy_WhiteTurret(int x, int y) : Enemy(x, y)
 {
+	type = WHITETURRET;
+
 	left.PushBack({ 156,50,15,14 });
 	right.PushBack({ 176,67,15,14 });
 

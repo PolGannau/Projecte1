@@ -6,6 +6,8 @@
 
 Enemy_StraightOnShip::Enemy_StraightOnShip(int x, int y) : Enemy(x, y)
 {
+	type = STRAIGHTONSHIP;
+
 	fly.PushBack({ 187,1,29,13 });
 	fly.PushBack({ 217, 0, 29, 16 });
 	fly.PushBack({ 247, 1, 29, 17 });
