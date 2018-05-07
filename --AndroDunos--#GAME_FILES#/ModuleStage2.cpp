@@ -157,9 +157,9 @@ update_status ModuleStage2::Update()
 		if (!App->render->Blit(underground_e, 2011 + UT_W * 4 - 64 * 3, -85, nullptr, 0.39f)) return update_status::UPDATE_ERROR;//64 is the mesure of 1/6th of the under_tile_width here it's used to fit the end of the underground background into the previous tiles
 	}
 	if (!App->render->Blit(map_p[0], 0, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
-	if (!App->render->Blit(map_p[1], 1639, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
+	if (!App->render->Blit(map_p[1], 1672, -608, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
 	if (!App->render->Blit(map_p[2], 3279, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
-	if (!App->render->Blit(map_p[3], 4935, -607, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
+	if (!App->render->Blit(map_p[3], 4886, -606, nullptr, 0.8f)) return update_status::UPDATE_ERROR;
 
 	return UPDATE_CONTINUE;
 }
