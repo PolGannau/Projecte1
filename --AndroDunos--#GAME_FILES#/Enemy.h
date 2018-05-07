@@ -21,7 +21,7 @@ public:
 	virtual ~Enemy();
 
 	const Collider* GetCollider() const;
-
+	virtual void OnCollision(Collider* collider);
 	virtual void Move() {};
 	virtual void Draw(SDL_Texture* sprites);
 
