@@ -55,6 +55,17 @@ bool ModuleStage2::Start()
 	App->collision->AddCollider({ 503,185,39,45 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 458,192,45,45 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 580,195,426,45 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 703,182,304,45 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 933,0,438,5 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 951,0,402,20 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1031,20,202,16 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1046,36,123,12 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1008,198,257,45 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1265,210,98,30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1325,201,28,30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1158,171,90,45 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1181,159,56,30 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 1196,145,41,30 }, COLLIDER_WALL);
 	
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 350, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 368, 60);
