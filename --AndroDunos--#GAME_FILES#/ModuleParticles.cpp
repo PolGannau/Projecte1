@@ -203,6 +203,10 @@ ModuleParticles::ModuleParticles()
 	laserenemygreenturret.speed.y = 0.3f;
 	laserenemygreenturret.life = BULLET_LIFE;
 
+	bullettouchgreenturret.anim.PushBack({ 650,17,44,29 });
+	bullettouchgreenturret.anim.speed = 0.2f;
+	
+	
 }
 
 ModuleParticles::~ModuleParticles()
