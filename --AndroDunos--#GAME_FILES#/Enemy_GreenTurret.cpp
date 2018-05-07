@@ -10,21 +10,21 @@ Enemy_GreenTurret::Enemy_GreenTurret(int x, int y) : Enemy(x, y)
 {
 	//lookingright.PushBack({ 430,0,39,29 });
 
-	lookingleft.PushBack({ 523,0,44,29 });
-	lookingleft.PushBack({ 523,0,44,29 });
-	lookingleft.PushBack({ 523,0,44,29 });
-	lookingleft.PushBack({ 523,0,44,29 });
-	lookingleft.PushBack({ 569,0,46,29 });
-	lookingleft.PushBack({ 615,0,48,29 });
-	lookingleft.PushBack({ 665,0,47,29 });
-	lookingleft.PushBack({ 713,0,49,29 });
-	lookingleft.PushBack({ 521,33,49,29 });
-	lookingleft.PushBack({ 571,33,51,29 });
-	lookingleft.PushBack({ 623,33,46,29 });
-	lookingleft.PushBack({ 713,0,49,29 });
-	lookingleft.PushBack({ 665,0,47,29 });
-	lookingleft.PushBack({ 569,0,46,29 });
-	lookingleft.speed = 0.05666f;
+	lookingleft.PushBack({ 423,59,51,29 });
+	lookingleft.PushBack({ 423,59,51,29 });
+	lookingleft.PushBack({ 423,59,51,29 });
+	lookingleft.PushBack({ 423,59,51,29 });
+	lookingleft.PushBack({ 423,125,51,29 });
+	lookingleft.PushBack({ 494,95,51,29 });
+	lookingleft.PushBack({ 558,127,51,29 });
+	lookingleft.PushBack({ 648,63,51,29 });
+	lookingleft.PushBack({ 648,129,51,29 });
+	lookingleft.PushBack({ 648,63,51,29 });
+	lookingleft.PushBack({ 558,127,51,29 });
+	lookingleft.PushBack({ 494,95,51,29 });
+	lookingleft.PushBack({ 423,125,51,29 });
+	
+	lookingleft.speed = 0.15f;
 	//animation = &lookingright;
 	animation = &lookingleft;
 
@@ -39,10 +39,12 @@ void Enemy_GreenTurret::Move()
 
 	if (lookingleft.SeeCurrentFrame() == 8) {
 		bullet++;
-		if (bullet == 16) {
-			bullet = 0;
+		if (bullet == 6) {
 			App->particles->AddParticle(App->particles->laserenemygreenturret, position.x + 3, position.y + 7.5, COLLIDER_ENEMY_SHOT);
 		}
+	}
+	if (lookingleft.SeeCurrentFrame() == 9) {
+		bullet = 0;
 	}
 
 }
