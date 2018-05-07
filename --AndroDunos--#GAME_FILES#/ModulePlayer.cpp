@@ -284,12 +284,12 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_F3] == KEY_STATE::KEY_DOWN)
 	{
-		App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->stageclear);
+		App->fade->FadeToBlack((Module*)App->stage2, (Module*)App->stageclear);
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_F4] == KEY_STATE::KEY_DOWN)
 	{
-		App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->gameover);
+		App->fade->FadeToBlack((Module*)App->stage2, (Module*)App->gameover);
 	}
 
 	if (App->input->keyboard[SDL_SCANCODE_E] == KEY_STATE::KEY_DOWN)
@@ -318,7 +318,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	{
 		if (App->player2->IsEnabled() == false)
 		{
-			App->fade->FadeToBlack((Module*)App->scene_space, (Module*)App->gameover, 2.0f);
+			App->fade->FadeToBlack((Module*)App->stage2, (Module*)App->gameover, 2.0f);
 		}
 
 		App->particles->AddParticle(App->particles->explosionship, position.x, position.y, COLLIDER_NONE);
