@@ -15,7 +15,7 @@ public:
 
 	unsigned int lastTime = 0, currentTime;
 	Enemy_GreenTurret(int x, int y);
-	void OnCollision(Collider* collider);
+	
 	void Move();
 };
 

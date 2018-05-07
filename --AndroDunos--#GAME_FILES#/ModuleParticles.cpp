@@ -206,7 +206,9 @@ ModuleParticles::ModuleParticles()
 	bullettouchgreenturret.anim.PushBack({ 650,17,44,29 });
 	bullettouchgreenturret.anim.speed = 0.2f;
 	
-	
+	GreenTurretExplosion.anim.PushBack({ 650,17,44,29 });
+
+
 }
 
 ModuleParticles::~ModuleParticles()

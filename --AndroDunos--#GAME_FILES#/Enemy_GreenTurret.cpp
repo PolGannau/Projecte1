@@ -49,7 +49,7 @@ void Enemy_GreenTurret::Move()
 
 }
 
-void Enemy_GreenTurret::OnCollision(Collider* collider) {
-	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-	
-}
+
+
+
+
