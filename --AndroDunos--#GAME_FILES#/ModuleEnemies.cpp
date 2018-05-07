@@ -183,7 +183,6 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (lives[i]>0) {
 					App->enemies->tocuh = true;
 				}
-				App->enemies->tocuh = true;
 				break;
 			case WHITESHIP:
 				enemies[i]->OnCollision(c2);

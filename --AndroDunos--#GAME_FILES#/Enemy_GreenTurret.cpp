@@ -49,6 +49,7 @@ void Enemy_GreenTurret::Move()
 		bullet = 0;
 	}
 	if (App->enemies->tocuh == true) {
+		App->enemies->tocuh = false;
 		App->particles->AddParticle(App->particles->bullettouchgreenturret, position.x, position.y);
 	}
 }
