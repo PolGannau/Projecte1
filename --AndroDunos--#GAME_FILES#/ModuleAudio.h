@@ -29,10 +29,8 @@ public:
 public:
 
 	Mix_Music * songs[MAX_MUSIC];
-	uint last_song = 0;
 
 	Mix_Chunk* sound_effects[MAX_FX];
-	uint last_effect = 0;
 };
 
 #endif // !__MODULEAUDIO_H__

@@ -83,19 +83,25 @@ Mix_Music * const ModuleAudio::LoadMusic(const char * path)
 {
 	Mix_Music* music = nullptr;
 
-	if (last_song < MAX_MUSIC)
-	{
-		music = Mix_LoadMUS(path);
+	music = Mix_LoadMUS(path);
 
-		if (music == nullptr)
+	if (music == nullptr)
+	{
+		LOG("couldn't load song with path: %s. Error: %s", path, Mix_GetError());
+	}
+
+	else
+	{
+		for (int last = 0; last < MAX_MUSIC; ++last)
 		{
-			LOG("couldn't load song with path: %s. Error: %s", path, Mix_GetError());
-		}
-		else
-		{
-			songs[last_song++] = music;
+			if (songs[last] == nullptr)
+			{
+				songs[last] = music;
+				break;
+			}
 		}
 	}
+
 	return music;
 }
 
@@ -103,17 +109,22 @@ Mix_Chunk * const ModuleAudio::LoadEffect(const char * path)
 {
 	Mix_Chunk* effect = nullptr;
 
-	if (last_effect < MAX_FX)
-	{
-		effect = Mix_LoadWAV(path);
+	effect = Mix_LoadWAV(path);
 
-		if (effect == nullptr)
+	if (effect == nullptr)
+	{
+		LOG("Could not load sound effect with path: %s. Error: %s", path, Mix_GetError());
+	}
+
+	else
+	{
+		for (int last = 0; last < MAX_FX; ++last)
 		{
-			LOG("Could not load sound effect with path: %s. Error: %s", path, Mix_GetError());
-		}
-		else
-		{
-			sound_effects[last_effect++] = effect;
+			if (sound_effects[last] == nullptr)
+			{
+				sound_effects[last] = effect;
+				break;
+			}
 		}
 	}
 	return effect;
@@ -121,7 +132,7 @@ Mix_Chunk * const ModuleAudio::LoadEffect(const char * path)
 
 void ModuleAudio::UnloadMusic(Mix_Music * music)
 {
-	for (uint i = 0; i < last_song; ++i)
+	for (uint i = 0; i < MAX_MUSIC; ++i)
 	{
 		if (songs[i] == music)
 		{
@@ -134,7 +145,7 @@ void ModuleAudio::UnloadMusic(Mix_Music * music)
 
 void ModuleAudio::UnloadSoundEffects(Mix_Chunk * effect)
 {
-	for (uint i = 0; i < last_effect; ++i)
+	for (uint i = 0; i < MAX_FX; ++i)
 	{
 		if (sound_effects[i] == effect)
 		{

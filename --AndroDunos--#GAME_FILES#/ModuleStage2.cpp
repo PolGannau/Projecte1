@@ -31,10 +31,10 @@ bool ModuleStage2::Start()
 
 	stop_p = false;
 	background1 = App->textures->Load("assets/level-1/background&floor/UpperBackground.png");
-	map_p[0] = App->textures->Load("assets/Stage 2/map-part1stage2.png"); //ES EL INICI DEL FLOOR DEL STAGE 2
-	map_p[1] = App->textures->Load("assets/Stage 2/map-part2stage2.png");
-	map_p[2] = App->textures->Load("assets/Stage 2/map-part3stage2.png");
-	map_p[3] = App->textures->Load("assets/Stage 2/map-part4stage2.png");
+	map_p[0] = App->textures->Load("assets/Stage-2/map-part1stage2.png"); //ES EL INICI DEL FLOOR DEL STAGE 2
+	map_p[1] = App->textures->Load("assets/Stage-2/map-part2stage2.png");
+	map_p[2] = App->textures->Load("assets/Stage-2/map-part3stage2.png");
+	map_p[3] = App->textures->Load("assets/Stage-2/map-part4stage2.png");
 
 	underground = App->textures->Load("assets/level-1/background&floor/UnderBackground.png");
 	underground_e = App->textures->Load("assets/level-1/background&floor/UnderBackground_end.png");
@@ -68,7 +68,7 @@ bool ModuleStage2::Start()
 
 
 	//mus = App->audio->LoadMusic("assets/stage2/07_Stage_2-Mechanized-Unit-Intro.ogg", 1);
-	mus = App->audio->LoadMusic("assets/stage2/07_Stage_2 -Mechanized-Unit-Loop.ogg");
+	mus = App->audio->LoadMusic("assets/Stage-2/07_Stage_2-Mechanized-Unit-Loop.ogg");
 
 	App->audio->PlayMusic(mus);
 
