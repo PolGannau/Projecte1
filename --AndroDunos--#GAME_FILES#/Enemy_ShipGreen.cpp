@@ -8,12 +8,11 @@ Enemy_ShipGreen::Enemy_ShipGreen(int x, int y) : Enemy(x, y)
 {
 	type = SHIPGREEN;
 
-	fly.PushBack({ 368,0,23,22 });
-	fly.PushBack({ 340, 2, 23, 20 });
-	fly.PushBack({ 311, 4, 23, 17 });
-	fly.PushBack({ 340, 2, 23, 20 });
-	fly.PushBack({ 396,1,23,19 });
-	fly.speed = 0.1f;
+	fly.PushBack({ 311, 4, 23, 17 }); // 1
+	fly.PushBack({ 340, 2, 23, 20 }); // 2
+	fly.PushBack({ 368,0,23,22 }); // 3
+	fly.PushBack({ 396,1,23,19 }); // 4
+	fly.speed = 0.08f;
 
 	animation = &fly;
 
