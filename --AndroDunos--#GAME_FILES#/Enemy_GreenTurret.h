@@ -10,7 +10,7 @@ private:
 	int original_y = 0;
 	Animation lookingleft, lookingright;
 	float bullet = 0;
-	bool left;
+	bool lefttt;
 
 public:
 

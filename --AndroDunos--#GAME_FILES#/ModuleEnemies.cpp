@@ -114,6 +114,7 @@ bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y, bool z)
 			queue[i].type = type;
 			queue[i].x = x;
 			queue[i].y = y;
+			queue[i].z = z;
 			ret = true;
 			break;
 		}
@@ -145,7 +146,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_ShipGreen(info.x, info.y);
 			break;
 		case ENEMY_TYPES::GREENTURRET:
-			enemies[i] = new Enemy_GreenTurret(info.x, info.y);
+			enemies[i] = new Enemy_GreenTurret(info.x, info.y,info.z);
 			lives[i] = 5;
 			break;
 		case ENEMY_TYPES::SHIPTURRET:

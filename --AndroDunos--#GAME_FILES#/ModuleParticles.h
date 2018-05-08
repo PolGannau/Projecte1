@@ -78,6 +78,7 @@ public:
 	Particle laserenemydown;
 	Particle laserenemyleft;
 	Particle laserenemygreenturret;
+	Particle laserenemygreenturret2;
 	Particle bullettouchgreenturret;
 	Particle GreenTurretExplosion;
 	
