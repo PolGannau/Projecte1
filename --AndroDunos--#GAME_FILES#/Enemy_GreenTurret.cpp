@@ -6,7 +6,7 @@
 #include "ModulePlayer.h"
 #include "SDL/include/SDL_timer.h"
 
-Enemy_GreenTurret::Enemy_GreenTurret(int x, int y) : Enemy(x, y)
+Enemy_GreenTurret::Enemy_GreenTurret(int x, int y, bool left) : Enemy(x, y)
 {
 	type = GREENTURRET;
 
@@ -48,10 +48,13 @@ void Enemy_GreenTurret::Move()
 	if (lookingleft.SeeCurrentFrame() == 9) {
 		bullet = 0;
 	}
-	if (App->enemies->tocuh == true) {
+	if (App->enemies->tocuh) {
 		App->enemies->tocuh = false;
-		App->particles->AddParticle(App->particles->bullettouchgreenturret, position.x, position.y);
+		App->particles->AddParticle(App->particles->bullettouchgreenturret, position.x+5, position.y);
 	}
+}
+void Enemy_GreenTurret::OnCollision(Collider* collider) {
+	App->particles->AddParticle(App->particles->GreenTurretExplosion, position.x+5, position.y);
 }
 
 

@@ -8,7 +8,7 @@
 #include "ModuleCollision.h"
 
 #define BULLET_LIFE 500
-
+#define BULLET_ENEMY_LIFE 2000
 #define BULLET_SPEED 10
 #define BULLET_ENEMY_SPEED 5
 

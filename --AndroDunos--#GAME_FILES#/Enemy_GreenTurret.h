@@ -10,12 +10,13 @@ private:
 	int original_y = 0;
 	Animation lookingleft, lookingright;
 	float bullet = 0;
+	bool left;
 
 public:
 
 	unsigned int lastTime = 0, currentTime;
-	Enemy_GreenTurret(int x, int y);
-	
+	Enemy_GreenTurret(int x, int y, bool left);
+	void OnCollision(Collider* collider);
 	void Move();
 };
 

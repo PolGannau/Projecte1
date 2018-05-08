@@ -184,30 +184,30 @@ ModuleParticles::ModuleParticles()
 	laserenemyup.anim.speed = 0.2f;
 	laserenemyup.speed.x = -BULLET_ENEMY_SPEED;
 	laserenemyup.speed.y = -BULLET_ENEMY_SPEED / 3;
-	laserenemyup.life = BULLET_LIFE;
+	laserenemyup.life = BULLET_ENEMY_LIFE;
 
 	laserenemydown.anim.PushBack({ 239,264,7,7 });
 	laserenemydown.anim.speed = 0.2f;
 	laserenemydown.speed.x = -BULLET_ENEMY_SPEED;
 	laserenemydown.speed.y = BULLET_ENEMY_SPEED / 3;
-	laserenemydown.life = BULLET_LIFE;
+	laserenemydown.life = BULLET_ENEMY_LIFE;
 
 	laserenemyleft.anim.PushBack({ 259,245,7,7 });
 	laserenemyleft.anim.speed = 0.2f;
 	laserenemyleft.speed.x = -BULLET_ENEMY_SPEED;
-	laserenemyleft.life = BULLET_LIFE;
+	laserenemyleft.life = BULLET_ENEMY_LIFE;
 	
 	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
 	laserenemygreenturret.anim.speed = 0.05f;
 	laserenemygreenturret.speed.x = -BULLET_ENEMY_SPEED;
 	laserenemygreenturret.speed.y = 0.3f;
-	laserenemygreenturret.life = BULLET_LIFE;
+	laserenemygreenturret.life = BULLET_ENEMY_LIFE;
 
 	bullettouchgreenturret.anim.PushBack({ 650,17,44,29 });
 	bullettouchgreenturret.anim.speed = 0.2f;
 	
-	GreenTurretExplosion.anim.PushBack({ 650,17,44,29 });
-
+	GreenTurretExplosion.anim.PushBack({ 552,22,44,29 });
+	GreenTurretExplosion.life = 8000;
 
 }
 

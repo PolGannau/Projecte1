@@ -103,7 +103,7 @@ bool ModuleEnemies::CleanUp()
 	return true;
 }
 
-bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y)
+bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y, bool z)
 {
 	bool ret = false;
 
@@ -179,6 +179,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					enemies[i]->OnCollision(c2);
 					delete enemies[i];
 					enemies[i] = nullptr;
+					App->enemies->dead = true;
 				}
 				else if (lives[i]>0) {
 					App->enemies->tocuh = true;
