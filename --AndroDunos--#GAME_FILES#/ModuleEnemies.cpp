@@ -103,7 +103,7 @@ bool ModuleEnemies::CleanUp()
 	return true;
 }
 
-bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y, bool z)
+bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y,bool z)
 {
 	bool ret = false;
 

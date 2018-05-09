@@ -13,6 +13,7 @@ private:
 	Animation left, right;
 	Path path;
 	iPoint original_pos;
+	int anim = 1;
 	bool leftt = true, leftup = false, leftup2 = false, upleft = false, up = false;
 	bool upright = false, rightup2 = false, rightup = false, rightt = false;
 	bool leftdown = false, leftdown2 = false, downleft = false, down = false;

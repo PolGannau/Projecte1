@@ -31,6 +31,10 @@ public:
 		frames[last_frame++] = rect;
 	}
 
+	void Sprite(const SDL_Rect& rect) {
+		frames[last_frame] = rect;
+	}
+
 	SDL_Rect& GetCurrentFrame()
 	{
    current_frame += speed;
