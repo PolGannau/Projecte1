@@ -80,12 +80,17 @@ void Enemy_GreenTurret::Move()
 		}
 		if (App->enemies->tocuh) {
 			App->enemies->tocuh = false;
-			App->particles->AddParticle(App->particles->bullettouchgreenturret, position.x + 5, position.y);
+			App->particles->AddParticle(App->particles->bullettouchgreenturret2, position.x - 2, position.y);
 		}
 	}
 }
 void Enemy_GreenTurret::OnCollision(Collider* collider) {
-	App->particles->AddParticle(App->particles->GreenTurretExplosion, position.x+5, position.y);
+	if (lefttt) {
+		App->particles->AddParticle(App->particles->GreenTurretExplosion, position.x + 5, position.y);
+	}
+	else {
+		App->particles->AddParticle(App->particles->GreenTurretExplosion2, position.x - 5, position.y);
+	}
 }
 
 

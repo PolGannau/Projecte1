@@ -81,6 +81,8 @@ public:
 	Particle laserenemygreenturret2;
 	Particle bullettouchgreenturret;
 	Particle GreenTurretExplosion;
+	Particle bullettouchgreenturret2;
+	Particle GreenTurretExplosion2;
 	
 
 };
