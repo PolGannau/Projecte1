@@ -276,6 +276,11 @@ update_status ModulePlayer2::Update()
 	{
 		current_animation = &idle;
 	}
+	if (App->input->keyboard[SDL_SCANCODE_E] == KEY_STATE::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, position.x + 250, position.y, 1);
+
+	}
 
 	// TODO 3: Update collider position to player position
 	coll->SetPos(position.x, position.y);

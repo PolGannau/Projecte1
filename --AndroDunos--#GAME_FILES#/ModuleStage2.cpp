@@ -98,7 +98,8 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 368, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 386, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 404, 60);
-
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 404, 215);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 700, 215);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 550, 50);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 568, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 586, 100);
