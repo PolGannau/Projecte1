@@ -83,6 +83,11 @@ bool ModuleStage2::Start()
 	App->collision->AddCollider({ 3300,30,16,10 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3323,30,121,17 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3528,5,13,21 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3502,194,40,1376 }, COLLIDER_WALL); //down
+	App->collision->AddCollider({ 3768,0,40,1570 }, COLLIDER_WALL); //down
+	App->collision->AddCollider({ 2909,1570,40,194 }, COLLIDER_WALL); //left left
+	App->collision->AddCollider({ 2909,1570,630,30 }, COLLIDER_WALL); //left up
+	App->collision->AddCollider({ 2909,1764,630,30 }, COLLIDER_WALL); //left down
 	
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 350, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 368, 60);
