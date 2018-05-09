@@ -221,6 +221,13 @@ ModuleParticles::ModuleParticles()
 	GreenTurretExplosion2.anim.PushBack({ 652,76,44,29 });
 	GreenTurretExplosion2.life = 8000;
 
+	TurretShot.anim.PushBack({ 283,255,6,6 });
+	TurretShot.anim.PushBack({ 293,255,6,6 });
+	TurretShot.anim.PushBack({ 303,255,6,6 });
+	TurretShot.anim.PushBack({ 313,255,6,6 });
+	TurretShot.anim.speed = 0.1f;
+	TurretShot.speed.x = BULLET_ENEMY_SPEED;
+	TurretShot.life = BULLET_ENEMY_LIFE;
 }
 
 ModuleParticles::~ModuleParticles()

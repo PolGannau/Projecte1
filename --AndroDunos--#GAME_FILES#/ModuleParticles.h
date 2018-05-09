@@ -83,6 +83,7 @@ public:
 	Particle GreenTurretExplosion;
 	Particle bullettouchgreenturret2;
 	Particle GreenTurretExplosion2;
+	Particle TurretShot;
 	
 
 };

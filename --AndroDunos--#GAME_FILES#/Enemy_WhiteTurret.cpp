@@ -31,6 +31,7 @@ void Enemy_WhiteTurret::Move()
 			}
 			else if (App->player->position.y >= 60 && App->player->position.y < 90) {
 				turret.Sprite({ 201,49,14,16 });
+				App->particles->AddParticle(App->particles->TurretShot, position.x, position.y, COLLIDER_TYPE::COLLIDER_ENEMY_SHOT);
 			}
 			else if (App->player->position.y >= 90 && App->player->position.y < 150) {
 				turret.Sprite({ 176,50,15,14 });
