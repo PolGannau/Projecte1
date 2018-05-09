@@ -13,6 +13,7 @@
 	-> Introduce all powerups
 	-> Enemies sprites and animation
 	-> Audio of the Player shots and explotion
+	-> Floor movement
 ----------------------------------------------------
 **0.8** -> All player weapons
 	-> Special attacks
