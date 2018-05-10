@@ -3,6 +3,8 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModulePowerUps.h"
+#include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 
 PowerUpRed::PowerUpRed(int x, int y) : PowerUp(x, y)
 {
@@ -52,12 +54,17 @@ void PowerUpRed::Move()
 
 void PowerUpRed::OnCollision(Collider* collider)
 {
-	if (fly.SeeCurrentFrame() <=13) {
-		App->powerups->powerup1 = true;
+	if (App->player->position.x)
+	{
+		if (fly.SeeCurrentFrame() <= 13) {
+			App->powerups->powerup1 = true;
+		}
+		else if (fly.SeeCurrentFrame() >= 14 && fly.SeeCurrentFrame() <= 26) {
+			App->powerups->powerup2 = true;
+		}
 	}
-	else if (fly.SeeCurrentFrame() >=14 && fly.SeeCurrentFrame() <=26) {
-		App->powerups->powerup2 = true;
+	else {
+
 	}
-	
-	
+
 }

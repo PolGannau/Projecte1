@@ -180,20 +180,32 @@ ModuleParticles::ModuleParticles()
 	laser1powerupred.speed.x += 1;
 	laser1powerupred.life = BULLET_LIFE;
 
-	laserenemyup.anim.PushBack({239,245,7,7});
+	laserenemyup.anim.PushBack({238,244,8,8});
+	laserenemyup.anim.PushBack({ 258,244,8,8 });
+	laserenemyup.anim.PushBack({ 238,263,8,8 });
+	laserenemyup.anim.PushBack({ 258,264,8,8 });
 	laserenemyup.anim.speed = 0.2f;
+	laserenemyup.anim.loop = true;
 	laserenemyup.speed.x = -BULLET_ENEMY_SPEED;
-	laserenemyup.speed.y = -BULLET_ENEMY_SPEED / 3;
+	laserenemyup.speed.y = -BULLET_ENEMY_SPEED / 2;
 	laserenemyup.life = BULLET_ENEMY_LIFE;
 
-	laserenemydown.anim.PushBack({ 239,264,7,7 });
+	laserenemydown.anim.PushBack({ 238,244,8,8 });
+	laserenemydown.anim.PushBack({ 258,244,8,8 });
+	laserenemydown.anim.PushBack({ 238,264,8,8 });
+	laserenemydown.anim.PushBack({ 258,264,8,8 });
 	laserenemydown.anim.speed = 0.2f;
+	laserenemydown.anim.loop = true;
 	laserenemydown.speed.x = -BULLET_ENEMY_SPEED;
-	laserenemydown.speed.y = BULLET_ENEMY_SPEED / 3;
+	laserenemydown.speed.y = BULLET_ENEMY_SPEED / 2;
 	laserenemydown.life = BULLET_ENEMY_LIFE;
 
-	laserenemyleft.anim.PushBack({ 259,245,7,7 });
+	laserenemyleft.anim.PushBack({ 238,244,8,8 });
+	laserenemyleft.anim.PushBack({ 258,244,8,8 });
+	laserenemyleft.anim.PushBack({ 238,245,8,8 });
+	laserenemyleft.anim.PushBack({ 258,245,8,8 });
 	laserenemyleft.anim.speed = 0.2f;
+	laserenemyleft.anim.loop = true;
 	laserenemyleft.speed.x = -BULLET_ENEMY_SPEED;
 	laserenemyleft.life = BULLET_ENEMY_LIFE;
 	
