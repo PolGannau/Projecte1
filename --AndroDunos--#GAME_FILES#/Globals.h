@@ -31,6 +31,7 @@ enum ENEMY_TYPES
 	GREENTURRET,
 	SHIPTURRET,
 	WHITETURRET,
+	VERTICALSTRUCTURE,
 };
 
 // Useful typedefs ---------

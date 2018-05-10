@@ -10,8 +10,6 @@ Enemy_WhiteTurret::Enemy_WhiteTurret(int x, int y): Enemy(x, y)
 {
 	type = WHITETURRET;
 
-	anim = 1;
-	
 	collider = App->collision->AddCollider({ 0, 0, 15, 14 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_pos.x = x;

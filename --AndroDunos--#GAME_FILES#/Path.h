@@ -30,7 +30,12 @@ public:
 		steps[last_step].frames = frames;
 		steps[last_step++].speed = speed;
 	}
-
+	void Sprite(fPoint speed, uint frames, Animation* animation = nullptr)
+	{
+		steps[last_step].animation = animation;
+		steps[last_step].frames = frames;
+		steps[last_step].speed = speed;
+	}
 	iPoint GetCurrentSpeed(Animation** current_animation = nullptr)
 	{
 		current_frame += 1;

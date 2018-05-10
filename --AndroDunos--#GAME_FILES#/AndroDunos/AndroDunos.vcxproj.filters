@@ -135,6 +135,9 @@
     <ClInclude Include="..\Enemy_WhiteTurret.h">
       <Filter>Modules\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="..\Enemy_VerticalStructure.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp">
@@ -234,6 +237,9 @@
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="..\Enemy_WhiteTurret.cpp">
+      <Filter>Modules\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Enemy_VerticalStructure.cpp">
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
   </ItemGroup>

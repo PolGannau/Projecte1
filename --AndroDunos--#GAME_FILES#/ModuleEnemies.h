@@ -9,6 +9,7 @@
 #include "Enemy_GreenTurret.h"
 #include "Enemy_ShipTurret.h"
 #include "Enemy_WhiteTurret.h"
+#include "Enemy_VerticalStructure.h"
 
 #define MAX_ENEMIES 100
 
@@ -36,7 +37,7 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
-	bool tocuh = false, dead = false;;
+	bool tocuh = false, dead = false, verticalstructuredead = false;
 	bool AddEnemy(ENEMY_TYPES type, int x, int y, bool z= false);
 
 private:

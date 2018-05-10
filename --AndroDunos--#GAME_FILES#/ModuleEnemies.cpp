@@ -12,6 +12,7 @@
 #include "Enemy_GreenTurret.h"
 #include "Enemy_ShipTurret.h"
 #include "Enemy_WhiteTurret.h"
+#include "Enemy_VerticalStructure.h"
 #include "ModulePlayer.h"
 
 
@@ -155,6 +156,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::WHITETURRET:
 			enemies[i] = new Enemy_WhiteTurret(info.x, info.y);
 			break;
+		case ENEMY_TYPES::VERTICALSTRUCTURE:
+			enemies[i] = new Enemy_VerticalStructure(info.x, info.y, info.z);
+			break;
 		}
 		
 
@@ -212,6 +216,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case WHITETURRET:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case VERTICALSTRUCTURE:
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;

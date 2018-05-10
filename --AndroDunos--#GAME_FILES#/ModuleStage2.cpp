@@ -110,7 +110,7 @@ bool ModuleStage2::Start()
 	mus = App->audio->LoadMusic("assets/Stage-2/07_Stage_2-Mechanized-Unit-Loop.ogg");
 
 	App->audio->PlayMusic(mus);
-
+	
 	return true;
 }
 
@@ -153,15 +153,15 @@ update_status ModuleStage2::Update()
 		}
 	}
 
-	if ((App->render->camera.x >= 3680 * SCREEN_SIZE && App->render->camera.x <= 3682 * SCREEN_SIZE && App->render->camera.y == 0)
+	if ((App->render->camera.x >= 3637 * SCREEN_SIZE && App->render->camera.x <= 3639 * SCREEN_SIZE && App->render->camera.y == 0)
 		|| (App->render->camera.x >= 8945 * SCREEN_SIZE && App->render->camera.y >= 279))
 	{
 		stop_p = true; // stop scrolling in x axes
 	}
-	else if ((App->render->camera.x >= 3680 * SCREEN_SIZE && App->render->camera.x <= 3682 * SCREEN_SIZE && App->render->camera.y >= 279 * SCREEN_SIZE)
+	else if ((App->render->camera.x >= 3637 * SCREEN_SIZE && App->render->camera.x <= 3639 * SCREEN_SIZE && App->render->camera.y >= 279 * SCREEN_SIZE)
 		|| (App->render->camera.x >= 8945 * SCREEN_SIZE && App->render->camera.x <= 8947 * SCREEN_SIZE && App->render->camera.y == 0)) stop_p = false; // enable scroll in x axes
 
-	if ((App->render->camera.x >= 3680 * SCREEN_SIZE && App->render->camera.x <= 3682 * SCREEN_SIZE  && App->render->camera.y <= 279 * SCREEN_SIZE)
+	if ((App->render->camera.x >= 3437 * SCREEN_SIZE && App->render->camera.x <= 3439 * SCREEN_SIZE  && App->render->camera.y <= 279 * SCREEN_SIZE)
 		|| (App->render->camera.x >= 5658 * SCREEN_SIZE && App->render->camera.x <= 5814 * SCREEN_SIZE)
 		|| (App->render->camera.x >= 7580 * SCREEN_SIZE && App->render->camera.x <= 7857 * SCREEN_SIZE))
 	{
@@ -184,7 +184,7 @@ update_status ModuleStage2::Update()
 		{
 			App->player2->position.y -= 1;
 		}
-	}
+	} //movement 
 
 	if (App->player->position.x >= 11200 || App->player2->position.x >= 11200)
 	{
