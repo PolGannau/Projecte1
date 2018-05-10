@@ -158,6 +158,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::VERTICALSTRUCTURE:
 			enemies[i] = new Enemy_VerticalStructure(info.x, info.y, info.z);
+			lives[i] = 15;
 			break;
 		}
 		
@@ -221,9 +222,16 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case VERTICALSTRUCTURE:
-				enemies[i]->OnCollision(c2);
-				delete enemies[i];
-				enemies[i] = nullptr;
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+					App->enemies->dead2 = true;
+				}
+				else if (lives[i]>0) {
+					App->enemies->touch2 = true;
+				}
 				break;
 			default:
 				break;

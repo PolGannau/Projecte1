@@ -240,6 +240,20 @@ ModuleParticles::ModuleParticles()
 	TurretShot.anim.speed = 0.1f;
 	TurretShot.speed.x = BULLET_ENEMY_SPEED;
 	TurretShot.life = BULLET_ENEMY_LIFE;
+
+	Structuretouch.anim.PushBack({ 5,341,48,136 });
+	Structuretouch.anim.speed = 0.2f;
+
+	Structuredead.anim.PushBack({ 76,357,48,120 });
+	Structuredead.speed.y = 0.5;
+	Structuredead.life = 8000;
+
+	Structuretouch2.anim.PushBack({ 167,341,48,136 });
+	Structuretouch2.anim.speed = 0.2f;
+
+	Structuredead2.anim.PushBack({ 236,357,48,120 });
+	Structuredead2.speed.y = -0.5;
+	Structuredead2.life = 8000;
 }
 
 ModuleParticles::~ModuleParticles()

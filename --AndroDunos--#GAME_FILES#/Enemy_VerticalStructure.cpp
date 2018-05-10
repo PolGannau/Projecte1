@@ -45,6 +45,10 @@ void Enemy_VerticalStructure::Move()
 		if (stop) {
 			position.y = position.y;
 		}
+		if (App->enemies->touch2) {
+			App->enemies->touch2 = false;
+			App->particles->AddParticle(App->particles->Structuretouch, position.x , position.y);
+		}
 	}
 	else {
 		if (stop == false) {
@@ -57,9 +61,18 @@ void Enemy_VerticalStructure::Move()
 		if (stop) {
 			position.y = position.y;
 		}
+		if (App->enemies->touch2) {
+			App->enemies->touch2 = false;
+			App->particles->AddParticle(App->particles->Structuretouch2, position.x, position.y);
+		}
 	}
 }
 
 void Enemy_VerticalStructure::OnCollision(Collider* collider) {
-	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+	if (up) {
+		App->particles->AddParticle(App->particles->Structuredead, position.x, position.y + 10);
+	}
+	else {
+		App->particles->AddParticle(App->particles->Structuredead2, position.x, position.y);
+	}
 }
