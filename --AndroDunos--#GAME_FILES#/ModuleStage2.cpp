@@ -83,8 +83,16 @@ bool ModuleStage2::Start()
 	App->collision->AddCollider({ 3300,30,16,10 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3323,30,121,17 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 3528,5,13,21 }, COLLIDER_WALL);
-	App->collision->AddCollider({ 3502,194,40,1376 }, COLLIDER_WALL); //down
-	App->collision->AddCollider({ 3768,0,40,1570 }, COLLIDER_WALL); //down
+	App->collision->AddCollider({ 3502,194,40,304 }, COLLIDER_WALL); //down
+	App->collision->AddCollider({ 3502,540,40,150 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3502,750,40,150 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3502,944,40,336 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3502,1320,40,250 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3768,0,40,498 }, COLLIDER_WALL); //down
+	App->collision->AddCollider({ 3768,540,40,150 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3768,750,40,152 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3768,944,40,338 }, COLLIDER_WALL);
+	App->collision->AddCollider({ 3768,1322,40,248 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 2909,1570,40,194 }, COLLIDER_WALL); //left left
 	App->collision->AddCollider({ 2909,1570,630,30 }, COLLIDER_WALL); //left up
 	App->collision->AddCollider({ 2909,1764,630,30 }, COLLIDER_WALL); //left down
