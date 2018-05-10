@@ -185,10 +185,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					enemies[i]->OnCollision(c2);
 					delete enemies[i];
 					enemies[i] = nullptr;
-					App->enemies->dead = true;
 				}
 				else if (lives[i]>0) {
-					App->enemies->tocuh = true;
+					enemies[i]->hit = true;
 				}
 				break;
 			case WHITESHIP:
@@ -227,10 +226,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 					enemies[i]->OnCollision(c2);
 					delete enemies[i];
 					enemies[i] = nullptr;
-					App->enemies->dead2 = true;
 				}
 				else if (lives[i]>0) {
-					App->enemies->touch2 = true;
+					enemies[i]->hit = true;
 				}
 				break;
 			default:

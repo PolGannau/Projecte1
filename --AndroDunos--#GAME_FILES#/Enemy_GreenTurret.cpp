@@ -51,8 +51,6 @@ Enemy_GreenTurret::Enemy_GreenTurret(int x, int y, bool z) : Enemy(x, y)
 }
 void Enemy_GreenTurret::Move()
 {
-	position.x -= 1;
-
 	if (lefttt) {
 		if (lookingleft.SeeCurrentFrame() == 8) {
 			bullet++;
@@ -63,8 +61,8 @@ void Enemy_GreenTurret::Move()
 		if (lookingleft.SeeCurrentFrame() == 9) {
 			bullet = 0;
 		}
-		if (App->enemies->tocuh) {
-			App->enemies->tocuh = false;
+		if (hit) {
+			hit = false;
 			App->particles->AddParticle(App->particles->bullettouchgreenturret, position.x + 5, position.y);
 		}
 	}
@@ -78,8 +76,8 @@ void Enemy_GreenTurret::Move()
 		if (lookingright.SeeCurrentFrame() == 9) {
 			bullet = 0;
 		}
-		if (App->enemies->tocuh) {
-			App->enemies->tocuh = false;
+		if (hit) {
+			hit = false;
 			App->particles->AddParticle(App->particles->bullettouchgreenturret2, position.x - 2, position.y);
 		}
 	}

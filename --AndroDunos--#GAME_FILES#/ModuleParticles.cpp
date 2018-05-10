@@ -210,7 +210,6 @@ ModuleParticles::ModuleParticles()
 	laserenemyleft.life = BULLET_ENEMY_LIFE;
 	
 	laserenemygreenturret.anim.PushBack({ 208,184,16,3 });
-	laserenemygreenturret.anim.speed = 0.05f;
 	laserenemygreenturret.speed.x = -BULLET_ENEMY_SPEED;
 	laserenemygreenturret.speed.y = 0.3f;
 	laserenemygreenturret.life = BULLET_ENEMY_LIFE;
@@ -254,6 +253,14 @@ ModuleParticles::ModuleParticles()
 	Structuredead2.anim.PushBack({ 236,357,48,120 });
 	Structuredead2.speed.y = -0.5;
 	Structuredead2.life = 8000;
+
+	followlaser.anim.PushBack({ 238,244,8,8 });
+	followlaser.anim.PushBack({ 258,244,8,8 });
+	followlaser.anim.PushBack({ 238,245,8,8 });
+	followlaser.anim.PushBack({ 258,245,8,8 });
+	followlaser.anim.speed = 0.2f;
+	followlaser.anim.loop = true;
+	followlaser.life = BULLET_ENEMY_LIFE;
 }
 
 ModuleParticles::~ModuleParticles()
@@ -370,8 +377,11 @@ Particle::Particle(const Particle& p) :
 
 Particle::~Particle()
 {
-	if (collider != nullptr)
+	if (collider != nullptr) {
 		collider->to_delete = true;
+		collider = nullptr;
+	}
+	
 }
 
 bool Particle::Update()

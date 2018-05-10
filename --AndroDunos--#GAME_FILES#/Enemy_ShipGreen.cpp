@@ -3,6 +3,11 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
+#include "ModulePlayer.h"
+
+#include <math.h>  
+
+
 
 Enemy_ShipGreen::Enemy_ShipGreen(int x, int y) : Enemy(x, y)
 {
@@ -24,7 +29,19 @@ Enemy_ShipGreen::Enemy_ShipGreen(int x, int y) : Enemy(x, y)
 void Enemy_ShipGreen::Move()
 {
 	position.x -= 1;
-	
+	shot++;
+
+	if (shot == 60) {
+		x = App->player->position.x - position.x;
+		y = App->player->position.y - position.y;
+		m = sqrt((x*x) + (y*y));
+		x = x / m;
+		y = y / m;
+		App->particles->followlaser.speed.x = x * 3.1f;
+		App->particles->followlaser.speed.y = y * 3.1f;
+		App->particles->AddParticle(App->particles->followlaser, position.x + 8, position.y + 15, COLLIDER_ENEMY_SHOT);
+		shot = 0;
+	}
 }
 
 void Enemy_ShipGreen::OnCollision(Collider* collider) {

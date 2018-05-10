@@ -17,6 +17,7 @@ public:
 	iPoint position;
 	ENEMY_TYPES type = ENEMY_TYPES::NO_TYPE;
 	bool hit = false;
+	bool dead = false;
 public:
 	Enemy(int x, int y);
 	virtual ~Enemy();

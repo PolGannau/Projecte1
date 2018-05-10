@@ -15,7 +15,7 @@ private:
 	
 
 public:
-
+	bool touuch;
 	Enemy_VerticalStructure(int x, int y, bool z);
 	void OnCollision(Collider* collider);
 	void Move();

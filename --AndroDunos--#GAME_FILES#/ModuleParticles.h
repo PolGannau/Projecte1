@@ -88,6 +88,7 @@ public:
 	Particle Structuredead;
 	Particle Structuretouch2;
 	Particle Structuredead2;
+	Particle followlaser;
 
 };
 

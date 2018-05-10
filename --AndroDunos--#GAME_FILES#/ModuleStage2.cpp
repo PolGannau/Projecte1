@@ -113,6 +113,20 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 586, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 504, 120);
 
+	// well position
+	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2277, 245, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2453, -145, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2614, -145, false); 
+	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2757, 245, true);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 501, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 501, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 695, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 695, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 889, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 889, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 1283, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 1283, true);
 
 	//mus = App->audio->LoadMusic("assets/stage2/07_Stage_2-Mechanized-Unit-Intro.ogg", 1);
 	mus = App->audio->LoadMusic("assets/Stage-2/07_Stage_2-Mechanized-Unit-Loop.ogg");

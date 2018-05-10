@@ -45,8 +45,8 @@ void Enemy_VerticalStructure::Move()
 		if (stop) {
 			position.y = position.y;
 		}
-		if (App->enemies->touch2) {
-			App->enemies->touch2 = false;
+		if (hit) {
+			hit = false;
 			App->particles->AddParticle(App->particles->Structuretouch, position.x , position.y);
 		}
 	}
@@ -61,8 +61,8 @@ void Enemy_VerticalStructure::Move()
 		if (stop) {
 			position.y = position.y;
 		}
-		if (App->enemies->touch2) {
-			App->enemies->touch2 = false;
+		if (hit) {
+			hit = false;
 			App->particles->AddParticle(App->particles->Structuretouch2, position.x, position.y);
 		}
 	}
