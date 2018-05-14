@@ -29,8 +29,8 @@ Enemy_ShipGreen::Enemy_ShipGreen(int x, int y) : Enemy(x, y)
 void Enemy_ShipGreen::Move()
 {
 	position.x -= 1;
-	shot++;
 
+	shot++;
 	if (shot == 60) {
 		x = App->player->position.x - position.x;
 		y = App->player->position.y - position.y;
@@ -40,7 +40,6 @@ void Enemy_ShipGreen::Move()
 		App->particles->followlaser.speed.x = x * 2.2f;
 		App->particles->followlaser.speed.y = y * 2.2f;
 		App->particles->AddParticle(App->particles->followlaser, position.x + 8, position.y + 15, COLLIDER_ENEMY_SHOT);
-		shot = 0;
 	}
 }
 

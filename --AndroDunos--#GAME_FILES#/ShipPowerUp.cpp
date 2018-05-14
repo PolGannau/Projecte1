@@ -52,30 +52,43 @@ ShipPowerUp::ShipPowerUp(int x, int y) : PowerUp(x, y)
 	animation = &fly;
 
 	collider = App->collision->AddCollider({ 0, 0, 31, 27 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->powerups);
+	
+	path.PushBack({ 0.4f, -0.0f }, 170); //avança recte cap a la esquerre
+	path.PushBack({ -0.15f, 0.3f }, 40); //baixa  esquerre
+	path.PushBack({ 0.3f, 0.0f }, 20); //pausa
+	path.PushBack({ -0.15f, -0.3f }, 40); //puja  esquerre
+	path.PushBack({ 1.5f, 0.0f }, 340); //endarrera
+	path.PushBack({ 0.4f, -0.0f }, 100); //avança recte cap a la esquerre
+	path.PushBack({ -0.15f, 0.3f }, 40); //baixa  esquerre
+	path.PushBack({ 0.3f, 0.0f }, 20); //pausa
+	path.PushBack({ -0.15f, -0.3f }, 40); //puja  esquerre
+	path.PushBack({ 1.5f, 0.0f }, 340); //endarrera
+	path.PushBack({ 0.4f, -0.0f }, 100); //avança recte cap a la esquerre
+	path.PushBack({ -0.15f, 0.3f }, 40); //baixa  esquerre
+	path.PushBack({ 0.3f, 0.0f }, 20); //pausa
+	path.PushBack({ -0.15f, -0.3f }, 40); //puja  esquerre
+	path.PushBack({ 1.5f, 0.0f }, 340); //endarrera
+	path.PushBack({ 0.4f, -0.0f }, 100); //avança recte cap a la esquerre
+	path.PushBack({ -0.15f, 0.3f }, 40); //baixa  esquerre
+	path.PushBack({ 0.3f, 0.0f }, 20); //pausa
+	path.PushBack({ -0.15f, -0.3f }, 40); //puja  esquerre
+	path.PushBack({ 1.5f, 0.0f }, 340); //endarrera
+	path.PushBack({ 0.7f, -0.0f }, 2000); //last one 
 
-	original_y = y;
+	/*path.PushBack({ -0.1f, 0.0f }, 60); //avança recte cap a la esquerre
+	path.PushBack({ -0.4f, 0.2f }, 40); //baixa  esquerre
+	path.PushBack({ 0.3f, 0.0f }, 20); //
+	path.PushBack({ -0.4f, -0.2f }, 40); //puja  esquerre
+	path.PushBack({ 1.5f, 0.0f }, 308); */
+
+	original_pos.x = x;
+	original_pos.y = y;
 }
 
 void ShipPowerUp::Move()
 {
-	if (going_up)
-	{
-		if (wave > 1.0f)
-			going_up = false;
-		else
-			wave += 0.05f;
-	}
-	else
-	{
-		if (wave < -1.0f)
-			going_up = true;
-		else
-			wave -= 0.05f;
-	}
-
-	position.y = int(float(original_y) + (25.0f * sinf(wave)));
-	position.x -= 1;
-
+	position = original_pos + path.GetCurrentSpeed();
+	position.x += 1;
 }
 
 void ShipPowerUp::OnCollision(Collider* collider)

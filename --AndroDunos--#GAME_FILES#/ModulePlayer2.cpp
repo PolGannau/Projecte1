@@ -61,7 +61,7 @@ bool ModulePlayer2::Start()
 
 	destroyed = false;
 	// TODO 2: Add a collider to the player
-	coll = App->collision->AddCollider({ position.x,position.y, 27, 16 }, COLLIDER_PLAYER, this);
+	coll = App->collision->AddCollider({ position.x,position.y, 27, 16 }, COLLIDER_PLAYER2, this);
 
 	fx_1 = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-1_(Main_Ships).wav");
 	fx_2 = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-2_(Main_Ships).wav");
@@ -139,7 +139,7 @@ update_status ModulePlayer2::Update()
 		currentTime = SDL_GetTicks();
 		if (currentTime > lastTime + 50)
 		{
-			if (App->powerups->powerup1 && App->powerups->powerup2 == false) {
+			if (App->powerups->power2up1 && App->powerups->power2up2 == false) {
 				if (weapon1) {
 					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
 					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 11, COLLIDER_PLAYER_SHOT);
@@ -165,7 +165,7 @@ update_status ModulePlayer2::Update()
 					App->audio->PlaySoundEffect(fx_4);
 				}
 			}
-			else if (App->powerups->powerup2 && App->powerups->powerup1 == false) {
+			else if (App->powerups->power2up2 && App->powerups->power2up1 == false) {
 				if (weapon1) {
 					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
 					App->particles->AddParticle(App->particles->laser, position.x + 25, position.y + 11, COLLIDER_PLAYER_SHOT);
@@ -189,7 +189,7 @@ update_status ModulePlayer2::Update()
 					App->audio->PlaySoundEffect(fx_4);
 				}
 			}
-			else if (App->powerups->powerup1 && App->powerups->powerup2) {
+			else if (App->powerups->power2up1 && App->powerups->power2up2) {
 				if (weapon1) {
 					App->particles->AddParticle(App->particles->laser, position.x + 20, position.y + 4, COLLIDER_PLAYER_SHOT);
 					App->particles->AddParticle(App->particles->laser, position.x + 25, position.y + 11, COLLIDER_PLAYER_SHOT);
@@ -278,7 +278,7 @@ update_status ModulePlayer2::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_E] == KEY_STATE::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, position.x + 250, position.y, 1);
+		//App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, position.x + 250, position.y, 1);
 
 	}
 

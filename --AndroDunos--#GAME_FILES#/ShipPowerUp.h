@@ -2,6 +2,7 @@
 #define __SHIPPOWERUP_H__
 
 #include "PowerUp.h"
+#include "Path.h"
 
 class ShipPowerUp : public PowerUp
 {
@@ -10,6 +11,8 @@ private:
 	bool going_up = true;
 	int original_y = 0;
 	Animation fly;
+	iPoint original_pos;
+	Path path;
 
 public:
 

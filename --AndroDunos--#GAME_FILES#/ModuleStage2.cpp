@@ -117,7 +117,7 @@ bool ModuleStage2::Start()
 	App->collision->AddCollider({ 5869,1781,303,15 }, COLLIDER_WALL);
 
 	
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 350, 60);
+	/*App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 350, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 368, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 386, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 404, 60);
@@ -126,9 +126,19 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 550, 50);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 568, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 586, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 504, 120);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 504, 120);*/
 
 	// well position
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 270, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 295, 163);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 320, 140);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 360, 39);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 375, 62);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 392, 39);
+
+	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 400, 100);
+
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2277, 245, true);
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2453, -145, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2614, -145, false); 

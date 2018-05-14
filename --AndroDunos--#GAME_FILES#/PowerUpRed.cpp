@@ -54,17 +54,26 @@ void PowerUpRed::Move()
 
 void PowerUpRed::OnCollision(Collider* collider)
 {
-	if (App->player->position.x)
-	{
-		if (fly.SeeCurrentFrame() <= 13) {
+	if (fly.SeeCurrentFrame() <= 13) {
+		if (collider->type == COLLIDER_PLAYER)
+		{
 			App->powerups->powerup1 = true;
 		}
-		else if (fly.SeeCurrentFrame() >= 14 && fly.SeeCurrentFrame() <= 26) {
-			App->powerups->powerup2 = true;
+		else if (collider->type == COLLIDER_PLAYER2)
+		{
+			App->powerups->power2up1 = true;
 		}
 	}
-	else {
-
+	else if (fly.SeeCurrentFrame() >= 14 && fly.SeeCurrentFrame() <= 26) {
+		if (collider->type == COLLIDER_PLAYER)
+		{
+			App->powerups->powerup2 = true;
+		}
+		else if (collider->type == COLLIDER_PLAYER2)
+		{
+			App->powerups->power2up2 = true;
+		}
 	}
+
 
 }
