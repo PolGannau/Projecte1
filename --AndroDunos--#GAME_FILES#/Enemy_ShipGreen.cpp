@@ -37,8 +37,8 @@ void Enemy_ShipGreen::Move()
 		m = sqrt((x*x) + (y*y));
 		x = x / m;
 		y = y / m;
-		App->particles->followlaser.speed.x = x * 3.1f;
-		App->particles->followlaser.speed.y = y * 3.1f;
+		App->particles->followlaser.speed.x = x * 2.2f;
+		App->particles->followlaser.speed.y = y * 2.2f;
 		App->particles->AddParticle(App->particles->followlaser, position.x + 8, position.y + 15, COLLIDER_ENEMY_SHOT);
 		shot = 0;
 	}
