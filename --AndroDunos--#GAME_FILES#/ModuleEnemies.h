@@ -10,6 +10,7 @@
 #include "Enemy_ShipTurret.h"
 #include "Enemy_WhiteTurret.h"
 #include "Enemy_VerticalStructure.h"
+#include "Enemy_TripleTurret.h"
 
 #define MAX_ENEMIES 100
 

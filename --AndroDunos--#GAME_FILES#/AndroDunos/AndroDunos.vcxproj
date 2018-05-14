@@ -27,6 +27,7 @@
     <ClInclude Include="..\Enemy_ShipTurret.h" />
     <ClInclude Include="..\Enemy_ShipUpDown.h" />
     <ClInclude Include="..\Enemy_StraightOnShip.h" />
+    <ClInclude Include="..\Enemy_TripleTurret.h" />
     <ClInclude Include="..\Enemy_VerticalStructure.h" />
     <ClInclude Include="..\Enemy_WhiteShip.h" />
     <ClInclude Include="..\Enemy_WhiteTurret.h" />
@@ -66,6 +67,7 @@
     <ClCompile Include="..\Enemy_ShipTurret.cpp" />
     <ClCompile Include="..\Enemy_ShipUpDown.cpp" />
     <ClCompile Include="..\Enemy_StraightOnShip.cpp" />
+    <ClCompile Include="..\Enemy_TripleTurret.cpp" />
     <ClCompile Include="..\Enemy_VerticalStructure.cpp" />
     <ClCompile Include="..\Enemy_WhiteShip.cpp" />
     <ClCompile Include="..\Enemy_WhiteTurret.cpp" />

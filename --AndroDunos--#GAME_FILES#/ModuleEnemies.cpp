@@ -13,6 +13,7 @@
 #include "Enemy_ShipTurret.h"
 #include "Enemy_WhiteTurret.h"
 #include "Enemy_VerticalStructure.h"
+#include "Enemy_TripleTurret.h"
 #include "ModulePlayer.h"
 
 
@@ -160,6 +161,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_VerticalStructure(info.x, info.y, info.z);
 			lives[i] = 15;
 			break;
+		case ENEMY_TYPES::TRIPLETURRET:
+			enemies[i] = new Enemy_TripleTurret(info.x, info.y);
+			break;
 		}
 		
 
@@ -230,6 +234,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				else if (lives[i]>0) {
 					enemies[i]->hit = true;
 				}
+				break;
+			case TRIPLETURRET:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
 				break;
 			default:
 				break;
