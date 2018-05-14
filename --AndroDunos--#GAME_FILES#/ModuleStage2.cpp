@@ -107,6 +107,7 @@ bool ModuleStage2::Start()
 	App->collision->AddCollider({ 3981,1732,111,30 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 4091,1780,146,30 }, COLLIDER_WALL);
 	App->collision->AddCollider({ 4240,1716,109,60 }, COLLIDER_WALL);
+
 	
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 350, 60);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 368, 60);
