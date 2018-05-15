@@ -47,39 +47,39 @@ ShipPowerUp::ShipPowerUp(int x, int y) : PowerUp(x, y)
 	fly.PushBack({ 107, 79, 18, 26 });
 	fly.PushBack({ 133, 79, 18, 26 });
 	fly.PushBack({ 159, 79, 18, 26 });
-	fly.speed = 0.05f;
+	fly.speed = 0.1f;
 
 	animation = &fly;
 
 	collider = App->collision->AddCollider({ 0, 0, 31, 27 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->powerups);
 	
-	path.PushBack({ 0.4f, -0.0f }, 170); //avança recte cap a la esquerre
-	path.PushBack({ -0.15f, 0.3f }, 40); //baixa  esquerre
+	path.PushBack({ -0.5f, -0.0f }, 70); //avança recte cap a la esquerre
+	path.PushBack({ -0.15f, 0.3f }, 20); //baixa  esquerre
 	path.PushBack({ 0.3f, 0.0f }, 20); //pausa
-	path.PushBack({ -0.15f, -0.3f }, 40); //puja  esquerre
-	path.PushBack({ 1.5f, 0.0f }, 340); //endarrera
-	path.PushBack({ 0.4f, -0.0f }, 100); //avança recte cap a la esquerre
-	path.PushBack({ -0.15f, 0.3f }, 40); //baixa  esquerre
+	path.PushBack({ -0.15f, -0.3f }, 20); //puja  esquerre
+	path.PushBack({ 2.0f, 0.0f }, 125); //endarrera
+	path.PushBack({ -0.3f, -0.0f }, 50); //avança recte cap a la esquerre
+	path.PushBack({ -0.15f, 0.3f }, 20); //baixa  esquerre
 	path.PushBack({ 0.3f, 0.0f }, 20); //pausa
-	path.PushBack({ -0.15f, -0.3f }, 40); //puja  esquerre
-	path.PushBack({ 1.5f, 0.0f }, 340); //endarrera
-	path.PushBack({ 0.4f, -0.0f }, 100); //avança recte cap a la esquerre
-	path.PushBack({ -0.15f, 0.3f }, 40); //baixa  esquerre
+	path.PushBack({ -0.15f, -0.3f }, 20); //puja  esquerre
+	path.PushBack({ 2.0f, 0.0f }, 127); //endarrera
+	path.PushBack({ -0.3f, -0.0f }, 50); //avança recte cap a la esquerre
+	path.PushBack({ -0.15f, 0.3f }, 20); //baixa  esquerre
 	path.PushBack({ 0.3f, 0.0f }, 20); //pausa
-	path.PushBack({ -0.15f, -0.3f }, 40); //puja  esquerre
-	path.PushBack({ 1.5f, 0.0f }, 340); //endarrera
-	path.PushBack({ 0.4f, -0.0f }, 100); //avança recte cap a la esquerre
-	path.PushBack({ -0.15f, 0.3f }, 40); //baixa  esquerre
+	path.PushBack({ -0.15f, -0.3f }, 20); //puja  esquerre
+	path.PushBack({ 2.0f, 0.0f }, 121); //endarrera
+	path.PushBack({ -0.3f, -0.0f }, 50); //avança recte cap a la esquerre
+	path.PushBack({ -0.15f, 0.3f }, 20); //baixa  esquerre
 	path.PushBack({ 0.3f, 0.0f }, 20); //pausa
-	path.PushBack({ -0.15f, -0.3f }, 40); //puja  esquerre
-	path.PushBack({ 1.5f, 0.0f }, 340); //endarrera
-	path.PushBack({ 0.7f, -0.0f }, 2000); //last one 
+	path.PushBack({ -0.15f, -0.3f }, 20); //puja  esquerre
+	path.PushBack({ 2.0f, 0.0f }, 119); //endarrera
+	path.PushBack({ -0.25f, -0.0f }, 500); //last one 
 
-	/*path.PushBack({ -0.1f, 0.0f }, 60); //avança recte cap a la esquerre
-	path.PushBack({ -0.4f, 0.2f }, 40); //baixa  esquerre
-	path.PushBack({ 0.3f, 0.0f }, 20); //
-	path.PushBack({ -0.4f, -0.2f }, 40); //puja  esquerre
-	path.PushBack({ 1.5f, 0.0f }, 308); */
+	/*path.PushBack({ -0.5f, -0.0f }, 70); //avança recte cap a la esquerre
+	path.PushBack({ -0.15f, 0.3f }, 40); //baixa  esquerre
+	path.PushBack({ 0.3f, 0.0f }, 20); //pausa
+	path.PushBack({ -0.15f, -0.3f }, 40); //puja  esquerre
+	path.PushBack({ 2.0f, 0.0f }, 175); //endarrera*/
 
 	original_pos.x = x;
 	original_pos.y = y;
