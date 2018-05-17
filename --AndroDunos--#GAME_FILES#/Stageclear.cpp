@@ -57,6 +57,9 @@ update_status ModuleStageclear::Update()
 	{
 		App->fade->FadeToBlack(this, (Module*)App->scene_intro, 0.2f);
 	}
+	if (SDL_GameControllerGetButton(App->input->controller1, SDL_CONTROLLER_BUTTON_START)) {
+		App->fade->FadeToBlack(this, (Module*)App->scene_intro, 0.2f);
+	}
 
 	return UPDATE_CONTINUE;
 }

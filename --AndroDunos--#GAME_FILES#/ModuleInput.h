@@ -30,6 +30,8 @@ public:
 public:
 	KEY_STATE keyboard[MAX_KEYS];
 	SDL_Event Events;
+	SDL_GameController * controller1 = nullptr;
+	SDL_GameController* controller2 = nullptr;
 };
 
 #endif // __ModuleInput_H__
