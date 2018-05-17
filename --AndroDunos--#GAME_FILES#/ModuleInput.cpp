@@ -94,7 +94,9 @@ update_status ModuleInput::PreUpdate()
 				}
 			}
 		}
-
+	if (controller1 && controller2==false) {
+		controller2 = false;
+	}
 	return update_status::UPDATE_CONTINUE;
 }
 

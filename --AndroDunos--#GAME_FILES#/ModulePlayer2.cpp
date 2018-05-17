@@ -87,6 +87,8 @@ bool ModulePlayer2::CleanUp()
 update_status ModulePlayer2::Update()
 {
 	int speed = 2;
+	
+
 
 	bool UP = App->input->keyboard[SDL_SCANCODE_I] == KEY_STATE::KEY_REPEAT || SDL_GameControllerGetAxis(App->input->controller2, SDL_CONTROLLER_AXIS_LEFTY) < -CONTROLLER_DEAD_ZONE;
 	bool LEFT = App->input->keyboard[SDL_SCANCODE_J] == KEY_STATE::KEY_REPEAT || SDL_GameControllerGetAxis(App->input->controller2, SDL_CONTROLLER_AXIS_LEFTX) < -CONTROLLER_DEAD_ZONE;
@@ -149,7 +151,7 @@ update_status ModulePlayer2::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || (SDL_GameControllerGetButton(App->input->controller2, SDL_CONTROLLER_BUTTON_A) && a == false))
+	if (App->input->keyboard[SDL_SCANCODE_RCTRL] == KEY_STATE::KEY_DOWN || (SDL_GameControllerGetButton(App->input->controller2, SDL_CONTROLLER_BUTTON_A) && a == false))
 	{
 		a = true;
 		currentTime = SDL_GetTicks();

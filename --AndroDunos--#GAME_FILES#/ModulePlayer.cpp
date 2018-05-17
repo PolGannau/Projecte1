@@ -36,12 +36,14 @@ ModulePlayer::ModulePlayer()
 	up.PushBack({ 94, 67, 27, 15 });
 	up.loop = false;
 	up.speed = 0.1f;
-
+	
 	// Move down
 	down.PushBack({ 94, 132, 27, 16 });
 	down.PushBack({ 94, 154, 27, 17 });
 	down.loop = false;
 	down.speed = 0.1f;
+
+	
 }
 
 ModulePlayer::~ModulePlayer()
@@ -96,7 +98,7 @@ bool ModulePlayer::CleanUp()
 update_status ModulePlayer::Update()
 {
 	int speed = 2;
-	
+
 	bool UP = App->input->keyboard[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT || SDL_GameControllerGetAxis(App->input->controller1, SDL_CONTROLLER_AXIS_LEFTY) < -CONTROLLER_DEAD_ZONE;
 	bool LEFT = App->input->keyboard[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT || SDL_GameControllerGetAxis(App->input->controller1, SDL_CONTROLLER_AXIS_LEFTX) < -CONTROLLER_DEAD_ZONE;
 	bool DOWN = App->input->keyboard[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT || SDL_GameControllerGetAxis(App->input->controller1, SDL_CONTROLLER_AXIS_LEFTY) > CONTROLLER_DEAD_ZONE;
@@ -157,7 +159,6 @@ update_status ModulePlayer::Update()
 			position.y = App->render->view.y + 1;
 		}
 	}
-
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || (SDL_GameControllerGetButton(App->input->controller1, SDL_CONTROLLER_BUTTON_A) && a == false))
 	{
 		a = true;
