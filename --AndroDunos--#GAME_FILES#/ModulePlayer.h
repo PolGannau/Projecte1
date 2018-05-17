@@ -46,7 +46,7 @@ public:
 	bool weapon3 = false;
 	bool weapon4 = false;
 	int hp;
-	bool a = false, x = false, idlee = false, upp = false, downn = false;
+	bool a = false, x = false;
 
 };
 

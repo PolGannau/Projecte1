@@ -88,7 +88,22 @@ update_status ModulePlayer2::Update()
 {
 	int speed = 2;
 
-	if (App->input->keyboard[SDL_SCANCODE_J] == KEY_STATE::KEY_REPEAT)
+	bool UP = App->input->keyboard[SDL_SCANCODE_I] == KEY_STATE::KEY_REPEAT || SDL_GameControllerGetAxis(App->input->controller2, SDL_CONTROLLER_AXIS_LEFTY) < -CONTROLLER_DEAD_ZONE;
+	bool LEFT = App->input->keyboard[SDL_SCANCODE_J] == KEY_STATE::KEY_REPEAT || SDL_GameControllerGetAxis(App->input->controller2, SDL_CONTROLLER_AXIS_LEFTX) < -CONTROLLER_DEAD_ZONE;
+	bool DOWN = App->input->keyboard[SDL_SCANCODE_K] == KEY_STATE::KEY_REPEAT || SDL_GameControllerGetAxis(App->input->controller2, SDL_CONTROLLER_AXIS_LEFTY) > CONTROLLER_DEAD_ZONE;
+	bool RIGHT = App->input->keyboard[SDL_SCANCODE_L] == KEY_STATE::KEY_REPEAT || SDL_GameControllerGetAxis(App->input->controller2, SDL_CONTROLLER_AXIS_LEFTX) > CONTROLLER_DEAD_ZONE;
+
+	if (SDL_GameControllerGetButton(App->input->controller2, SDL_CONTROLLER_BUTTON_X) == false)
+	{
+		x = false;
+	}
+
+	if (SDL_GameControllerGetButton(App->input->controller2, SDL_CONTROLLER_BUTTON_A) == false)
+	{
+		a = false;
+	}
+
+	if (LEFT)
 	{
 		position.x -= speed;
 		if (position.x <= App->render->view.x)
@@ -97,7 +112,7 @@ update_status ModulePlayer2::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_L] == KEY_STATE::KEY_REPEAT)
+	if (RIGHT)
 	{
 		position.x += speed;
 		if (position.x + 27 >= App->render->view.x + App->render->view.w)
@@ -106,7 +121,7 @@ update_status ModulePlayer2::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_K] == KEY_STATE::KEY_REPEAT)
+	if (DOWN)
 	{
 		position.y += speed;
 		if (current_animation != &down)
@@ -120,7 +135,7 @@ update_status ModulePlayer2::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_I] == KEY_STATE::KEY_REPEAT)
+	if (UP)
 	{
 		position.y -= speed;
 		if (current_animation != &up)
@@ -134,8 +149,9 @@ update_status ModulePlayer2::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_RCTRL] == KEY_STATE::KEY_DOWN)
+	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN || (SDL_GameControllerGetButton(App->input->controller2, SDL_CONTROLLER_BUTTON_A) && a == false))
 	{
+		a = true;
 		currentTime = SDL_GetTicks();
 		if (currentTime > lastTime + 50)
 		{
@@ -244,8 +260,9 @@ update_status ModulePlayer2::Update()
 		}
 	}
 
-	if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN)
+	if (App->input->keyboard[SDL_SCANCODE_RSHIFT] == KEY_STATE::KEY_DOWN || (SDL_GameControllerGetButton(App->input->controller2, SDL_CONTROLLER_BUTTON_X) && x == false))
 	{
+		x = true;
 		if (weapon1) {
 			weapon1 = false;
 			weapon2 = true;
