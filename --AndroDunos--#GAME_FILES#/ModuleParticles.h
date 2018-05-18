@@ -89,7 +89,8 @@ public:
 	Particle Structuretouch2;
 	Particle Structuredead2;
 	Particle followlaser;
-
+	Particle Structuretouch1;
+	Particle Structuretouch21;
 };
 
 #endif // __MODULEPARTICLES_H__

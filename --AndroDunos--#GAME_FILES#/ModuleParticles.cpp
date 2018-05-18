@@ -243,6 +243,11 @@ ModuleParticles::ModuleParticles()
 
 	Structuretouch.anim.PushBack({ 5,341,48,136 });
 	Structuretouch.anim.speed = 0.2f;
+	Structuretouch.speed.y -= 1;
+
+	Structuretouch1.anim.PushBack({ 5,341,48,136 });
+	Structuretouch1.anim.speed = 0.2f;
+
 
 	Structuredead.anim.PushBack({ 76,357,48,120 });
 	Structuredead.speed.y = 0.5;
@@ -250,10 +255,15 @@ ModuleParticles::ModuleParticles()
 
 	Structuretouch2.anim.PushBack({ 167,341,48,136 });
 	Structuretouch2.anim.speed = 0.2f;
+	Structuretouch2.speed.y += 1;
+
+	Structuretouch21.anim.PushBack({ 167,341,48,136 });
+	Structuretouch21.anim.speed = 0.2f;
 
 	Structuredead2.anim.PushBack({ 236,357,48,120 });
 	Structuredead2.speed.y = -0.5;
 	Structuredead2.life = 8000;
+
 
 	followlaser.anim.PushBack({ 238,244,8,8 });
 	followlaser.anim.PushBack({ 258,244,8,8 });
