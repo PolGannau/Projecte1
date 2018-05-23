@@ -12,12 +12,7 @@
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
 ModuleSceneIntro::ModuleSceneIntro()
-{
-	/*neogeo.x = 0;
-	neogeo.y = 0;
-	neogeo.w = 512;
-	neogeo.h = 512;*/
-	
+{	
 	Neogeo.PushBack({0,0,250,40});
 	Neogeo.PushBack({ 0,90,250,40 });
 	Neogeo.PushBack({ 0,190,250,40 });
@@ -67,7 +62,7 @@ ModuleSceneIntro::ModuleSceneIntro()
 	Neogeo.PushBack({ 350,2090,250,40 });
 
 	Neogeo.loop = false;
-	Neogeo.speed = 0.4f;
+	Neogeo.speed = 0.2f;
 
 }
 
@@ -78,7 +73,7 @@ ModuleSceneIntro::~ModuleSceneIntro()
 bool ModuleSceneIntro::Start()
 {
 	LOG("Loading space intro");
-
+	bool ret = true;
 	intro = App->textures->Load("assets/Intro/Neogeo.png");
 
 	App->render->camera.x = App->render->camera.y = 0;
@@ -86,9 +81,10 @@ bool ModuleSceneIntro::Start()
 	music = App->audio->LoadMusic("assets/Intro/01_Neo_Geo_Logo.ogg");
 
 	App->audio->PlayMusic(music);
+
 	time2 = SDL_GetTicks();
 	time = 0;
-	return true;
+	return ret;
 }
 
 // UnLoad assets
@@ -99,16 +95,21 @@ bool ModuleSceneIntro::CleanUp()
 	App->textures->Unload(intro);
 
 	App->audio->UnloadMusic(music);
+	change = false;
 	Neogeo.Reset();
 	time = 0;
-	change = false;
+
 
 	return true;
 }
 
 // Update: draw background
-update_status ModuleSceneIntro::PreUpdate() {
 
+
+	
+
+update_status ModuleSceneIntro::Update()
+{
 	time = SDL_GetTicks() - time2;
 
 	if (time > 1500) change = true;
@@ -124,11 +125,6 @@ update_status ModuleSceneIntro::PreUpdate() {
 
 	SDL_RenderClear(App->render->renderer);
 
-	return UPDATE_CONTINUE;
-}
-update_status ModuleSceneIntro::Update()
-{
-	time = SDL_GetTicks() - time2;
 	anim = &Neogeo;
 
 	App->render->Blit(intro, 40, 50, &(anim->GetCurrentFrame()));
