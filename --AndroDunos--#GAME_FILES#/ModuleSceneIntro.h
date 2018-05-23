@@ -22,6 +22,7 @@ public:
 	SDL_Texture * intro = nullptr;
 	SDL_Rect neogeo;
 	Animation Neogeo;
+	Animation SNK;
 	uint fx = 0;
 	int time = 0;
 	int time2 = 0;

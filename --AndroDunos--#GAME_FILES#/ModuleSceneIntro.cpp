@@ -62,7 +62,12 @@ ModuleSceneIntro::ModuleSceneIntro()
 	Neogeo.PushBack({ 350,2090,250,40 });
 
 	Neogeo.loop = false;
-	Neogeo.speed = 0.2f;
+	Neogeo.speed = 0.4f;
+
+	SNK.PushBack({});
+	SNK.loop = false;
+	SNK.speed = 0.4f;
+	
 
 }
 
@@ -73,7 +78,6 @@ ModuleSceneIntro::~ModuleSceneIntro()
 bool ModuleSceneIntro::Start()
 {
 	LOG("Loading space intro");
-	bool ret = true;
 	intro = App->textures->Load("assets/Intro/Neogeo.png");
 
 	App->render->camera.x = App->render->camera.y = 0;
@@ -84,7 +88,7 @@ bool ModuleSceneIntro::Start()
 
 	time2 = SDL_GetTicks();
 	time = 0;
-	return ret;
+	return true;
 }
 
 // UnLoad assets
@@ -97,6 +101,7 @@ bool ModuleSceneIntro::CleanUp()
 	App->audio->UnloadMusic(music);
 	change = false;
 	Neogeo.Reset();
+	SNK.Reset();
 	time = 0;
 
 
