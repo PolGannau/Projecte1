@@ -310,7 +310,14 @@ update_status ModulePlayer2::Update()
 		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 		App->render->Blit(graphics, ((App->player2->position.x) - App->player2->stand_fire.GetCurrentFrame().w - 1), (App->player2->position.y + 7), &(stand_fire.GetCurrentFrame()));
 	}
-
+	if (setcoll) {
+		++settcoll;
+		if (settcoll >= 250) {
+			setcoll = false;
+			settcoll = 0;
+			App->player2->coll = App->collision->AddCollider({ App->player2->position.x,App->player2->position.y,27, 16 }, COLLIDER_PLAYER, App->player2);
+		}
+	}
 	return UPDATE_CONTINUE;
 }
 
@@ -320,18 +327,33 @@ void ModulePlayer2::OnCollision(Collider* c1, Collider* c2)
 {
 	if (c1 == coll && destroyed == false && App->fade->IsFading() == false)
 	{
-		if (App->player->IsEnabled() == false)
-		{
-			App->fade->FadeToBlack((Module*)App->stage2, (Module*)App->gameover,2.0f);
-		}
-		//code
 		App->particles->AddParticle(App->particles->explosionship2, position.x, position.y, COLLIDER_NONE);
 		weapon1 = true;
 		App->powerups->powerup1 = false;
 		App->powerups->powerup2 = false;
-		App->player2->coll->to_delete = true;
-		App->player2->Disable();
-		App->player2->CleanUp();
+		life--;
+		if (life == 0) {
+			if (App->player->IsEnabled() == false)
+			{
+				App->fade->FadeToBlack((Module*)App->stage2, (Module*)App->gameover, 2.0f);
+			}
+			App->player2->coll->to_delete = true;
+			App->player2->Disable();
+			App->player2->CleanUp();
+			destroyed = true;
+			life = 3;
+		}
+		else {
+			App->player2->Spawn();
+		}
 
 	}
+}
+void ModulePlayer2::Spawn() {
+	App->player2->coll->to_delete = true;
+	setcoll = true;
+	App->player2->position.x = (App->render->camera.x / SCREEN_SIZE) + 30;
+	App->player2->position.y = App->render->camera.y + 100;
+	current_animation = &idle;
+
 }

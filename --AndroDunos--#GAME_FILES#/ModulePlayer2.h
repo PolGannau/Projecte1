@@ -21,7 +21,7 @@ public:
 	bool CleanUp();
 
 	void OnCollision(Collider*, Collider*);
-
+	void Spawn();
 public:
 
 	SDL_Texture * graphics = nullptr;
@@ -46,6 +46,9 @@ public:
 	bool weapon4 = false;
 	int hp;
 	bool a = false, x = false;
+	int life = 3;
+	bool setcoll = false;
+	int settcoll = 0;
 };
 
 #endif

@@ -50,7 +50,8 @@ public:
 	bool a = false, x = false;
 	bool Up = false;
 	int life = 3;
-
+	bool setcoll = false;
+	int settcoll = 0;
 };
 
 #endif

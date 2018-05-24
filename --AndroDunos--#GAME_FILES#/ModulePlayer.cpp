@@ -325,7 +325,14 @@ update_status ModulePlayer::Update()
 		App->render->Blit(graphics, ((App->player->position.x) - App->player->stand_fire.GetCurrentFrame().w - 1), (App->player->position.y + 7), &(stand_fire.GetCurrentFrame()));
 	}
 	// Draw UI (score) -------------------------------------
-
+	if (setcoll) {
+		++settcoll;
+		if (settcoll >= 250) {
+			setcoll = false;
+			settcoll = 0;
+			App->player->coll = App->collision->AddCollider({ App->player->position.x,App->player->position.y,27, 16 }, COLLIDER_PLAYER, App->player);
+		}
+	}
 	return UPDATE_CONTINUE;
 }
 
@@ -357,8 +364,10 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 }
 
 void ModulePlayer::Spawn() {
-	
+	App->player->coll->to_delete = true;
+	setcoll = true;
 	App->player->position.x = (App->render->camera.x/SCREEN_SIZE) +30;
 	App->player->position.y = App->render->camera.y +100;
 	current_animation = &idle;
+
 }
