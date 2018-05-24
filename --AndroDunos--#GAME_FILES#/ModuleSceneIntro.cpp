@@ -65,22 +65,22 @@ ModuleSceneIntro::ModuleSceneIntro()
 
 	SNK.PushBack({ 601,0,72,19 });
 	SNK.PushBack({ 678,0,72,19 });
-	SNK.PushBack({ 754,0,72,19 });
-	SNK.PushBack({ 601,29,72,19 });
+	SNK.PushBack({ 753,0,72,19 });
+	SNK.PushBack({ 602,29,72,19 });
 	SNK.PushBack({ 678,29,72,19 });
 	SNK.PushBack({ 754,29,72,19 });
-	SNK.PushBack({ 601,55,72,19 });
+	SNK.PushBack({ 602,55,72,19 });
 	SNK.PushBack({ 678,55,72,19 });
 	SNK.PushBack({ 754,55,72,19 });
-	SNK.PushBack({ 601,79,72,19 });
+	SNK.PushBack({ 602,79,72,19 });
 	SNK.PushBack({ 678,79,72,19 });
-	SNK.PushBack({ 754,79,72,19 });
+	SNK.PushBack({ 753,79,72,19 });
 	SNK.PushBack({ 601,105,72,19 });
 	SNK.PushBack({ 678,105,72,19 });
 	SNK.PushBack({ 754,105,72,19 });
 	SNK.PushBack({ 601,129,72,19 });
 	SNK.PushBack({ 678,129,72,19 });
-	SNK.PushBack({ 754,129,72,19 });
+	SNK.PushBack({ 755,129,72,19 });
 	SNK.loop = false;
 	SNK.speed = 0.4f;
 	
