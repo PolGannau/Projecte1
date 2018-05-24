@@ -61,7 +61,7 @@ ModuleSceneIntro::ModuleSceneIntro()
 	Neogeo.PushBack({ 350,1990,250,40 });
 	Neogeo.PushBack({ 350,2090,250,40 });
 	Neogeo.loop = false;
-	Neogeo.speed = 0.2f;
+	Neogeo.speed = 0.4f;
 
 	SNK.PushBack({ 601,0,72,19 });
 	SNK.PushBack({ 678,0,72,19 });
@@ -198,7 +198,7 @@ update_status ModuleSceneIntro::Update()
 	if (next) {
 		App->render->Blit(intro, 83, 137, &(anim4->GetCurrentFrame()));
 	}
-	if (time > 3000 ) {
+	if (time > 4500 ) {
 		App->render->Blit(intro, 112, 170, &(anim2->GetCurrentFrame()));
 	}
 	if (SNK.SeeCurrentFrame() > 14) {
@@ -207,10 +207,10 @@ update_status ModuleSceneIntro::Update()
 	
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN && App->fade->IsFading() == false)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->stage2,0.0f);
+		App->fade->FadeToBlack(this, (Module*)App->viscogames,0.0f);
 	}
 	if (SDL_GameControllerGetButton(App->input->controller1, SDL_CONTROLLER_BUTTON_START)) {
-		App->fade->FadeToBlack(this, (Module*)App->stage2, 0.0f);
+		App->fade->FadeToBlack(this, (Module*)App->viscogames, 0.0f);
 	}
 
 	return UPDATE_CONTINUE;

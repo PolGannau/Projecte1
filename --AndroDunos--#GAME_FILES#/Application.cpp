@@ -18,6 +18,7 @@
 #include "ModuleFonts.h"
 #include "ModulePowerUps.h"
 #include "ModuleStage2.h"
+#include "ModuleViscoGames.h"
 
 
 Application::Application()
@@ -30,6 +31,7 @@ Application::Application()
 	modules[i++] = textures = new ModuleTextures();
 	modules[i++] = fonts = new ModuleFonts();
 	modules[i++] = scene_intro = new ModuleSceneIntro();
+	modules[i++] = viscogames = new ModuleViscoGames();
 	modules[i++] = stage2 = new ModuleStage2();
 	modules[i++] = scene_space = new ModuleSceneSpace();
 	modules[i++] = stageclear = new ModuleStageclear();
