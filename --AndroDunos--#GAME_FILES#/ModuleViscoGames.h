@@ -12,18 +12,23 @@ class ModuleViscoGames : public Module
 public:
 	ModuleViscoGames();
 	~ModuleViscoGames();
-	Animation* anim = nullptr;
-	Animation* anim2 = nullptr;
 	bool Start();
+	update_status PreUpdate();
 	update_status Update();
 	bool CleanUp();
 
 public:
 
 	SDL_Texture * visco = nullptr;
-	Animation Visco;
-	Animation Games;
+	SDL_Texture * games = nullptr;
+	SDL_Rect Visco;
+	SDL_Rect Games;
 	uint fx = 0;
+	int time = 0;
+	int time2 = 0;
+	int x = 2;
+	int y = 2;
+	bool movement = false;
 	Mix_Music * music = nullptr;
 };
 

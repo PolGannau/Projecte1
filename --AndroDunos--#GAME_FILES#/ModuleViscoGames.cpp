@@ -12,11 +12,17 @@
 
 ModuleViscoGames::ModuleViscoGames()
 {
-	Visco.PushBack({ 32,88,189,39 });
-	Visco.loop = false;
+	Games.x = 40;
+	Games.y = -50;
+	Games.w = 223;
+	Games.h = 39;
 
-	Games.PushBack({ 15,128,223,39 });
-	Games.loop = false;
+
+	Visco.x = 57;
+	Visco.y = 234;
+	Visco.w = 189;
+	Visco.h = 39;
+	
 }
 
 ModuleViscoGames::~ModuleViscoGames()
@@ -26,16 +32,22 @@ ModuleViscoGames::~ModuleViscoGames()
 bool ModuleViscoGames::Start()
 {
 	LOG("Loading space intro");
-	visco = App->textures->Load("assets/visco_games_intro.png");
-
+	visco = App->textures->Load("assets/Visco.png");
+	games = App->textures->Load("assets/Games.png");
+	
 	App->render->camera.x = App->render->camera.y = 0;
-
 	if (App->scene_intro->IsEnabled() == true) {
 		App->viscogames->Disable();
 	}
-		
+	
+	
+	time2 = SDL_GetTicks();
+	time = 0;
+	
 	return true;
 }
+
+
 
 // UnLoad assets
 bool ModuleViscoGames::CleanUp()
@@ -43,9 +55,8 @@ bool ModuleViscoGames::CleanUp()
 	LOG("Unloading space scene");
 
 	App->textures->Unload(visco);
-
-	Visco.Reset();
-	Games.Reset();
+	App->textures->Unload(games);
+	time = 0;
 
 
 	return true;
@@ -53,20 +64,39 @@ bool ModuleViscoGames::CleanUp()
 
 // Update: draw background
 
-
-
-
-update_status ModuleViscoGames::Update()
+update_status ModuleViscoGames::PreUpdate()
 {
 	SDL_SetRenderDrawColor(App->render->renderer, 0, 0, 0, 255);
 	SDL_RenderClear(App->render->renderer);
 
-	anim = &Visco;
-	anim2 = &Games;
+	return UPDATE_CONTINUE;
+}
 
-	App->render->Blit(visco, 40, 50, &(anim->GetCurrentFrame()));
-	App->render->Blit(visco, 40, 95, &(anim2->GetCurrentFrame()));
 
+update_status ModuleViscoGames::Update()
+{
+	time = SDL_GetTicks() - time2;
+	
+
+	if (movement == false) {
+		Games.y += y;
+		Visco.y -= y;
+		
+	}
+
+	if (Games.y > 110)
+	{
+		y = 0;
+		movement = true;
+	}
+
+	if (movement == true && time > 3900)
+	{
+		Games.x += x;
+		Visco.x -= x;
+		
+	}
+	
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN && App->fade->IsFading() == false)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->stage2, 0.0f);
@@ -74,5 +104,8 @@ update_status ModuleViscoGames::Update()
 	if (SDL_GameControllerGetButton(App->input->controller1, SDL_CONTROLLER_BUTTON_START)) {
 		App->fade->FadeToBlack(this, (Module*)App->stage2, 0.0f);
 	}
+
+	if (!App->render->Blit(games, Games.x, Games.y, NULL)) return update_status::UPDATE_ERROR;
+	if (!App->render->Blit(visco, Visco.x, Visco.y, NULL)) return update_status::UPDATE_ERROR;
 	return UPDATE_CONTINUE;
 }

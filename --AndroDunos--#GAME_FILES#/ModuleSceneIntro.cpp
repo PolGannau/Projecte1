@@ -205,11 +205,11 @@ update_status ModuleSceneIntro::Update()
 		App->render->Blit(intro, 272, 52, &(anim5->GetCurrentFrame()));
 	}
 	
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN && App->fade->IsFading() == false)
+	if ((App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN && App->fade->IsFading() == false) || time > 8000)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->viscogames,0.0f);
 	}
-	if (SDL_GameControllerGetButton(App->input->controller1, SDL_CONTROLLER_BUTTON_START)) {
+	if ((SDL_GameControllerGetButton(App->input->controller1, SDL_CONTROLLER_BUTTON_START)) || time > 8000) {
 		App->fade->FadeToBlack(this, (Module*)App->viscogames, 0.0f);
 	}
 
