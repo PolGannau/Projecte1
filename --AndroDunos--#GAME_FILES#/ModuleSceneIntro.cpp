@@ -60,16 +60,63 @@ ModuleSceneIntro::ModuleSceneIntro()
 	Neogeo.PushBack({ 350,1890,250,40 });
 	Neogeo.PushBack({ 350,1990,250,40 });
 	Neogeo.PushBack({ 350,2090,250,40 });
-
 	Neogeo.loop = false;
-	Neogeo.speed = 0.4f;
+	Neogeo.speed = 0.2f;
 
-	SNK.PushBack({});
+	SNK.PushBack({ 601,0,72,19 });
+	SNK.PushBack({ 678,0,72,19 });
+	SNK.PushBack({ 754,0,72,19 });
+	SNK.PushBack({ 601,29,72,19 });
+	SNK.PushBack({ 678,29,72,19 });
+	SNK.PushBack({ 754,29,72,19 });
+	SNK.PushBack({ 601,55,72,19 });
+	SNK.PushBack({ 678,55,72,19 });
+	SNK.PushBack({ 754,55,72,19 });
+	SNK.PushBack({ 601,79,72,19 });
+	SNK.PushBack({ 678,79,72,19 });
+	SNK.PushBack({ 754,79,72,19 });
+	SNK.PushBack({ 601,105,72,19 });
+	SNK.PushBack({ 678,105,72,19 });
+	SNK.PushBack({ 754,105,72,19 });
+	SNK.PushBack({ 601,129,72,19 });
+	SNK.PushBack({ 678,129,72,19 });
+	SNK.PushBack({ 754,129,72,19 });
 	SNK.loop = false;
 	SNK.speed = 0.4f;
 	
+	Letters.PushBack({ 838,0,20,14 });
+	Letters.PushBack({ 838,0,31,14 });
+	Letters.PushBack({ 838,0,40,14 });
+	Letters.PushBack({ 838,0,57,14 });
+	Letters.PushBack({ 838,0,66,14 });
+	Letters.PushBack({ 838,0,76,14 });
+	Letters.PushBack({ 838,0,96,14 });
+	Letters.PushBack({ 838,0,103,14 });
+	Letters.PushBack({ 838,0,114,14 });
+	Letters.PushBack({ 838,0,126,14 });
+	Letters.loop = false;
+	Letters.speed = 0.2f;
 
-}
+	Letters2.PushBack({ 838,17,8,13 });
+	Letters2.PushBack({ 838,17,18,13 });
+	Letters2.PushBack({ 838,17,31,13 });
+	Letters2.PushBack({ 838,17,43,13 });
+	Letters2.PushBack({ 838,17,55,13 });
+	Letters2.PushBack({ 838,17,65,13 });
+	Letters2.PushBack({ 838,17,77,13 });
+	Letters2.PushBack({ 838,17,87,13 });
+	Letters2.PushBack({ 838,17,102,13 });
+	Letters2.PushBack({ 838,17,112,13 });
+	Letters2.PushBack({ 838,17,121,13 });
+	Letters2.PushBack({ 838,17,133,13 });
+	Letters2.loop = false;
+	Letters2.speed = 0.2f;
+
+	Copy.PushBack({ 584,160,7,7 });
+	Copy.loop = false;
+
+
+}	
 
 ModuleSceneIntro::~ModuleSceneIntro()
 {}
@@ -102,6 +149,9 @@ bool ModuleSceneIntro::CleanUp()
 	change = false;
 	Neogeo.Reset();
 	SNK.Reset();
+	Letters.Reset();
+	Letters2.Reset();
+	Copy.Reset();
 	time = 0;
 
 
@@ -131,8 +181,30 @@ update_status ModuleSceneIntro::Update()
 	SDL_RenderClear(App->render->renderer);
 
 	anim = &Neogeo;
+	anim2 = &SNK;
+	anim3 = &Letters;
+	anim4 = &Letters2;
+	anim5 = &Copy;
 
 	App->render->Blit(intro, 40, 50, &(anim->GetCurrentFrame()));
+
+	if (time > 1700)
+	{
+		App->render->Blit(intro, 83, 120, &(anim3->GetCurrentFrame()));
+		if (Letters.SeeCurrentFrame() == 9) {
+			next = true;
+		}
+	}
+	if (next) {
+		App->render->Blit(intro, 83, 137, &(anim4->GetCurrentFrame()));
+	}
+	if (time > 3000 ) {
+		App->render->Blit(intro, 112, 170, &(anim2->GetCurrentFrame()));
+	}
+	if (SNK.SeeCurrentFrame() > 14) {
+		App->render->Blit(intro, 272, 52, &(anim5->GetCurrentFrame()));
+	}
+	
 	if (App->input->keyboard[SDL_SCANCODE_SPACE] == KEY_DOWN && App->fade->IsFading() == false)
 	{
 		App->fade->FadeToBlack(this, (Module*)App->stage2,0.0f);

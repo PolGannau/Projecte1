@@ -13,6 +13,10 @@ public:
 	ModuleSceneIntro();
 	~ModuleSceneIntro();
 	Animation* anim= nullptr;
+	Animation* anim2 = nullptr;
+	Animation* anim3 = nullptr;
+	Animation* anim4 = nullptr;
+	Animation* anim5 = nullptr;
 	bool Start();
 	update_status Update();
 	bool CleanUp();
@@ -20,13 +24,16 @@ public:
 public:
 
 	SDL_Texture * intro = nullptr;
-	SDL_Rect neogeo;
 	Animation Neogeo;
 	Animation SNK;
+	Animation Letters;
+	Animation Letters2;
+	Animation Copy;
 	uint fx = 0;
 	int time = 0;
 	int time2 = 0;
 	bool change = false;
+	bool next = false;
 	Mix_Music * music = nullptr;
 };
 
