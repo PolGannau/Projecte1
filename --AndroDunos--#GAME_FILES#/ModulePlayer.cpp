@@ -326,7 +326,6 @@ update_status ModulePlayer::Update()
 	}
 	// Draw UI (score) -------------------------------------
 
-
 	return UPDATE_CONTINUE;
 }
 
@@ -334,20 +333,32 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 {
 	if (c1 == coll && destroyed == false && App->fade->IsFading() == false)
 	{
-		if (App->player2->IsEnabled() == false)
-		{
-			App->fade->FadeToBlack((Module*)App->stage2, (Module*)App->gameover, 2.0f);
-		}
-
 		App->particles->AddParticle(App->particles->explosionship, position.x, position.y, COLLIDER_NONE);
-
-		App->player->coll->to_delete = true;
-		weapon1 = true;
 		App->powerups->powerup1 = false;
 		App->powerups->powerup2 = false;
-		App->player->Disable();
-		App->player->CleanUp();
-
-		destroyed = true;
+		weapon1 = true;
+		life--;
+		if (life == 0) {
+			if (App->player2->IsEnabled() == false)
+			{
+				App->fade->FadeToBlack((Module*)App->stage2, (Module*)App->gameover, 2.0f);
+			}
+			App->player->coll->to_delete = true;
+			App->player->Disable();
+			App->player->CleanUp();
+			destroyed = true;
+			life = 3;
+		}
+		else {
+			App->player->Spawn();
+		}
 	}
+
+}
+
+void ModulePlayer::Spawn() {
+	
+	App->player->position.x = (App->render->camera.x/SCREEN_SIZE) +30;
+	App->player->position.y = App->render->camera.y +100;
+	current_animation = &idle;
 }

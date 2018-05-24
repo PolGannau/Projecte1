@@ -20,6 +20,7 @@ public:
 	update_status Update();
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
+	void Spawn();
 
 public:
 
@@ -48,6 +49,8 @@ public:
 	int hp;
 	bool a = false, x = false;
 	bool Up = false;
+	int life = 3;
+
 };
 
 #endif
