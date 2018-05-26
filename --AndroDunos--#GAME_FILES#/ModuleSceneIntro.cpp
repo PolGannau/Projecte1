@@ -131,9 +131,16 @@ bool ModuleSceneIntro::Start()
 
 	music = App->audio->LoadMusic("assets/Intro/01_Neo_Geo_Logo.ogg");
 
-	App->audio->PlayMusic(music);
+	App->audio->PlayMusic(music,1);
+
+	change = false;
 
 	time2 = SDL_GetTicks();
+	Neogeo.Reset();
+	SNK.Reset();
+	Letters.Reset();
+	Letters2.Reset();
+	Copy.Reset();
 	time = 0;
 	return true;
 }
@@ -209,7 +216,7 @@ update_status ModuleSceneIntro::Update()
 	{
 		App->fade->FadeToBlack(this, (Module*)App->viscogames,0.0f);
 	}
-	if ((SDL_GameControllerGetButton(App->input->controller1, SDL_CONTROLLER_BUTTON_START)) || time > 8000) {
+	if ((SDL_GameControllerGetButton(App->input->controller1, SDL_CONTROLLER_BUTTON_START) && App->fade->IsFading() == false) || time > 8000) {
 		App->fade->FadeToBlack(this, (Module*)App->viscogames, 0.0f);
 	}
 

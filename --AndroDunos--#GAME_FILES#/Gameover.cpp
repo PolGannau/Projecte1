@@ -57,7 +57,7 @@ update_status ModuleGameover::Update()
 	{
 		App->fade->FadeToBlack(this, (Module*)App->scene_intro, 0.2f);
 	}
-	if (SDL_GameControllerGetButton(App->input->controller1, SDL_CONTROLLER_BUTTON_START)) {
+	if (SDL_GameControllerGetButton(App->input->controller1, SDL_CONTROLLER_BUTTON_START) && App->fade->IsFading()==false) {
 		App->fade->FadeToBlack(this, (Module*)App->scene_intro, 0.2f);
 	}
 
