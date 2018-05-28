@@ -1,7 +1,9 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleTextures.h"
+#include "ModulePlayer.h"
 #include "ModuleRender.h"
+#include "ModulePlayer2.h"
 #include "ModuleFonts.h"
 
 #include<string.h>
@@ -94,9 +96,9 @@ void ModuleFonts::BlitText(int x, int y, int font_id, const char* text) const
 	for (uint i = 0; i < len; ++i)
 	{
 		// TODO 2: Find the character in the table and its position in the texture, then Blit
-		uint j = 0;
+		uint j;
 
-		for (; j < fonts[font_id].len; ++j) {
+		for (j=0; j < fonts[font_id].len; ++j) {
 			if (text[i] == fonts[font_id].table[j])
 				break;
 

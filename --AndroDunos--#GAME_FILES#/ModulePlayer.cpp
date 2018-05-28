@@ -72,7 +72,7 @@ bool ModulePlayer::Start()
 	fx_4 = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-4_(Main_Ships).wav");
 
 	// TODO 4: Try loading "rtype_font3.png" that has two rows to test if all calculations are correct
-
+	font_maxscore = App->fonts->Load("assets/fonts/red_font_high_score.png", "1234567890hi-", 1);
 
 	return true;
 }
@@ -84,6 +84,7 @@ bool ModulePlayer::CleanUp()
 
 	App->textures->Unload(graphics);
 	App->fonts->UnLoad(font_score);
+	App->fonts->UnLoad(font_maxscore);
 	App->audio->UnloadSoundEffects(fx_1);
 	App->audio->UnloadSoundEffects(fx_2);
 	App->audio->UnloadSoundEffects(fx_3);
