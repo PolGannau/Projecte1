@@ -189,7 +189,22 @@ bool ModuleStage2::CleanUp()
 update_status ModuleStage2::Update()
 {
 
-	if ((stop_p == false && App->render->camera.x <= 3562 * SCREEN_SIZE)|| (App->render->camera.y >= 1570 * SCREEN_SIZE && stop_p==false))
+	if (App->render->camera.x >= 3502 * SCREEN_SIZE && App->render->camera.x <= 3806 * SCREEN_SIZE && App->render->camera.y >= 0 * SCREEN_SIZE && App->render->camera.y < 1571 * SCREEN_SIZE)
+	{
+		stop_p = true;
+	}
+	else
+	{
+		stop_p = false;
+
+	}
+	if (App->render->camera.y >= 1571 * SCREEN_SIZE && App->enemies->sub_Boss_Dead == false)
+	{
+		left_move = true;
+	}
+	else left_move = false;
+
+	if (stop_p == false && left_move == false)
 	{
 		App->render->camera.x += 1 * SCREEN_SIZE; //speed in x axes
 		App->player->position.x += 1;
@@ -200,13 +215,22 @@ update_status ModuleStage2::Update()
 		}
 	}
 
-
-	if (App->render->camera.x == 3502 * SCREEN_SIZE && App->render->camera.x <= 3808 * SCREEN_SIZE)
+	if (left_move == true)
 	{
-		stop_p = true; // stop scrolling in x axes
+		App->render->camera.x -= 1 * SCREEN_SIZE; //speed in x axes
+		App->player->position.x -= 1;
+		App->render->view.x -= 1;
+		if (App->player2->IsEnabled() == true)
+		{
+			App->player2->position.x -= 1;
+		}
+		if (App->render->camera.x <= 2907 * SCREEN_SIZE)
+		{
+			App->enemies->sub_Boss_Dead = true;
+		}
 	}
 
-	if (App->render->camera.x == 3502 * SCREEN_SIZE && App->render->camera.x <= 3808 * SCREEN_SIZE  && App->render->camera.y <= 1570 * SCREEN_SIZE)
+	if (stop_p == true && App->render->camera.x >= 3502 * SCREEN_SIZE && App->render->camera.x <= 3806 * SCREEN_SIZE && App->render->camera.y >= 0 * SCREEN_SIZE && App->render->camera.y < 1571 * SCREEN_SIZE)
 	{
 		App->render->camera.y += 1 * SCREEN_SIZE; // speed in y axes
 		App->player->position.y += 1;

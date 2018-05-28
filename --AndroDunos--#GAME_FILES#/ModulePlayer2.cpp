@@ -307,8 +307,8 @@ update_status ModulePlayer2::Update()
 	// Draw everything --------------------------------------
 	if (App->player2->IsEnabled() == true)
 	{
-		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 		App->render->Blit(graphics, ((App->player2->position.x) - App->player2->stand_fire.GetCurrentFrame().w - 1), (App->player2->position.y + 7), &(stand_fire.GetCurrentFrame()));
+		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 	}
 	if (setcoll) {
 		++settcoll;

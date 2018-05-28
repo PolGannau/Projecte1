@@ -35,6 +35,8 @@ bool ModuleEnemies::Start()
 	// Create a prototype for each enemy available so we can copy them around
 	sprites = App->textures->Load("assets/enemies/enemies.png");
 
+	sub_Boss_Dead = false;
+
 	return true;
 }
 

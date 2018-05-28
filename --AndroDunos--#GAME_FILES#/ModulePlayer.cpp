@@ -322,8 +322,8 @@ update_status ModulePlayer::Update()
 	// Draw everything --------------------------------------
 	if (destroyed == false)
 	{
-		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 		App->render->Blit(graphics, ((App->player->position.x) - App->player->stand_fire.GetCurrentFrame().w - 1), (App->player->position.y + 7), &(stand_fire.GetCurrentFrame()));
+		App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
 	}
 	// Draw UI (score) -------------------------------------
 	if (setcoll) {

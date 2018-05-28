@@ -29,6 +29,7 @@ public:
 	SDL_Texture * underground_e = nullptr;		//undergound background tiles end
 	SDL_Texture * hud = nullptr;
 	bool stop_p;
+	bool left_move = false;
 
 	Mix_Music* mus = nullptr;
 };

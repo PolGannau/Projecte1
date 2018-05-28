@@ -38,7 +38,7 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
-	bool tocuh = false, dead = false, verticalstructuredead = false, sub_Boss_Dead = true;
+	bool tocuh = false, dead = false, verticalstructuredead = false, sub_Boss_Dead = false;
 	bool touch2 = false, dead2=false;
 	bool AddEnemy(ENEMY_TYPES type, int x, int y, bool z= false);
 
