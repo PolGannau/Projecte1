@@ -96,6 +96,11 @@ ModuleParticles::ModuleParticles()
 	laser.speed.x = BULLET_SPEED;
 	laser.life = BULLET_LIFE;
 
+	BlueLaserPlayer.anim.PushBack({ 24, 53, 15, 6 });
+	BlueLaserPlayer.anim.speed = 0.2f;
+	BlueLaserPlayer.speed.x = BULLET_SPEED;
+	BlueLaserPlayer.life = BULLET_LIFE;
+
 	laser2right.anim.PushBack({ 8, 71, 10, 3 });
 	laser2right.anim.speed = 0.2f;
 	laser2right.speed.x = BULLET_SPEED;
@@ -106,6 +111,17 @@ ModuleParticles::ModuleParticles()
 	laser2left.speed.x = -BULLET_SPEED;
 	laser2left.life = BULLET_LIFE;
 
+	
+	Laser2PowerupBlue2up.anim.PushBack({ 7, 39, 11, 8 });
+	Laser2PowerupBlue2up.speed.x = -BULLET_SPEED;
+	Laser2PowerupBlue2up.speed.y = BULLET_SPEED / 3;
+	Laser2PowerupBlue2up.life = BULLET_LIFE;
+
+	Laser2PowerupBlue2down.anim.PushBack({ 7, 52, 11, 8 });
+	Laser2PowerupBlue2down.speed.x = -BULLET_SPEED;
+	Laser2PowerupBlue2down.speed.y = -BULLET_SPEED / 3;
+	Laser2PowerupBlue2down.life = BULLET_LIFE;
+	
 	laser3.anim.PushBack({ 42, 94, 32, 3 });
 	laser3.anim.speed = 0.2f;
 	laser3.speed.x = BULLET_SPEED;

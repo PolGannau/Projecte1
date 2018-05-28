@@ -91,6 +91,9 @@ public:
 	Particle followlaser;
 	Particle Structuretouch1;
 	Particle Structuretouch21;
+	Particle BlueLaserPlayer;
+	Particle Laser2PowerupBlue2up;
+	Particle Laser2PowerupBlue2down;
 };
 
 #endif // __MODULEPARTICLES_H__

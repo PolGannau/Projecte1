@@ -37,6 +37,8 @@ public:
 	void OnCollision(Collider* c1, Collider* c2);
 	bool powerup1 = false, powerup2 = false, powerup3 = false, powerup4 = false;
 	bool power2up1 = false, power2up2 = false, power2up3 = false, power2up4 = false;
+	int blue = -1, red = -1, yellow = -1, green = -1;
+	int blue2 = -1, red2 = -1, yellow2 = -1, green2 = -1;
 	bool AddPowerUp(POWERUPS_TYPES type, int x, int y);
 
 private:

@@ -10,7 +10,7 @@ private:
 	bool going_up = true;
 	int original_y = 0;
 	Animation fly;
-
+	
 public:
 
 	PowerUpRed(int x, int y);

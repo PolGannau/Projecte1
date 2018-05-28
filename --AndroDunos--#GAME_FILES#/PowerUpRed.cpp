@@ -48,8 +48,7 @@ PowerUpRed::PowerUpRed(int x, int y) : PowerUp(x, y)
 
 void PowerUpRed::Move()
 {
-
-	position.x -= 0.5;
+	position.x -= 0;
 }
 
 void PowerUpRed::OnCollision(Collider* collider)
@@ -58,20 +57,25 @@ void PowerUpRed::OnCollision(Collider* collider)
 		if (collider->type == COLLIDER_PLAYER)
 		{
 			App->powerups->powerup1 = true;
+			App->powerups->red = App->powerups->red + 1;
 		}
 		else if (collider->type == COLLIDER_PLAYER2)
 		{
 			App->powerups->power2up1 = true;
+			App->powerups->red2 = App->powerups->red2 + 1;
 		}
 	}
 	else if (fly.SeeCurrentFrame() >= 14 && fly.SeeCurrentFrame() <= 26) {
 		if (collider->type == COLLIDER_PLAYER)
 		{
 			App->powerups->powerup2 = true;
+			App->powerups->blue = App->powerups->blue + 1;
+
 		}
 		else if (collider->type == COLLIDER_PLAYER2)
 		{
 			App->powerups->power2up2 = true;
+			App->powerups->blue2 = App->powerups->blue2 + 1;
 		}
 	}
 
