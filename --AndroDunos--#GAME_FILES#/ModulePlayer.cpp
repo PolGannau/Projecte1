@@ -59,13 +59,12 @@ bool ModulePlayer::Start()
 	destroyed = false;
 	position.x = 30;
 	position.y = 60;
-	font_score = App->fonts->Load("Assets/Fonts/font_score.png", "1234567890P", 1);
 	score = 0;
 
 	coll = App->collision->AddCollider({ position.x, position.y, 27, 17 }, COLLIDER_PLAYER, this);
 
 	// TODO 0: Notice how a font is loaded and the meaning of all its arguments 
-	font_score = App->fonts->Load("assets/fonts/Font-score-white.png", "1234567890P", 1);
+	font_score = App->fonts->Load("assets/fonts/Font-score-white.png", "1234567890p", 1);
 
 	fx_1 = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-1_(Main_Ships).wav");
 	fx_2 = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-2_(Main_Ships).wav");
@@ -73,6 +72,7 @@ bool ModulePlayer::Start()
 	fx_4 = App->audio->LoadEffect("assets/ship/Laser_Shot_Type-4_(Main_Ships).wav");
 
 	// TODO 4: Try loading "rtype_font3.png" that has two rows to test if all calculations are correct
+
 
 	return true;
 }

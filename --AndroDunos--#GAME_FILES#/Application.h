@@ -20,11 +20,11 @@ class ModuleStageclear;
 class ModuleCollision;
 class ModuleEnemies;
 class ModuleFonts;
-class Module;
 class ModulePowerUps;
 class ModuleGameover;
 class ModuleStage2;
 class ModuleViscoGames;
+class Module;
 
 
 class Application

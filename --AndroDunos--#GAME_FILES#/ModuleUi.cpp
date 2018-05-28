@@ -66,7 +66,7 @@ bool ModuleUi::Start()
 	press2p.loop = true;
 	press2p.speed = 0.0225f;
 
-	//font_score = App->fonts->Load("Assets/font_score.png", "1234567890P", 1);
+	
 
 
 	return true;
@@ -86,10 +86,11 @@ update_status ModuleUi::Update()
 
 
 	//final score in stage
-	//if (App->stageclear->IsEnabled() == true && App->gameover->IsEnabled() == false) {
-	//	sprintf_s(score_text, 10, "%7d", App->player1->score);
-	//	App->fonts->BlitText(20, 100, font_score, score_text);
-	//}
+	if (App->stageclear->IsEnabled() == true && App->gameover->IsEnabled() == false)
+	{
+	sprintf_s(score_text, 10, "%7d", App->player->score);
+	App->fonts->BlitText(20, 100, font_score, score_text);
+	}
 
 
 	if (App->player->IsEnabled() == true) {

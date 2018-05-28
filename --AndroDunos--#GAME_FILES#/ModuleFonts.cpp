@@ -4,7 +4,7 @@
 #include "ModuleRender.h"
 #include "ModuleFonts.h"
 
-#include <string.h>
+#include<string.h>
 
 // Constructor
 ModuleFonts::ModuleFonts() : Module()
@@ -46,11 +46,12 @@ int ModuleFonts::Load(const char* texture_path, const char* characters, uint row
 
 	fonts[id].graphic = tex; // graphic: pointer to the texture
 	fonts[id].rows = rows; // rows: rows of characters in the texture
-	fonts[id].len = 0;// len: length of the table
+	fonts[id].len = 0; // len: length of the table
 
-					  // table: array of chars to have the list of characters
-	strcpy_s(fonts[id].table, MAX_FONT_CHARS, characters); //
-														   // row_chars: amount of chars per row of the texture
+	// TODO 1: Finish storing font data
+	// table: array of chars to have the list of characters
+	strcpy_s(fonts[id].table, MAX_FONT_CHARS, characters);
+	// row_chars: amount of chars per row of the texture
 	fonts[id].len = strlen(characters);
 	fonts[id].row_chars = fonts[id].len / rows;
 	// char_w: width of each character
@@ -92,7 +93,7 @@ void ModuleFonts::BlitText(int x, int y, int font_id, const char* text) const
 
 	for (uint i = 0; i < len; ++i)
 	{
-		// Finds the character in the table and its position in the texture, then Blit
+		// TODO 2: Find the character in the table and its position in the texture, then Blit
 		uint j = 0;
 
 		for (; j < fonts[font_id].len; ++j) {
@@ -106,4 +107,5 @@ void ModuleFonts::BlitText(int x, int y, int font_id, const char* text) const
 
 		App->render->Blit(font->graphic, x + i * font->char_w, y, &rect, 0.0f, false);
 	}
+
 }
