@@ -204,8 +204,8 @@ update_status ModulePlayer2::Update()
 					else {
 						App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 6, COLLIDER_PLAYER_SHOT);
 						App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 12, COLLIDER_PLAYER_SHOT);
-						App->particles->AddParticle(App->particles->Laser2PowerupBlue2down, position.x - 7, position.y + 12, COLLIDER_PLAYER_SHOT);
-						App->particles->AddParticle(App->particles->Laser2PowerupBlue2up, position.x - 7, position.y + 6, COLLIDER_PLAYER_SHOT);
+						App->particles->AddParticle(App->particles->Laser2PowerupBlue2down, position.x - 7, position.y + 10, COLLIDER_PLAYER_SHOT);
+						App->particles->AddParticle(App->particles->Laser2PowerupBlue2up, position.x - 7, position.y + 4, COLLIDER_PLAYER_SHOT);
 					}
 					App->audio->PlaySoundEffect(fx_2);
 				}
@@ -243,8 +243,8 @@ update_status ModulePlayer2::Update()
 					else {
 						App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 6, COLLIDER_PLAYER_SHOT);
 						App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 12, COLLIDER_PLAYER_SHOT);
-						App->particles->AddParticle(App->particles->Laser2PowerupBlue2down, position.x - 7, position.y + 12, COLLIDER_PLAYER_SHOT);
-						App->particles->AddParticle(App->particles->Laser2PowerupBlue2up, position.x - 7, position.y + 6, COLLIDER_PLAYER_SHOT);
+						App->particles->AddParticle(App->particles->Laser2PowerupBlue2down, position.x - 7, position.y + 10, COLLIDER_PLAYER_SHOT);
+						App->particles->AddParticle(App->particles->Laser2PowerupBlue2up, position.x - 7, position.y + 4, COLLIDER_PLAYER_SHOT);
 						App->particles->AddParticle(App->particles->laser2powerupred, position.x + 10, position.y, COLLIDER_PLAYER_SHOT);
 					}
 					App->audio->PlaySoundEffect(fx_2);

@@ -144,6 +144,12 @@
     <ClInclude Include="..\ModuleViscoGames.h">
       <Filter>Modules</Filter>
     </ClInclude>
+    <ClInclude Include="..\Enemy_Elevator.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Enemy_MovementLaser.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp">
@@ -253,6 +259,12 @@
     </ClCompile>
     <ClCompile Include="..\ModuleViscoGames.cpp">
       <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Enemy_Elevator.cpp">
+      <Filter>Modules\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Enemy_MovementLaser.cpp">
+      <Filter>Modules\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

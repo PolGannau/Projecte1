@@ -139,6 +139,10 @@ bool ModuleStage2::Start()
 
 	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 400, 100);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 540, 120, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 550, 120, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 560, 120, false, 1);
+
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2277, 245, true);
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2453, -145, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2614, -145, false); 
@@ -152,6 +156,8 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 889, true);
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 1283, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 1283, true);
+
+
 
 	//mus = App->audio->LoadMusic("assets/stage2/07_Stage_2-Mechanized-Unit-Intro.ogg", 1);
 	mus = App->audio->LoadMusic("assets/Stage-2/07_Stage_2-Mechanized-Unit-Loop.ogg");

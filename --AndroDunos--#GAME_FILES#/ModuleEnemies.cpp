@@ -14,6 +14,8 @@
 #include "Enemy_WhiteTurret.h"
 #include "Enemy_VerticalStructure.h"
 #include "Enemy_TripleTurret.h"
+#include "Enemy_Elevator.h"
+#include "Enemy_MovementLaser.h"
 #include "ModulePlayer.h"
 
 
@@ -107,7 +109,7 @@ bool ModuleEnemies::CleanUp()
 	return true;
 }
 
-bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y,bool z)
+bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y,bool z, int num)
 {
 	bool ret = false;
 
@@ -119,6 +121,7 @@ bool ModuleEnemies::AddEnemy(ENEMY_TYPES type, int x, int y,bool z)
 			queue[i].x = x;
 			queue[i].y = y;
 			queue[i].z = z;
+			queue[i].num = num;
 			ret = true;
 			break;
 		}
@@ -144,7 +147,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_ShipUpDown(info.x, info.y);
 			break;
 		case ENEMY_TYPES::STRAIGHTONSHIP:
-			enemies[i] = new Enemy_StraightOnShip(info.x, info.y);
+			enemies[i] = new Enemy_StraightOnShip(info.x, info.y, info.num);
 			break;
 		case ENEMY_TYPES::SHIPGREEN:
 			enemies[i] = new Enemy_ShipGreen(info.x, info.y);
@@ -165,6 +168,12 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::TRIPLETURRET:
 			enemies[i] = new Enemy_TripleTurret(info.x, info.y);
+			break;
+		case ENEMY_TYPES::ELEVATOR:
+			enemies[i] = new Enemy_Elevator(info.x, info.y);
+			break;
+		case ENEMY_TYPES::MOVEMENTLASER:
+			enemies[i] = new Enemy_MovementLaser(info.x, info.y);
 			break;
 		}
 		
@@ -238,6 +247,16 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				}
 				break;
 			case TRIPLETURRET:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case ELEVATOR:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case MOVEMENTLASER:
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;

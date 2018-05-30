@@ -213,8 +213,8 @@ update_status ModulePlayer::Update()
 					else {
 						App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 6, COLLIDER_PLAYER_SHOT);
 						App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 12, COLLIDER_PLAYER_SHOT);
-						App->particles->AddParticle(App->particles->Laser2PowerupBlue2down, position.x - 7, position.y + 12, COLLIDER_PLAYER_SHOT);
-						App->particles->AddParticle(App->particles->Laser2PowerupBlue2up, position.x - 7, position.y + 6, COLLIDER_PLAYER_SHOT);
+						App->particles->AddParticle(App->particles->Laser2PowerupBlue2down, position.x - 7, position.y + 10, COLLIDER_PLAYER_SHOT);
+						App->particles->AddParticle(App->particles->Laser2PowerupBlue2up, position.x - 7, position.y + 4, COLLIDER_PLAYER_SHOT);
 					}
 					App->audio->PlaySoundEffect(fx_2);
 				}
@@ -252,8 +252,8 @@ update_status ModulePlayer::Update()
 					else {
 						App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 6, COLLIDER_PLAYER_SHOT);
 						App->particles->AddParticle(App->particles->laser2right, position.x + 20, position.y + 12, COLLIDER_PLAYER_SHOT);
-						App->particles->AddParticle(App->particles->Laser2PowerupBlue2down, position.x - 7, position.y + 12, COLLIDER_PLAYER_SHOT);
-						App->particles->AddParticle(App->particles->Laser2PowerupBlue2up, position.x - 7, position.y + 6, COLLIDER_PLAYER_SHOT);
+						App->particles->AddParticle(App->particles->Laser2PowerupBlue2down, position.x - 7, position.y + 10, COLLIDER_PLAYER_SHOT);
+						App->particles->AddParticle(App->particles->Laser2PowerupBlue2up, position.x - 7, position.y + 4, COLLIDER_PLAYER_SHOT);
 						App->particles->AddParticle(App->particles->laser2powerupred, position.x + 10, position.y, COLLIDER_PLAYER_SHOT);
 					}
 					App->audio->PlaySoundEffect(fx_2);
@@ -340,8 +340,8 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_E] == KEY_STATE::KEY_DOWN)
 	{
-		//App->enemies->AddEnemy(ENEMY_TYPES::TRIPLETURRET, position.x + 250, position.y);
-		App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, position.x + 250, position.y);
+		App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, position.x + 250, position.y,false, 2);
+		//App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, position.x + 250, position.y);
 	}
 
 	coll->SetPos(position.x, position.y);

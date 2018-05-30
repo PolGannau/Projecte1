@@ -11,6 +11,8 @@
 #include "Enemy_WhiteTurret.h"
 #include "Enemy_VerticalStructure.h"
 #include "Enemy_TripleTurret.h"
+#include "Enemy_Elevator.h"
+#include "Enemy_MovementLaser.h"
 
 #define MAX_ENEMIES 100
 
@@ -22,7 +24,7 @@ struct EnemyInfo
 	ENEMY_TYPES type = ENEMY_TYPES::NO_TYPE;
 	int x, y;
 	bool z;
-	int anim_;
+	int num;
 };
 
 class ModuleEnemies : public Module
@@ -40,7 +42,7 @@ public:
 	void OnCollision(Collider* c1, Collider* c2);
 	bool tocuh = false, dead = false, verticalstructuredead = false, sub_Boss_Dead = false;
 	bool touch2 = false, dead2=false;
-	bool AddEnemy(ENEMY_TYPES type, int x, int y, bool z= false);
+	bool AddEnemy(ENEMY_TYPES type, int x, int y, bool z = false, int num = 1);
 
 private:
 
