@@ -15,6 +15,8 @@
 #include "Enemy_MovementLaser.h"
 #include "Enemy_Ship.h"
 #include "Enemy_HandShip.h"
+#include "Enemy_Multicolor.h"
+#include "Enemy_Small.h"
 
 #define MAX_ENEMIES 100
 

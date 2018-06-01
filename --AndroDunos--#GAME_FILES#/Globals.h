@@ -2,13 +2,13 @@
 #define __GLOBALS_H__
 
 #include "SDL\include\SDL_rect.h"
-#include <windows.h>
+
 #define LOG(format, ...) log(__FILE__, __LINE__, format, __VA_ARGS__);
 void log(const char file[], int line, const char* format, ...);
 
 #define EXIT_FAILURE 1
 #define EXIT_SUCCESS 0
-Thread.Sleep(500);
+
 #define TILE_WIDTH 251
 
 #define MIN( a, b ) ( ((a) < (b)) ? (a) : (b) )
@@ -37,6 +37,8 @@ enum ENEMY_TYPES
 	MOVEMENTLASER,
 	SHIP,
 	HANDSHIP,
+	MULTICOLOR,
+	SMALL,
 
 };
 
@@ -44,15 +46,16 @@ enum ENEMY_TYPES
 typedef unsigned int uint;
 
 // Configuration -----------
-#define SCREEN_SIZE 3 // 1 full screen
+#define SCREEN_SIZE 3 // 1 full screen  3  no
 #define SCREEN_WIDTH 304 
 #define SCREEN_HEIGHT 224 
 #define WIN_FULLSCREEN 0
-#define WIN_FULLSCREEN_DESKTOP 0 // 1 full screen
+#define WIN_FULLSCREEN_DESKTOP 0 // 1 full screen 0 no
 #define WIN_BORDERLESS 0
 #define WIN_RESIZABLE 0
 #define REN_VSYNC 1
 #define CONTROLLER_DEAD_ZONE 8000
+
 
 
 #endif // __GLOBALS_H__

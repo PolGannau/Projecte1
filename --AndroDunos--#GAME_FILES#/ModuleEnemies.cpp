@@ -18,7 +18,10 @@
 #include "Enemy_MovementLaser.h"
 #include "Enemy_Ship.h"
 #include "Enemy_HandShip.h"
+#include "Enemy_Multicolor.h"
+#include "Enemy_Small.h"
 #include "ModulePlayer.h"
+
 
 
 #define SPAWN_MARGIN 50
@@ -183,9 +186,13 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::HANDSHIP:
 			enemies[i] = new Enemy_HandShip(info.x, info.y);
 			break;
+		case ENEMY_TYPES::MULTICOLOR:
+			enemies[i] = new Enemy_MultiColor(info.x, info.y);
+			break;
+		case ENEMY_TYPES::SMALL:
+			enemies[i] = new Enemy_Small(info.x, info.y);
+			break;
 		}
-		
-
 	}
 }
 
@@ -275,6 +282,16 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case HANDSHIP:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case MULTICOLOR:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case SMALL:
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;

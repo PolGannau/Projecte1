@@ -39,5 +39,5 @@ void Enemy_Ship::Move()
 	position.x -= 1;
 }
 void Enemy_Ship::OnCollision(Collider* collider) {
-
+	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
 }
