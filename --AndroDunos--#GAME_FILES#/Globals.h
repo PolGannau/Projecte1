@@ -2,13 +2,13 @@
 #define __GLOBALS_H__
 
 #include "SDL\include\SDL_rect.h"
-
+#include <windows.h>
 #define LOG(format, ...) log(__FILE__, __LINE__, format, __VA_ARGS__);
 void log(const char file[], int line, const char* format, ...);
 
 #define EXIT_FAILURE 1
 #define EXIT_SUCCESS 0
-
+Thread.Sleep(500);
 #define TILE_WIDTH 251
 
 #define MIN( a, b ) ( ((a) < (b)) ? (a) : (b) )
