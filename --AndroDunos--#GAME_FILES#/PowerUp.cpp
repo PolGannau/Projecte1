@@ -12,7 +12,7 @@ PowerUp::PowerUp(int x, int y) : position(x, y)
 PowerUp::~PowerUp()
 {
 	if (collider != nullptr)
-		//collider->to_delete = true;
+		collider->to_delete = true;
 	collider = nullptr;
 }
 

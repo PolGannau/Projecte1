@@ -14,6 +14,7 @@
 #include "Enemy_Elevator.h"
 #include "Enemy_MovementLaser.h"
 #include "Enemy_Ship.h"
+#include "Enemy_HandShip.h"
 
 #define MAX_ENEMIES 100
 

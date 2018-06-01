@@ -18,7 +18,7 @@ Enemy_StraightOnShip::Enemy_StraightOnShip(int x, int y, int num) : Enemy(x, y)
 		animation = &fly;
 
 		path.PushBack({-2.0f,0.0f},37);
-		path.PushBack({ 2.0f,-0.8f }, 25);
+		path.PushBack({ 2.0f,-0.8f }, 40);
 		path.PushBack({ -4.0f,0.0f }, 500);
 		movement = 1;
 	}
@@ -32,6 +32,20 @@ Enemy_StraightOnShip::Enemy_StraightOnShip(int x, int y, int num) : Enemy(x, y)
 		animation = &fly;
 		movement = 2;
 	}
+	else if (num == 3) { //down
+		fly.PushBack({ 187,1,29,13 });
+		fly.PushBack({ 217, 0, 29, 16 });
+		fly.PushBack({ 247, 1, 29, 17 });
+		fly.PushBack({ 217, 0, 29, 16 });
+		fly.PushBack({ 277, 1, 29, 14 });
+		fly.speed = 0.1f;
+		animation = &fly;
+
+		path.PushBack({ -2.0f,0.0f }, 37); 
+		path.PushBack({ 2.0f,0.8f }, 40); 
+		path.PushBack({ -4.0f,0.0f }, 500);
+		movement = 3;
+	}
 
 
 	collider = App->collision->AddCollider({ 0, 0, 29, 16 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
@@ -42,7 +56,7 @@ Enemy_StraightOnShip::Enemy_StraightOnShip(int x, int y, int num) : Enemy(x, y)
 void Enemy_StraightOnShip::Move()
 {
 	
-	if (movement==1) {
+	if (movement==1 || movement==3) {
 		position = original_pos + path.GetCurrentSpeed();
 	}
 	else if (movement == 2) {
