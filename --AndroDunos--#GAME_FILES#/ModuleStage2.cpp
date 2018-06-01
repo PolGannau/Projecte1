@@ -129,13 +129,13 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 504, 120);*/
 
 	// well position
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 270, 140);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 295, 163);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 320, 140);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 270, 140, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 295, 163, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 320, 140, true);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 360, 39);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 375, 62);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 392, 39);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 360, 39, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 375, 62, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 392, 39, true);
 
 	App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, 400, 100);
 
@@ -151,6 +151,9 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2453, -145, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2614, -145, false); 
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2757, 245, true);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::ELEVATOR, 3544, -400);
+	App->enemies->AddEnemy(ENEMY_TYPES::ELEVATOR2, 3544, 191);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 501, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 501, true);
@@ -240,7 +243,7 @@ update_status ModuleStage2::Update()
 		}
 	}
 
-	if (stop_p == true && App->render->camera.x >= 3502 * SCREEN_SIZE && App->render->camera.x <= 3806 * SCREEN_SIZE && App->render->camera.y >= 0 * SCREEN_SIZE && App->render->camera.y < 1571 * SCREEN_SIZE)
+	if (stop_p == true && App->render->camera.x >= 3502 * SCREEN_SIZE && App->render->camera.x <= 3806 * SCREEN_SIZE && App->render->camera.y >= 0 * SCREEN_SIZE && App->render->camera.y < 1571 * SCREEN_SIZE && App->enemies->timeelevator>=560)
 	{
 		App->render->camera.y += 1 * SCREEN_SIZE; // speed in y axes
 		App->player->position.y += 1;

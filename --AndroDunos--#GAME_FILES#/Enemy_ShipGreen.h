@@ -12,11 +12,11 @@ private:
 	Animation fly;
 	int shot = 0;
 	float x, y, m;
-
+	bool gun;
 
 public:
 
-	Enemy_ShipGreen(int x, int y);
+	Enemy_ShipGreen(int x, int y, bool gun);
 	void OnCollision(Collider* collider);
 	void Move();
 };

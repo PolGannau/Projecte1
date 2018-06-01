@@ -12,10 +12,12 @@
 #include "Enemy_VerticalStructure.h"
 #include "Enemy_TripleTurret.h"
 #include "Enemy_Elevator.h"
+#include "Enemy_Elevator2.h"
 #include "Enemy_MovementLaser.h"
 #include "Enemy_Ship.h"
 #include "Enemy_HandShip.h"
 #include "Enemy_Multicolor.h"
+#include "Enemy_WhiteYellow.h"
 #include "Enemy_Small.h"
 
 #define MAX_ENEMIES 100
@@ -47,7 +49,7 @@ public:
 	bool tocuh = false, dead = false, verticalstructuredead = false, sub_Boss_Dead = false;
 	bool touch2 = false, dead2=false;
 	bool AddEnemy(ENEMY_TYPES type, int x, int y, bool z = false, int num = 1);
-
+	int timeelevator = 0;
 private:
 
 	void SpawnEnemy(const EnemyInfo& info);

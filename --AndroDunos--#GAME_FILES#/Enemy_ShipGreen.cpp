@@ -9,7 +9,7 @@
 
 
 
-Enemy_ShipGreen::Enemy_ShipGreen(int x, int y) : Enemy(x, y)
+Enemy_ShipGreen::Enemy_ShipGreen(int x, int y, bool gun) : Enemy(x, y)
 {
 	type = SHIPGREEN;
 
@@ -22,24 +22,25 @@ Enemy_ShipGreen::Enemy_ShipGreen(int x, int y) : Enemy(x, y)
 	animation = &fly;
 
 	collider = App->collision->AddCollider({ 0, 0, 23, 22 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
-
+	this->gun = gun;
 	original_y = y;
 }
 
 void Enemy_ShipGreen::Move()
 {
 	position.x -= 1;
-
-	shot++;
-	if (shot == 60) {
-		x = App->player->position.x - position.x;
-		y = App->player->position.y - position.y;
-		m = sqrt((x*x) + (y*y));
-		x = x / m;
-		y = y / m;
-		App->particles->followlaser.speed.x = x * 1.8f;
-		App->particles->followlaser.speed.y = y * 1.8f;
-		App->particles->AddParticle(App->particles->followlaser, position.x + 8, position.y + 15, COLLIDER_ENEMY_SHOT);
+	if (gun) {
+		shot++;
+		if (shot == 60) {
+			x = App->player->position.x - position.x;
+			y = App->player->position.y - position.y;
+			m = sqrt((x*x) + (y*y));
+			x = x / m;
+			y = y / m;
+			App->particles->followlaser.speed.x = x * 1.8f;
+			App->particles->followlaser.speed.y = y * 1.8f;
+			App->particles->AddParticle(App->particles->followlaser, position.x + 8, position.y + 15, COLLIDER_ENEMY_SHOT);
+		}
 	}
 }
 

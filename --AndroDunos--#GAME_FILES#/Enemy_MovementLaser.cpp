@@ -23,7 +23,7 @@ Enemy_MovementLaser::Enemy_MovementLaser(int x, int y) : Enemy(x, y)
 	animation = &enemy;
 
 
-	collider = App->collision->AddCollider({ 0, 0, 44, 22 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 30, 22 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_y = y;
 }

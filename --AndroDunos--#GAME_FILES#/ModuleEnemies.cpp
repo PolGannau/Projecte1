@@ -15,12 +15,14 @@
 #include "Enemy_VerticalStructure.h"
 #include "Enemy_TripleTurret.h"
 #include "Enemy_Elevator.h"
+#include "Enemy_Elevator2.h"
 #include "Enemy_MovementLaser.h"
 #include "Enemy_Ship.h"
 #include "Enemy_HandShip.h"
 #include "Enemy_Multicolor.h"
 #include "Enemy_Small.h"
 #include "ModulePlayer.h"
+#include "Enemy_WhiteYellow.h"
 
 
 
@@ -84,7 +86,7 @@ update_status ModuleEnemies::PostUpdate()
 	{
 		if (enemies[i] != nullptr)
 		{
-			if (enemies[i]->position.x * SCREEN_SIZE < (App->render->camera.x) - SPAWN_MARGIN - 80)
+			if (enemies[i]->position.x * SCREEN_SIZE < (App->render->camera.x) - SPAWN_MARGIN - 80 && !ENEMY_TYPES::ELEVATOR && !ENEMY_TYPES::ELEVATOR2)
 			{
 				delete enemies[i];
 				enemies[i] = nullptr;
@@ -155,7 +157,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_StraightOnShip(info.x, info.y, info.num);
 			break;
 		case ENEMY_TYPES::SHIPGREEN:
-			enemies[i] = new Enemy_ShipGreen(info.x, info.y);
+			enemies[i] = new Enemy_ShipGreen(info.x, info.y, info.z);
 			break;
 		case ENEMY_TYPES::GREENTURRET:
 			enemies[i] = new Enemy_GreenTurret(info.x, info.y,info.z);
@@ -177,6 +179,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::ELEVATOR:
 			enemies[i] = new Enemy_Elevator(info.x, info.y);
 			break;
+		case ENEMY_TYPES::ELEVATOR2:
+			enemies[i] = new Enemy_Elevator2(info.x, info.y);
+			break;
 		case ENEMY_TYPES::MOVEMENTLASER:
 			enemies[i] = new Enemy_MovementLaser(info.x, info.y);
 			break;
@@ -191,6 +196,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::SMALL:
 			enemies[i] = new Enemy_Small(info.x, info.y);
+			break;
+		case ENEMY_TYPES::WHITEYELLOW:
+			enemies[i] = new Enemy_WhiteYellow(info.x, info.y);
 			break;
 		}
 	}
@@ -268,8 +276,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				break;
 			case ELEVATOR:
 				enemies[i]->OnCollision(c2);
-				delete enemies[i];
-				enemies[i] = nullptr;
+				break;
+			case ELEVATOR2:
+				enemies[i]->OnCollision(c2);
 				break;
 			case MOVEMENTLASER:
 				enemies[i]->OnCollision(c2);
@@ -292,6 +301,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case SMALL:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case WHITEYELLOW:
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;

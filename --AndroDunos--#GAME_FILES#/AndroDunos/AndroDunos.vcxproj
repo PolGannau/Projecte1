@@ -23,6 +23,7 @@
     <ClInclude Include="..\Application.h" />
     <ClInclude Include="..\Enemy.h" />
     <ClInclude Include="..\Enemy_Elevator.h" />
+    <ClInclude Include="..\Enemy_Elevator2.h" />
     <ClInclude Include="..\Enemy_GreenTurret.h" />
     <ClInclude Include="..\Enemy_HandShip.h" />
     <ClInclude Include="..\Enemy_MovementLaser.h" />
@@ -37,6 +38,7 @@
     <ClInclude Include="..\Enemy_VerticalStructure.h" />
     <ClInclude Include="..\Enemy_WhiteShip.h" />
     <ClInclude Include="..\Enemy_WhiteTurret.h" />
+    <ClInclude Include="..\Enemy_WhiteYellow.h" />
     <ClInclude Include="..\Gameover.h" />
     <ClInclude Include="..\Globals.h" />
     <ClInclude Include="..\MemLeaks.h" />
@@ -70,6 +72,7 @@
     <ClCompile Include="..\Application.cpp" />
     <ClCompile Include="..\Enemy.cpp" />
     <ClCompile Include="..\Enemy_Elevator.cpp" />
+    <ClCompile Include="..\Enemy_Elevator2..cpp" />
     <ClCompile Include="..\Enemy_GreenTurret.cpp" />
     <ClCompile Include="..\Enemy_HandShip.cpp" />
     <ClCompile Include="..\Enemy_MovementLaser.cpp" />
@@ -84,6 +87,7 @@
     <ClCompile Include="..\Enemy_VerticalStructure.cpp" />
     <ClCompile Include="..\Enemy_WhiteShip.cpp" />
     <ClCompile Include="..\Enemy_WhiteTurret.cpp" />
+    <ClCompile Include="..\Enemy_WhiteYellow.cpp" />
     <ClCompile Include="..\Globals.cpp" />
     <ClCompile Include="..\Main.cpp" />
     <ClCompile Include="..\ModuleAudio.cpp" />
