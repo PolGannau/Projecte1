@@ -134,7 +134,7 @@ bool ModuleSceneIntro::Start()
 	App->audio->PlayMusic(music,1);
 
 	change = false;
-
+	next = false;
 	time2 = SDL_GetTicks();
 	Neogeo.Reset();
 	SNK.Reset();

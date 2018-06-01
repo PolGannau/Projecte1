@@ -16,6 +16,7 @@
 #include "Enemy_TripleTurret.h"
 #include "Enemy_Elevator.h"
 #include "Enemy_MovementLaser.h"
+#include "Enemy_Ship.h"
 #include "ModulePlayer.h"
 
 
@@ -175,6 +176,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::MOVEMENTLASER:
 			enemies[i] = new Enemy_MovementLaser(info.x, info.y);
 			break;
+		case ENEMY_TYPES::SHIP:
+			enemies[i] = new Enemy_Ship(info.x, info.y);
+			break;
 		}
 		
 
@@ -257,6 +261,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case MOVEMENTLASER:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case SHIP:
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;

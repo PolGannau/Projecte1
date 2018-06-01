@@ -13,6 +13,7 @@
 #include "Enemy_TripleTurret.h"
 #include "Enemy_Elevator.h"
 #include "Enemy_MovementLaser.h"
+#include "Enemy_Ship.h"
 
 #define MAX_ENEMIES 100
 
