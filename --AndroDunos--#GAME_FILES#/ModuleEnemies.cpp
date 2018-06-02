@@ -169,7 +169,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_ShipTurret(info.x, info.y);
 			break;
 		case ENEMY_TYPES::WHITETURRET:
-			enemies[i] = new Enemy_WhiteTurret(info.x, info.y);
+			enemies[i] = new Enemy_WhiteTurret(info.x, info.y, info.z);
 			break;
 		case ENEMY_TYPES::VERTICALSTRUCTURE:
 			enemies[i] = new Enemy_VerticalStructure(info.x, info.y, info.z);

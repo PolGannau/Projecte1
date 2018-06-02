@@ -324,7 +324,8 @@ update_status ModulePlayer2::Update()
 	}
 	if (App->input->keyboard[SDL_SCANCODE_E] == KEY_STATE::KEY_DOWN)
 	{
-		App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, position.x + 250, position.y);
+		App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, position.x + 250, position.y, false, 2);
+		//App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, position.x + 250, position.y);
 
 	}
 

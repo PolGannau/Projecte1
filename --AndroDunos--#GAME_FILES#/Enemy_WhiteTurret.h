@@ -13,11 +13,15 @@ private:
 	Animation turret;
 	Path path;
 	iPoint original_pos;
-	int anim = 1;
+	float angle;
+	int b, h;
+	int Time, lastTime;
+	bool Shoot;
+	bool up;
 
 public:
 
-	Enemy_WhiteTurret(int x, int y);
+	Enemy_WhiteTurret(int x, int y, bool up);
 	void OnCollision(Collider* collider);
 	void Move();
 };
