@@ -14,10 +14,11 @@ private:
 	Path path;
 	iPoint original_pos;
 	int timing = 80;
+	float x, y, m;
 
 public:
 
-	Enemy_WhiteShip(int x, int y);
+	Enemy_WhiteShip(int x, int y, int num);
 	void OnCollision(Collider* collider);
 	void Move();
 };

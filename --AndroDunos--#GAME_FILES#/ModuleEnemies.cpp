@@ -149,7 +149,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		switch (info.type)
 		{
 		case ENEMY_TYPES::WHITESHIP:
-			enemies[i] = new Enemy_WhiteShip(info.x, info.y);
+			enemies[i] = new Enemy_WhiteShip(info.x, info.y, info.num);
 			break;
 		case ENEMY_TYPES::SHIPUPDOWN:
 			enemies[i] = new Enemy_ShipUpDown(info.x, info.y);
