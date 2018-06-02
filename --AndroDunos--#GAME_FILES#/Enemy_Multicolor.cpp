@@ -31,10 +31,10 @@ Enemy_MultiColor::Enemy_MultiColor(int x, int y) : Enemy(x, y)
 
 	animation = &fly;
 
-	path.PushBack({ -1.0f, 1.0f }, 50);
-	path.PushBack({ -1.0f,-1.0f }, 37);
+	path.PushBack({ -0.8f, 0.8f }, 50);
+	path.PushBack({ -0.8f,-0.8f }, 37);
 	path.PushBack({ -1.0f, 1.0f }, 10);
-	path.PushBack({ 1.0, 1.0 }, 10);
+	path.PushBack({ 0.8f, 0.8f }, 10);
 	path.PushBack({ 2.0f, 0.0f }, 500);
 	collider = App->collision-> AddCollider({ 0, 0, 20, 20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
