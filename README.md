@@ -116,6 +116,8 @@ Our team is composed by three members:
 
 **[Link to release web page](https://github.com/PolGannau/Tribute-to-AndroDunos/releases)**
 
+**[Link to the official webpage](https://polgannau.github.io/Tribute-to-AndroDunos/)**
+
 ### Oriol Capdevila (OriolCS2)
 
 Role: Team Leader

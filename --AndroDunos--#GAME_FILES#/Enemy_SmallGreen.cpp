@@ -22,8 +22,13 @@ Enemy_SmallGreen::Enemy_SmallGreen(int x, int y) : Enemy(x, y)
 
 	animation = &fly;
 
-	path.PushBack({ 0.0f,0.0f },10);
-	
+	path.PushBack({ 0.0f,-2.0f }, 50);
+	path.PushBack({ 0.0f,0.0f }, 25);
+	path.PushBack({ -2.0f,0.0f }, 35);
+	path.PushBack({ -0.5f,0.0f }, 15);
+	path.PushBack({ 0.0f,0.0f }, 2);
+	path.PushBack({ 1.75f,0.0f }, 5);
+	path.PushBack({ 3.5f,0.0f }, 500);
 	collider = App->collision->AddCollider({ 0, 0, 16, 12 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_pos.x = x;
