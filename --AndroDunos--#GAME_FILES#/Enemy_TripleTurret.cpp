@@ -13,28 +13,27 @@ Enemy_TripleTurret::Enemy_TripleTurret(int x, int y) : Enemy(x, y)
 	fly.PushBack({ 427,0,28,23 });
 	fly.PushBack({ 456, 0, 28, 23 });
 	fly.PushBack({ 485, 0, 28, 23 });
-	fly.speed = 0.1f;
+	fly.speed = 0.2f;
 
-	animation = &fly;
-
+	idle.PushBack({ 427,0,28,23 });
+	animation = &idle;
 	collider = App->collision->AddCollider({ 0, 0, 28, 23 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 	original_y = y;
 }
 
 void Enemy_TripleTurret::Move()
 {
-	position.x -= 1;
-	change++;
-	/*if (change == 5) {
-		fly.Sprite({ 427,0,28,23 });
+
+	if (App->player->position.x < position.x) {
+		animation = &idle;
+		position.x -= 1;
+		
 	}
-	else if (change == 10) {
-		fly.Sprite({ 456, 0, 28, 23 });
+	if (App->player->position.x >= position.x) {
+		animation = &fly;
+		position.x += 2.0f;
 	}
-	else if (change == 15) {
-		change = 0;
-		fly.Sprite({ 485, 0, 28, 23 });
-	}*/
+
 
 
 }
