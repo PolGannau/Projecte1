@@ -53,7 +53,16 @@ Enemy_Small::Enemy_Small(int x, int y, int num) : Enemy(x, y)
 		animation = &fly;
 
 		//POSA AQUI EL PATH
-
+		path.PushBack({ 0.0f,-3.0f }, 40);
+		path.PushBack({ 1.2f,-1.8f }, 15);
+		path.PushBack({ 1.8f,-1.2f }, 15);
+		path.PushBack({ 3.0f, 0.0f }, 12);
+		path.PushBack({ 1.8f, 1.2f }, 15);
+		path.PushBack({ 1.2f, 1.8f }, 15);
+		path.PushBack({ 0.0f, 2.0f }, 12);
+		path.PushBack({ -1.2f,1.8f }, 15);
+		path.PushBack({ -1.8f,1.2f }, 15);
+		path.PushBack({ -3.0f,0.0f }, 500);
 	}
 	collider = App->collision->AddCollider({ 0, 0, 16, 12 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 

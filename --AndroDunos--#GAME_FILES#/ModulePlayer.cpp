@@ -16,7 +16,7 @@
 #include "PowerUpRed.h"
 #include "PowerUp.h"
 #include "SDL/include/SDL_timer.h"
-#include<stdio.h>
+#include <stdio.h>
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
 
@@ -340,7 +340,7 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_E] == KEY_STATE::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(ENEMY_TYPES::SMALL, position.x + 250, position.y,false, 1); // si poses 2 es posara el 2 del small
+		App->enemies->AddEnemy(ENEMY_TYPES::SMALL, position.x + 250, position.y,false, 2); // si poses 2 es posara el 2 del small
 		//App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, position.x + 250, position.y);
 	}
 
