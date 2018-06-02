@@ -249,14 +249,6 @@ ModuleParticles::ModuleParticles()
 	GreenTurretExplosion2.anim.PushBack({ 652,76,44,29 });
 	GreenTurretExplosion2.life = 8000;
 
-	TurretShot.anim.PushBack({ 283,255,6,6 });
-	TurretShot.anim.PushBack({ 293,255,6,6 });
-	TurretShot.anim.PushBack({ 303,255,6,6 });
-	TurretShot.anim.PushBack({ 313,255,6,6 });
-	TurretShot.anim.speed = 0.1f;
-	TurretShot.speed.x = BULLET_ENEMY_SPEED;
-	TurretShot.life = BULLET_ENEMY_LIFE;
-
 	Structuretouch.anim.PushBack({ 5,341,48,136 });
 	Structuretouch.anim.speed = 0.2f;
 	Structuretouch.speed.y -= 1;
@@ -288,6 +280,162 @@ ModuleParticles::ModuleParticles()
 	followlaser.anim.speed = 0.2f;
 	followlaser.anim.loop = true;
 	followlaser.life = BULLET_ENEMY_LIFE;
+
+	TurretShot1d.anim.PushBack({ 283,255,6,6 });
+	TurretShot1d.anim.PushBack({ 293,255,6,6 });
+	TurretShot1d.anim.PushBack({ 303,255,6,6 });
+	TurretShot1d.anim.PushBack({ 313,255,6,6 });
+	TurretShot1d.anim.speed = 0.1f;
+	TurretShot1d.speed.x -= 2;
+	TurretShot1d.life = BULLET_ENEMY_LIFE;
+
+	TurretShot2d.anim.PushBack({ 283,255,6,6 });
+	TurretShot2d.anim.PushBack({ 293,255,6,6 });
+	TurretShot2d.anim.PushBack({ 303,255,6,6 });
+	TurretShot2d.anim.PushBack({ 313,255,6,6 });
+	TurretShot2d.anim.speed = 0.1f;
+	TurretShot2d.speed.x -= 2;
+	TurretShot2d.speed.y += 1;
+	TurretShot2d.life = BULLET_ENEMY_LIFE;
+
+	TurretShot3d.anim.PushBack({ 283,255,6,6 });
+	TurretShot3d.anim.PushBack({ 293,255,6,6 });
+	TurretShot3d.anim.PushBack({ 303,255,6,6 });
+	TurretShot3d.anim.PushBack({ 313,255,6,6 });
+	TurretShot3d.anim.speed = 0.1f;
+	TurretShot3d.speed.x -= 2;
+	TurretShot3d.speed.y += 2;
+	TurretShot3d.life = BULLET_ENEMY_LIFE;
+
+	TurretShot4d.anim.PushBack({ 283,255,6,6 });
+	TurretShot4d.anim.PushBack({ 293,255,6,6 });
+	TurretShot4d.anim.PushBack({ 303,255,6,6 });
+	TurretShot4d.anim.PushBack({ 313,255,6,6 });
+	TurretShot4d.anim.speed = 0.1f;
+	TurretShot4d.speed.x -= 1;
+	TurretShot4d.speed.y += 2;
+	TurretShot4d.life = BULLET_ENEMY_LIFE;
+
+	TurretShot5d.anim.PushBack({ 283,255,6,6 });
+	TurretShot5d.anim.PushBack({ 293,255,6,6 });
+	TurretShot5d.anim.PushBack({ 303,255,6,6 });
+	TurretShot5d.anim.PushBack({ 313,255,6,6 });
+	TurretShot5d.anim.speed = 0.1f;
+	TurretShot5d.speed.y += 2;
+	TurretShot5d.life = BULLET_ENEMY_LIFE;
+
+	TurretShot6d.anim.PushBack({ 283,255,6,6 });
+	TurretShot6d.anim.PushBack({ 293,255,6,6 });
+	TurretShot6d.anim.PushBack({ 303,255,6,6 });
+	TurretShot6d.anim.PushBack({ 313,255,6,6 });
+	TurretShot6d.anim.speed = 0.1f;
+	TurretShot6d.speed.x += 1;
+	TurretShot6d.speed.y += 2;
+	TurretShot6d.life = BULLET_ENEMY_LIFE;
+
+	TurretShot7d.anim.PushBack({ 283,255,6,6 });
+	TurretShot7d.anim.PushBack({ 293,255,6,6 });
+	TurretShot7d.anim.PushBack({ 303,255,6,6 });
+	TurretShot7d.anim.PushBack({ 313,255,6,6 });
+	TurretShot7d.anim.speed = 0.1f;
+	TurretShot7d.speed.x += 2;
+	TurretShot7d.speed.y += 2;
+	TurretShot7d.life = BULLET_ENEMY_LIFE;
+
+	TurretShot8d.anim.PushBack({ 283,255,6,6 });
+	TurretShot8d.anim.PushBack({ 293,255,6,6 });
+	TurretShot8d.anim.PushBack({ 303,255,6,6 });
+	TurretShot8d.anim.PushBack({ 313,255,6,6 });
+	TurretShot8d.anim.speed = 0.1f;
+	TurretShot8d.speed.x += 2;
+	TurretShot8d.speed.y += 1;
+	TurretShot8d.life = BULLET_ENEMY_LIFE;
+
+	TurretShot9d.anim.PushBack({ 283,255,6,6 });
+	TurretShot9d.anim.PushBack({ 293,255,6,6 });
+	TurretShot9d.anim.PushBack({ 303,255,6,6 });
+	TurretShot9d.anim.PushBack({ 313,255,6,6 });
+	TurretShot9d.anim.speed = 0.1f;
+	TurretShot9d.speed.x += 2;
+	TurretShot9d.life = BULLET_ENEMY_LIFE;
+
+	TurretShot1u.anim.PushBack({ 283,255,6,6 });
+	TurretShot1u.anim.PushBack({ 293,255,6,6 });
+	TurretShot1u.anim.PushBack({ 303,255,6,6 });
+	TurretShot1u.anim.PushBack({ 313,255,6,6 });
+	TurretShot1u.anim.speed = 0.1f;
+	TurretShot1u.speed.x -= 2;
+	TurretShot1u.life = BULLET_ENEMY_LIFE;
+
+	TurretShot2u.anim.PushBack({ 283,255,6,6 });
+	TurretShot2u.anim.PushBack({ 293,255,6,6 });
+	TurretShot2u.anim.PushBack({ 303,255,6,6 });
+	TurretShot2u.anim.PushBack({ 313,255,6,6 });
+	TurretShot2u.anim.speed = 0.1f;
+	TurretShot2u.speed.x -= 2;
+	TurretShot2u.speed.y -= 1;
+	TurretShot2u.life = BULLET_ENEMY_LIFE;
+
+	TurretShot3u.anim.PushBack({ 283,255,6,6 });
+	TurretShot3u.anim.PushBack({ 293,255,6,6 });
+	TurretShot3u.anim.PushBack({ 303,255,6,6 });
+	TurretShot3u.anim.PushBack({ 313,255,6,6 });
+	TurretShot3u.anim.speed = 0.1f;
+	TurretShot3u.speed.x -= 2;
+	TurretShot3u.speed.y -= 2;
+	TurretShot3u.life = BULLET_ENEMY_LIFE;
+
+	TurretShot4u.anim.PushBack({ 283,255,6,6 });
+	TurretShot4u.anim.PushBack({ 293,255,6,6 });
+	TurretShot4u.anim.PushBack({ 303,255,6,6 });
+	TurretShot4u.anim.PushBack({ 313,255,6,6 });
+	TurretShot4u.anim.speed = 0.1f;
+	TurretShot4u.speed.x -= 1;
+	TurretShot4u.speed.y -= 2;
+	TurretShot4u.life = BULLET_ENEMY_LIFE;
+
+	TurretShot5u.anim.PushBack({ 283,255,6,6 });
+	TurretShot5u.anim.PushBack({ 293,255,6,6 });
+	TurretShot5u.anim.PushBack({ 303,255,6,6 });
+	TurretShot5u.anim.PushBack({ 313,255,6,6 });
+	TurretShot5u.anim.speed = 0.1f;
+	TurretShot5u.speed.y -= 2;
+	TurretShot5u.life = BULLET_ENEMY_LIFE;
+
+	TurretShot6u.anim.PushBack({ 283,255,6,6 });
+	TurretShot6u.anim.PushBack({ 293,255,6,6 });
+	TurretShot6u.anim.PushBack({ 303,255,6,6 });
+	TurretShot6u.anim.PushBack({ 313,255,6,6 });
+	TurretShot6u.anim.speed = 0.1f;
+	TurretShot6u.speed.x += 1;
+	TurretShot6u.speed.y -= 2;
+	TurretShot6u.life = BULLET_ENEMY_LIFE;
+
+	TurretShot7u.anim.PushBack({ 283,255,6,6 });
+	TurretShot7u.anim.PushBack({ 293,255,6,6 });
+	TurretShot7u.anim.PushBack({ 303,255,6,6 });
+	TurretShot7u.anim.PushBack({ 313,255,6,6 });
+	TurretShot7u.anim.speed = 0.1f;
+	TurretShot7u.speed.x += 2;
+	TurretShot7u.speed.y -= 2;
+	TurretShot7u.life = BULLET_ENEMY_LIFE;
+
+	TurretShot8u.anim.PushBack({ 283,255,6,6 });
+	TurretShot8u.anim.PushBack({ 293,255,6,6 });
+	TurretShot8u.anim.PushBack({ 303,255,6,6 });
+	TurretShot8u.anim.PushBack({ 313,255,6,6 });
+	TurretShot8u.anim.speed = 0.1f;
+	TurretShot8u.speed.x += 2;
+	TurretShot8u.speed.y -= 1;
+	TurretShot8u.life = BULLET_ENEMY_LIFE;
+
+	TurretShot9u.anim.PushBack({ 283,255,6,6 });
+	TurretShot9u.anim.PushBack({ 293,255,6,6 });
+	TurretShot9u.anim.PushBack({ 303,255,6,6 });
+	TurretShot9u.anim.PushBack({ 313,255,6,6 });
+	TurretShot9u.anim.speed = 0.1f;
+	TurretShot9u.speed.x += 2;
+	TurretShot9u.life = BULLET_ENEMY_LIFE;
 }
 
 ModuleParticles::~ModuleParticles()

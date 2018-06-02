@@ -94,6 +94,24 @@ public:
 	Particle BlueLaserPlayer;
 	Particle Laser2PowerupBlue2up;
 	Particle Laser2PowerupBlue2down;
+	Particle TurretShot1d;
+	Particle TurretShot2d;
+	Particle TurretShot3d;
+	Particle TurretShot4d;
+	Particle TurretShot5d;
+	Particle TurretShot6d;
+	Particle TurretShot7d;
+	Particle TurretShot8d;
+	Particle TurretShot9d;
+	Particle TurretShot1u;
+	Particle TurretShot2u;
+	Particle TurretShot3u;
+	Particle TurretShot4u;
+	Particle TurretShot5u;
+	Particle TurretShot6u;
+	Particle TurretShot7u;
+	Particle TurretShot8u;
+	Particle TurretShot9u;
 };
 
 #endif // __MODULEPARTICLES_H__
