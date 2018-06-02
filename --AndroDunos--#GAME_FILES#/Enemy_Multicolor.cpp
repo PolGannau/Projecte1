@@ -24,16 +24,39 @@ Enemy_MultiColor::Enemy_MultiColor(int x, int y) : Enemy(x, y)
 	fly.PushBack({ 158, 350, 20, 20 });
 	fly.speed = 0.2f;
 
+	fly.loop = false;
+
+
+	fly.speed = 0.1f;
+
 	animation = &fly;
 
-	collider = App->collision->AddCollider({ 0, 0, 20, 20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	path.PushBack({ -1.0f, 1.0f }, 50);
+	path.PushBack({ -1.0f,-1.0f }, 37);
+	path.PushBack({ -1.0f, 1.0f }, 10);
+	path.PushBack({ 1.0, 1.0 }, 10);
+	path.PushBack({ 2.0f, 0.0f }, 500);
+	collider = App->collision-> AddCollider({ 0, 0, 20, 20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
-	original_y = y;
+	original_pos.x = x;
+	original_pos.y = y;
 }
 
 void Enemy_MultiColor::Move()
 {
-	position.x -= 1;
+	position = original_pos + path.GetCurrentSpeed();
+
+	if (fly.SeeCurrentFrame() == 19 && now) {
+		x = App->player->position.x - position.x;
+		y = App->player->position.y - position.y;
+		m = sqrt((x*x) + (y*y));
+		x = x / m;
+		y = y / m;
+		App->particles->followlaser.speed.x = x * 1.8f;
+		App->particles->followlaser.speed.y = y * 1.8f;
+		App->particles->AddParticle(App->particles->followlaser, position.x, position.y + 8, COLLIDER_ENEMY_SHOT);
+		now = false;
+	}
 
 
 }
