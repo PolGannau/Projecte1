@@ -199,7 +199,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_Small(info.x, info.y);
 			break;
 		case ENEMY_TYPES::WHITEYELLOW:
-			enemies[i] = new Enemy_WhiteYellow(info.x, info.y);
+			enemies[i] = new Enemy_WhiteYellow(info.x, info.y, info.num);
 			break;
 		case ENEMY_TYPES::MINIBOSS:
 			enemies[i] = new Enemy_MiniBoss(info.x, info.y);

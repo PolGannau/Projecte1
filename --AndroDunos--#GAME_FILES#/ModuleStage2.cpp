@@ -147,6 +147,17 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 550, 80, false, 3);
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 560, 80, false, 3);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITEYELLOW, 1400, 220, false, 1);  
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITEYELLOW, 1420, 240, false, 3);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITEYELLOW, 1440, 260, false, 5);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITEYELLOW, 1460, 280, false, 7);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITEYELLOW, 1400, -10, false, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITEYELLOW, 1420, -30, false, 4);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITEYELLOW, 1440, -50, false, 6);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITEYELLOW, 1460, -70, false, 8);
+
+	
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2277, 245, true);
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2453, -145, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2614, -145, false); 

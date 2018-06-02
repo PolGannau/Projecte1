@@ -33,6 +33,8 @@ Enemy_HandShip::Enemy_HandShip(int x, int y) : Enemy(x, y)
 	fly.PushBack({ 70, 542, 30, 19 });
 	fly.PushBack({ 105, 542, 30, 19 }); //aqui ha de disparar
 	fly.PushBack({ 105, 542, 30, 19 });
+	fly.PushBack({ 105, 542, 30, 19 });
+	fly.PushBack({ 105, 542, 30, 19 });
 	fly.PushBack({ 140, 542, 30, 19 });
 	fly.PushBack({ 0, 565, 30, 19 });
 	fly.PushBack({ 35, 565, 30, 19 });

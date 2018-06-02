@@ -37,7 +37,8 @@ Enemy_Ship::Enemy_Ship(int x, int y) : Enemy(x, y)
 	path.PushBack({ 1.2f,-1.2f }, 500);
 	collider = App->collision->AddCollider({ 0, 0, 35, 25 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
-	original_y = y;
+	original_pos.x = x;
+	original_pos.y = y;
 }
 void Enemy_Ship::Move()
 {
