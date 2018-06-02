@@ -23,6 +23,7 @@
 #include "Enemy_Small.h"
 #include "ModulePlayer.h"
 #include "Enemy_WhiteYellow.h"
+#include "Enemy_MiniBoss.h"
 
 
 
@@ -200,6 +201,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::WHITEYELLOW:
 			enemies[i] = new Enemy_WhiteYellow(info.x, info.y);
 			break;
+		case ENEMY_TYPES::MINIBOSS:
+			enemies[i] = new Enemy_MiniBoss(info.x, info.y);
+			break;
 		}
 	}
 }
@@ -306,6 +310,11 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case WHITEYELLOW:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+				break;
+			case MINIBOSS:
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;

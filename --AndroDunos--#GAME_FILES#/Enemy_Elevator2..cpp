@@ -20,7 +20,7 @@ Enemy_Elevator2::Enemy_Elevator2(int x, int y) : Enemy(x, y)
 	path.PushBack({ 0.0f, -1.0f }, 399);
 	path.PushBack({ 0.0f, 0.0f }, 160);
 	path.PushBack({ 0.0f, 1.0f }, 1571);
-	path.PushBack({ 0.0f, 0.0f }, 50000);
+	path.PushBack({ 0.0f, 0.0f }, 500000);
 
 	collider = App->collision->AddCollider({ 0, 0, 224, 31 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
