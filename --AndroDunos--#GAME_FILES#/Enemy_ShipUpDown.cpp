@@ -3,6 +3,7 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
+#include "ModulePlayer.h"
 
 Enemy_ShipUpDown::Enemy_ShipUpDown(int x, int y) : Enemy(x, y)
 {
@@ -24,14 +25,24 @@ Enemy_ShipUpDown::Enemy_ShipUpDown(int x, int y) : Enemy(x, y)
 
 	animation = &fly;
 
+	path.PushBack({ -1.2f,1.5f }, 50);
+	path.PushBack({ -1.2f, 0.8f }, 20);
+	path.PushBack({ -1.2f, 0.0f }, 2);
+	path.PushBack({ -1.2f, -0.8f }, 20);
+	path.PushBack({ -1.2f,-1.5f }, 50);
+	path.PushBack({ -1.2f,-0.8f }, 20);
+	path.PushBack({ -1.2f,0.0f }, 2);
+	path.PushBack({ -1.2f, 0.8f }, 20);
 	collider = App->collision->AddCollider({ 0, 0, 18, 22 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
-	original_y = y;
+	original_pos.x = x;
+	original_pos.y = y;
+	
 }
 
 void Enemy_ShipUpDown::Move()
 {
-	if (going_up)
+	/*if (going_up)
 	{
 		if (wave > 1.0f)
 			going_up = false;
@@ -44,7 +55,22 @@ void Enemy_ShipUpDown::Move()
 			going_up = true;
 		else
 			wave -= 0.05f;
+	}*/
+	position = original_pos + path.GetCurrentSpeed();
+
+	if (fly.SeeCurrentFrame() == 19 && now) {
+		x = App->player->position.x - position.x;
+		y = App->player->position.y - position.y;
+		m = sqrt((x*x) + (y*y));
+		x = x / m;
+		y = y / m;
+		App->particles->followlaser.speed.x = x * 1.8f;
+		App->particles->followlaser.speed.y = y * 1.8f;
+		App->particles->AddParticle(App->particles->followlaser, position.x, position.y + 8, COLLIDER_ENEMY_SHOT);
+		now = false;
 	}
+
+
 
 	position.y = int(float(original_y) + (25.0f * sinf(wave)));
 	position.x -= 1;

@@ -2,14 +2,19 @@
 #define __ENEMY_SHIPUPDOWN_H__
 
 #include "Enemy.h"
+#include "path.h"
 
 class Enemy_ShipUpDown : public Enemy
 {
 private:
 	float wave = -1.0f;
 	bool going_up = true;
+	bool now = true;
+	float x, y, m;
+	iPoint original_pos;
 	int original_y = 0;
 	Animation fly;
+	Path path;
 
 public:
 
