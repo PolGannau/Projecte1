@@ -47,6 +47,12 @@ Enemy_HandShip::Enemy_HandShip(int x, int y) : Enemy(x, y)
 
 	animation = &fly;
 
+	path.PushBack({ -1.0f, 0.0f }, 20);
+	path.PushBack({ 0.0f, -0.5f }, 20);
+	path.PushBack({ 1.3f, 0.0f }, 100);
+	path.PushBack({ 1.1f,0.0f }, 25);
+	path.PushBack({ 0.0f, 0.0f }, 50);
+	path.PushBack({ 2.0f,0.0f }, 500);
 	collider = App->collision->AddCollider({ 0, 0, 23, 22 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_pos.x = x;

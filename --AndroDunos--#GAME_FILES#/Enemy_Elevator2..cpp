@@ -14,7 +14,7 @@ Enemy_Elevator2::Enemy_Elevator2(int x, int y) : Enemy(x, y)
 	elevator.PushBack({ 1598, 430, 224, 31 });
 	elevator.PushBack({ 1598, 683, 224, 31 });
 	elevator.PushBack({ 1598, 941, 224, 31 });
-	elevator.speed = 0.02f;
+	elevator.speed = 0.2f;
 	animation = &elevator;
 
 	path.PushBack({ 0.0f, -1.0f }, 399);
