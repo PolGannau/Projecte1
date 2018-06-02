@@ -153,7 +153,7 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2757, 245, true);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::ELEVATOR, 3544, -400);
-	App->enemies->AddEnemy(ENEMY_TYPES::ELEVATOR2, 3544, 191);
+	App->enemies->AddEnemy(ENEMY_TYPES::ELEVATOR2, 3544, 591);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 501, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 501, true);

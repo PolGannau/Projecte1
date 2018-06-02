@@ -2,13 +2,15 @@
 #define __ENEMY_ELEVATOR2_H__
 
 #include "Enemy.h"
+#include "Path.h"
 
 class Enemy_Elevator2 : public Enemy
 {
 private:
 	int original_y = 0;
 	Animation elevator;
-
+	Path path;
+	iPoint original_pos;
 
 public:
 
