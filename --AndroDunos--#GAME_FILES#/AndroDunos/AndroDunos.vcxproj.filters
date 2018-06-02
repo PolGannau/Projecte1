@@ -174,6 +174,9 @@
     <ClInclude Include="..\Enemy_SmallGreen.h">
       <Filter>Modules\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="..\Enemy_Laser.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp">
@@ -312,6 +315,9 @@
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="..\Enemy_SmallGreen.cpp">
+      <Filter>Modules\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Enemy_Laser.cpp">
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
   </ItemGroup>

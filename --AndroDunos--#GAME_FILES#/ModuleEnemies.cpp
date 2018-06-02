@@ -25,6 +25,7 @@
 #include "Enemy_WhiteYellow.h"
 #include "Enemy_MiniBoss.h"
 #include "Enemy_SmallGreen.h"
+#include "Enemy_Laser.h"
 
 
 
@@ -208,6 +209,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::SMALLGREEN:
 			enemies[i] = new Enemy_SmallGreen(info.x, info.y);
 			break;
+		case ENEMY_TYPES::LASER:
+			enemies[i] = new Enemy_Laser(info.x, info.y);
+			break;
 		}
 	}
 }
@@ -327,6 +331,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;
+				break;
+			case LASER:
+				enemies[i]->OnCollision(c2);
 				break;
 			default:
 				break;

@@ -31,9 +31,7 @@ void Enemy_Elevator::Move()
 	position = original_pos + path.GetCurrentSpeed();
 	App->enemies->timeelevator++;
 }
-void Enemy_Elevator::OnCollision(Collider* collider) {
-
-}
+void Enemy_Elevator::OnCollision(Collider* collider) {}
 
 
 

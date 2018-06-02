@@ -32,5 +32,5 @@ void Enemy_MovementLaser::Move()
 
 }
 void Enemy_MovementLaser::OnCollision(Collider* collider) {
-
+	App->particles->AddParticle(App->particles->smallexplosion, position.x, position.y);
 }

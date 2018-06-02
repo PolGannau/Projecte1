@@ -21,6 +21,7 @@
 #include "Enemy_MiniBoss.h"
 #include "Enemy_Small.h"
 #include "Enemy_SmallGreen.h"
+#include "Enemy_Laser.h"
 
 #define MAX_ENEMIES 100
 
