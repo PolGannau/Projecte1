@@ -70,14 +70,13 @@ void Enemy_ShipUpDown::Move()
 		now = false;
 	}
 
-<<<<<<< HEAD
+
 
 	/*
 	position.y = int(float(original_y) + (25.0f * sinf(wave)));
 	position.x -= 1;
 	*/
-=======
->>>>>>> 202095d19a29dd388124b078d1402ad667970d88
+
 }
 
 void Enemy_ShipUpDown::OnCollision(Collider* collider) {
