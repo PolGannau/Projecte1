@@ -20,6 +20,7 @@
 #include "Enemy_WhiteYellow.h"
 #include "Enemy_MiniBoss.h"
 #include "Enemy_Small.h"
+#include "Enemy_SmallGreen.h"
 
 #define MAX_ENEMIES 100
 
