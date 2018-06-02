@@ -17,13 +17,19 @@ Enemy_Elevator2::Enemy_Elevator2(int x, int y) : Enemy(x, y)
 	elevator.speed = 0.02f;
 	animation = &elevator;
 
+	path.PushBack({ 0.0f, -1.0f }, 399);
+	path.PushBack({ 0.0f, 0.0f }, 160);
+	path.PushBack({ 0.0f, 1.0f }, 1571);
+	path.PushBack({ 0.0f, 0.0f }, 50000);
+
 	collider = App->collision->AddCollider({ 0, 0, 224, 31 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
-	original_y = y;
+	original_pos.x = x;
+	original_pos.y = y;
 }
 void Enemy_Elevator2::Move()
 {
-
+	position = original_pos + path.GetCurrentSpeed();
 }
 void Enemy_Elevator2::OnCollision(Collider* collider) {
 
