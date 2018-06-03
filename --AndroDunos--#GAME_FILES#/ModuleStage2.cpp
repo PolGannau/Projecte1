@@ -233,13 +233,32 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100, false, 2);
 	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100, false, 3);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 2000, -70, true, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 2015, -70, true, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 2030, -70, true, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 2045, -70, true, 2);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 2100, 50, true, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 2140, 90, true, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 2180, 40, true, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 2220, 100, true, 1);
 
+	//THIS ONE SHOULDNT BE HERE
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 2400, 185, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 2550, 190, true);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::SHIP, )
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3000, 60); //THIS SHOULD NOT SHOOT
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3015, 40);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3020, 80);
 
-	//App->enemies->AddEnemy(ENEMY_TYPES::SHIP)
-	
+	App->enemies->AddEnemy(ENEMY_TYPES::TRIPLETURRET, 3000, 180);//Crazy turret
+
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3100, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3115, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3130, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3145, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3160, 100);
+
 	/*App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1100, 250, false, 2);  //Nau verda
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1101, 260, false, 2);
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1102, 270, false, 2);
