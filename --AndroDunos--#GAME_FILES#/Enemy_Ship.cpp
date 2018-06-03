@@ -12,27 +12,27 @@ Enemy_Ship::Enemy_Ship(int x, int y) : Enemy(x, y)
 	type = SHIP;
 
 
-	fly.PushBack({ 1087,3,35,22 });
-	fly.PushBack({ 1127,6,35,19 });
-	fly.PushBack({ 1170,5,35,20 });
-	fly.PushBack({ 1213,3,34,27 });
-	fly.PushBack({ 1249,0,33,35 });
-	fly.PushBack({ 1288,3,35,27 });
-	fly.PushBack({ 1329,6,35,23 });
-	fly.PushBack({ 1370,10,35,19 });
-	fly.PushBack({ 1410,5,34,22 });
-	fly.PushBack({ 1447,2,35,27 });
-	fly.PushBack({ 1485,0,35,35 });
-	fly.PushBack({ 1526,5,35,27 });
+	fly.PushBack({ 1130,20,22,14  });
+	fly.PushBack({ 1160,21,22,12 });
+	fly.PushBack({ 1190,21,22,14  });
+	fly.PushBack({ 1220,20,22,17 });
+	fly.PushBack({ 1250,17,22,22 });
+	fly.PushBack({ 1280,20,22,17 });
+	fly.PushBack({ 1310,22,22,14  });
+	fly.PushBack({ 1340,22,22,14 });
+	fly.PushBack({ 1370,20,22,14 });
+	fly.PushBack({ 1400,18,22,17 });
+	fly.PushBack({ 1430,17,22,22 });
+	fly.PushBack({ 1460,18,22,17 });
 
 
 	fly.speed = 0.2f;
 
 	animation = &fly;
 
-	path.PushBack({ 1.2f, 1.2f }, 50);
+	path.PushBack({ 1.2f, 1.2f }, 70);
 	path.PushBack({ 1.2f, 0.5f }, 20);
-	path.PushBack({ 1.2f, 0.0f }, 5);
+	path.PushBack({ 1.2f, 0.0f }, 7);
 	path.PushBack({ 1.2f,-0.5f }, 20);
 	path.PushBack({ 1.2f,-1.2f }, 500);
 	collider = App->collision->AddCollider({ 0, 0, 35, 25 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
