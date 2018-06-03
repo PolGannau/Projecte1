@@ -369,12 +369,15 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;
+				break;
 			case BOSS:
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;
+				break;
 			case STRUCTBOSS:
 				enemies[i]->OnCollision(c2);
+				break;
 			default:
 				break;
 			}

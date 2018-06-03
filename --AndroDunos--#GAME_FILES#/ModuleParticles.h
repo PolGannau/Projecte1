@@ -117,6 +117,7 @@ public:
 	Particle Canonexplosion2;
 	Particle triple, tripleu, tripled;
 	Particle SBlaser, SBlaseru, SBlaserd;
+	Particle boss, boss2;
 
 };
 

@@ -38,5 +38,7 @@ Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
 void Enemy_Boss::Move()
 {
 	position = original_pos + path.GetCurrentSpeed();
+
+
 }
 void Enemy_Boss::OnCollision(Collider* collider) {}
