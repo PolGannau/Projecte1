@@ -287,7 +287,7 @@ bool ModuleStage2::CleanUp()
 update_status ModuleStage2::Update()
 {
 
-	if (App->render->camera.x >= 3502 * SCREEN_SIZE && App->render->camera.x <= 3806 * SCREEN_SIZE && App->render->camera.y >= 0 * SCREEN_SIZE && App->render->camera.y < 1571 * SCREEN_SIZE)
+	if (App->render->camera.x >= 3505 * SCREEN_SIZE && App->render->camera.x <= 3809 * SCREEN_SIZE && App->render->camera.y >= 0 * SCREEN_SIZE && App->render->camera.y < 1570 * SCREEN_SIZE)
 	{
 		stop_p = true;
 	}
@@ -296,7 +296,7 @@ update_status ModuleStage2::Update()
 		stop_p = false;
 
 	}
-	if (App->render->camera.y >= 1571 * SCREEN_SIZE && App->enemies->sub_Boss_Dead == false)
+	if (App->render->camera.y >= 1570 * SCREEN_SIZE && App->enemies->sub_Boss_Dead == false)
 	{
 		left_move = true;
 	}
@@ -313,23 +313,31 @@ update_status ModuleStage2::Update()
 		}
 	}
 
-	if (left_move == true && App->enemies->subBoss)
+	if (left_move == true)
 	{
-		App->render->camera.x -= 1 * SCREEN_SIZE; //speed in x axes
-		App->player->position.x -= 1;
-		App->render->view.x -= 1;
-		if (App->player2->IsEnabled() == true)
+		if (App->render->camera.x <= 2910 * SCREEN_SIZE)
 		{
-			App->player2->position.x -= 1;
+			App->render->camera.x = App->render->camera.x;
+			App->player->position.x = App->player->position.x;
+			App->render->view.x = App->render->view.x;
+			if (App->player2->IsEnabled() == true)
+			{
+				App->player2->position.x = App->player2->position.x;
+			}
 		}
-	if (App->render->camera.x <= 2907 * SCREEN_SIZE)
+		else if (App->render->camera.x >= 2911 * SCREEN_SIZE)
 		{
-			App->enemies->sub_Boss_Dead = true;
-		
+			App->render->camera.x -= 1 * SCREEN_SIZE; //speed in x axes
+			App->player->position.x -= 1;
+			App->render->view.x -= 1;
+			if (App->player2->IsEnabled() == true)
+			{
+				App->player2->position.x -= 1;
+			}
 		}
 	}
 
-	if (stop_p == true && App->render->camera.x >= 3502 * SCREEN_SIZE && App->render->camera.x <= 3806 * SCREEN_SIZE && App->render->camera.y >= 0 * SCREEN_SIZE && App->render->camera.y < 1571 * SCREEN_SIZE && App->enemies->timeelevator>=560)
+	if (stop_p == true && App->render->camera.x >= 3505 * SCREEN_SIZE && App->render->camera.x <= 3809 * SCREEN_SIZE && App->render->camera.y >= 0 * SCREEN_SIZE && App->render->camera.y < 1570 * SCREEN_SIZE && App->enemies->timeelevator >= 560)
 	{
 		App->render->camera.y += 1 * SCREEN_SIZE; // speed in y axes
 		App->player->position.y += 1;
