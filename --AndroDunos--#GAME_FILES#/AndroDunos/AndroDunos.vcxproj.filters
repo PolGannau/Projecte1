@@ -180,6 +180,9 @@
     <ClInclude Include="..\Enemy_RocketTurret.h">
       <Filter>Modules\Enemies</Filter>
     </ClInclude>
+    <ClInclude Include="..\Enemy_ElevatorCanon.h">
+      <Filter>Modules\Enemies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Main.cpp">
@@ -324,6 +327,9 @@
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="..\Enemy_RocketTurret.cpp">
+      <Filter>Modules\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Enemy_ElevatorCanon.cpp">
       <Filter>Modules\Enemies</Filter>
     </ClCompile>
   </ItemGroup>

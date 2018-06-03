@@ -11,6 +11,7 @@ private:
 	Animation elevator;
 	Path path;
 	iPoint original_pos;
+	int time = 0;
 
 public:
 

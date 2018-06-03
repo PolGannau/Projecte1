@@ -27,6 +27,7 @@
 #include "Enemy_SmallGreen.h"
 #include "Enemy_Laser.h"
 #include "Enemy_RocketTurret.h"
+#include "Enemy_ElevatorCanon.h"
 
 
 
@@ -180,6 +181,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::TRIPLETURRET:
 			enemies[i] = new Enemy_TripleTurret(info.x, info.y);
 			break;
+		case ENEMY_TYPES::ELEVATORCANON:
+			enemies[i] = new Enemy_ElevatorCanon(info.x, info.y);
+			break;
 		case ENEMY_TYPES::ELEVATOR:
 			enemies[i] = new Enemy_Elevator(info.x, info.y);
 			break;
@@ -290,6 +294,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				delete enemies[i];
 				enemies[i] = nullptr;
 				break;
+			case ELEVATORCANON:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
 			case ELEVATOR:
 				enemies[i]->OnCollision(c2);
 				break;

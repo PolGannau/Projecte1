@@ -30,5 +30,9 @@ Enemy_Elevator2::Enemy_Elevator2(int x, int y) : Enemy(x, y)
 void Enemy_Elevator2::Move()
 {
 	position = original_pos + path.GetCurrentSpeed();
+	++time;
+	if (time == 700) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 160, position.y);
+	}
 }
 void Enemy_Elevator2::OnCollision(Collider* collider) {}

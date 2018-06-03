@@ -24,6 +24,7 @@
     <ClInclude Include="..\Enemy.h" />
     <ClInclude Include="..\Enemy_Elevator.h" />
     <ClInclude Include="..\Enemy_Elevator2.h" />
+    <ClInclude Include="..\Enemy_ElevatorCanon.h" />
     <ClInclude Include="..\Enemy_GreenTurret.h" />
     <ClInclude Include="..\Enemy_HandShip.h" />
     <ClInclude Include="..\Enemy_Laser.h" />
@@ -77,6 +78,7 @@
     <ClCompile Include="..\Enemy.cpp" />
     <ClCompile Include="..\Enemy_Elevator.cpp" />
     <ClCompile Include="..\Enemy_Elevator2..cpp" />
+    <ClCompile Include="..\Enemy_ElevatorCanon.cpp" />
     <ClCompile Include="..\Enemy_GreenTurret.cpp" />
     <ClCompile Include="..\Enemy_HandShip.cpp" />
     <ClCompile Include="..\Enemy_Laser.cpp" />

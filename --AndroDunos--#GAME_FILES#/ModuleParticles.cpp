@@ -443,6 +443,29 @@ ModuleParticles::ModuleParticles()
 	Rocket.anim.speed = 0.1f;
 	Rocket.speed.y -= 1;
 	Rocket.life = BULLET_ENEMY_LIFE;
+
+
+	Canonexplosion2.anim.PushBack({ 387, 174, 12, 19 });
+	Canonexplosion2.anim.PushBack({ 273, 104, 32, 32 });
+	Canonexplosion2.anim.PushBack({ 308, 105, 30, 30 });
+	Canonexplosion2.anim.PushBack({ 342, 106, 30, 30 });
+	Canonexplosion2.anim.PushBack({ 263, 144, 30, 30 });
+	Canonexplosion2.anim.PushBack({ 297, 145, 30, 30 });
+	Canonexplosion2.anim.PushBack({ 332, 143, 32, 32 });
+	Canonexplosion2.anim.PushBack({ 269, 179, 32, 32 });
+	Canonexplosion2.anim.PushBack({ 316, 180, 32, 32 });
+	Canonexplosion2.anim.PushBack({ 387, 204, 16, 16 });
+	Canonexplosion2.anim.loop = false;
+	Canonexplosion2.anim.speed = 0.2f;
+	Canonexplosion2.life = 900000;
+
+	Canonattack.anim.PushBack({ 283,255,6,6 });
+	Canonattack.anim.PushBack({ 293,255,6,6 });
+	Canonattack.anim.PushBack({ 303,255,6,6 });
+	Canonattack.anim.PushBack({ 313,255,6,6 });
+	Canonattack.anim.speed = 0.1f;
+	Canonattack.speed.y -= 1;
+	Canonattack.life = BULLET_ENEMY_LIFE;
 }
 
 ModuleParticles::~ModuleParticles()

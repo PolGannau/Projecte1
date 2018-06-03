@@ -113,6 +113,8 @@ public:
 	Particle TurretShot8u;
 	Particle TurretShot9u;
 	Particle Rocket;
+	Particle Canonattack;
+	Particle Canonexplosion2;
 };
 
 #endif // __MODULEPARTICLES_H__
