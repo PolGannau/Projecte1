@@ -16,6 +16,10 @@ Enemy_MiniBoss::Enemy_MiniBoss(int x, int y) : Enemy(x, y)
 	fly.PushBack({ 965, 290, 79, 176 });
 
 
+	fly.loop = false;
+
+
+	fly.speed = 0.1f;
 
 	animation = &fly;
 
@@ -84,9 +88,6 @@ void Enemy_MiniBoss::Move()
 			mov = 0;
 		}
 	}
-
-
-
 
 
 }

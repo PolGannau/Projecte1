@@ -468,6 +468,7 @@ ModuleParticles::ModuleParticles()
 	Canonattack.life = BULLET_ENEMY_LIFE;
 
 
+
 	triple.anim.PushBack({ 283,255,6,6 });
 	triple.anim.PushBack({ 293,255,6,6 });
 	triple.anim.PushBack({ 303,255,6,6 });

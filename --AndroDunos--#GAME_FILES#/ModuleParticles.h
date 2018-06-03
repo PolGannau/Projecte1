@@ -117,6 +117,7 @@ public:
 	Particle Canonexplosion2;
 	Particle triple, tripleu, tripled;
 	Particle SBlaser, SBlaseru, SBlaserd;
+
 };
 
 #endif // __MODULEPARTICLES_H__
