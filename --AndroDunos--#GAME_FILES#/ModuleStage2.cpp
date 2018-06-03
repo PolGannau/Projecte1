@@ -184,6 +184,22 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::MULTICOLOR, 760, 30);
 	App->enemies->AddEnemy(ENEMY_TYPES::MULTICOLOR, 790, 30);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+
 
 
 	//mus = App->audio->LoadMusic("assets/stage2/07_Stage_2-Mechanized-Unit-Intro.ogg", 1);
