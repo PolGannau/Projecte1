@@ -115,7 +115,6 @@ public:
 	Particle Rocket;
 	Particle Canonattack;
 	Particle Canonexplosion2;
-	Particle triple, tripleu, tripled;
 };
 
 #endif // __MODULEPARTICLES_H__

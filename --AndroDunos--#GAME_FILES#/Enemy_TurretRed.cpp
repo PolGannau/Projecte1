@@ -19,12 +19,12 @@ Enemy_TurretRed::Enemy_TurretRed(int x, int y) : Enemy(x, y)
 	left.PushBack({ 1131,215,24,22 });
 	left.PushBack({ 1171,215,24,22 });
 	left.PushBack({ 1086,245,24,22 });
-	
+	left.loop = false;
 	left.speed = 0.05f;
-	animation = &left;
+
 	path.PushBack({ 0.0f,0.0f }, 1, &left);
 
-	mov = 0;
+
 
 	collider = App->collision->AddCollider({ 0, 0, 20, 306 }, COLLIDER_TYPE::COLLIDER_POWERUP, (Module*)App->enemies);
 
@@ -33,24 +33,7 @@ Enemy_TurretRed::Enemy_TurretRed(int x, int y) : Enemy(x, y)
 }
 void Enemy_TurretRed::Move()
 {
-	mov += 0.5f;
-	++time;
-	if (mov == 1.0f) {
-		if (App->player->position.x <= position.x) {
-			animation = &left;
-			position.x -= 1;
-		}
-		if (App->player->position.x > position.x) {
-			animation = &left;
-			position.x += 1;
-		}
-	mov = 0;
-	}
-	if (time > 500) {
-		animation = &left;
-		position.x -=1;
-	}
-	
+	position = original_pos + path.GetCurrentSpeed(&animation);
 }
 void Enemy_TurretRed::OnCollision(Collider* collider) {
 

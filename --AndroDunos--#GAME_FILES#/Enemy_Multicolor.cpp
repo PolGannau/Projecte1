@@ -22,7 +22,7 @@ Enemy_MultiColor::Enemy_MultiColor(int x, int y) : Enemy(x, y)
 	fly.PushBack({ 115, 350, 20, 20 });
 	fly.PushBack({ 136, 350, 20, 20 });
 	fly.PushBack({ 158, 350, 20, 20 });
-	fly.speed = 0.2f;
+	fly.speed = 0.05f;
 
 	fly.loop = false;
 
@@ -31,10 +31,16 @@ Enemy_MultiColor::Enemy_MultiColor(int x, int y) : Enemy(x, y)
 
 	animation = &fly;
 
-	path.PushBack({ -0.8f, 0.8f }, 50);
-	path.PushBack({ -0.8f,-0.8f }, 37);
-	path.PushBack({ -1.0f, 1.0f }, 10);
-	path.PushBack({ 0.8f, 0.8f }, 10);
+	path.PushBack({ -1.0f, 1.0f }, 30);
+	path.PushBack({ -1.0f,0.5f }, 15);
+	path.PushBack({ -1.0f,0.0f }, 5);
+	path.PushBack({ -1.0f,-0.5f }, 15);
+	path.PushBack({ -1.0f,-1.0f }, 37);
+	path.PushBack({ -0.5f,-0.5f }, 15);
+	path.PushBack({ -0.5f,0.0f }, 5);
+	path.PushBack({ -0.5f,0.5f }, 15);
+	path.PushBack({ 0.0f,0.5f }, 15);
+	path.PushBack({ 1.0f, 1.0f }, 10);
 	path.PushBack({ 2.0f, 0.0f }, 500);
 	collider = App->collision-> AddCollider({ 0, 0, 20, 20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 

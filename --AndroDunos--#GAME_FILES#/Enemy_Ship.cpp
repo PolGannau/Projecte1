@@ -7,34 +7,49 @@
 
 #include <math.h>  
 
-Enemy_Ship::Enemy_Ship(int x, int y) : Enemy(x, y)
+Enemy_Ship::Enemy_Ship(int x, int y, int num) : Enemy(x, y)
 {
 	type = SHIP;
 
+	if (num == 1) {
+		fly.PushBack({ 1130,20,22,14 });
+		fly.PushBack({ 1160,21,22,12 });
+		fly.PushBack({ 1190,21,22,14 });
+		fly.PushBack({ 1220,20,22,17 });
+		fly.PushBack({ 1250,17,22,22 });
+		fly.PushBack({ 1280,20,22,17 });
+		fly.PushBack({ 1310,22,22,14 });
+		fly.PushBack({ 1340,22,22,14 });
+		fly.PushBack({ 1370,20,22,14 });
+		fly.PushBack({ 1400,18,22,17 });
+		fly.PushBack({ 1430,17,22,22 });
+		fly.PushBack({ 1460,18,22,17 });
 
-	fly.PushBack({ 1130,20,22,14 });
-	fly.PushBack({ 1160,21,22,12 });
-	fly.PushBack({ 1190,21,22,14 });
-	fly.PushBack({ 1220,20,22,17 });
-	fly.PushBack({ 1250,17,22,22 });
-	fly.PushBack({ 1280,20,22,17 });
-	fly.PushBack({ 1310,22,22,14 });
-	fly.PushBack({ 1340,22,22,14 });
-	fly.PushBack({ 1370,20,22,14 });
-	fly.PushBack({ 1400,18,22,17 });
-	fly.PushBack({ 1430,17,22,22 });
-	fly.PushBack({ 1460,18,22,17 });
 
+		fly.speed = 0.2f;
 
-	fly.speed = 0.2f;
+		animation = &fly;
 
-	animation = &fly;
-
-	path.PushBack({ 1.2f, 1.2f }, 70);
-	path.PushBack({ 1.2f, 0.5f }, 28);
-	path.PushBack({ 1.2f, 0.0f }, 10);
-	path.PushBack({ 1.2f,-0.5f }, 28);
-	path.PushBack({ 1.2f,-1.2f }, 500);
+		path.PushBack({ 1.2f, 1.2f }, 110);
+		path.PushBack({ 1.2f, 0.5f }, 28);
+		path.PushBack({ 1.2f, 0.0f }, 15);
+		path.PushBack({ 1.2f,-0.5f }, 28);
+		path.PushBack({ 1.2f,-1.2f }, 500);
+	}
+	else if (num == 2) {
+		fly.PushBack({ 1130,44,22,17 });
+		fly.PushBack({ 1160,43,22,22 });
+		fly.PushBack({ 1190,44,22,17 });
+		fly.PushBack({ 1220,46,22,14 });
+		fly.PushBack({ 1250,48,22,14 });
+		fly.PushBack({ 1280,48,22,14 });
+		fly.PushBack({ 1310,46,22,17 });
+		fly.PushBack({ 1340,43,22,22 });
+		fly.PushBack({ 1370,46,22,17 });
+		fly.PushBack({ 1400,47,22,14 });
+		fly.PushBack({ 1430,47,22,12 });
+		fly.PushBack({ 1460,46,22,14 });
+	}
 	collider = App->collision->AddCollider({ 0, 0, 35, 25 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_pos.x = x;
