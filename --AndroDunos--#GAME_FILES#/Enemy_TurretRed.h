@@ -1,26 +1,23 @@
-#ifndef __ENEMY_SMALL_H__
-#define __ENEMY_SMALL_H__
+#ifndef __ENEMY_TURRETRED_H__
+#define __ENEMY_TURRETRED_H__
 
 #include "Enemy.h"
 #include "Path.h"
 
-class Enemy_Small : public Enemy
+class Enemy_TurretRed : public Enemy
 {
 private:
 	int original_y = 0;
-	Animation fly;
-	float x, y, m;
+	Animation left;
 	iPoint original_pos;
 	Path path;
-	bool now = true;
-
-
 
 public:
 
-	Enemy_Small(int x, int y, int num);
+	Enemy_TurretRed(int x, int y);
 	void OnCollision(Collider* collider);
 	void Move();
 };
 
 #endif
+

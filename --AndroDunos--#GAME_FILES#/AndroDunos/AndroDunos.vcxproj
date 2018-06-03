@@ -40,6 +40,7 @@
     <ClInclude Include="..\Enemy_SmallGreen.h" />
     <ClInclude Include="..\Enemy_StraightOnShip.h" />
     <ClInclude Include="..\Enemy_TripleTurret.h" />
+    <ClInclude Include="..\Enemy_TurretRed.h" />
     <ClInclude Include="..\Enemy_VerticalStructure.h" />
     <ClInclude Include="..\Enemy_WhiteShip.h" />
     <ClInclude Include="..\Enemy_WhiteTurret.h" />
@@ -94,6 +95,7 @@
     <ClCompile Include="..\Enemy_SmallGreen.cpp" />
     <ClCompile Include="..\Enemy_StraightOnShip.cpp" />
     <ClCompile Include="..\Enemy_TripleTurret.cpp" />
+    <ClCompile Include="..\Enemy_TurretRed.cpp" />
     <ClCompile Include="..\Enemy_VerticalStructure.cpp" />
     <ClCompile Include="..\Enemy_WhiteShip.cpp" />
     <ClCompile Include="..\Enemy_WhiteTurret.cpp" />
@@ -128,7 +130,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{1801CFDB-73DE-4E28-ACC2-3AA154B2E5E5}</ProjectGuid>
     <RootNamespace>AndroDunos</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
