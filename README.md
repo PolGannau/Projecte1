@@ -138,6 +138,8 @@ Our team is composed by three members:
 
 **[Link to the official webpage](https://polgannau.github.io/Tribute-to-AndroDunos/)**
 
+**[Video](https://youtu.be/-HWO4uNuppE)**
+
 ### Oriol Capdevila (OriolCS2)
 
 Role: Team Leader
