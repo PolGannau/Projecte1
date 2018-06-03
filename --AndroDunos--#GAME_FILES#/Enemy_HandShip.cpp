@@ -163,9 +163,9 @@ Enemy_HandShip::Enemy_HandShip(int x, int y, int num) : Enemy(x, y)
 void Enemy_HandShip::Move()
 {
 	position = original_pos + path.GetCurrentSpeed();
-	if (fly.SeeCurrentFrame() == 17) {
+	/*if (fly.SeeCurrentFrame() == 17) {
 		collider = App->collision->AddCollider({ 0, 0, 30, 19 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
-	}
+	}*/
 	if (fly.SeeCurrentFrame() == 19 && now) {
 		x = App->player->position.x - position.x;
 		y = App->player->position.y - position.y;
