@@ -13,13 +13,9 @@ Enemy_MiniBoss::Enemy_MiniBoss(int x, int y) : Enemy(x, y)
 {
 	type = MINIBOSS;
 
-	fly.PushBack({ 0, 470, 30, 19 });
+	fly.PushBack({ 965, 290, 79, 176 });
 
 
-	fly.loop = false;
-
-
-	fly.speed = 0.1f;
 
 	animation = &fly;
 
@@ -31,7 +27,7 @@ Enemy_MiniBoss::Enemy_MiniBoss(int x, int y) : Enemy(x, y)
 
 void Enemy_MiniBoss::Move()
 {
-	position = original_pos + path.GetCurrentSpeed();
+	
 
 }
 
