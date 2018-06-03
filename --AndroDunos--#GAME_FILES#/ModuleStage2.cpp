@@ -309,7 +309,7 @@ update_status ModuleStage2::Update()
 		}
 	}
 
-	if (left_move == true)
+	if (left_move == true && App->enemies->subBoss)
 	{
 		if (App->render->camera.x <= 2910 * SCREEN_SIZE)
 		{
