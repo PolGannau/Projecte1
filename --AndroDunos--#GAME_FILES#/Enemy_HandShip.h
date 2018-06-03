@@ -16,7 +16,7 @@ private:
 
 public:
 
-	Enemy_HandShip(int x, int y);
+	Enemy_HandShip(int x, int y, int num);
 	void OnCollision(Collider* collider);
 	void Move();
 };

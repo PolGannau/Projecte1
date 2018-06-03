@@ -9,56 +9,155 @@
 
 
 
-Enemy_HandShip::Enemy_HandShip(int x, int y) : Enemy(x, y)
+Enemy_HandShip::Enemy_HandShip(int x, int y, int num) : Enemy(x, y)
 {
-	type = HANDSHIP;
-
-	fly.PushBack({ 0, 470, 30, 19 }); 
-	fly.PushBack({ 35, 470, 30, 19 });
-	fly.PushBack({ 70, 470, 30, 19 });
-	fly.PushBack({ 105, 470, 30, 19 });
-	fly.PushBack({ 140, 470, 30, 19 });
-	fly.PushBack({ 0, 494, 30, 19 });
-	fly.PushBack({ 35, 494, 30, 19 });
-	fly.PushBack({ 70, 494, 30, 19 });
-	fly.PushBack({ 105, 494, 30, 19 });
-	fly.PushBack({ 140, 494, 30, 19 });
-	fly.PushBack({ 0, 518, 30, 19 });
-	fly.PushBack({ 35, 518, 30, 19 });
-	fly.PushBack({ 70, 518, 30, 19 });
-	fly.PushBack({ 105, 518, 30, 19 });
-	fly.PushBack({ 140, 518, 30, 19 });
-	fly.PushBack({ 0, 542, 30, 19 });
-	fly.PushBack({ 35, 542, 30, 19 });
-	fly.PushBack({ 70, 542, 30, 19 });
-	fly.PushBack({ 105, 542, 30, 19 }); //aqui ha de disparar
-	fly.PushBack({ 105, 542, 30, 19 });
-	fly.PushBack({ 105, 542, 30, 19 });
-	fly.PushBack({ 105, 542, 30, 19 });
-	fly.PushBack({ 140, 542, 30, 19 });
-	fly.PushBack({ 0, 565, 30, 19 });
-	fly.PushBack({ 35, 565, 30, 19 });
-	fly.PushBack({ 70, 565, 30, 19 });
-	fly.PushBack({ 105, 565, 30, 19 });
-	fly.PushBack({ 140, 565, 30, 19 });
-
-	fly.loop = false;
-
-
-	fly.speed = 0.1f;
-
-	animation = &fly;
-
-	path.PushBack({ -1.0f, 0.0f }, 20);
-	path.PushBack({ 0.0f, -0.5f }, 20);
-	path.PushBack({ 1.3f, 0.0f }, 100);
-	path.PushBack({ 1.1f,0.0f }, 25);
-	path.PushBack({ 0.0f, 0.0f }, 50);
-	path.PushBack({ 2.0f,0.0f }, 500);
 	
+		type = HANDSHIP;
+	if (num == 1) {
 
-	original_pos.x = x;
-	original_pos.y = y;
+		fly.PushBack({ 0, 470, 30, 19 });
+		fly.PushBack({ 35, 470, 30, 19 });
+		fly.PushBack({ 70, 470, 30, 19 });
+		fly.PushBack({ 105, 470, 30, 19 });
+		fly.PushBack({ 140, 470, 30, 19 });
+		fly.PushBack({ 0, 494, 30, 19 });
+		fly.PushBack({ 35, 494, 30, 19 });
+		fly.PushBack({ 70, 494, 30, 19 });
+		fly.PushBack({ 105, 494, 30, 19 });
+		fly.PushBack({ 140, 494, 30, 19 });
+		fly.PushBack({ 0, 518, 30, 19 });
+		fly.PushBack({ 35, 518, 30, 19 });
+		fly.PushBack({ 70, 518, 30, 19 });
+		fly.PushBack({ 105, 518, 30, 19 });
+		fly.PushBack({ 140, 518, 30, 19 });
+		fly.PushBack({ 0, 542, 30, 19 });
+		fly.PushBack({ 35, 542, 30, 19 });
+		fly.PushBack({ 70, 542, 30, 19 });
+		fly.PushBack({ 105, 542, 30, 19 }); //aqui ha de disparar
+		fly.PushBack({ 105, 542, 30, 19 });
+		fly.PushBack({ 105, 542, 30, 19 });
+		fly.PushBack({ 105, 542, 30, 19 });
+		fly.PushBack({ 140, 542, 30, 19 });
+		fly.PushBack({ 0, 565, 30, 19 });
+		fly.PushBack({ 35, 565, 30, 19 });
+		fly.PushBack({ 70, 565, 30, 19 });
+		fly.PushBack({ 105, 565, 30, 19 });
+		fly.PushBack({ 140, 565, 30, 19 });
+
+		fly.loop = false;
+
+
+		fly.speed = 0.1f;
+
+		animation = &fly;
+
+		path.PushBack({ -1.0f, 0.0f }, 20);
+		path.PushBack({ 0.0f, -0.5f }, 20);
+		path.PushBack({ 1.3f, 0.0f }, 100);
+		path.PushBack({ -0.2f,0.0f }, 25);
+		path.PushBack({ 0.0f, 0.0f }, 50);
+		path.PushBack({ 2.0f,0.0f }, 500);
+
+
+		original_pos.x = x;
+		original_pos.y = y;
+	}
+	else if (num == 2) {
+		fly.PushBack({ 0, 470, 30, 19 });
+		fly.PushBack({ 35, 470, 30, 19 });
+		fly.PushBack({ 70, 470, 30, 19 });
+		fly.PushBack({ 105, 470, 30, 19 });
+		fly.PushBack({ 140, 470, 30, 19 });
+		fly.PushBack({ 0, 494, 30, 19 });
+		fly.PushBack({ 35, 494, 30, 19 });
+		fly.PushBack({ 70, 494, 30, 19 });
+		fly.PushBack({ 105, 494, 30, 19 });
+		fly.PushBack({ 140, 494, 30, 19 });
+		fly.PushBack({ 0, 518, 30, 19 });
+		fly.PushBack({ 35, 518, 30, 19 });
+		fly.PushBack({ 70, 518, 30, 19 });
+		fly.PushBack({ 105, 518, 30, 19 });
+		fly.PushBack({ 140, 518, 30, 19 });
+		fly.PushBack({ 0, 542, 30, 19 });
+		fly.PushBack({ 35, 542, 30, 19 });
+		fly.PushBack({ 70, 542, 30, 19 });
+		fly.PushBack({ 105, 542, 30, 19 }); //aqui ha de disparar
+		fly.PushBack({ 105, 542, 30, 19 });
+		fly.PushBack({ 105, 542, 30, 19 });
+		fly.PushBack({ 105, 542, 30, 19 });
+		fly.PushBack({ 140, 542, 30, 19 });
+		fly.PushBack({ 0, 565, 30, 19 });
+		fly.PushBack({ 35, 565, 30, 19 });
+		fly.PushBack({ 70, 565, 30, 19 });
+		fly.PushBack({ 105, 565, 30, 19 });
+		fly.PushBack({ 140, 565, 30, 19 });
+
+		fly.loop = false;
+
+
+		fly.speed = 0.1f;
+
+		animation = &fly;
+
+		path.PushBack({ -1.0f, 0.0f }, 20);
+		path.PushBack({ 0.0f, 1.5f }, 20);
+		path.PushBack({ 1.5f, 0.0f }, 100);
+		path.PushBack({ -0.2f,0.0f }, 25);
+		path.PushBack({ 0.0f, 0.0f }, 50);
+		path.PushBack({ 2.0f,0.0f }, 500);
+
+
+		original_pos.x = x;
+		original_pos.y = y;
+	}
+	else if (num == 3) {
+		fly.PushBack({ 0, 470, 30, 19 });
+		fly.PushBack({ 35, 470, 30, 19 });
+		fly.PushBack({ 70, 470, 30, 19 });
+		fly.PushBack({ 105, 470, 30, 19 });
+		fly.PushBack({ 140, 470, 30, 19 });
+		fly.PushBack({ 0, 494, 30, 19 });
+		fly.PushBack({ 35, 494, 30, 19 });
+		fly.PushBack({ 70, 494, 30, 19 });
+		fly.PushBack({ 105, 494, 30, 19 });
+		fly.PushBack({ 140, 494, 30, 19 });
+		fly.PushBack({ 0, 518, 30, 19 });
+		fly.PushBack({ 35, 518, 30, 19 });
+		fly.PushBack({ 70, 518, 30, 19 });
+		fly.PushBack({ 105, 518, 30, 19 });
+		fly.PushBack({ 140, 518, 30, 19 });
+		fly.PushBack({ 0, 542, 30, 19 });
+		fly.PushBack({ 35, 542, 30, 19 });
+		fly.PushBack({ 70, 542, 30, 19 });
+		fly.PushBack({ 105, 542, 30, 19 }); //aqui ha de disparar
+		fly.PushBack({ 105, 542, 30, 19 });
+		fly.PushBack({ 105, 542, 30, 19 });
+		fly.PushBack({ 105, 542, 30, 19 });
+		fly.PushBack({ 140, 542, 30, 19 });
+		fly.PushBack({ 0, 565, 30, 19 });
+		fly.PushBack({ 35, 565, 30, 19 });
+		fly.PushBack({ 70, 565, 30, 19 });
+		fly.PushBack({ 105, 565, 30, 19 });
+		fly.PushBack({ 140, 565, 30, 19 });
+
+		fly.loop = false;
+
+
+		fly.speed = 0.1f;
+
+		animation = &fly;
+
+		path.PushBack({ -1.0f, 0.0f }, 20);
+		path.PushBack({ 0.0f, -1.0f }, 20);
+		path.PushBack({ 1.5f, 0.0f }, 100);
+		path.PushBack({ -0.2f,0.0f }, 25);
+		path.PushBack({ 0.0f, 0.0f }, 50);
+		path.PushBack({ 2.0f,0.0f }, 500);
+
+
+		original_pos.x = x;
+		original_pos.y = y;
+	}
 }
 
 void Enemy_HandShip::Move()

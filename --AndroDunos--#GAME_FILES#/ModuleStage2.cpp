@@ -175,10 +175,6 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 1283, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 1283, true);
 
-
-	
-
-
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1220, 40, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1125, 47, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1150, 47, false);
@@ -221,21 +217,21 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1885, 60, false, 1);
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1900, 60, false, 1);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100, false, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100, false, 3);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100, false, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100, false, 3);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100, false, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100, false, 3);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100, false, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100, false, 3);
 
 
 
