@@ -207,6 +207,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::HANDSHIP:
 			enemies[i] = new Enemy_HandShip(info.x, info.y, info.num);
+			lives[i] = 5;
 			break;
 		case ENEMY_TYPES::MULTICOLOR:
 			enemies[i] = new Enemy_MultiColor(info.x, info.y);
@@ -350,9 +351,12 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case HANDSHIP:
-				enemies[i]->OnCollision(c2);
-				delete enemies[i];
-				enemies[i] = nullptr;
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+				}
 				break;
 			case MULTICOLOR:
 				enemies[i]->OnCollision(c2);

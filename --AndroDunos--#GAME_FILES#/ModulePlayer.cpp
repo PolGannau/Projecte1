@@ -343,7 +343,7 @@ update_status ModulePlayer::Update()
 
 		//App->enemies->AddEnemy(ENEMY_TYPES::BOSS, position.x + 250, position.y,true, 2); // si poses 2 es posara el 2 del small
 
-		App->enemies->AddEnemy(ENEMY_TYPES::SHIPTURRET, position.x + 250, position.y,true, 1); // si poses 2 es posara el 2 del small
+		App->enemies->AddEnemy(ENEMY_TYPES::TRIPLETURRET, position.x + 250, position.y,true, 1); // si poses 2 es posara el 2 del small
 
 		//App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, position.x + 250, position.y);
 	}

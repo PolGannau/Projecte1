@@ -153,7 +153,7 @@ Enemy_HandShip::Enemy_HandShip(int x, int y, int num) : Enemy(x, y)
 		path.PushBack({ -0.2f,0.0f }, 25);
 		path.PushBack({ 0.0f, 0.0f }, 50);
 		path.PushBack({ 2.0f,0.0f }, 500);
-
+		collider = App->collision->AddCollider({ 0, 0, 30, 19 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 		original_pos.x = x;
 		original_pos.y = y;
