@@ -300,7 +300,11 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4376, 1602, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4445, 1635, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4500, 1635, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4473, 1737, true);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 4600, 1690, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 4615, 1720, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 4630, 1960, 1);
 
 	/*App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1100, 250, false, 2);  //Nau verda
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1101, 260, false, 2);
