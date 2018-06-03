@@ -118,6 +118,7 @@ public:
 	Particle triple, tripleu, tripled;
 	Particle SBlaser, SBlaseru, SBlaserd;
 	Particle boss, boss2;
+	Particle minibossdead;
 
 };
 

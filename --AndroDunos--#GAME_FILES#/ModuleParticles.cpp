@@ -538,6 +538,9 @@ ModuleParticles::ModuleParticles()
 	boss2.anim.loop = true;
 	boss2.life = BULLET_ENEMY_LIFE;
 
+	minibossdead.anim.PushBack({0,520,80,725});
+	minibossdead.life = 50000;
+
 }
 
 ModuleParticles::~ModuleParticles()

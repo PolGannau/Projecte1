@@ -93,5 +93,5 @@ void Enemy_MiniBoss::Move()
 }
 
 void Enemy_MiniBoss::OnCollision(Collider* collider) {
-	App->particles->AddParticle(App->particles->explosion, position.x, position.y);
+	App->particles->AddParticle(App->particles->minibossdead, position.x, position.y);
 }
