@@ -27,6 +27,13 @@ Enemy_MiniBoss::Enemy_MiniBoss(int x, int y) : Enemy(x, y)
 	path.PushBack({ -1.0f, 0.0f }, 150);
 	path.PushBack({ -3.0f, 0.0f }, 50);
 	path.PushBack({ 1.5f, 0.0f }, 25);
+	path.PushBack({ -1.0f, 0.0f }, 150);
+	path.PushBack({ -3.0f, 0.0f }, 50);
+	path.PushBack({ 1.5f, 0.0f }, 25);
+	path.PushBack({ -1.0f, 0.0f }, 150);
+	path.PushBack({ -3.0f, 0.0f }, 25);
+	path.PushBack({ 2.0f, 0.0f }, 50);
+	path.PushBack({ 0.0f, 0.0f }, 99999999999);
 
 	collider = App->collision->AddCollider({ 0, 0, 79, 176 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 

@@ -58,11 +58,11 @@ enum ENEMY_TYPES
 typedef unsigned int uint;
 
 // Configuration -----------
-#define SCREEN_SIZE 3 // 1 full screen  3  no
+#define SCREEN_SIZE 1 // 1 full screen  3  no
 #define SCREEN_WIDTH 304 
 #define SCREEN_HEIGHT 224 
 #define WIN_FULLSCREEN 0
-#define WIN_FULLSCREEN_DESKTOP 0 // 1 full screen 0 no
+#define WIN_FULLSCREEN_DESKTOP 1 // 1 full screen 0 no
 #define WIN_BORDERLESS 0
 #define WIN_RESIZABLE 0
 #define REN_VSYNC 1
