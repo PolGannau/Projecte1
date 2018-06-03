@@ -30,7 +30,7 @@ bool ModuleStage2::Start()
 	App->render->view.x = App->render->view.y = 0;
 
 	stop_p = false;
-	background1 = App->textures->Load("assets/level-1/background&floor/UpperBackground.png");
+	background1 = App->textures->Load("assets/Stage-2/back.png");
 	map_p[0] = App->textures->Load("assets/Stage-2/map-part1stage2.png"); //ES EL INICI DEL FLOOR DEL STAGE 2
 	map_p[1] = App->textures->Load("assets/Stage-2/map-part2stage2.png");
 	map_p[2] = App->textures->Load("assets/Stage-2/map-part3stage2.png");
@@ -300,7 +300,11 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4376, 1602, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4445, 1635, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4500, 1635, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4473, 1737, true);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 4600, 1690, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 4615, 1720, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 4630, 1960, 1);
 
 	/*App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1100, 250, false, 2);  //Nau verda
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1101, 260, false, 2);
