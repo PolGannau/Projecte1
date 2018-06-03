@@ -39,11 +39,21 @@ bool ModuleViscoGames::Start()
 	if (App->scene_intro->IsEnabled() == true) {
 		App->viscogames->Disable();
 	}
-	
-	
+	Games.x = 40;
+	Games.y = -50;
+	Games.w = 223;
+	Games.h = 39;
+
+
+	Visco.x = 57;
+	Visco.y = 234;
+	Visco.w = 189;
+	Visco.h = 39;
+	movement = false;
 	time2 = SDL_GetTicks();
 	time = 0;
-	
+	x = 2;
+	y = 2;
 	return true;
 }
 
@@ -57,8 +67,9 @@ bool ModuleViscoGames::CleanUp()
 	App->textures->Unload(visco);
 	App->textures->Unload(games);
 	time = 0;
-
-
+	x = 2;
+	y = 2;
+	movement = false;
 	return true;
 }
 
