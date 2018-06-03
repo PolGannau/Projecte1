@@ -130,7 +130,11 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{1801CFDB-73DE-4E28-ACC2-3AA154B2E5E5}</ProjectGuid>
     <RootNamespace>AndroDunos</RootNamespace>
+<<<<<<< HEAD
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+=======
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+>>>>>>> bfd971db08f8171fd41fb2aed8cf2c7b86ded71c
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
