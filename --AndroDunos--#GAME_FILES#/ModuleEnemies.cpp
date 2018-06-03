@@ -31,6 +31,7 @@
 #include "Enemy_ElevatorCanon.h"
 #include "Enemy_Boss.h"
 #include "Enemy_Boss2.h"
+#include "Enemy_Structure.h"
 
 
 
@@ -232,6 +233,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::STRUCTBOSS:
 			enemies[i] = new Enemy_Boss2(info.x, info.y);
 			break;
+		case ENEMY_TYPES::STRUCTURE:
+			enemies[i] = new Enemy_Structure(info.x, info.y);
+			break;
 		}
 	}
 }
@@ -376,6 +380,9 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case STRUCTBOSS:
+				enemies[i]->OnCollision(c2);
+				break;
+			case STRUCTURE:
 				enemies[i]->OnCollision(c2);
 				break;
 			default:

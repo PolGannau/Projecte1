@@ -27,6 +27,7 @@
 #include "Enemy_ElevatorCanon.h"
 #include "Enemy_Boss.h"
 #include "Enemy_Boss2.h"
+#include "Enemy_Structure.h"
 
 #define MAX_ENEMIES 500
 

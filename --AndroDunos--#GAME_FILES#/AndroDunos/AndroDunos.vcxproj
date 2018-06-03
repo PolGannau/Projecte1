@@ -41,6 +41,7 @@
     <ClInclude Include="..\Enemy_Small.h" />
     <ClInclude Include="..\Enemy_SmallGreen.h" />
     <ClInclude Include="..\Enemy_StraightOnShip.h" />
+    <ClInclude Include="..\Enemy_Structure.h" />
     <ClInclude Include="..\Enemy_TripleTurret.h" />
     <ClInclude Include="..\Enemy_TurretRed.h" />
     <ClInclude Include="..\Enemy_VerticalStructure.h" />
@@ -98,6 +99,7 @@
     <ClCompile Include="..\Enemy_Small.cpp" />
     <ClCompile Include="..\Enemy_SmallGreen.cpp" />
     <ClCompile Include="..\Enemy_StraightOnShip.cpp" />
+    <ClCompile Include="..\Enemy_Structure.cpp" />
     <ClCompile Include="..\Enemy_TripleTurret.cpp" />
     <ClCompile Include="..\Enemy_TurretRed.cpp" />
     <ClCompile Include="..\Enemy_VerticalStructure.cpp" />
