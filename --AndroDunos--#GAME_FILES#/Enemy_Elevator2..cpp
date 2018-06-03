@@ -76,5 +76,8 @@ void Enemy_Elevator2::Move()
 	if (time == 1730) {
 		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 48, position.y, false, 2);
 	}
+	if (time == 2200) {
+		App->enemies->AddEnemy(ENEMY_TYPES::MINIBOSS, position.x + 270, position.y - 169);
+	}
 }
 void Enemy_Elevator2::OnCollision(Collider* collider) {}

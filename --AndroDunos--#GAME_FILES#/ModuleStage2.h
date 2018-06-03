@@ -19,7 +19,7 @@ public:
 	bool Start();
 	update_status Update();
 	bool CleanUp();
-	int time = 0;
+
 public:
 
 	SDL_Texture * background1 = nullptr;

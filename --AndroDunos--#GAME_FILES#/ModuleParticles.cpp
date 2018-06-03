@@ -467,6 +467,7 @@ ModuleParticles::ModuleParticles()
 	Canonattack.speed.y -= 1;
 	Canonattack.life = BULLET_ENEMY_LIFE;
 
+
 	triple.anim.PushBack({ 283,255,6,6 });
 	triple.anim.PushBack({ 293,255,6,6 });
 	triple.anim.PushBack({ 303,255,6,6 });
@@ -492,6 +493,36 @@ ModuleParticles::ModuleParticles()
 	tripleu.speed.y -= 2;
 	tripleu.speed.x -= 1;
 	tripleu.life = BULLET_ENEMY_LIFE;
+
+	SBlaser.anim.PushBack({ 238,244,8,8 });
+	SBlaser.anim.PushBack({ 258,244,8,8 });
+	SBlaser.anim.PushBack({ 238,245,8,8 });
+	SBlaser.anim.PushBack({ 258,245,8,8 });
+	SBlaser.anim.speed = 0.2f;
+	SBlaser.speed.x -= 6;
+	SBlaser.anim.loop = true;
+	SBlaser.life = BULLET_ENEMY_LIFE;
+
+	SBlaseru.anim.PushBack({ 238,244,8,8 });
+	SBlaseru.anim.PushBack({ 258,244,8,8 });
+	SBlaseru.anim.PushBack({ 238,245,8,8 });
+	SBlaseru.anim.PushBack({ 258,245,8,8 });
+	SBlaseru.anim.speed = 0.2f;
+	SBlaseru.speed.x -= 6;
+	SBlaseru.speed.y -= 3;
+	SBlaseru.anim.loop = true;
+	SBlaseru.life = BULLET_ENEMY_LIFE;
+
+	SBlaserd.anim.PushBack({ 238,244,8,8 });
+	SBlaserd.anim.PushBack({ 258,244,8,8 });
+	SBlaserd.anim.PushBack({ 238,245,8,8 });
+	SBlaserd.anim.PushBack({ 258,245,8,8 });
+	SBlaserd.anim.speed = 0.2f;
+	SBlaserd.speed.x -= 6;
+	SBlaserd.speed.y += 3;
+	SBlaserd.anim.loop = true;
+	SBlaserd.life = BULLET_ENEMY_LIFE;
+
 }
 
 ModuleParticles::~ModuleParticles()

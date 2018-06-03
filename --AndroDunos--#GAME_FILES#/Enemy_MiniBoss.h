@@ -11,7 +11,11 @@ private:
 	Animation fly;
 	iPoint original_pos;
 	Path path;
-
+	int time = 0;
+	float x, y, m;
+	int time2 = 0;
+	bool go = false;
+	float mov = 0;
 public:
 
 	Enemy_MiniBoss(int x, int y);

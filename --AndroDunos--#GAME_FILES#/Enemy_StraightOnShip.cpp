@@ -60,7 +60,6 @@ Enemy_StraightOnShip::Enemy_StraightOnShip(int x, int y, int num) : Enemy(x, y)
 		path.PushBack({ -2.0f,1.0f }, 15);
 		path.PushBack({ -2.0f,2.0f }, 15);
 		path.PushBack({ -2.0f,2.5f }, 5000);
-		movement = 4;
 		movement = 1;
 	}
 	else if (num == 5) { 
@@ -76,7 +75,6 @@ Enemy_StraightOnShip::Enemy_StraightOnShip(int x, int y, int num) : Enemy(x, y)
 		path.PushBack({ -2.0f,-1.0f }, 15);
 		path.PushBack({ -2.0f,-2.0f }, 15);
 		path.PushBack({ -2.0f,-2.5f }, 5000);
-		movement = 4;
 
 		movement = 1;
 	}

@@ -11,8 +11,7 @@ private:
 	Animation left;
 	iPoint original_pos;
 	Path path;
-	int time = 0;
-	float mov;
+
 public:
 
 	Enemy_TurretRed(int x, int y);

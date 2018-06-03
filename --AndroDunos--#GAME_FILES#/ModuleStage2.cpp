@@ -146,8 +146,6 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 540, 80, false, 3);
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 550, 80, false, 3);
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 560, 80, false, 3);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::TRIPLETURRET, 600, 140);
 	
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITEYELLOW, 1400, 220, false, 1);  
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITEYELLOW, 1420, 240, false, 3);
@@ -165,8 +163,6 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2614, -145, false); 
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2757, 245, true);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::TRIPLETURRET, 3010, 180);
-
 	App->enemies->AddEnemy(ENEMY_TYPES::ELEVATOR, 3544, -400);
 	App->enemies->AddEnemy(ENEMY_TYPES::ELEVATOR2, 3544, 591);
 
@@ -179,10 +175,76 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 1283, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 1283, true);
 
+	
+
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1220, 40, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1125, 47, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1150, 47, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1280, 22, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1332, 20, false);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1205, 130, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1300, 197, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1337, 187, true);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 150, -100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 155, -100);
+
+
 	App->enemies->AddEnemy(ENEMY_TYPES::MULTICOLOR, 700, 30);
 	App->enemies->AddEnemy(ENEMY_TYPES::MULTICOLOR, 730, 30);
 	App->enemies->AddEnemy(ENEMY_TYPES::MULTICOLOR, 760, 30);
 	App->enemies->AddEnemy(ENEMY_TYPES::MULTICOLOR, 790, 30);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1600, 50, false, 4);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1610, 35, false, 4);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1610, 65, false, 4);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1640, 125, false, 5);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1650, 110, false, 5);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1650, 140, false, 5);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1700, 50, false, 4);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1710, 35, false, 4);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1710, 65, false, 4);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1800, 100, false, 3);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1815, 100, false, 3);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1830, 100, false, 3);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1845, 100, false, 3);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1855, 60, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1870, 60, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1885, 60, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1900, 60, false, 1);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+
+
+
+
+	//App->enemies->AddEnemy(ENEMY_TYPES::SHIP, )
+
+	//App->enemies->AddEnemy(ENEMY_TYPES::SHIP)
+	
+	/*App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1100, 250, false, 2);  //Nau verda
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1101, 260, false, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1102, 270, false, 2);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1103, 280, false, 2);*/
 
 
 
@@ -257,9 +319,10 @@ update_status ModuleStage2::Update()
 		{
 			App->player2->position.x -= 1;
 		}
-		if (App->render->camera.x <= 2907 * SCREEN_SIZE)
+	if (App->render->camera.x <= 2907 * SCREEN_SIZE)
 		{
 			App->enemies->sub_Boss_Dead = true;
+		
 		}
 	}
 
