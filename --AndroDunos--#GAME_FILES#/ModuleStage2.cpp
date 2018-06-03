@@ -278,6 +278,9 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3535, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3540, 120);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 3865, 1603, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 3875, 1752, true);
+
 	/*App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1100, 250, false, 2);  //Nau verda
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1101, 260, false, 2);
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1102, 270, false, 2);
