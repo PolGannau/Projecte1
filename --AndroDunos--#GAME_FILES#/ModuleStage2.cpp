@@ -127,7 +127,7 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 568, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 586, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 504, 120);*/
-
+	App->enemies->AddEnemy(ENEMY_TYPES::BOSS, 6422, 1650, true);
 	// well position
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 270, 140, true);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 295, 163, true);
@@ -343,7 +343,15 @@ update_status ModuleStage2::Update()
 			App->player2->position.y += 1;
 		}
 	}
-
+	if (App->render->camera.x >= 6150) {
+		App->render->camera.x -= 0 * SCREEN_SIZE; //speed in x axes
+		App->player->position.x -= 0;
+		App->render->view.x -= 0;
+		if (App->player2->IsEnabled() == true)
+		{
+			App->player2->position.x -= 0;
+		}
+	}
 	//movement 
 
 	if (App->player->position.x >= 11200 || App->player2->position.x >= 11200)

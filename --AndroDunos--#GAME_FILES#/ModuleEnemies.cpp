@@ -29,6 +29,7 @@
 #include "Enemy_RocketTurret.h"
 #include "Enemy_TurretRed.h"
 #include "Enemy_ElevatorCanon.h"
+#include "Enemy_Boss.h"
 
 
 
@@ -224,6 +225,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::TURRETRED:
 			enemies[i] = new Enemy_TurretRed(info.x, info.y);
 			break;
+		case ENEMY_TYPES::BOSS:
+			enemies[i] = new Enemy_Boss(info.x, info.y);
+			break;
 		}
 	}
 }
@@ -340,6 +344,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				break;
 			case MINIBOSS:
 				enemies[i]->OnCollision(c2);
+				App->enemies->sub_Boss_Dead = true;
 				delete enemies[i];
 				enemies[i] = nullptr;
 				break;
@@ -357,6 +362,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case TURRETRED:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
+			case BOSS:
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;

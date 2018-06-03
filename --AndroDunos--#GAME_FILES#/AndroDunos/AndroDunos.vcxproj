@@ -22,6 +22,7 @@
     <ClInclude Include="..\Animation.h" />
     <ClInclude Include="..\Application.h" />
     <ClInclude Include="..\Enemy.h" />
+    <ClInclude Include="..\Enemy_Boss.h" />
     <ClInclude Include="..\Enemy_Elevator.h" />
     <ClInclude Include="..\Enemy_Elevator2.h" />
     <ClInclude Include="..\Enemy_ElevatorCanon.h" />
@@ -77,6 +78,7 @@
   <ItemGroup>
     <ClCompile Include="..\Application.cpp" />
     <ClCompile Include="..\Enemy.cpp" />
+    <ClCompile Include="..\Enemy_Boss.cpp" />
     <ClCompile Include="..\Enemy_Elevator.cpp" />
     <ClCompile Include="..\Enemy_Elevator2..cpp" />
     <ClCompile Include="..\Enemy_ElevatorCanon.cpp" />
@@ -131,7 +133,7 @@
     <ProjectGuid>{1801CFDB-73DE-4E28-ACC2-3AA154B2E5E5}</ProjectGuid>
     <RootNamespace>AndroDunos</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

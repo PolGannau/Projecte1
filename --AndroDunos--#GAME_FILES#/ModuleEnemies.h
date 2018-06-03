@@ -25,6 +25,7 @@
 #include "Enemy_RocketTurret.h"
 #include "Enemy_TurretRed.h"
 #include "Enemy_ElevatorCanon.h"
+#include "Enemy_Boss.h"
 
 #define MAX_ENEMIES 100
 
