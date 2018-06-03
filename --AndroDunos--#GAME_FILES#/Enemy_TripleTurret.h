@@ -9,7 +9,6 @@ private:
 	int original_y = 0;
 	Animation fly, idle;
 
-
 public:
 
 	Enemy_TripleTurret(int x, int y);

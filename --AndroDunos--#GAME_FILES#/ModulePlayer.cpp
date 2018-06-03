@@ -340,7 +340,7 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keyboard[SDL_SCANCODE_E] == KEY_STATE::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(ENEMY_TYPES::SHIP, position.x + 250, position.y,true, 2); // si poses 2 es posara el 2 del small
+		App->enemies->AddEnemy(ENEMY_TYPES::TRIPLETURRET, position.x + 250, position.y,true, 2); // si poses 2 es posara el 2 del small
 		//App->powerups->AddPowerUp(POWERUPS_TYPES::SHIPPOWERUP, position.x + 250, position.y);
 	}
 
