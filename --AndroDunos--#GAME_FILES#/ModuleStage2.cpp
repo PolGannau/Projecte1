@@ -349,6 +349,7 @@ update_status ModuleStage2::Update()
 	{
 		stop_p = true;
 	}
+	else if (App->render->camera.x >= 6172 * SCREEN_SIZE)stop_p = true;
 	else
 	{
 		stop_p = false;
