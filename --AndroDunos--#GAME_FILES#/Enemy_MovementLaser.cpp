@@ -29,7 +29,10 @@ Enemy_MovementLaser::Enemy_MovementLaser(int x, int y) : Enemy(x, y)
 }
 void Enemy_MovementLaser::Move()
 {
-
+	++time;
+	if (time == 50) {
+		App->enemies->AddEnemy(ENEMY_TYPES::LASER, position.x + 5, position.y - 172);
+	}
 }
 void Enemy_MovementLaser::OnCollision(Collider* collider) {
 	App->particles->AddParticle(App->particles->smallexplosion, position.x, position.y);

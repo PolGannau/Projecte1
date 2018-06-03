@@ -112,6 +112,7 @@ public:
 	Particle TurretShot7u;
 	Particle TurretShot8u;
 	Particle TurretShot9u;
+	Particle Rocket;
 };
 
 #endif // __MODULEPARTICLES_H__

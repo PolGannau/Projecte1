@@ -8,7 +8,7 @@ class Enemy_MovementLaser : public Enemy
 private:
 	int original_y = 0;
 	Animation enemy;
-
+	int time = 0;
 
 public:
 

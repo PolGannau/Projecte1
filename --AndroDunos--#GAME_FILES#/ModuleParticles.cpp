@@ -436,6 +436,13 @@ ModuleParticles::ModuleParticles()
 	TurretShot9u.anim.speed = 0.1f;
 	TurretShot9u.speed.x += 2;
 	TurretShot9u.life = BULLET_ENEMY_LIFE;
+
+	Rocket.anim.PushBack({ 736,0,10,16 });
+	Rocket.anim.PushBack({ 710,0,10,19 });
+	Rocket.anim.PushBack({ 723,0,10,21 });
+	Rocket.anim.speed = 0.1f;
+	Rocket.speed.y -= 1;
+	Rocket.life = BULLET_ENEMY_LIFE;
 }
 
 ModuleParticles::~ModuleParticles()

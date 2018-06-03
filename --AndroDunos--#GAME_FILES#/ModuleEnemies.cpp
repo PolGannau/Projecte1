@@ -26,6 +26,7 @@
 #include "Enemy_MiniBoss.h"
 #include "Enemy_SmallGreen.h"
 #include "Enemy_Laser.h"
+#include "Enemy_RocketTurret.h"
 
 
 
@@ -212,6 +213,9 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		case ENEMY_TYPES::LASER:
 			enemies[i] = new Enemy_Laser(info.x, info.y);
 			break;
+		case ENEMY_TYPES::ROCKETTURRET:
+			enemies[i] = new Enemy_RocketTurret(info.x, info.y);
+			break;
 		}
 	}
 }
@@ -335,6 +339,10 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 			case LASER:
 				enemies[i]->OnCollision(c2);
 				break;
+			case ROCKETTURRET:
+				enemies[i]->OnCollision(c2);
+				delete enemies[i];
+				enemies[i] = nullptr;
 			default:
 				break;
 			}

@@ -22,6 +22,7 @@
 #include "Enemy_Small.h"
 #include "Enemy_SmallGreen.h"
 #include "Enemy_Laser.h"
+#include "Enemy_RocketTurret.h"
 
 #define MAX_ENEMIES 100
 

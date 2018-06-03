@@ -4,6 +4,7 @@
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
 #include "ModulePlayer.h"
+#include "ModulePlayer2.h"
 #include "SDL/include/SDL_timer.h"
 
 Enemy_Laser::Enemy_Laser(int x, int y) : Enemy(x, y)
@@ -22,7 +23,7 @@ Enemy_Laser::Enemy_Laser(int x, int y) : Enemy(x, y)
 	animation = &enemy;
 
 
-	collider = App->collision->AddCollider({ 0, 0, 20, 306 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
+	collider = App->collision->AddCollider({ 0, 0, 20, 306 }, COLLIDER_TYPE::COLLIDER_POWERUP, (Module*)App->enemies);
 
 	original_y = y;
 }
@@ -32,6 +33,9 @@ void Enemy_Laser::Move()
 }
 void Enemy_Laser::OnCollision(Collider* collider) {
 	if (collider->type == COLLIDER_PLAYER) {
-		App->player->position.x -= 1;
+		App->player->position.y += 1;
+	}
+	if (collider->type == COLLIDER_PLAYER2) {
+		App->player2->position.y += 1;
 	}
 }
