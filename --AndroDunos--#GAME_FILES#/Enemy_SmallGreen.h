@@ -15,7 +15,7 @@ private:
 
 public:
 
-	Enemy_SmallGreen(int x, int y);
+	Enemy_SmallGreen(int x, int y, int num);
 	void OnCollision(Collider* collider);
 	void Move();
 };

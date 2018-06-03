@@ -11,10 +11,12 @@ private:
 	int original_y = 0;
 	Animation fly;
 	float y = 5;
+	bool z;
+	int time = 0;
 
 public:
 
-	Enemy_ShipTurret(int x, int y);
+	Enemy_ShipTurret(int x, int y, bool z);
 	void OnCollision(Collider* collider);
 	void Move();
 };

@@ -173,7 +173,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			lives[i] = 5;
 			break;
 		case ENEMY_TYPES::SHIPTURRET:
-			enemies[i] = new Enemy_ShipTurret(info.x, info.y);
+			enemies[i] = new Enemy_ShipTurret(info.x, info.y, info.z);
 			break;
 		case ENEMY_TYPES::WHITETURRET:
 			enemies[i] = new Enemy_WhiteTurret(info.x, info.y, info.z);
@@ -216,7 +216,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_MiniBoss(info.x, info.y);
 			break;
 		case ENEMY_TYPES::SMALLGREEN:
-			enemies[i] = new Enemy_SmallGreen(info.x, info.y);
+			enemies[i] = new Enemy_SmallGreen(info.x, info.y, info.num);
 			break;
 		case ENEMY_TYPES::LASER:
 			enemies[i] = new Enemy_Laser(info.x, info.y);
@@ -234,7 +234,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_Boss2(info.x, info.y);
 			break;
 		case ENEMY_TYPES::STRUCTURE:
-			enemies[i] = new Enemy_Structure(info.x, info.y);
+			enemies[i] = new Enemy_Structure(info.x, info.y, info.z);
 			break;
 		}
 	}
