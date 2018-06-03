@@ -31,8 +31,50 @@ void Enemy_Elevator2::Move()
 {
 	position = original_pos + path.GetCurrentSpeed();
 	++time;
-	if (time == 700) {
-		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 160, position.y);
+
+	if (time == 890) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 160, position.y, false, 1);
+	}
+	if (time == 965) { //aqui apareix el primer dadalt posicio 5
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 112, position.y, false, 1);
+	}
+	if (time == 1040) { //aqui apareix el 2n i 3r dadalt posicio 2 i 6
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 192, position.y, false, 1);
+	}
+	if (time == 1500) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 128, position.y, false, 1);
+	}
+	if (time == 1515) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 16, position.y, false, 1);
+	}
+	if (time == 1545) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 78, position.y, false, 2);
+	}
+	if (time == 1575) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 158, position.y, false, 2);
+	}
+	if (time == 1605) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 48, position.y, false, 2);
+	}
+	if (time == 1635) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 80, position.y, false, 2);
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 144, position.y, false, 2);
+	}
+	if (time == 1655) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 32, position.y, false, 2);
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 96, position.y, false, 2);
+	}
+	if (time == 1685) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 208, position.y, false, 2);
+	}
+	if (time == 1685) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 144, position.y, false, 2);
+	}
+	if (time == 1700) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 16, position.y, false, 2);
+	}
+	if (time == 1730) {
+		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 48, position.y, false, 2);
 	}
 }
 void Enemy_Elevator2::OnCollision(Collider* collider) {}

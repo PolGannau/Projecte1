@@ -12,10 +12,11 @@ private:
 	Animation appear, disappear;
 	float y = 5;
 	int time = 0;
+	int num;
 	bool now = true;
 public:
 
-	Enemy_ElevatorCanon(int x, int y);
+	Enemy_ElevatorCanon(int x, int y, int num);
 	void OnCollision(Collider* collider);
 	void Move();
 };

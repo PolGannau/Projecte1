@@ -182,7 +182,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_TripleTurret(info.x, info.y);
 			break;
 		case ENEMY_TYPES::ELEVATORCANON:
-			enemies[i] = new Enemy_ElevatorCanon(info.x, info.y);
+			enemies[i] = new Enemy_ElevatorCanon(info.x, info.y, info.num);
 			break;
 		case ENEMY_TYPES::ELEVATOR:
 			enemies[i] = new Enemy_Elevator(info.x, info.y);
