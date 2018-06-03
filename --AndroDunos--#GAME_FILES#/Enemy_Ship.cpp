@@ -49,6 +49,16 @@ Enemy_Ship::Enemy_Ship(int x, int y, int num) : Enemy(x, y)
 		fly.PushBack({ 1400,47,22,14 });
 		fly.PushBack({ 1430,47,22,12 });
 		fly.PushBack({ 1460,46,22,14 });
+
+		fly.speed = 0.2f;
+
+		animation = &fly;
+
+		path.PushBack({ -1.2f,1.2f }, 110);
+		path.PushBack({ -1.2f,0.5f }, 28);
+		path.PushBack({ -1.2f,0.0f }, 15);
+		path.PushBack({ -1.2f,-0.5f }, 28);
+		path.PushBack({ -1.2f,-1.2f }, 500);
 	}
 	collider = App->collision->AddCollider({ 0, 0, 35, 25 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 

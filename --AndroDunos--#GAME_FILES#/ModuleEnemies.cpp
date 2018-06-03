@@ -195,7 +195,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			enemies[i] = new Enemy_MovementLaser(info.x, info.y);
 			break;
 		case ENEMY_TYPES::SHIP:
-			enemies[i] = new Enemy_Ship(info.x, info.y);
+			enemies[i] = new Enemy_Ship(info.x, info.y, info.num);
 			break;
 		case ENEMY_TYPES::HANDSHIP:
 			enemies[i] = new Enemy_HandShip(info.x, info.y);

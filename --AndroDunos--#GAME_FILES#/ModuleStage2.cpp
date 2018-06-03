@@ -223,6 +223,8 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
 
+	//App->enemies->AddEnemy(ENEMY_TYPES::SHIP, )
+
 	//App->enemies->AddEnemy(ENEMY_TYPES::SHIP)
 	
 	/*App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1100, 250, false, 2);  //Nau verda
