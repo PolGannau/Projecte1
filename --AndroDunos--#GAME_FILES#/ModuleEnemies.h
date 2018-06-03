@@ -28,7 +28,7 @@
 #include "Enemy_Boss.h"
 #include "Enemy_Boss2.h"
 
-#define MAX_ENEMIES 100
+#define MAX_ENEMIES 500
 
 
 class Enemy;
