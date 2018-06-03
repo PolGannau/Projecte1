@@ -32,7 +32,7 @@ void Enemy_Elevator2::Move()
 	position = original_pos + path.GetCurrentSpeed();
 	++time;
 
-	if (time == 890) {
+	/*if (time == 890) {
 		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 160, position.y, false, 1);
 	}
 	if (time == 965) { //aqui apareix el primer dadalt posicio 5
@@ -75,7 +75,7 @@ void Enemy_Elevator2::Move()
 	}
 	if (time == 1730) {
 		App->enemies->AddEnemy(ENEMY_TYPES::ELEVATORCANON, position.x + 48, position.y, false, 2);
-	}
+	}*/
 	if (time == 2200) {
 		App->enemies->AddEnemy(ENEMY_TYPES::MINIBOSS, position.x + 270, position.y - 169);
 	}
