@@ -36,9 +36,7 @@ bool ModuleStage2::Start()
 	map_p[2] = App->textures->Load("assets/Stage-2/map-part3stage2.png");
 	map_p[3] = App->textures->Load("assets/Stage-2/map-part4stage2.png");
 
-	underground = App->textures->Load("assets/level-1/background&floor/UnderBackground.png");
-	underground_e = App->textures->Load("assets/level-1/background&floor/UnderBackground_end.png");
-	underground_s = App->textures->Load("assets/level-1/background&floor/Underbackground_start.png");
+	underground = App->textures->Load("assets/Stage-2/down.png");
 
 	App->player->Enable();
 	App->particles->Enable();
@@ -328,8 +326,6 @@ bool ModuleStage2::CleanUp()
 
 	App->textures->Unload(background1);
 	App->textures->Unload(underground);
-	App->textures->Unload(underground_e);
-	App->textures->Unload(underground_s);
 	App->textures->Unload(map_p[0]);
 	App->textures->Unload(map_p[1]);
 	App->textures->Unload(map_p[2]);
@@ -428,15 +424,14 @@ update_status ModuleStage2::Update()
 
 
 	// Draw everything --------------------------------------
-	for (int i = 0; i < 29; ++i) if (!App->render->Blit(background1, TILE_WIDTH * i, 120, NULL, 0.6f)) return update_status::UPDATE_ERROR;
-	if (App->render->camera.x > 3681 * SCREEN_SIZE && App->render->camera.x <= 8943 * SCREEN_SIZE) {
-		if (!App->render->Blit(underground_s, 1435, -85, nullptr, 0.39f)) return update_status::UPDATE_ERROR;
-		if (!App->render->Blit(underground, 2015, -85, nullptr, 0.39f)) return update_status::UPDATE_ERROR;
-		if (!App->render->Blit(underground, 2014 + UT_W, -85, nullptr, 0.39f)) return update_status::UPDATE_ERROR;
-		if (!App->render->Blit(underground, 2013 + UT_W * 2, -85, nullptr, 0.39f)) return update_status::UPDATE_ERROR;
-		if (!App->render->Blit(underground, 2012 + UT_W * 3, -85, nullptr, 0.39f)) return update_status::UPDATE_ERROR;
-		if (!App->render->Blit(underground_e, 2011 + UT_W * 4 - 64 * 3, -85, nullptr, 0.39f)) return update_status::UPDATE_ERROR;//64 is the mesure of 1/6th of the under_tile_width here it's used to fit the end of the underground background into the previous tiles
-	}
+	for (int i = 0; i < 29; ++i) if (!App->render->Blit(background1, TILE_WIDTH * i, 0, NULL, 0.6f)) return update_status::UPDATE_ERROR;
+	
+	for (int j = 0; j < 5; ++j) if (!App->render->Blit(background1, TILE_WIDTH * 11, TILEHIGHT*j, NULL, 0.6f)) return update_status::UPDATE_ERROR;
+	for (int j = 0; j < 5; ++j) if (!App->render->Blit(background1, TILE_WIDTH * 10, TILEHIGHT*j, NULL, 0.6f)) return update_status::UPDATE_ERROR;
+
+	for (int k = 0; k < 5; ++k) if (!App->render->Blit(underground, TILE_WIDTH *10-TILE_WIDTH2*k, TILEHIGHT* 4 + 50, NULL, 0.6f)) return update_status::UPDATE_ERROR;
+	for (int k = 0; k < 7; ++k) if (!App->render->Blit(underground, TILE_WIDTH*11+TILE_WIDTH2*k, TILEHIGHT * 4 + 50, NULL, 0.6f)) return update_status::UPDATE_ERROR;
+	
 	if (!App->render->Blit(map_p[0], 0, -607, nullptr, 1.0f)) return update_status::UPDATE_ERROR;
 	if (!App->render->Blit(map_p[1], 1672, -608, nullptr,1.0f)) return update_status::UPDATE_ERROR;
 	if (!App->render->Blit(map_p[2], 3279, -607, nullptr, 1.0f)) return update_status::UPDATE_ERROR;
