@@ -82,17 +82,17 @@ X: Change weapon
 -Elevator added
 ### **V_0.5**
 
-- Player 1 spawn with X
+-Player 1 spawn with X
 
-- WinScreen fixed
+-WinScreen fixed
 
-- GameOver Screen
+-GameOver Screen
 
-- More Enemies
+-More Enemies
 
-- Powerups Ship
+-Powerups Ship
 
-- Powerups texture
+-Powerups texture
 
 ### **V_0.3.5**
 
