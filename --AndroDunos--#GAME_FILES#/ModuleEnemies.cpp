@@ -158,6 +158,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 		{
 		case ENEMY_TYPES::WHITESHIP:
 			enemies[i] = new Enemy_WhiteShip(info.x, info.y, info.num);
+			lives[i]=5;
 			break;
 		case ENEMY_TYPES::SHIPUPDOWN:
 			enemies[i] = new Enemy_ShipUpDown(info.x, info.y);
@@ -174,8 +175,10 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::SHIPTURRET:
 			enemies[i] = new Enemy_ShipTurret(info.x, info.y, info.z);
+			lives[i] = 8;
 			break;
 		case ENEMY_TYPES::WHITETURRET:
+			lives[i] = 2;
 			enemies[i] = new Enemy_WhiteTurret(info.x, info.y, info.z);
 			break;
 		case ENEMY_TYPES::VERTICALSTRUCTURE:
@@ -184,6 +187,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::TRIPLETURRET:
 			enemies[i] = new Enemy_TripleTurret(info.x, info.y);
+			lives[i] = 3;
 			break;
 		case ENEMY_TYPES::ELEVATORCANON:
 			enemies[i] = new Enemy_ElevatorCanon(info.x, info.y, info.num);
@@ -196,6 +200,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::MOVEMENTLASER:
 			enemies[i] = new Enemy_MovementLaser(info.x, info.y);
+			lives[i] = 7;
 			break;
 		case ENEMY_TYPES::SHIP:
 			enemies[i] = new Enemy_Ship(info.x, info.y, info.num);
@@ -214,6 +219,7 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::MINIBOSS:
 			enemies[i] = new Enemy_MiniBoss(info.x, info.y);
+			lives[i] = 50;
 			break;
 		case ENEMY_TYPES::SMALLGREEN:
 			enemies[i] = new Enemy_SmallGreen(info.x, info.y, info.num);
@@ -223,12 +229,14 @@ void ModuleEnemies::SpawnEnemy(const EnemyInfo& info)
 			break;
 		case ENEMY_TYPES::ROCKETTURRET:
 			enemies[i] = new Enemy_RocketTurret(info.x, info.y);
+			lives[i] = 2;
 			break;
 		case ENEMY_TYPES::TURRETRED:
 			enemies[i] = new Enemy_TurretRed(info.x, info.y);
 			break;
 		case ENEMY_TYPES::BOSS:
 			enemies[i] = new Enemy_Boss(info.x, info.y);
+			lives[i] = 90;
 			break;
 		case ENEMY_TYPES::STRUCTBOSS:
 			enemies[i] = new Enemy_Boss2(info.x, info.y);
@@ -265,9 +273,12 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				}
 				break;
 			case WHITESHIP:
-				enemies[i]->OnCollision(c2);
-				delete enemies[i];
-				enemies[i] = nullptr;
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+				}
 				break;
 			case SHIPUPDOWN:
 				enemies[i]->OnCollision(c2);
@@ -285,14 +296,19 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case SHIPTURRET:
-				enemies[i]->OnCollision(c2);
-				delete enemies[i];
-				enemies[i] = nullptr;
-				break;
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+				}
 			case WHITETURRET:
-				enemies[i]->OnCollision(c2);
-				delete enemies[i];
-				enemies[i] = nullptr;
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+				}
 				break;
 			case VERTICALSTRUCTURE:
 				lives[i]--;
@@ -306,24 +322,27 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				}
 				break;
 			case TRIPLETURRET:
-				enemies[i]->OnCollision(c2);
-				delete enemies[i];
-				enemies[i] = nullptr;
-				break;
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+				}
 			case ELEVATORCANON:
 				enemies[i]->OnCollision(c2);
 				delete enemies[i];
 				enemies[i] = nullptr;
 			case ELEVATOR:
-				enemies[i]->OnCollision(c2);
 				break;
 			case ELEVATOR2:
-				enemies[i]->OnCollision(c2);
 				break;
 			case MOVEMENTLASER:
-				enemies[i]->OnCollision(c2);
-				delete enemies[i];
-				enemies[i] = nullptr;
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+				}
 				break;
 			case SHIP:
 				enemies[i]->OnCollision(c2);
@@ -351,10 +370,12 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case MINIBOSS:
-				enemies[i]->OnCollision(c2);
-				App->enemies->sub_Boss_Dead = true;
-				delete enemies[i];
-				enemies[i] = nullptr;
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+				}
 				break;
 			case SMALLGREEN:
 				enemies[i]->OnCollision(c2);
@@ -365,9 +386,12 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i]->OnCollision(c2);
 				break;
 			case ROCKETTURRET:
-				enemies[i]->OnCollision(c2);
-				delete enemies[i];
-				enemies[i] = nullptr;
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+				}
 				break;
 			case TURRETRED:
 				enemies[i]->OnCollision(c2);
@@ -375,12 +399,14 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				enemies[i] = nullptr;
 				break;
 			case BOSS:
-				enemies[i]->OnCollision(c2);
-				delete enemies[i];
-				enemies[i] = nullptr;
+				lives[i]--;
+				if (lives[i] == 0) {
+					enemies[i]->OnCollision(c2);
+					delete enemies[i];
+					enemies[i] = nullptr;
+				}
 				break;
 			case STRUCTBOSS:
-				enemies[i]->OnCollision(c2);
 				break;
 			case STRUCTURE:
 				enemies[i]->OnCollision(c2);
