@@ -12,7 +12,7 @@ The theme of the game is placed in the future where the human being is able to t
 
 ## Installation
 
-The user has to download the zip release from the Github Project's site, decompress it, and execute the executable.
+The user has to download the zip release from the Github Project's site, decompress it, read the README and have fun.
 
 ## Game Controls
 
@@ -58,8 +58,28 @@ F3: WinScreen Shortcut
 
 F4: GameOver Shortcut
 
-## Changelist
+### Controller
 
+Left Joystick: Move
+
+A: Shoot
+
+X: Change weapon
+
+## Changelist
+### **V_1.0**
+
+-Enemies added
+
+-Controllers added
+
+-Some intro cutscenes added
+
+-Sub-boss added
+
+-Boss added
+
+-Elevator added
 ### **V_0.5**
 
 - Player 1 spawn with X
@@ -114,7 +134,7 @@ Our team is composed by three members:
 
 **[Link to  wiki github](https://github.com/PolGannau/Tribute-to-AndroDunos/wiki)**
 
-**[Link to release web page](https://github.com/PolGannau/Tribute-to-AndroDunos/releases)**
+**[Link to release the game](https://github.com/PolGannau/Tribute-to-AndroDunos/releases)**
 
 **[Link to the official webpage](https://polgannau.github.io/Tribute-to-AndroDunos/)**
 
