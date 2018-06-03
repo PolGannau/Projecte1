@@ -134,7 +134,7 @@ Our team is composed by three members:
 
 **[Link to  wiki github](https://github.com/PolGannau/Tribute-to-AndroDunos/wiki)**
 
-**[Link to release the game](https://github.com/PolGannau/Tribute-to-AndroDunos/releases)**
+**[Link to download the game](https://github.com/PolGannau/Tribute-to-AndroDunos/releases/download/v0.9.0/AndroDunosv1.0.zip)**
 
 **[Link to the official webpage](https://polgannau.github.io/Tribute-to-AndroDunos/)**
 
