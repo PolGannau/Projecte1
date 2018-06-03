@@ -211,19 +211,6 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1710, 35, false, 4);
 	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1710, 65, false, 4);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1600, 50, false, 2);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1610, 35, false, 2);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1610, 65, false, 2);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1640, 125, false, 2);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1650, 110, false, 2);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1650, 140, false, 2);
-
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1700, 50, false, 2);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1710, 35, false, 2);
-	App->enemies->AddEnemy(ENEMY_TYPES::STRAIGHTONSHIP, 1710, 65, false, 2);
-
-
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1800, 100, false, 3);
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1815, 100, false, 3);
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1830, 100, false, 3);
