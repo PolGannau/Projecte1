@@ -207,7 +207,23 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1885, 60, false, 1);
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1900, 60, false, 1);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIP)
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 536, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1366, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 1750, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+
+	//App->enemies->AddEnemy(ENEMY_TYPES::SHIP)
 	
 	/*App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1100, 250, false, 2);  //Nau verda
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1101, 260, false, 2);
