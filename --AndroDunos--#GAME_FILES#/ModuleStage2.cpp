@@ -281,6 +281,27 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 3865, 1603, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 3875, 1752, true);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3900, 1680);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3915, 1660);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3920, 1700);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 3920, 1752, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4000, 1720, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4050, 1720, true);
+
+	//This ones should be anothers
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4100, 1635, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4150, 1635, false);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::ROCKETTURRET, 4258, 1706);
+	App->enemies->AddEnemy(ENEMY_TYPES::ROCKETTURRET, 4295, 1706);
+	App->enemies->AddEnemy(ENEMY_TYPES::ROCKETTURRET, 4330, 1706);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4376, 1602, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4445, 1635, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 4500, 1635, false);
+
+
 	/*App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1100, 250, false, 2);  //Nau verda
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1101, 260, false, 2);
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1102, 270, false, 2);
