@@ -22,6 +22,14 @@ Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
 	boss.speed = 0.1f;
 
 	animation = &boss;
+
+	path.PushBack({ 0.0f,-0.5f }, 25);
+	path.PushBack({ 0.0f,0.0f }, 10);
+	path.PushBack({ 0.0f,-0.5f }, 25);
+	path.PushBack({ 0.0f,0.5f }, 25);
+	path.PushBack({ 0.0f,0.0f }, 10);
+	path.PushBack({ 0.0f,0.5f }, 25);
+
 	collider = App->collision->AddCollider({ 0, 0, 66, 128 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_pos.x = x;
@@ -29,6 +37,6 @@ Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
 }
 void Enemy_Boss::Move()
 {
-	position.x += 0;
+	position = original_pos + path.GetCurrentSpeed();
 }
 void Enemy_Boss::OnCollision(Collider* collider) {}

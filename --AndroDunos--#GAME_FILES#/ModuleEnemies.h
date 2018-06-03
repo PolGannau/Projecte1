@@ -26,6 +26,7 @@
 #include "Enemy_TurretRed.h"
 #include "Enemy_ElevatorCanon.h"
 #include "Enemy_Boss.h"
+#include "Enemy_Boss2.h"
 
 #define MAX_ENEMIES 100
 

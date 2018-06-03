@@ -127,7 +127,9 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 568, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 586, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 504, 120);*/
-	App->enemies->AddEnemy(ENEMY_TYPES::BOSS, 6422, 1650, true);
+	//App->enemies->AddEnemy(ENEMY_TYPES::BOSS, 6422, 1634, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::STRUCTBOSS, 3743, 1570, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::BOSS, 3743, 1634, true);
 	// well position
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 270, 140, true);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 295, 163, true);

@@ -23,6 +23,7 @@
     <ClInclude Include="..\Application.h" />
     <ClInclude Include="..\Enemy.h" />
     <ClInclude Include="..\Enemy_Boss.h" />
+    <ClInclude Include="..\Enemy_Boss2.h" />
     <ClInclude Include="..\Enemy_Elevator.h" />
     <ClInclude Include="..\Enemy_Elevator2.h" />
     <ClInclude Include="..\Enemy_ElevatorCanon.h" />
@@ -79,6 +80,7 @@
     <ClCompile Include="..\Application.cpp" />
     <ClCompile Include="..\Enemy.cpp" />
     <ClCompile Include="..\Enemy_Boss.cpp" />
+    <ClCompile Include="..\Enemy_Boss2.cpp" />
     <ClCompile Include="..\Enemy_Elevator.cpp" />
     <ClCompile Include="..\Enemy_Elevator2..cpp" />
     <ClCompile Include="..\Enemy_ElevatorCanon.cpp" />
