@@ -127,7 +127,7 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 568, 80);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 586, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::WHITESHIP, 504, 120);*/
-	App->enemies->AddEnemy(ENEMY_TYPES::TRIPLETURRET, 600, 140);
+
 	// well position
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 270, 140, true);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 295, 163, true);
@@ -164,6 +164,8 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2453, -145, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2614, -145, false); 
 	App->enemies->AddEnemy(ENEMY_TYPES::VERTICALSTRUCTURE, 2757, 245, true);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::TRIPLETURRET, 3010, 180);
 
 	App->enemies->AddEnemy(ENEMY_TYPES::ELEVATOR, 3544, -400);
 	App->enemies->AddEnemy(ENEMY_TYPES::ELEVATOR2, 3544, 591);
@@ -246,7 +248,7 @@ update_status ModuleStage2::Update()
 		}
 	}
 
-	if (left_move == true)
+	if (left_move == true && App->enemies->subBoss)
 	{
 		App->render->camera.x -= 1 * SCREEN_SIZE; //speed in x axes
 		App->player->position.x -= 1;

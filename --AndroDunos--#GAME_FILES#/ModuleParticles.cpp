@@ -466,6 +466,32 @@ ModuleParticles::ModuleParticles()
 	Canonattack.anim.speed = 0.1f;
 	Canonattack.speed.y -= 1;
 	Canonattack.life = BULLET_ENEMY_LIFE;
+
+	triple.anim.PushBack({ 283,255,6,6 });
+	triple.anim.PushBack({ 293,255,6,6 });
+	triple.anim.PushBack({ 303,255,6,6 });
+	triple.anim.PushBack({ 313,255,6,6 });
+	triple.anim.speed = 0.1f;
+	triple.speed.y -= 2;
+	triple.life = BULLET_ENEMY_LIFE;
+
+	tripled.anim.PushBack({ 283,255,6,6 });
+	tripled.anim.PushBack({ 293,255,6,6 });
+	tripled.anim.PushBack({ 303,255,6,6 });
+	tripled.anim.PushBack({ 313,255,6,6 });
+	tripled.anim.speed = 0.1f;
+	tripled.speed.y -= 2;
+	tripled.speed.x += 1;
+	tripled.life = BULLET_ENEMY_LIFE;
+
+	tripleu.anim.PushBack({ 283,255,6,6 });
+	tripleu.anim.PushBack({ 293,255,6,6 });
+	tripleu.anim.PushBack({ 303,255,6,6 });
+	tripleu.anim.PushBack({ 313,255,6,6 });
+	tripleu.anim.speed = 0.1f;
+	tripleu.speed.y -= 2;
+	tripleu.speed.x -= 1;
+	tripleu.life = BULLET_ENEMY_LIFE;
 }
 
 ModuleParticles::~ModuleParticles()
