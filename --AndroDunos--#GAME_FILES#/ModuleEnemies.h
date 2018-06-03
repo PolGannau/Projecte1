@@ -52,7 +52,7 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 	void OnCollision(Collider* c1, Collider* c2);
-	bool tocuh = false, dead = false, verticalstructuredead = false, sub_Boss_Dead = false;
+	bool tocuh = false, dead = false, verticalstructuredead = false, sub_Boss_Dead = false, subBoss=false;
 	bool touch2 = false, dead2=false;
 	bool AddEnemy(ENEMY_TYPES type, int x, int y, bool z = false, int num = 1);
 	int timeelevator = 0;

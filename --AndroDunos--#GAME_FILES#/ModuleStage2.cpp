@@ -248,7 +248,7 @@ update_status ModuleStage2::Update()
 		}
 	}
 
-	if (left_move == true)
+	if (left_move == true && App->enemies->subBoss)
 	{
 		App->render->camera.x -= 1 * SCREEN_SIZE; //speed in x axes
 		App->player->position.x -= 1;
