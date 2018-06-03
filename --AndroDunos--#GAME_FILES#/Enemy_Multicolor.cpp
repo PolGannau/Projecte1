@@ -40,8 +40,8 @@ Enemy_MultiColor::Enemy_MultiColor(int x, int y) : Enemy(x, y)
 	path.PushBack({ -0.5f,0.0f }, 5);
 	path.PushBack({ -0.5f,0.5f }, 15);
 	path.PushBack({ 0.0f,0.5f }, 15);
-	path.PushBack({ 1.0f, 1.0f }, 10);
-	path.PushBack({ 2.0f, 0.0f }, 500);
+	path.PushBack({ 1.0f, 1.0f }, 15);
+	path.PushBack({ 3.5f, 0.0f }, 500);
 	collider = App->collision-> AddCollider({ 0, 0, 20, 20 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
 	original_pos.x = x;

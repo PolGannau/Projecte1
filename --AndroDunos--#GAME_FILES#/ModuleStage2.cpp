@@ -177,6 +177,16 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 1283, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 1283, true);
 
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1220, 40, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1125, 47, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1150, 47, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1280, 22, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1332, 20, false);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1205, 130, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1300, 197, true);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 1337, 187, true);
+
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 150, -100);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 155, -100);
 
@@ -222,6 +232,9 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::HANDSHIP, 2989, 100);
+
+
+
 
 	//App->enemies->AddEnemy(ENEMY_TYPES::SHIP, )
 
