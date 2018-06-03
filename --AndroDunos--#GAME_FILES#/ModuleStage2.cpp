@@ -253,11 +253,28 @@ bool ModuleStage2::Start()
 
 	App->enemies->AddEnemy(ENEMY_TYPES::TRIPLETURRET, 3000, 180);//Crazy turret
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3100, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3115, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3130, 100);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3145, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3120, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3135, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3150, 100);
 	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3160, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPUPDOWN, 3180, 100);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::MOVEMENTLASER, 3270, 185);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 3304, 38, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 3362, 46, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 3400, 46, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::WHITETURRET, 3420, 46, false);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 3480, 70, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 3500, 70, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 3520, 70, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 3540, 70, false, 1);
+	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 3560, 70, false, 1);
+
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3520, 100);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3535, 80);
+	App->enemies->AddEnemy(ENEMY_TYPES::SHIPGREEN, 3540, 120);
 
 	/*App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1100, 250, false, 2);  //Nau verda
 	App->enemies->AddEnemy(ENEMY_TYPES::SMALL, 1101, 260, false, 2);
