@@ -3,7 +3,9 @@
 #include "ModuleCollision.h"
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
+#include "ModuleFadeToBlack.h"
 #include "ModulePlayer.h"
+#include "Stageclear.h"
 #include "SDL/include/SDL_timer.h"
 
 Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
@@ -61,4 +63,7 @@ void Enemy_Boss::Move()
 		time = 50;
 	}
 }
-void Enemy_Boss::OnCollision(Collider* collider) {}
+void Enemy_Boss::OnCollision(Collider* collider) 
+{
+	App->fade->FadeToBlack((Module*)App->stage2, (Module*)App->stageclear, 0.8f);
+}

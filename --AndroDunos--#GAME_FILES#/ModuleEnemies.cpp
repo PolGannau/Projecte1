@@ -377,6 +377,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
 				lives[i]--;
 				if (lives[i] == 0) {
 					enemies[i]->OnCollision(c2);
+					App->enemies->sub_Boss_Dead = true;
 					delete enemies[i];
 					enemies[i] = nullptr;
 				}
