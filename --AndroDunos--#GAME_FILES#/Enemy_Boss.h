@@ -11,7 +11,7 @@ private:
 	Animation nomove, boss;
 	Path path;
 	iPoint original_pos;
-
+	int time = 0;
 public:
 
 	Enemy_Boss(int x, int y);

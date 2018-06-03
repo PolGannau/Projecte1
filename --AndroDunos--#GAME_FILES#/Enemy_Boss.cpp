@@ -23,10 +23,10 @@ Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
 
 	animation = &boss;
 
-	path.PushBack({ 0.0f,-0.5f }, 25);
+	path.PushBack({ 0.0f,-0.5f }, 60);
 	path.PushBack({ 0.0f,0.0f }, 10);
 	path.PushBack({ 0.0f,-0.5f }, 25);
-	path.PushBack({ 0.0f,0.5f }, 25);
+	path.PushBack({ 0.0f,0.5f }, 60);
 	path.PushBack({ 0.0f,0.0f }, 10);
 	path.PushBack({ 0.0f,0.5f }, 25);
 
@@ -38,7 +38,27 @@ Enemy_Boss::Enemy_Boss(int x, int y) : Enemy(x, y)
 void Enemy_Boss::Move()
 {
 	position = original_pos + path.GetCurrentSpeed();
+	time++;
+	if (time == 120) {
+		App->particles->AddParticle(App->particles->boss, position.x - 23, position.y + 50);
+		App->particles->AddParticle(App->particles->boss, position.x - 23, position.y + 75);
+	}
+	if (time == 180) {
+		App->particles->AddParticle(App->particles->boss2, position.x, position.y + 60);
+	}
 
-
+	if (time == 185) {
+		App->particles->AddParticle(App->particles->boss2, position.x, position.y + 60);
+	}
+	if (time == 190) {
+		App->particles->AddParticle(App->particles->boss2, position.x, position.y + 60);
+	}
+	if (time == 195) {
+		App->particles->AddParticle(App->particles->boss2, position.x, position.y + 60);
+	}
+	if (time == 200) {
+		App->particles->AddParticle(App->particles->boss2, position.x, position.y + 60);
+		time = 50;
+	}
 }
 void Enemy_Boss::OnCollision(Collider* collider) {}

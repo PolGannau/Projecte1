@@ -529,10 +529,10 @@ ModuleParticles::ModuleParticles()
 	boss.life = BULLET_ENEMY_LIFE;
 
 
-	boss2.anim.PushBack({ 238,244,8,8 });
-	boss2.anim.PushBack({ 258,244,8,8 });
-	boss2.anim.PushBack({ 238,245,8,8 });
-	boss2.anim.PushBack({ 258,245,8,8 });
+	boss2.anim.PushBack({ 283,255,6,6 });
+	boss2.anim.PushBack({ 283,255,6,6 });
+	boss2.anim.PushBack({ 283,255,6,6 });
+	boss2.anim.PushBack({ 283,255,6,6 });
 	boss2.anim.speed = 0.2f;
 	boss2.speed.x -= 3;
 	boss2.anim.loop = true;
