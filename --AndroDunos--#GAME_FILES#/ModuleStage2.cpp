@@ -177,9 +177,11 @@ bool ModuleStage2::Start()
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3504, 1283, false);
 	App->enemies->AddEnemy(ENEMY_TYPES::GREENTURRET, 3761, 1283, true);
 
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 300, -40, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 325, -40, false);
-	App->enemies->AddEnemy(ENEMY_TYPES::SHIP, 350, -40, false);
+	App->enemies->AddEnemy(ENEMY_TYPES::MULTICOLOR, 700, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::MULTICOLOR, 730, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::MULTICOLOR, 760, 30);
+	App->enemies->AddEnemy(ENEMY_TYPES::MULTICOLOR, 790, 30);
+
 
 
 	//mus = App->audio->LoadMusic("assets/stage2/07_Stage_2-Mechanized-Unit-Intro.ogg", 1);

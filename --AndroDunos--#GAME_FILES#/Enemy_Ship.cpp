@@ -12,13 +12,13 @@ Enemy_Ship::Enemy_Ship(int x, int y) : Enemy(x, y)
 	type = SHIP;
 
 
-	fly.PushBack({ 1130,20,22,14  });
+	fly.PushBack({ 1130,20,22,14 });
 	fly.PushBack({ 1160,21,22,12 });
-	fly.PushBack({ 1190,21,22,14  });
+	fly.PushBack({ 1190,21,22,14 });
 	fly.PushBack({ 1220,20,22,17 });
 	fly.PushBack({ 1250,17,22,22 });
 	fly.PushBack({ 1280,20,22,17 });
-	fly.PushBack({ 1310,22,22,14  });
+	fly.PushBack({ 1310,22,22,14 });
 	fly.PushBack({ 1340,22,22,14 });
 	fly.PushBack({ 1370,20,22,14 });
 	fly.PushBack({ 1400,18,22,17 });
@@ -31,9 +31,9 @@ Enemy_Ship::Enemy_Ship(int x, int y) : Enemy(x, y)
 	animation = &fly;
 
 	path.PushBack({ 1.2f, 1.2f }, 70);
-	path.PushBack({ 1.2f, 0.5f }, 20);
-	path.PushBack({ 1.2f, 0.0f }, 7);
-	path.PushBack({ 1.2f,-0.5f }, 20);
+	path.PushBack({ 1.2f, 0.5f }, 28);
+	path.PushBack({ 1.2f, 0.0f }, 10);
+	path.PushBack({ 1.2f,-0.5f }, 28);
 	path.PushBack({ 1.2f,-1.2f }, 500);
 	collider = App->collision->AddCollider({ 0, 0, 35, 25 }, COLLIDER_TYPE::COLLIDER_ENEMY, (Module*)App->enemies);
 
